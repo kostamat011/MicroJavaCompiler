@@ -1,0 +1,64 @@
+INFO  05:50:52,836 - Compiling source file: E:\FAKULTET\IV GOD\PP\projekat\workspace\MJCompiler\test\program.mj
+INFO  05:50:52,878 - #2 program
+INFO  05:50:52,879 - #48 MyProg
+INFO  05:50:52,879 - #48 var
+INFO  05:50:52,879 - #48 x
+INFO  05:50:52,880 - #38 ;
+INFO  05:50:52,881 - #44 {
+INFO  05:50:52,882 - #14 void
+INFO  05:50:52,882 - #48 main
+INFO  05:50:52,883 - #40 (
+INFO  05:50:52,883 - #41 )
+INFO  05:50:52,883 - #44 {
+INFO  05:50:52,883 - #48 int
+INFO  05:50:52,884 - #48 x
+ERROR 05:50:52,884 - 
+Sintaksna greska na liniji 5
+INFO  05:50:52,884 - #38 ;
+INFO  05:50:52,884 - #45 }
+INFO  05:50:52,884 - #45 }
+ERROR 05:50:52,885 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 14
+INFO  05:50:52,887 - Program(
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    GlobalVarDeclaration(
+      VarDeclarationExpr(
+        Type(
+        ) [Type]
+        VarDeclListSingle(
+          VarDeclSingle(
+            NoArray(
+            ) [NoArray]
+          ) [VarDeclSingle]
+        ) [VarDeclListSingle]
+      ) [VarDeclarationExpr]
+    ) [GlobalVarDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListNo(
+    ) [MethodDeclListNo]
+    MethodDeclarationExpr(
+      MethodTypeVoid(
+      ) [MethodTypeVoid]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListMultiple(
+        StatementListNo(
+        ) [StatementListNo]
+        StatementSingle(
+          SingleDesignatorStatement(
+            DesignatorStmtAssign(
+              AssignError(
+              ) [AssignError]
+            ) [DesignatorStmtAssign]
+          ) [SingleDesignatorStatement]
+        ) [StatementSingle]
+      ) [StatementListMultiple]
+    ) [MethodDeclarationExpr]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  05:50:52,887 - ===================================
+INFO  05:50:52,889 -  Deklarisanih globalnih promenljivih ima = 1
+INFO  05:50:52,889 -  Ifova ima = 0
+INFO  05:50:52,889 -  IfElsova ima = 0

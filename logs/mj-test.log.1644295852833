@@ -1,0 +1,48 @@
+INFO  05:50:39,559 - Compiling source file: E:\FAKULTET\IV GOD\PP\projekat\workspace\MJCompiler\test\program.mj
+INFO  05:50:39,602 - #2 program
+INFO  05:50:39,602 - #48 MyProg
+INFO  05:50:39,602 - #48 var
+INFO  05:50:39,602 - #48 x
+INFO  05:50:39,603 - #38 ;
+INFO  05:50:39,604 - #44 {
+INFO  05:50:39,604 - #14 void
+INFO  05:50:39,605 - #48 main
+INFO  05:50:39,605 - #40 (
+INFO  05:50:39,606 - #41 )
+INFO  05:50:39,606 - #44 {
+INFO  05:50:39,606 - #45 }
+INFO  05:50:39,607 - #45 }
+INFO  05:50:39,608 - Program(
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    GlobalVarDeclaration(
+      VarDeclarationExpr(
+        Type(
+        ) [Type]
+        VarDeclListSingle(
+          VarDeclSingle(
+            NoArray(
+            ) [NoArray]
+          ) [VarDeclSingle]
+        ) [VarDeclListSingle]
+      ) [VarDeclarationExpr]
+    ) [GlobalVarDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListNo(
+    ) [MethodDeclListNo]
+    MethodDeclarationExpr(
+      MethodTypeVoid(
+      ) [MethodTypeVoid]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListNo(
+      ) [StatementListNo]
+    ) [MethodDeclarationExpr]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  05:50:39,608 - ===================================
+INFO  05:50:39,610 -  Deklarisanih globalnih promenljivih ima = 1
+INFO  05:50:39,610 -  Ifova ima = 0
+INFO  05:50:39,610 -  IfElsova ima = 0

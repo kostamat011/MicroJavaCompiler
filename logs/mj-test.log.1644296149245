@@ -1,0 +1,297 @@
+INFO  05:55:16,280 - Compiling source file: E:\FAKULTET\IV GOD\PP\projekat\workspace\MJCompiler\test\program.mj
+INFO  05:55:16,322 - #2 program
+INFO  05:55:16,322 - #48 MyProg
+INFO  05:55:16,322 - #48 var
+INFO  05:55:16,323 - #48 x
+INFO  05:55:16,323 - #38 ;
+INFO  05:55:16,325 - #44 {
+INFO  05:55:16,325 - #14 void
+INFO  05:55:16,325 - #48 main
+INFO  05:55:16,326 - #40 (
+INFO  05:55:16,326 - #41 )
+INFO  05:55:16,326 - #44 {
+INFO  05:55:16,327 - #48 int
+INFO  05:55:16,327 - #48 x
+ERROR 05:55:16,327 - 
+Sintaksna greska na liniji 5
+INFO  05:55:16,327 - #38 ;
+INFO  05:55:16,327 - #5 if
+INFO  05:55:16,327 - #40 (
+INFO  05:55:16,328 - #48 x
+ERROR 05:55:16,328 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 14
+INFO  05:55:16,329 - #28 ==
+INFO  05:55:16,331 - #51 322
+INFO  05:55:16,332 - #48 fd
+ERROR 05:55:16,332 - 
+Sintaksna greska na liniji 6
+INFO  05:55:16,332 - #41 )
+INFO  05:55:16,332 - #44 {
+INFO  05:55:16,332 - #5 if
+INFO  05:55:16,332 - #40 (
+ERROR 05:55:16,332 - Izvrsen oporovak prilikom greske u logickom izrazu unutar if naredbe do ) u liniji 6
+INFO  05:55:16,332 - #48 x
+INFO  05:55:16,333 - #28 ==
+INFO  05:55:16,333 - #51 323
+INFO  05:55:16,333 - #41 )
+INFO  05:55:16,333 - #44 {
+INFO  05:55:16,333 - #48 int
+INFO  05:55:16,334 - #48 y
+ERROR 05:55:16,334 - 
+Sintaksna greska na liniji 8
+INFO  05:55:16,334 - #38 ;
+INFO  05:55:16,334 - #48 y
+INFO  05:55:16,334 - #27 =
+INFO  05:55:16,334 - #51 5
+ERROR 05:55:16,334 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 13
+INFO  05:55:16,334 - #38 ;
+INFO  05:55:16,334 - #45 }
+INFO  05:55:16,334 - #6 else
+INFO  05:55:16,335 - #44 {
+INFO  05:55:16,335 - #48 x
+INFO  05:55:16,335 - #27 =
+INFO  05:55:16,335 - #48 y
+INFO  05:55:16,335 - #38 ;
+INFO  05:55:16,335 - #45 }
+INFO  05:55:16,335 - #45 }
+INFO  05:55:16,335 - #6 else
+INFO  05:55:16,335 - #44 {
+INFO  05:55:16,335 - #9 do
+INFO  05:55:16,335 - #44 {
+INFO  05:55:16,335 - #48 y
+INFO  05:55:16,336 - #36 ++
+INFO  05:55:16,336 - #38 ;
+INFO  05:55:16,336 - #45 }
+INFO  05:55:16,336 - #10 while
+INFO  05:55:16,336 - #40 (
+INFO  05:55:16,336 - #48 x
+INFO  05:55:16,336 - #28 ==
+INFO  05:55:16,336 - #51 3
+INFO  05:55:16,336 - #41 )
+INFO  05:55:16,336 - #38 ;
+INFO  05:55:16,336 - #45 }
+INFO  05:55:16,337 - #45 }
+INFO  05:55:16,337 - #45 }
+INFO  05:55:16,338 - Program(
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    GlobalVarDeclaration(
+      VarDeclarationExpr(
+        Type(
+        ) [Type]
+        VarDeclListSingle(
+          VarDeclSingle(
+            NoArray(
+            ) [NoArray]
+          ) [VarDeclSingle]
+        ) [VarDeclListSingle]
+      ) [VarDeclarationExpr]
+    ) [GlobalVarDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListNo(
+    ) [MethodDeclListNo]
+    MethodDeclarationExpr(
+      MethodTypeVoid(
+      ) [MethodTypeVoid]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListMultiple(
+        StatementListMultiple(
+          StatementListNo(
+          ) [StatementListNo]
+          StatementSingle(
+            SingleDesignatorStatement(
+              DesignatorStmtAssign(
+                AssignError(
+                ) [AssignError]
+              ) [DesignatorStmtAssign]
+            ) [SingleDesignatorStatement]
+          ) [StatementSingle]
+        ) [StatementListMultiple]
+        StatementSingle(
+          IfElseStatement(
+            IfConditionError(
+            ) [IfConditionError]
+            StatementMultiple(
+              StatementsInBraces(
+                StatementListMultiple(
+                  StatementListNo(
+                  ) [StatementListNo]
+                  StatementSingle(
+                    IfElseStatement(
+                      IfConditionListSingle(
+                        CondTermListSingle(
+                          CondFactExprRelop(
+                            ExprPositive(
+                              TermMultiple(
+                                DesignatorEmptyFactor(
+                                  IdentDesignator(
+                                  ) [IdentDesignator]
+                                ) [DesignatorEmptyFactor]
+                                MulopFactorListNo(
+                                ) [MulopFactorListNo]
+                              ) [TermMultiple]
+                              AddopTermListNo(
+                              ) [AddopTermListNo]
+                            ) [ExprPositive]
+                            RelopEQUAL(
+                            ) [RelopEQUAL]
+                            ExprPositive(
+                              TermMultiple(
+                                NumConstFactor(
+                                ) [NumConstFactor]
+                                MulopFactorListNo(
+                                ) [MulopFactorListNo]
+                              ) [TermMultiple]
+                              AddopTermListNo(
+                              ) [AddopTermListNo]
+                            ) [ExprPositive]
+                          ) [CondFactExprRelop]
+                        ) [CondTermListSingle]
+                      ) [IfConditionListSingle]
+                      StatementMultiple(
+                        StatementsInBraces(
+                          StatementListMultiple(
+                            StatementListMultiple(
+                              StatementListNo(
+                              ) [StatementListNo]
+                              StatementSingle(
+                                SingleDesignatorStatement(
+                                  DesignatorStmtAssign(
+                                    AssignError(
+                                    ) [AssignError]
+                                  ) [DesignatorStmtAssign]
+                                ) [SingleDesignatorStatement]
+                              ) [StatementSingle]
+                            ) [StatementListMultiple]
+                            StatementSingle(
+                              SingleDesignatorStatement(
+                                DesignatorStmtAssign(
+                                  DesignatorStmtAssignDecl(
+                                    IdentDesignator(
+                                    ) [IdentDesignator]
+                                    ExprPositive(
+                                      TermMultiple(
+                                        NumConstFactor(
+                                        ) [NumConstFactor]
+                                        MulopFactorListNo(
+                                        ) [MulopFactorListNo]
+                                      ) [TermMultiple]
+                                      AddopTermListNo(
+                                      ) [AddopTermListNo]
+                                    ) [ExprPositive]
+                                  ) [DesignatorStmtAssignDecl]
+                                ) [DesignatorStmtAssign]
+                              ) [SingleDesignatorStatement]
+                            ) [StatementSingle]
+                          ) [StatementListMultiple]
+                        ) [StatementsInBraces]
+                      ) [StatementMultiple]
+                      StatementMultiple(
+                        StatementsInBraces(
+                          StatementListMultiple(
+                            StatementListNo(
+                            ) [StatementListNo]
+                            StatementSingle(
+                              SingleDesignatorStatement(
+                                DesignatorStmtAssign(
+                                  DesignatorStmtAssignDecl(
+                                    IdentDesignator(
+                                    ) [IdentDesignator]
+                                    ExprPositive(
+                                      TermMultiple(
+                                        DesignatorEmptyFactor(
+                                          IdentDesignator(
+                                          ) [IdentDesignator]
+                                        ) [DesignatorEmptyFactor]
+                                        MulopFactorListNo(
+                                        ) [MulopFactorListNo]
+                                      ) [TermMultiple]
+                                      AddopTermListNo(
+                                      ) [AddopTermListNo]
+                                    ) [ExprPositive]
+                                  ) [DesignatorStmtAssignDecl]
+                                ) [DesignatorStmtAssign]
+                              ) [SingleDesignatorStatement]
+                            ) [StatementSingle]
+                          ) [StatementListMultiple]
+                        ) [StatementsInBraces]
+                      ) [StatementMultiple]
+                    ) [IfElseStatement]
+                  ) [StatementSingle]
+                ) [StatementListMultiple]
+              ) [StatementsInBraces]
+            ) [StatementMultiple]
+            StatementMultiple(
+              StatementsInBraces(
+                StatementListMultiple(
+                  StatementListNo(
+                  ) [StatementListNo]
+                  StatementSingle(
+                    DoWhileStatement(
+                      StatementListMultiple(
+                        StatementListNo(
+                        ) [StatementListNo]
+                        StatementMultiple(
+                          StatementsInBraces(
+                            StatementListMultiple(
+                              StatementListNo(
+                              ) [StatementListNo]
+                              StatementSingle(
+                                SingleDesignatorStatement(
+                                  DesignatorStmtPlusPlus(
+                                    IdentDesignator(
+                                    ) [IdentDesignator]
+                                  ) [DesignatorStmtPlusPlus]
+                                ) [SingleDesignatorStatement]
+                              ) [StatementSingle]
+                            ) [StatementListMultiple]
+                          ) [StatementsInBraces]
+                        ) [StatementMultiple]
+                      ) [StatementListMultiple]
+                      ConditionListSingle(
+                        CondTermListSingle(
+                          CondFactExprRelop(
+                            ExprPositive(
+                              TermMultiple(
+                                DesignatorEmptyFactor(
+                                  IdentDesignator(
+                                  ) [IdentDesignator]
+                                ) [DesignatorEmptyFactor]
+                                MulopFactorListNo(
+                                ) [MulopFactorListNo]
+                              ) [TermMultiple]
+                              AddopTermListNo(
+                              ) [AddopTermListNo]
+                            ) [ExprPositive]
+                            RelopEQUAL(
+                            ) [RelopEQUAL]
+                            ExprPositive(
+                              TermMultiple(
+                                NumConstFactor(
+                                ) [NumConstFactor]
+                                MulopFactorListNo(
+                                ) [MulopFactorListNo]
+                              ) [TermMultiple]
+                              AddopTermListNo(
+                              ) [AddopTermListNo]
+                            ) [ExprPositive]
+                          ) [CondFactExprRelop]
+                        ) [CondTermListSingle]
+                      ) [ConditionListSingle]
+                    ) [DoWhileStatement]
+                  ) [StatementSingle]
+                ) [StatementListMultiple]
+              ) [StatementsInBraces]
+            ) [StatementMultiple]
+          ) [IfElseStatement]
+        ) [StatementSingle]
+      ) [StatementListMultiple]
+    ) [MethodDeclarationExpr]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  05:55:16,339 - ===================================
+INFO  05:55:16,341 -  Deklarisanih globalnih promenljivih ima = 1
+INFO  05:55:16,341 -  Ifova ima = 0
+INFO  05:55:16,341 -  IfElsova ima = 2

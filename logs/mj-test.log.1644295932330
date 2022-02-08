@@ -1,0 +1,114 @@
+INFO  05:51:20,439 - Compiling source file: E:\FAKULTET\IV GOD\PP\projekat\workspace\MJCompiler\test\program.mj
+INFO  05:51:20,480 - #2 program
+INFO  05:51:20,481 - #48 MyProg
+INFO  05:51:20,481 - #48 var
+INFO  05:51:20,481 - #48 x
+INFO  05:51:20,482 - #38 ;
+INFO  05:51:20,483 - #44 {
+INFO  05:51:20,483 - #14 void
+INFO  05:51:20,484 - #48 main
+INFO  05:51:20,484 - #40 (
+INFO  05:51:20,484 - #41 )
+INFO  05:51:20,485 - #44 {
+INFO  05:51:20,485 - #48 int
+INFO  05:51:20,486 - #48 x
+ERROR 05:51:20,486 - 
+Sintaksna greska na liniji 5
+INFO  05:51:20,486 - #38 ;
+INFO  05:51:20,486 - #5 if
+INFO  05:51:20,486 - #40 (
+INFO  05:51:20,487 - #48 x
+ERROR 05:51:20,487 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 14
+INFO  05:51:20,488 - #28 ==
+INFO  05:51:20,489 - #51 322
+INFO  05:51:20,490 - #41 )
+INFO  05:51:20,491 - #44 {
+INFO  05:51:20,491 - #45 }
+INFO  05:51:20,491 - #45 }
+INFO  05:51:20,491 - #45 }
+INFO  05:51:20,493 - Program(
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    GlobalVarDeclaration(
+      VarDeclarationExpr(
+        Type(
+        ) [Type]
+        VarDeclListSingle(
+          VarDeclSingle(
+            NoArray(
+            ) [NoArray]
+          ) [VarDeclSingle]
+        ) [VarDeclListSingle]
+      ) [VarDeclarationExpr]
+    ) [GlobalVarDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListNo(
+    ) [MethodDeclListNo]
+    MethodDeclarationExpr(
+      MethodTypeVoid(
+      ) [MethodTypeVoid]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListMultiple(
+        StatementListMultiple(
+          StatementListNo(
+          ) [StatementListNo]
+          StatementSingle(
+            SingleDesignatorStatement(
+              DesignatorStmtAssign(
+                AssignError(
+                ) [AssignError]
+              ) [DesignatorStmtAssign]
+            ) [SingleDesignatorStatement]
+          ) [StatementSingle]
+        ) [StatementListMultiple]
+        StatementSingle(
+          IfStatement(
+            IfConditionListSingle(
+              CondTermListSingle(
+                CondFactExprRelop(
+                  ExprPositive(
+                    TermMultiple(
+                      DesignatorEmptyFactor(
+                        IdentDesignator(
+                        ) [IdentDesignator]
+                      ) [DesignatorEmptyFactor]
+                      MulopFactorListNo(
+                      ) [MulopFactorListNo]
+                    ) [TermMultiple]
+                    AddopTermListNo(
+                    ) [AddopTermListNo]
+                  ) [ExprPositive]
+                  RelopEQUAL(
+                  ) [RelopEQUAL]
+                  ExprPositive(
+                    TermMultiple(
+                      NumConstFactor(
+                      ) [NumConstFactor]
+                      MulopFactorListNo(
+                      ) [MulopFactorListNo]
+                    ) [TermMultiple]
+                    AddopTermListNo(
+                    ) [AddopTermListNo]
+                  ) [ExprPositive]
+                ) [CondFactExprRelop]
+              ) [CondTermListSingle]
+            ) [IfConditionListSingle]
+            StatementMultiple(
+              StatementsInBraces(
+                StatementListNo(
+                ) [StatementListNo]
+              ) [StatementsInBraces]
+            ) [StatementMultiple]
+          ) [IfStatement]
+        ) [StatementSingle]
+      ) [StatementListMultiple]
+    ) [MethodDeclarationExpr]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  05:51:20,493 - ===================================
+INFO  05:51:20,497 -  Deklarisanih globalnih promenljivih ima = 1
+INFO  05:51:20,497 -  Ifova ima = 1
+INFO  05:51:20,497 -  IfElsova ima = 0
