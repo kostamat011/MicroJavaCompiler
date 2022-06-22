@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/5/2022 3:52:46
+// 22/5/2022 6:31:55
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -13,6 +13,7 @@ public interface Visitor {
     public void visit(Relop Relop);
     public void visit(MulopFactorList MulopFactorList);
     public void visit(MethodType MethodType);
+    public void visit(MethodSignature MethodSignature);
     public void visit(AllDeclList AllDeclList);
     public void visit(FormParsOption FormParsOption);
     public void visit(StatementList StatementList);
@@ -31,8 +32,8 @@ public interface Visitor {
     public void visit(GlobalVarDeclSingle GlobalVarDeclSingle);
     public void visit(MemberDesignator MemberDesignator);
     public void visit(VarDeclList VarDeclList);
-    public void visit(ConstVal ConstVal);
     public void visit(Expr Expr);
+    public void visit(ConstVal ConstVal);
     public void visit(VarDeclOption VarDeclOption);
     public void visit(ActPars ActPars);
     public void visit(SingleDecl SingleDecl);
@@ -124,18 +125,19 @@ public interface Visitor {
     public void visit(FormParSingle FormParSingle);
     public void visit(FormParsSingle FormParsSingle);
     public void visit(FormParsMultiple FormParsMultiple);
+    public void visit(VarArgsDeclaration VarArgsDeclaration);
     public void visit(MethodTypeVoid MethodTypeVoid);
     public void visit(MethodTypeType MethodTypeType);
-    public void visit(VarArgsDeclaration VarArgsDeclaration);
-    public void visit(MethodDeclarationExpr MethodDeclarationExpr);
-    public void visit(MethodDeclarationVarArgsExpr MethodDeclarationVarArgsExpr);
-    public void visit(MethodDeclarationParsExpr MethodDeclarationParsExpr);
+    public void visit(MethodName MethodName);
+    public void visit(MethodSignaturePlain MethodSignaturePlain);
+    public void visit(MethodSignatureVarArgs MethodSignatureVarArgs);
+    public void visit(MethodSignatureParams MethodSignatureParams);
+    public void visit(MethodDeclaration MethodDeclaration);
     public void visit(MethodDeclListNo MethodDeclListNo);
     public void visit(MethodDeclListMultiple MethodDeclListMultiple);
     public void visit(ClassMethodOption ClassMethodOption);
     public void visit(ClassDeclarationExpr ClassDeclarationExpr);
-    public void visit(NoVarDeclOption NoVarDeclOption);
-    public void visit(VarDeclOptionTrue VarDeclOptionTrue);
+    public void visit(RecordName RecordName);
     public void visit(RecordDeclarationExpr RecordDeclarationExpr);
     public void visit(NoArray NoArray);
     public void visit(ArrayBrackets ArrayBrackets);
@@ -144,6 +146,8 @@ public interface Visitor {
     public void visit(GlobalVarDeclListSingle GlobalVarDeclListSingle);
     public void visit(GlobalVarDeclListMultiple GlobalVarDeclListMultiple);
     public void visit(GlobalVarDeclarationExpr GlobalVarDeclarationExpr);
+    public void visit(NoVarDeclOption NoVarDeclOption);
+    public void visit(VarDeclOptionTrue VarDeclOptionTrue);
     public void visit(VarDeclSingle VarDeclSingle);
     public void visit(VarDeclListSingle VarDeclListSingle);
     public void visit(VarDeclListMultiple VarDeclListMultiple);

@@ -1,0 +1,31 @@
+INFO  06:20:00,360 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  06:20:00,378 - #2 program
+INFO  06:20:00,378 - #48 test302
+INFO  06:20:00,378 - #16 record
+INFO  06:20:00,378 - #48 rec
+INFO  06:20:00,378 - #44 {
+INFO  06:20:00,379 - #45 }
+INFO  06:20:00,379 - #44 {
+INFO  06:20:00,379 - #45 }
+INFO  06:20:00,379 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    RecordDeclaration(
+      RecordDeclarationExpr(
+        RecordName(
+         rec
+        ) [RecordName]
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+      ) [RecordDeclarationExpr]
+    ) [RecordDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListNo(
+  ) [MethodDeclListNo]
+) [Program]
+INFO  06:20:00,388 - ===================================
+INFO  06:20:00,390 - Compile successful!

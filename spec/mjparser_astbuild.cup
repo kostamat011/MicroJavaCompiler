@@ -78,6 +78,7 @@ nonterminal ClassMethodDeclOption ClassMethodDeclOption;
 nonterminal MethodDecl MethodDecl;
 nonterminal MethodDeclList MethodDeclList;
 nonterminal MethodDeclOption MethodDeclOption;
+nonterminal MethodSignature MethodSignature;
 nonterminal MethodType MethodType;
 nonterminal FormParsOption FormParsOption;
 nonterminal FormPars FormPars;
@@ -109,7 +110,7 @@ nonterminal Relop Relop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgramName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgramName, RecordName, MethodName;
 
 
 precedence left ELSE;
@@ -151,6 +152,9 @@ VarDeclList ::= (VarDeclListMultiple) VarDeclList:V1 COMMA VarDeclSingle:V2 {: R
 
 VarDeclSingle ::= (VarDeclSingle) IDENT:varName ArrBracketsOption:A1 {: RESULT=new VarDeclSingle(varName, A1); RESULT.setLine(varNameleft); :};
 
+VarDeclOption ::= (VarDeclOptionTrue) VarDeclOption:V1 VarDecl:V2 {: RESULT=new VarDeclOptionTrue(V1, V2); RESULT.setLine(V1left); :}
+				| (NoVarDeclOption) {: RESULT=new NoVarDeclOption(); :} /* epsilon */ 
+				;
 
 GlobalVarDecl ::= (GlobalVarDeclarationExpr) Type:varTypeName GlobalVarDeclList:G1 SEMICOLON {: RESULT=new GlobalVarDeclarationExpr(varTypeName, G1); RESULT.setLine(varTypeNameleft); :};
 
@@ -168,11 +172,9 @@ ArrBracketsOption ::= (ArrayBrackets) LBRCK RBRCK {: RESULT=new ArrayBrackets();
 			       |  (NoArray) {: RESULT=new NoArray(); :} /* epsilon */
 			 	   ;
 			 
-RecordDecl ::= (RecordDeclarationExpr) RECORD IDENT:recordName LBRACE VarDeclOption:V1 RBRACE {: RESULT=new RecordDeclarationExpr(recordName, V1); RESULT.setLine(recordNameleft); :};
+RecordDecl ::= (RecordDeclarationExpr) RECORD RecordName:R1 LBRACE VarDeclOption:V2 RBRACE {: RESULT=new RecordDeclarationExpr(R1, V2); RESULT.setLine(R1left); :};
 
-VarDeclOption ::= (VarDeclOptionTrue) VarDeclOption:V1 VarDecl:V2 {: RESULT=new VarDeclOptionTrue(V1, V2); RESULT.setLine(V1left); :}
-				| (NoVarDeclOption) {: RESULT=new NoVarDeclOption(); :} /* epsilon */ 
-				;
+RecordName ::= (RecordName) IDENT:name {: RESULT=new RecordName(name); RESULT.setLine(nameleft); :};
 				
 ClassDecl ::= (ClassDeclarationExpr) CLASS IDENT:className LBRACE VarDeclOption:V1 ClassMethodDeclOption:C2 RBRACE {: RESULT=new ClassDeclarationExpr(className, V1, C2); RESULT.setLine(classNameleft); :};
 
@@ -182,17 +184,20 @@ MethodDeclList ::= (MethodDeclListMultiple) MethodDeclList:M1 MethodDecl:M2 {: R
 				|  (MethodDeclListNo) {: RESULT=new MethodDeclListNo(); :} /* epsilon */
 				;
 
-MethodDecl ::= (MethodDeclarationParsExpr) MethodType:M1 IDENT:methodName LPAREN FormPars:F2 RPAREN VarDeclOption:V3 LBRACE StatementList:S4 RBRACE {: RESULT=new MethodDeclarationParsExpr(M1, methodName, F2, V3, S4); RESULT.setLine(M1left); :}
-			|  (MethodDeclarationVarArgsExpr) MethodType:M1 IDENT:methodName LPAREN FormPars:F2 COMMA VarArgs:V3 RPAREN VarDeclOption:V4 LBRACE StatementList:S5 RBRACE {: RESULT=new MethodDeclarationVarArgsExpr(M1, methodName, F2, V3, V4, S5); RESULT.setLine(M1left); :}
-			|  (MethodDeclarationExpr) MethodType:M1 IDENT:methodName LPAREN RPAREN VarDeclOption:V2 LBRACE StatementList:S3 RBRACE {: RESULT=new MethodDeclarationExpr(M1, methodName, V2, S3); RESULT.setLine(M1left); :}
-			;
-			
-VarArgs ::= (VarArgsDeclaration) Type:T1 DOT DOT DOT IDENT:varArgsName {: RESULT=new VarArgsDeclaration(T1, varArgsName); RESULT.setLine(T1left); :};
+MethodDecl ::= (MethodDeclaration) MethodSignature:M1 VarDeclOption:V2 LBRACE StatementList:S3 RBRACE {: RESULT=new MethodDeclaration(M1, V2, S3); RESULT.setLine(M1left); :};
+
+MethodSignature ::= (MethodSignatureParams) MethodType:M1 MethodName:M2 LPAREN FormPars:F3 RPAREN {: RESULT=new MethodSignatureParams(M1, M2, F3); RESULT.setLine(M1left); :} 
+				 |  (MethodSignatureVarArgs) MethodType:M1 MethodName:M2 LPAREN FormPars:F3 COMMA VarArgs:V4 RPAREN {: RESULT=new MethodSignatureVarArgs(M1, M2, F3, V4); RESULT.setLine(M1left); :}
+				 |  (MethodSignaturePlain) MethodType:M1 MethodName:M2 LPAREN RPAREN {: RESULT=new MethodSignaturePlain(M1, M2); RESULT.setLine(M1left); :} 
+				 ;
+
+MethodName ::= (MethodName) IDENT:name {: RESULT=new MethodName(name); RESULT.setLine(nameleft); :};
 
 MethodType ::= (MethodTypeType) Type:T1 {: RESULT=new MethodTypeType(T1); RESULT.setLine(T1left); :}
 			|  (MethodTypeVoid) VOID {: RESULT=new MethodTypeVoid(); :}
 			; 
 
+VarArgs ::= (VarArgsDeclaration) Type:T1 DOT DOT DOT IDENT:varArgsName {: RESULT=new VarArgsDeclaration(T1, varArgsName); RESULT.setLine(T1left); :};
 
 FormPars ::= (FormParsMultiple) FormPars:F1 COMMA FormPar:F2 {: RESULT=new FormParsMultiple(F1, F2); RESULT.setLine(F1left); :}
 		   | (FormParsSingle) FormPar:F1 {: RESULT=new FormParsSingle(F1); RESULT.setLine(F1left); :}

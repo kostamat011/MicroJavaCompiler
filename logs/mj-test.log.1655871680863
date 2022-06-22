@@ -1,0 +1,11 @@
+INFO  06:20:28,622 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  06:20:28,641 - #2 program
+INFO  06:20:28,641 - #48 test302
+INFO  06:20:28,641 - #16 record
+INFO  06:20:28,641 - #48 rec
+INFO  06:20:28,641 - #44 {
+INFO  06:20:28,642 - #48 int
+INFO  06:20:28,642 - #48 x
+ERROR 06:20:28,642 - 
+Sintaksna greska na liniji 7
+ERROR 06:20:28,642 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 7

@@ -1,0 +1,40 @@
+INFO  05:50:08,452 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  05:50:08,471 - #2 program
+INFO  05:50:08,471 - #48 test302
+INFO  05:50:08,471 - #7 const
+INFO  05:50:08,471 - #48 bool
+INFO  05:50:08,471 - #48 a
+INFO  05:50:08,472 - #27 =
+INFO  05:50:08,472 - #49 false
+INFO  05:50:08,472 - #38 ;
+INFO  05:50:08,472 - #44 {
+INFO  05:50:08,472 - #45 }
+INFO  05:50:08,473 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    ConstDeclaration(
+      ConstDeclarationExpr(
+        Type(
+         bool
+        ) [Type]
+        ConstAssignSingle(
+          ConstAssign(
+           a
+            BoolConst(
+             false
+            ) [BoolConst]
+          ) [ConstAssign]
+        ) [ConstAssignSingle]
+      ) [ConstDeclarationExpr]
+    ) [ConstDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListNo(
+  ) [MethodDeclListNo]
+) [Program]
+INFO  05:50:08,482 - ===================================
+ERROR 05:50:08,485 - No main method found
+INFO  05:50:08,485 - One or more errors found!

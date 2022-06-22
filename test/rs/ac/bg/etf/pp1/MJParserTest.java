@@ -44,15 +44,7 @@ public class MJParserTest {
 
 			// ispis prepoznatih programskih konstrukcija
 			SemanticPass v = new SemanticPass();
-			prog.traverseBottomUp(v); 
-
-			/*log.info(" Deklarisanih globalnih promenljivih ima = " + v.globalVarDeclCount);
-			log.info(" Ifova ima = " + v.ifcnt);
-			log.info(" IfElsova ima = " + v.ifelsecnt);
-			log.info(" Pristupa ugnjezdenim clanovima koji nisu nizovi ima = "+ v.membersDesignators);
-			log.info(" Pristupa ugnjezdenim clanovima koji su nizovi ima = " + v.membersArraysDesignators);
-			log.info(" Pristupa ugnjezdenim clanovima ukupno ima = "+ v.nestedDesignators);
-			log.info(" Var args ima =  "+ v.varArgsCnt);*/
+			prog.traverseBottomUp(v);
 			
 			if(v.isSuccessful()) {
 				log.info("Compile successful!");

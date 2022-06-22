@@ -1,0 +1,112 @@
+INFO  06:35:04,258 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  06:35:04,276 - #2 program
+INFO  06:35:04,276 - #48 test302
+INFO  06:35:04,276 - #16 record
+INFO  06:35:04,276 - #48 rec
+INFO  06:35:04,276 - #44 {
+INFO  06:35:04,277 - #48 int
+INFO  06:35:04,277 - #48 x1
+INFO  06:35:04,277 - #39 ,
+INFO  06:35:04,278 - #48 p
+INFO  06:35:04,278 - #39 ,
+INFO  06:35:04,278 - #48 z
+INFO  06:35:04,278 - #42 [
+INFO  06:35:04,278 - #43 ]
+INFO  06:35:04,278 - #38 ;
+INFO  06:35:04,278 - #48 char
+INFO  06:35:04,278 - #48 m
+INFO  06:35:04,278 - #38 ;
+INFO  06:35:04,278 - #45 }
+INFO  06:35:04,278 - #44 {
+INFO  06:35:04,278 - #48 int
+INFO  06:35:04,279 - #48 main
+INFO  06:35:04,279 - #40 (
+INFO  06:35:04,287 - #41 )
+INFO  06:35:04,287 - #44 {
+INFO  06:35:04,287 - #45 }
+INFO  06:35:04,287 - #45 }
+INFO  06:35:04,288 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    RecordDeclaration(
+      RecordDeclarationExpr(
+        RecordName(
+         rec
+        ) [RecordName]
+        VarDeclOptionTrue(
+          VarDeclOptionTrue(
+            NoVarDeclOption(
+            ) [NoVarDeclOption]
+            VarDeclarationExpr(
+              Type(
+               int
+              ) [Type]
+              VarDeclListMultiple(
+                VarDeclListMultiple(
+                  VarDeclListSingle(
+                    VarDeclSingle(
+                     x1
+                      NoArray(
+                      ) [NoArray]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListSingle]
+                  VarDeclSingle(
+                   p
+                    NoArray(
+                    ) [NoArray]
+                  ) [VarDeclSingle]
+                ) [VarDeclListMultiple]
+                VarDeclSingle(
+                 z
+                  ArrayBrackets(
+                  ) [ArrayBrackets]
+                ) [VarDeclSingle]
+              ) [VarDeclListMultiple]
+            ) [VarDeclarationExpr]
+          ) [VarDeclOptionTrue]
+          VarDeclarationExpr(
+            Type(
+             char
+            ) [Type]
+            VarDeclListSingle(
+              VarDeclSingle(
+               m
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclSingle]
+            ) [VarDeclListSingle]
+          ) [VarDeclarationExpr]
+        ) [VarDeclOptionTrue]
+      ) [RecordDeclarationExpr]
+    ) [RecordDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListNo(
+    ) [MethodDeclListNo]
+    MethodDeclaration(
+      MethodSignaturePlain(
+        MethodTypeType(
+          Type(
+           int
+          ) [Type]
+        ) [MethodTypeType]
+        MethodName(
+         main
+        ) [MethodName]
+      ) [MethodSignaturePlain]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListNo(
+      ) [StatementListNo]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  06:35:04,288 - ===================================
+ERROR 06:35:04,291 - Main method must have void type.
+ERROR 06:35:04,291 - Missing return statement for method of type int
+ERROR 06:35:04,291 - No main method found
+INFO  06:35:04,291 - One or more errors found!

@@ -63,7 +63,7 @@ nonterminal ConstDecl, ConstAssignList, ConstAssign, ConstVal;
 nonterminal VarDecl, VarDeclList, VarDeclSingle, VarDeclOption, ArrBracketsOption;
 nonterminal GlobalVarDecl, GlobalVarDeclList, GlobalVarDeclSingle;
 nonterminal ClassDecl, ClassMethodDeclOption;
-nonterminal MethodDecl, MethodDeclList, MethodDeclOption, MethodType;
+nonterminal MethodDecl, MethodDeclList, MethodDeclOption, MethodSignature, MethodType;
 nonterminal FormParsOption, FormPars, FormPar, VarArgs;
 nonterminal StatementList, Statement, Statements, SingleStatement;
 nonterminal DesignatorStatement, DesignatorStatementAssign, Designator, MemberDesignator, Expr, NumConstOption;
@@ -72,7 +72,7 @@ nonterminal Condition, IfCondition, CondTerm, CondFact, Relop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgramName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgramName, RecordName, MethodName;
 
 
 precedence left ELSE;
@@ -114,6 +114,9 @@ VarDeclList ::= (VarDeclListMultiple) VarDeclList COMMA VarDeclSingle
 
 VarDeclSingle ::= (VarDeclSingle) IDENT:varName ArrBracketsOption;
 
+VarDeclOption ::= (VarDeclOptionTrue) VarDeclOption VarDecl
+				| (NoVarDeclOption) /* epsilon */ 
+				;
 
 GlobalVarDecl ::= (GlobalVarDeclarationExpr) Type:varTypeName GlobalVarDeclList SEMICOLON;
 
@@ -131,11 +134,9 @@ ArrBracketsOption ::= (ArrayBrackets) LBRCK RBRCK
 			       |  (NoArray) /* epsilon */
 			 	   ;
 			 
-RecordDecl ::= (RecordDeclarationExpr) RECORD IDENT:recordName LBRACE VarDeclOption RBRACE;
+RecordDecl ::= (RecordDeclarationExpr) RECORD RecordName LBRACE VarDeclOption RBRACE;
 
-VarDeclOption ::= (VarDeclOptionTrue) VarDeclOption VarDecl
-				| (NoVarDeclOption) /* epsilon */ 
-				;
+RecordName ::= (RecordName) IDENT:name;
 				
 ClassDecl ::= (ClassDeclarationExpr) CLASS IDENT:className LBRACE VarDeclOption ClassMethodDeclOption RBRACE;
 
@@ -145,17 +146,20 @@ MethodDeclList ::= (MethodDeclListMultiple) MethodDeclList MethodDecl
 				|  (MethodDeclListNo) /* epsilon */
 				;
 
-MethodDecl ::= (MethodDeclarationParsExpr) MethodType IDENT:methodName LPAREN FormPars RPAREN VarDeclOption LBRACE StatementList RBRACE
-			|  (MethodDeclarationVarArgsExpr) MethodType IDENT:methodName LPAREN FormPars COMMA VarArgs RPAREN VarDeclOption LBRACE StatementList RBRACE
-			|  (MethodDeclarationExpr) MethodType IDENT:methodName LPAREN RPAREN VarDeclOption LBRACE StatementList RBRACE
-			;
-			
-VarArgs ::= (VarArgsDeclaration) Type DOT DOT DOT IDENT:varArgsName;
+MethodDecl ::= (MethodDeclaration) MethodSignature VarDeclOption LBRACE StatementList RBRACE;
+
+MethodSignature ::= (MethodSignatureParams) MethodType MethodName LPAREN FormPars RPAREN 
+				 |  (MethodSignatureVarArgs) MethodType MethodName LPAREN FormPars COMMA VarArgs RPAREN
+				 |  (MethodSignaturePlain) MethodType MethodName LPAREN RPAREN 
+				 ;
+
+MethodName ::= (MethodName) IDENT:name;
 
 MethodType ::= (MethodTypeType) Type
 			|  (MethodTypeVoid) VOID
 			; 
 
+VarArgs ::= (VarArgsDeclaration) Type DOT DOT DOT IDENT:varArgsName;
 
 FormPars ::= (FormParsMultiple) FormPars COMMA FormPar
 		   | (FormParsSingle) FormPar

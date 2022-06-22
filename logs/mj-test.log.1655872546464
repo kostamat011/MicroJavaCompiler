@@ -1,0 +1,38 @@
+INFO  06:35:38,333 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  06:35:38,351 - #2 program
+INFO  06:35:38,351 - #48 test302
+INFO  06:35:38,351 - #16 record
+INFO  06:35:38,352 - #48 rec
+INFO  06:35:38,352 - #44 {
+INFO  06:35:38,352 - #48 int
+INFO  06:35:38,352 - #48 x1
+INFO  06:35:38,353 - #39 ,
+INFO  06:35:38,353 - #48 p
+INFO  06:35:38,353 - #39 ,
+INFO  06:35:38,353 - #48 z
+INFO  06:35:38,353 - #42 [
+INFO  06:35:38,353 - #43 ]
+INFO  06:35:38,353 - #38 ;
+INFO  06:35:38,353 - #48 char
+INFO  06:35:38,354 - #48 m
+INFO  06:35:38,354 - #38 ;
+INFO  06:35:38,354 - #45 }
+INFO  06:35:38,354 - #44 {
+INFO  06:35:38,354 - #14 void
+INFO  06:35:38,354 - #48 main
+INFO  06:35:38,354 - #40 (
+INFO  06:35:38,364 - #41 )
+INFO  06:35:38,364 - #44 {
+INFO  06:35:38,364 - #45 }
+INFO  06:35:38,364 - #14 void
+INFO  06:35:38,364 - #48 main
+INFO  06:35:38,364 - #40 (
+INFO  06:35:38,364 - #41 )
+INFO  06:35:38,364 - #44 {
+INFO  06:35:38,364 - #45 }
+INFO  06:35:38,364 - #48 char
+INFO  06:35:38,365 - #48 m
+INFO  06:35:38,365 - #38 ;
+ERROR 06:35:38,365 - 
+Sintaksna greska na liniji 20
+ERROR 06:35:38,365 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 20

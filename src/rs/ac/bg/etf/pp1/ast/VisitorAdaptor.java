@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/5/2022 3:52:46
+// 22/5/2022 6:31:55
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -13,6 +13,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Relop Relop) { }
     public void visit(MulopFactorList MulopFactorList) { }
     public void visit(MethodType MethodType) { }
+    public void visit(MethodSignature MethodSignature) { }
     public void visit(AllDeclList AllDeclList) { }
     public void visit(FormParsOption FormParsOption) { }
     public void visit(StatementList StatementList) { }
@@ -31,8 +32,8 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(GlobalVarDeclSingle GlobalVarDeclSingle) { }
     public void visit(MemberDesignator MemberDesignator) { }
     public void visit(VarDeclList VarDeclList) { }
-    public void visit(ConstVal ConstVal) { }
     public void visit(Expr Expr) { }
+    public void visit(ConstVal ConstVal) { }
     public void visit(VarDeclOption VarDeclOption) { }
     public void visit(ActPars ActPars) { }
     public void visit(SingleDecl SingleDecl) { }
@@ -124,18 +125,19 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(FormParSingle FormParSingle) { visit(); }
     public void visit(FormParsSingle FormParsSingle) { visit(); }
     public void visit(FormParsMultiple FormParsMultiple) { visit(); }
+    public void visit(VarArgsDeclaration VarArgsDeclaration) { visit(); }
     public void visit(MethodTypeVoid MethodTypeVoid) { visit(); }
     public void visit(MethodTypeType MethodTypeType) { visit(); }
-    public void visit(VarArgsDeclaration VarArgsDeclaration) { visit(); }
-    public void visit(MethodDeclarationExpr MethodDeclarationExpr) { visit(); }
-    public void visit(MethodDeclarationVarArgsExpr MethodDeclarationVarArgsExpr) { visit(); }
-    public void visit(MethodDeclarationParsExpr MethodDeclarationParsExpr) { visit(); }
+    public void visit(MethodName MethodName) { visit(); }
+    public void visit(MethodSignaturePlain MethodSignaturePlain) { visit(); }
+    public void visit(MethodSignatureVarArgs MethodSignatureVarArgs) { visit(); }
+    public void visit(MethodSignatureParams MethodSignatureParams) { visit(); }
+    public void visit(MethodDeclaration MethodDeclaration) { visit(); }
     public void visit(MethodDeclListNo MethodDeclListNo) { visit(); }
     public void visit(MethodDeclListMultiple MethodDeclListMultiple) { visit(); }
     public void visit(ClassMethodOption ClassMethodOption) { visit(); }
     public void visit(ClassDeclarationExpr ClassDeclarationExpr) { visit(); }
-    public void visit(NoVarDeclOption NoVarDeclOption) { visit(); }
-    public void visit(VarDeclOptionTrue VarDeclOptionTrue) { visit(); }
+    public void visit(RecordName RecordName) { visit(); }
     public void visit(RecordDeclarationExpr RecordDeclarationExpr) { visit(); }
     public void visit(NoArray NoArray) { visit(); }
     public void visit(ArrayBrackets ArrayBrackets) { visit(); }
@@ -144,6 +146,8 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(GlobalVarDeclListSingle GlobalVarDeclListSingle) { visit(); }
     public void visit(GlobalVarDeclListMultiple GlobalVarDeclListMultiple) { visit(); }
     public void visit(GlobalVarDeclarationExpr GlobalVarDeclarationExpr) { visit(); }
+    public void visit(NoVarDeclOption NoVarDeclOption) { visit(); }
+    public void visit(VarDeclOptionTrue VarDeclOptionTrue) { visit(); }
     public void visit(VarDeclSingle VarDeclSingle) { visit(); }
     public void visit(VarDeclListSingle VarDeclListSingle) { visit(); }
     public void visit(VarDeclListMultiple VarDeclListMultiple) { visit(); }

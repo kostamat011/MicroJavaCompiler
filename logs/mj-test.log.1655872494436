@@ -1,0 +1,96 @@
+INFO  06:34:45,647 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  06:34:45,665 - #2 program
+INFO  06:34:45,665 - #48 test302
+INFO  06:34:45,665 - #16 record
+INFO  06:34:45,666 - #48 rec
+INFO  06:34:45,666 - #44 {
+INFO  06:34:45,666 - #48 int
+INFO  06:34:45,666 - #48 x1
+INFO  06:34:45,666 - #39 ,
+INFO  06:34:45,667 - #48 p
+INFO  06:34:45,667 - #39 ,
+INFO  06:34:45,667 - #48 z
+INFO  06:34:45,667 - #42 [
+INFO  06:34:45,667 - #43 ]
+INFO  06:34:45,667 - #38 ;
+INFO  06:34:45,667 - #48 char
+INFO  06:34:45,668 - #48 m
+INFO  06:34:45,668 - #39 ,
+INFO  06:34:45,668 - #48 m
+INFO  06:34:45,668 - #38 ;
+INFO  06:34:45,668 - #45 }
+INFO  06:34:45,668 - #44 {
+INFO  06:34:45,668 - #45 }
+INFO  06:34:45,677 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    RecordDeclaration(
+      RecordDeclarationExpr(
+        RecordName(
+         rec
+        ) [RecordName]
+        VarDeclOptionTrue(
+          VarDeclOptionTrue(
+            NoVarDeclOption(
+            ) [NoVarDeclOption]
+            VarDeclarationExpr(
+              Type(
+               int
+              ) [Type]
+              VarDeclListMultiple(
+                VarDeclListMultiple(
+                  VarDeclListSingle(
+                    VarDeclSingle(
+                     x1
+                      NoArray(
+                      ) [NoArray]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListSingle]
+                  VarDeclSingle(
+                   p
+                    NoArray(
+                    ) [NoArray]
+                  ) [VarDeclSingle]
+                ) [VarDeclListMultiple]
+                VarDeclSingle(
+                 z
+                  ArrayBrackets(
+                  ) [ArrayBrackets]
+                ) [VarDeclSingle]
+              ) [VarDeclListMultiple]
+            ) [VarDeclarationExpr]
+          ) [VarDeclOptionTrue]
+          VarDeclarationExpr(
+            Type(
+             char
+            ) [Type]
+            VarDeclListMultiple(
+              VarDeclListSingle(
+                VarDeclSingle(
+                 m
+                  NoArray(
+                  ) [NoArray]
+                ) [VarDeclSingle]
+              ) [VarDeclListSingle]
+              VarDeclSingle(
+               m
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclSingle]
+            ) [VarDeclListMultiple]
+          ) [VarDeclarationExpr]
+        ) [VarDeclOptionTrue]
+      ) [RecordDeclarationExpr]
+    ) [RecordDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListNo(
+  ) [MethodDeclListNo]
+) [Program]
+INFO  06:34:45,678 - ===================================
+ERROR 06:34:45,680 - Variable with name m already defined in current scope.
+ERROR 06:34:45,680 - No main method found
+INFO  06:34:45,680 - One or more errors found!

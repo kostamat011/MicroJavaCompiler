@@ -1,0 +1,143 @@
+INFO  06:01:37,918 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  06:01:37,936 - #2 program
+INFO  06:01:37,936 - #48 test302
+INFO  06:01:37,936 - #7 const
+INFO  06:01:37,937 - #48 bool
+INFO  06:01:37,937 - #48 a
+INFO  06:01:37,937 - #27 =
+INFO  06:01:37,937 - #49 false
+INFO  06:01:37,937 - #38 ;
+INFO  06:01:37,937 - #44 {
+INFO  06:01:37,938 - #14 void
+INFO  06:01:37,938 - #48 main
+INFO  06:01:37,938 - #40 (
+INFO  06:01:37,938 - #41 )
+INFO  06:01:37,938 - #44 {
+INFO  06:01:37,938 - #45 }
+INFO  06:01:37,939 - #48 int
+INFO  06:01:37,939 - #48 p
+INFO  06:01:37,939 - #40 (
+INFO  06:01:37,939 - #48 int
+INFO  06:01:37,939 - #48 a
+INFO  06:01:37,939 - #39 ,
+INFO  06:01:37,939 - #48 int
+INFO  06:01:37,949 - #48 b
+INFO  06:01:37,949 - #39 ,
+INFO  06:01:37,949 - #48 int
+INFO  06:01:37,949 - #48 c
+INFO  06:01:37,949 - #41 )
+INFO  06:01:37,949 - #44 {
+INFO  06:01:37,949 - #15 return
+INFO  06:01:37,949 - #51 1
+INFO  06:01:37,949 - #38 ;
+INFO  06:01:37,949 - #45 }
+INFO  06:01:37,949 - #45 }
+INFO  06:01:37,950 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    ConstDeclaration(
+      ConstDeclarationExpr(
+        Type(
+         bool
+        ) [Type]
+        ConstAssignSingle(
+          ConstAssign(
+           a
+            BoolConst(
+             false
+            ) [BoolConst]
+          ) [ConstAssign]
+        ) [ConstAssignSingle]
+      ) [ConstDeclarationExpr]
+    ) [ConstDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListMultiple(
+      MethodDeclListNo(
+      ) [MethodDeclListNo]
+      MethodDeclaration(
+        MethodSignaturePlain(
+          MethodTypeVoid(
+          ) [MethodTypeVoid]
+          MethodName(
+           main
+          ) [MethodName]
+        ) [MethodSignaturePlain]
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+        StatementListNo(
+        ) [StatementListNo]
+      ) [MethodDeclaration]
+    ) [MethodDeclListMultiple]
+    MethodDeclaration(
+      MethodSignatureParams(
+        MethodTypeType(
+          Type(
+           int
+          ) [Type]
+        ) [MethodTypeType]
+        MethodName(
+         p
+        ) [MethodName]
+        FormParsMultiple(
+          FormParsMultiple(
+            FormParsSingle(
+              FormParSingle(
+                Type(
+                 int
+                ) [Type]
+               a
+                NoArray(
+                ) [NoArray]
+              ) [FormParSingle]
+            ) [FormParsSingle]
+            FormParSingle(
+              Type(
+               int
+              ) [Type]
+             b
+              NoArray(
+              ) [NoArray]
+            ) [FormParSingle]
+          ) [FormParsMultiple]
+          FormParSingle(
+            Type(
+             int
+            ) [Type]
+           c
+            NoArray(
+            ) [NoArray]
+          ) [FormParSingle]
+        ) [FormParsMultiple]
+      ) [MethodSignatureParams]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListMultiple(
+        StatementListNo(
+        ) [StatementListNo]
+        StatementSingle(
+          SingleReturnExprStatement(
+            ExprPositive(
+              TermMultiple(
+                NumConstFactor(
+                 1
+                ) [NumConstFactor]
+                MulopFactorListNo(
+                ) [MulopFactorListNo]
+              ) [TermMultiple]
+              AddopTermListNo(
+              ) [AddopTermListNo]
+            ) [ExprPositive]
+          ) [SingleReturnExprStatement]
+        ) [StatementSingle]
+      ) [StatementListMultiple]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  06:01:37,950 - ===================================
+ERROR 06:01:37,953 - Missing return statement for method of type int
+INFO  06:01:37,953 - One or more errors found!

@@ -1,0 +1,60 @@
+INFO  05:50:37,791 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  05:50:37,808 - #2 program
+INFO  05:50:37,808 - #48 test302
+INFO  05:50:37,808 - #7 const
+INFO  05:50:37,809 - #48 bool
+INFO  05:50:37,809 - #48 a
+INFO  05:50:37,809 - #27 =
+INFO  05:50:37,809 - #49 false
+INFO  05:50:37,809 - #38 ;
+INFO  05:50:37,809 - #44 {
+INFO  05:50:37,809 - #14 void
+INFO  05:50:37,809 - #48 main
+INFO  05:50:37,810 - #40 (
+INFO  05:50:37,810 - #41 )
+INFO  05:50:37,810 - #44 {
+INFO  05:50:37,810 - #45 }
+INFO  05:50:37,810 - #45 }
+INFO  05:50:37,811 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    ConstDeclaration(
+      ConstDeclarationExpr(
+        Type(
+         bool
+        ) [Type]
+        ConstAssignSingle(
+          ConstAssign(
+           a
+            BoolConst(
+             false
+            ) [BoolConst]
+          ) [ConstAssign]
+        ) [ConstAssignSingle]
+      ) [ConstDeclarationExpr]
+    ) [ConstDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListNo(
+    ) [MethodDeclListNo]
+    MethodDeclaration(
+      MethodSignaturePlain(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+        MethodName(
+         main
+        ) [MethodName]
+      ) [MethodSignaturePlain]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListNo(
+      ) [StatementListNo]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  05:50:37,821 - ===================================
+INFO  05:50:37,824 - Compile successful!

@@ -1,31 +1,26 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/5/2022 3:52:45
+// 22/5/2022 6:31:55
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class MethodDeclarationVarArgsExpr extends MethodDecl {
+public class MethodSignatureVarArgs extends MethodSignature {
 
     private MethodType MethodType;
-    private String methodName;
+    private MethodName MethodName;
     private FormPars FormPars;
     private VarArgs VarArgs;
-    private VarDeclOption VarDeclOption;
-    private StatementList StatementList;
 
-    public MethodDeclarationVarArgsExpr (MethodType MethodType, String methodName, FormPars FormPars, VarArgs VarArgs, VarDeclOption VarDeclOption, StatementList StatementList) {
+    public MethodSignatureVarArgs (MethodType MethodType, MethodName MethodName, FormPars FormPars, VarArgs VarArgs) {
         this.MethodType=MethodType;
         if(MethodType!=null) MethodType.setParent(this);
-        this.methodName=methodName;
+        this.MethodName=MethodName;
+        if(MethodName!=null) MethodName.setParent(this);
         this.FormPars=FormPars;
         if(FormPars!=null) FormPars.setParent(this);
         this.VarArgs=VarArgs;
         if(VarArgs!=null) VarArgs.setParent(this);
-        this.VarDeclOption=VarDeclOption;
-        if(VarDeclOption!=null) VarDeclOption.setParent(this);
-        this.StatementList=StatementList;
-        if(StatementList!=null) StatementList.setParent(this);
     }
 
     public MethodType getMethodType() {
@@ -36,12 +31,12 @@ public class MethodDeclarationVarArgsExpr extends MethodDecl {
         this.MethodType=MethodType;
     }
 
-    public String getMethodName() {
-        return methodName;
+    public MethodName getMethodName() {
+        return MethodName;
     }
 
-    public void setMethodName(String methodName) {
-        this.methodName=methodName;
+    public void setMethodName(MethodName MethodName) {
+        this.MethodName=MethodName;
     }
 
     public FormPars getFormPars() {
@@ -60,56 +55,37 @@ public class MethodDeclarationVarArgsExpr extends MethodDecl {
         this.VarArgs=VarArgs;
     }
 
-    public VarDeclOption getVarDeclOption() {
-        return VarDeclOption;
-    }
-
-    public void setVarDeclOption(VarDeclOption VarDeclOption) {
-        this.VarDeclOption=VarDeclOption;
-    }
-
-    public StatementList getStatementList() {
-        return StatementList;
-    }
-
-    public void setStatementList(StatementList StatementList) {
-        this.StatementList=StatementList;
-    }
-
     public void accept(Visitor visitor) {
         visitor.visit(this);
     }
 
     public void childrenAccept(Visitor visitor) {
         if(MethodType!=null) MethodType.accept(visitor);
+        if(MethodName!=null) MethodName.accept(visitor);
         if(FormPars!=null) FormPars.accept(visitor);
         if(VarArgs!=null) VarArgs.accept(visitor);
-        if(VarDeclOption!=null) VarDeclOption.accept(visitor);
-        if(StatementList!=null) StatementList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(MethodType!=null) MethodType.traverseTopDown(visitor);
+        if(MethodName!=null) MethodName.traverseTopDown(visitor);
         if(FormPars!=null) FormPars.traverseTopDown(visitor);
         if(VarArgs!=null) VarArgs.traverseTopDown(visitor);
-        if(VarDeclOption!=null) VarDeclOption.traverseTopDown(visitor);
-        if(StatementList!=null) StatementList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(MethodType!=null) MethodType.traverseBottomUp(visitor);
+        if(MethodName!=null) MethodName.traverseBottomUp(visitor);
         if(FormPars!=null) FormPars.traverseBottomUp(visitor);
         if(VarArgs!=null) VarArgs.traverseBottomUp(visitor);
-        if(VarDeclOption!=null) VarDeclOption.traverseBottomUp(visitor);
-        if(StatementList!=null) StatementList.traverseBottomUp(visitor);
         accept(visitor);
     }
 
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("MethodDeclarationVarArgsExpr(\n");
+        buffer.append("MethodSignatureVarArgs(\n");
 
         if(MethodType!=null)
             buffer.append(MethodType.toString("  "+tab));
@@ -117,7 +93,10 @@ public class MethodDeclarationVarArgsExpr extends MethodDecl {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        buffer.append(" "+tab+methodName);
+        if(MethodName!=null)
+            buffer.append(MethodName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(FormPars!=null)
@@ -132,20 +111,8 @@ public class MethodDeclarationVarArgsExpr extends MethodDecl {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(VarDeclOption!=null)
-            buffer.append(VarDeclOption.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        if(StatementList!=null)
-            buffer.append(StatementList.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
         buffer.append(tab);
-        buffer.append(") [MethodDeclarationVarArgsExpr]");
+        buffer.append(") [MethodSignatureVarArgs]");
         return buffer.toString();
     }
 }

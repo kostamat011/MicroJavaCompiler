@@ -1,0 +1,74 @@
+INFO  05:51:14,160 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  05:51:14,177 - #2 program
+INFO  05:51:14,177 - #48 test302
+INFO  05:51:14,178 - #7 const
+INFO  05:51:14,178 - #48 bool
+INFO  05:51:14,178 - #48 a
+INFO  05:51:14,178 - #27 =
+INFO  05:51:14,178 - #49 false
+INFO  05:51:14,178 - #38 ;
+INFO  05:51:14,179 - #44 {
+INFO  05:51:14,179 - #14 void
+INFO  05:51:14,179 - #48 main
+INFO  05:51:14,179 - #40 (
+INFO  05:51:14,179 - #48 int
+INFO  05:51:14,179 - #48 a
+INFO  05:51:14,179 - #41 )
+INFO  05:51:14,180 - #44 {
+INFO  05:51:14,180 - #45 }
+INFO  05:51:14,180 - #45 }
+INFO  05:51:14,181 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    ConstDeclaration(
+      ConstDeclarationExpr(
+        Type(
+         bool
+        ) [Type]
+        ConstAssignSingle(
+          ConstAssign(
+           a
+            BoolConst(
+             false
+            ) [BoolConst]
+          ) [ConstAssign]
+        ) [ConstAssignSingle]
+      ) [ConstDeclarationExpr]
+    ) [ConstDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListNo(
+    ) [MethodDeclListNo]
+    MethodDeclaration(
+      MethodSignatureParams(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+        MethodName(
+         main
+        ) [MethodName]
+        FormParsSingle(
+          FormParSingle(
+            Type(
+             int
+            ) [Type]
+           a
+            NoArray(
+            ) [NoArray]
+          ) [FormParSingle]
+        ) [FormParsSingle]
+      ) [MethodSignatureParams]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListNo(
+      ) [StatementListNo]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  05:51:14,190 - ===================================
+ERROR 05:51:14,193 - Main method must have no parameters.
+ERROR 05:51:14,193 - No main method found
+INFO  05:51:14,193 - One or more errors found!

@@ -1,27 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/5/2022 3:52:45
+// 22/5/2022 6:31:55
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class RecordDeclarationExpr extends RecordDecl {
 
-    private String recordName;
+    private RecordName RecordName;
     private VarDeclOption VarDeclOption;
 
-    public RecordDeclarationExpr (String recordName, VarDeclOption VarDeclOption) {
-        this.recordName=recordName;
+    public RecordDeclarationExpr (RecordName RecordName, VarDeclOption VarDeclOption) {
+        this.RecordName=RecordName;
+        if(RecordName!=null) RecordName.setParent(this);
         this.VarDeclOption=VarDeclOption;
         if(VarDeclOption!=null) VarDeclOption.setParent(this);
     }
 
-    public String getRecordName() {
-        return recordName;
+    public RecordName getRecordName() {
+        return RecordName;
     }
 
-    public void setRecordName(String recordName) {
-        this.recordName=recordName;
+    public void setRecordName(RecordName RecordName) {
+        this.RecordName=RecordName;
     }
 
     public VarDeclOption getVarDeclOption() {
@@ -37,15 +38,18 @@ public class RecordDeclarationExpr extends RecordDecl {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(RecordName!=null) RecordName.accept(visitor);
         if(VarDeclOption!=null) VarDeclOption.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(RecordName!=null) RecordName.traverseTopDown(visitor);
         if(VarDeclOption!=null) VarDeclOption.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(RecordName!=null) RecordName.traverseBottomUp(visitor);
         if(VarDeclOption!=null) VarDeclOption.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -55,7 +59,10 @@ public class RecordDeclarationExpr extends RecordDecl {
         buffer.append(tab);
         buffer.append("RecordDeclarationExpr(\n");
 
-        buffer.append(" "+tab+recordName);
+        if(RecordName!=null)
+            buffer.append(RecordName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(VarDeclOption!=null)

@@ -1,0 +1,143 @@
+INFO  05:51:57,770 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  05:51:57,788 - #2 program
+INFO  05:51:57,788 - #48 test302
+INFO  05:51:57,788 - #7 const
+INFO  05:51:57,788 - #48 bool
+INFO  05:51:57,788 - #48 a
+INFO  05:51:57,788 - #27 =
+INFO  05:51:57,788 - #49 false
+INFO  05:51:57,789 - #38 ;
+INFO  05:51:57,789 - #44 {
+INFO  05:51:57,789 - #14 void
+INFO  05:51:57,789 - #48 main
+INFO  05:51:57,789 - #40 (
+INFO  05:51:57,790 - #41 )
+INFO  05:51:57,790 - #44 {
+INFO  05:51:57,790 - #45 }
+INFO  05:51:57,790 - #48 int
+INFO  05:51:57,790 - #48 p
+INFO  05:51:57,790 - #40 (
+INFO  05:51:57,790 - #48 int
+INFO  05:51:57,790 - #48 a
+INFO  05:51:57,791 - #39 ,
+INFO  05:51:57,791 - #48 int
+INFO  05:51:57,801 - #48 b
+INFO  05:51:57,801 - #39 ,
+INFO  05:51:57,801 - #48 int
+INFO  05:51:57,801 - #48 c
+INFO  05:51:57,801 - #41 )
+INFO  05:51:57,801 - #44 {
+INFO  05:51:57,801 - #15 return
+INFO  05:51:57,801 - #51 1
+INFO  05:51:57,801 - #38 ;
+INFO  05:51:57,801 - #45 }
+INFO  05:51:57,801 - #45 }
+INFO  05:51:57,801 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    ConstDeclaration(
+      ConstDeclarationExpr(
+        Type(
+         bool
+        ) [Type]
+        ConstAssignSingle(
+          ConstAssign(
+           a
+            BoolConst(
+             false
+            ) [BoolConst]
+          ) [ConstAssign]
+        ) [ConstAssignSingle]
+      ) [ConstDeclarationExpr]
+    ) [ConstDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListMultiple(
+      MethodDeclListNo(
+      ) [MethodDeclListNo]
+      MethodDeclaration(
+        MethodSignaturePlain(
+          MethodTypeVoid(
+          ) [MethodTypeVoid]
+          MethodName(
+           main
+          ) [MethodName]
+        ) [MethodSignaturePlain]
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+        StatementListNo(
+        ) [StatementListNo]
+      ) [MethodDeclaration]
+    ) [MethodDeclListMultiple]
+    MethodDeclaration(
+      MethodSignatureParams(
+        MethodTypeType(
+          Type(
+           int
+          ) [Type]
+        ) [MethodTypeType]
+        MethodName(
+         p
+        ) [MethodName]
+        FormParsMultiple(
+          FormParsMultiple(
+            FormParsSingle(
+              FormParSingle(
+                Type(
+                 int
+                ) [Type]
+               a
+                NoArray(
+                ) [NoArray]
+              ) [FormParSingle]
+            ) [FormParsSingle]
+            FormParSingle(
+              Type(
+               int
+              ) [Type]
+             b
+              NoArray(
+              ) [NoArray]
+            ) [FormParSingle]
+          ) [FormParsMultiple]
+          FormParSingle(
+            Type(
+             int
+            ) [Type]
+           c
+            NoArray(
+            ) [NoArray]
+          ) [FormParSingle]
+        ) [FormParsMultiple]
+      ) [MethodSignatureParams]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListMultiple(
+        StatementListNo(
+        ) [StatementListNo]
+        StatementSingle(
+          SingleReturnExprStatement(
+            ExprPositive(
+              TermMultiple(
+                NumConstFactor(
+                 1
+                ) [NumConstFactor]
+                MulopFactorListNo(
+                ) [MulopFactorListNo]
+              ) [TermMultiple]
+              AddopTermListNo(
+              ) [AddopTermListNo]
+            ) [ExprPositive]
+          ) [SingleReturnExprStatement]
+        ) [StatementSingle]
+      ) [StatementListMultiple]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  05:51:57,801 - ===================================
+ERROR 05:51:57,804 - Missing return statement for method of type rs.etf.pp1.symboltable.concepts.Struct@33cb5951
+INFO  05:51:57,805 - One or more errors found!

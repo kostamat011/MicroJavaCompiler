@@ -2,28 +2,17 @@
 
 program test302
 
-const bool a = false;
-
-record rec 
+record rec
 {
-	int xx, yy, zz;
-
-	char aa, bb, cc;
-	int o[];
+	int x1, p, z[];
+	char m;
 }
 
+char m;
+
 {
-	void m1(int a, int b, int c, int d, int ... p1)
-		int xy, zc;
+	void main()
 	{
-		int xx;
-		rec.xx = 4;
-		rec.o[2] = 3;
-		rec.o[4] = 4;
-	}
-	
-	void m2(int a, int b, int ... p, int p) 
-	{
-	}
+	}	
 }
 
