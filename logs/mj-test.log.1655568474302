@@ -1,0 +1,43 @@
+INFO  18:06:35,957 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  18:06:35,973 - #2 program
+INFO  18:06:35,973 - #48 test302
+INFO  18:06:35,973 - #48 int
+INFO  18:06:35,973 - #48 x
+INFO  18:06:35,973 - #27 =
+ERROR 18:06:35,973 - 
+Sintaksna greska na liniji 5
+INFO  18:06:35,973 - #51 5
+INFO  18:06:35,973 - #39 ,
+INFO  18:06:35,973 - #48 y
+INFO  18:06:35,974 - #27 =
+INFO  18:06:35,974 - #51 2
+INFO  18:06:35,974 - #39 ,
+INFO  18:06:35,974 - #48 z
+INFO  18:06:35,974 - #27 =
+INFO  18:06:35,974 - #51 3
+INFO  18:06:35,974 - #38 ;
+INFO  18:06:35,974 - #44 {
+INFO  18:06:35,974 - #45 }
+ERROR 18:06:35,974 - Izvrsen oporovak prilikom greske u deklaraciji globalne promenljive do , ili ; u liniji 5
+INFO  18:06:35,975 - Program(
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    GlobalVarDeclaration(
+      GlobalVarDeclarationExpr(
+        Type(
+        ) [Type]
+        GlobalVarDeclListSingle(
+          GlobalVarDeclarationError(
+          ) [GlobalVarDeclarationError]
+        ) [GlobalVarDeclListSingle]
+      ) [GlobalVarDeclarationExpr]
+    ) [GlobalVarDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListNo(
+  ) [MethodDeclListNo]
+) [Program]
+INFO  18:06:35,975 - ===================================
+INFO  18:06:35,976 -  Deklarisanih globalnih promenljivih ima = 1
+INFO  18:06:35,976 -  Ifova ima = 0
+INFO  18:06:35,976 -  IfElsova ima = 0

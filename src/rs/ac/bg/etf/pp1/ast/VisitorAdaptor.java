@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 8/1/2022 6:14:8
+// 22/5/2022 2:20:27
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -29,11 +29,13 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DesignatorStatementAssign DesignatorStatementAssign) { }
     public void visit(IfCondition IfCondition) { }
     public void visit(GlobalVarDeclSingle GlobalVarDeclSingle) { }
+    public void visit(MemberDesignator MemberDesignator) { }
     public void visit(VarDeclList VarDeclList) { }
     public void visit(Expr Expr) { }
     public void visit(VarDeclOption VarDeclOption) { }
     public void visit(ActPars ActPars) { }
     public void visit(SingleDecl SingleDecl) { }
+    public void visit(VarArgs VarArgs) { }
     public void visit(DesignatorStatement DesignatorStatement) { }
     public void visit(ConstAssignList ConstAssignList) { }
     public void visit(Statement Statement) { }
@@ -70,7 +72,10 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DesignatorStmtMinusMinus DesignatorStmtMinusMinus) { visit(); }
     public void visit(DesignatorStmtPlusPlus DesignatorStmtPlusPlus) { visit(); }
     public void visit(DesignatorStmtAssign DesignatorStmtAssign) { visit(); }
-    public void visit(IdentExprDesignator IdentExprDesignator) { visit(); }
+    public void visit(IdentMemberArrayDesignator IdentMemberArrayDesignator) { visit(); }
+    public void visit(IdentMemberDesignator IdentMemberDesignator) { visit(); }
+    public void visit(NestedDesignator NestedDesignator) { visit(); }
+    public void visit(IdentArrayDesignator IdentArrayDesignator) { visit(); }
     public void visit(IdentDesignator IdentDesignator) { visit(); }
     public void visit(RelopLSE RelopLSE) { visit(); }
     public void visit(RelopLS RelopLS) { visit(); }
@@ -121,7 +126,9 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(FormParsMultiple FormParsMultiple) { visit(); }
     public void visit(MethodTypeVoid MethodTypeVoid) { visit(); }
     public void visit(MethodTypeType MethodTypeType) { visit(); }
+    public void visit(VarArgsDeclaration VarArgsDeclaration) { visit(); }
     public void visit(MethodDeclarationExpr MethodDeclarationExpr) { visit(); }
+    public void visit(MethodDeclarationVarArgsExpr MethodDeclarationVarArgsExpr) { visit(); }
     public void visit(MethodDeclarationParsExpr MethodDeclarationParsExpr) { visit(); }
     public void visit(MethodDeclListNo MethodDeclListNo) { visit(); }
     public void visit(MethodDeclListMultiple MethodDeclListMultiple) { visit(); }
@@ -155,6 +162,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Type Type) { visit(); }
     public void visit(NoDecl NoDecl) { visit(); }
     public void visit(AllDeclListMultiple AllDeclListMultiple) { visit(); }
+    public void visit(ProgramName ProgramName) { visit(); }
     public void visit(Program Program) { visit(); }
 
 

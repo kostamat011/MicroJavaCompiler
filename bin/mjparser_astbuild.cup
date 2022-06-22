@@ -82,6 +82,7 @@ nonterminal MethodType MethodType;
 nonterminal FormParsOption FormParsOption;
 nonterminal FormPars FormPars;
 nonterminal FormPar FormPar;
+nonterminal VarArgs VarArgs;
 nonterminal StatementList StatementList;
 nonterminal Statement Statement;
 nonterminal Statements Statements;
@@ -89,6 +90,7 @@ nonterminal SingleStatement SingleStatement;
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal DesignatorStatementAssign DesignatorStatementAssign;
 nonterminal Designator Designator;
+nonterminal MemberDesignator MemberDesignator;
 nonterminal Expr Expr;
 nonterminal NumConstOption NumConstOption;
 nonterminal Mulop Mulop;
@@ -119,7 +121,7 @@ AllDeclList ::= (AllDeclListMultiple) AllDeclList:A1 SingleDecl:S2 {: RESULT=new
 Type ::= (Type) IDENT:typeName {: RESULT=new Type(); :};
 
 SingleDecl ::= (ConstDeclaration) ConstDecl:C1 {: RESULT=new ConstDeclaration(C1); RESULT.setLine(C1left); :}
-			|  (GlobalVarDeclaration) VarDecl:V1 {: RESULT=new GlobalVarDeclaration(V1); RESULT.setLine(V1left); :}
+			|  (GlobalVarDeclaration) GlobalVarDecl:G1 {: RESULT=new GlobalVarDeclaration(G1); RESULT.setLine(G1left); :}
 			|  (RecordDeclaration) RecordDecl:R1 {: RESULT=new RecordDeclaration(R1); RESULT.setLine(R1left); :}
 			|  (ClassDeclaration) ClassDecl:C1 {: RESULT=new ClassDeclaration(C1); RESULT.setLine(C1left); :}
 			;
@@ -177,8 +179,11 @@ MethodDeclList ::= (MethodDeclListMultiple) MethodDeclList:M1 MethodDecl:M2 {: R
 				;
 
 MethodDecl ::= (MethodDeclarationParsExpr) MethodType:M1 IDENT:methodName LPAREN FormPars:F2 RPAREN VarDeclOption:V3 LBRACE StatementList:S4 RBRACE {: RESULT=new MethodDeclarationParsExpr(M1, F2, V3, S4); RESULT.setLine(M1left); :}
+			|  (MethodDeclarationVarArgsExpr) MethodType:M1 IDENT:methodName LPAREN FormPars:F2 COMMA VarArgs:V3 RPAREN VarDeclOption:V4 LBRACE StatementList:S5 RBRACE {: RESULT=new MethodDeclarationVarArgsExpr(M1, F2, V3, V4, S5); RESULT.setLine(M1left); :}
 			|  (MethodDeclarationExpr) MethodType:M1 IDENT:methodName LPAREN RPAREN VarDeclOption:V2 LBRACE StatementList:S3 RBRACE {: RESULT=new MethodDeclarationExpr(M1, V2, S3); RESULT.setLine(M1left); :}
 			;
+			
+VarArgs ::= (VarArgsDeclaration) Type:T1 DOT DOT DOT IDENT:varArgsName {: RESULT=new VarArgsDeclaration(T1); RESULT.setLine(T1left); :};
 
 MethodType ::= (MethodTypeType) Type:T1 {: RESULT=new MethodTypeType(T1); RESULT.setLine(T1left); :}
 			|  (MethodTypeVoid) VOID {: RESULT=new MethodTypeVoid(); :}
@@ -262,9 +267,14 @@ Relop ::= (RelopGT) GT {: RESULT=new RelopGT(); :}
 	   ;
 
 Designator ::= (IdentDesignator) IDENT {: RESULT=new IdentDesignator(); :}
-			|  (IdentExprDesignator) IDENT LBRCK Expr:E1 RBRCK {: RESULT=new IdentExprDesignator(E1); RESULT.setLine(E1left); :}
+			|  (IdentArrayDesignator) IDENT LBRCK Expr:E1 RBRCK {: RESULT=new IdentArrayDesignator(E1); RESULT.setLine(E1left); :}
+			|  (NestedDesignator) MemberDesignator:M1 {: RESULT=new NestedDesignator(M1); RESULT.setLine(M1left); :}
 			;
-	
+			
+MemberDesignator ::= (IdentMemberDesignator) IDENT DOT IDENT:memberName {: RESULT=new IdentMemberDesignator(); :}
+				  |  (IdentMemberArrayDesignator) IDENT DOT IDENT:memberArrayName LBRCK Expr:E1 RBRCK {: RESULT=new IdentMemberArrayDesignator(E1); RESULT.setLine(E1left); :}
+				  ;
+
 DesignatorStatement ::= (DesignatorStmtAssign) DesignatorStatementAssign:D1 {: RESULT=new DesignatorStmtAssign(D1); RESULT.setLine(D1left); :}
 					|   (DesignatorStmtPlusPlus) Designator:D1 PLUSPLUS {: RESULT=new DesignatorStmtPlusPlus(D1); RESULT.setLine(D1left); :}
 					|   (DesignatorStmtMinusMinus) Designator:D1 MINUSMINUS {: RESULT=new DesignatorStmtMinusMinus(D1); RESULT.setLine(D1left); :}

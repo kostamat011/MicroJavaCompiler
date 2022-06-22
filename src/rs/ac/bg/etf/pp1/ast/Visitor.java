@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 8/1/2022 6:14:8
+// 22/5/2022 2:20:27
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -29,11 +29,13 @@ public interface Visitor {
     public void visit(DesignatorStatementAssign DesignatorStatementAssign);
     public void visit(IfCondition IfCondition);
     public void visit(GlobalVarDeclSingle GlobalVarDeclSingle);
+    public void visit(MemberDesignator MemberDesignator);
     public void visit(VarDeclList VarDeclList);
     public void visit(Expr Expr);
     public void visit(VarDeclOption VarDeclOption);
     public void visit(ActPars ActPars);
     public void visit(SingleDecl SingleDecl);
+    public void visit(VarArgs VarArgs);
     public void visit(DesignatorStatement DesignatorStatement);
     public void visit(ConstAssignList ConstAssignList);
     public void visit(Statement Statement);
@@ -70,7 +72,10 @@ public interface Visitor {
     public void visit(DesignatorStmtMinusMinus DesignatorStmtMinusMinus);
     public void visit(DesignatorStmtPlusPlus DesignatorStmtPlusPlus);
     public void visit(DesignatorStmtAssign DesignatorStmtAssign);
-    public void visit(IdentExprDesignator IdentExprDesignator);
+    public void visit(IdentMemberArrayDesignator IdentMemberArrayDesignator);
+    public void visit(IdentMemberDesignator IdentMemberDesignator);
+    public void visit(NestedDesignator NestedDesignator);
+    public void visit(IdentArrayDesignator IdentArrayDesignator);
     public void visit(IdentDesignator IdentDesignator);
     public void visit(RelopLSE RelopLSE);
     public void visit(RelopLS RelopLS);
@@ -121,7 +126,9 @@ public interface Visitor {
     public void visit(FormParsMultiple FormParsMultiple);
     public void visit(MethodTypeVoid MethodTypeVoid);
     public void visit(MethodTypeType MethodTypeType);
+    public void visit(VarArgsDeclaration VarArgsDeclaration);
     public void visit(MethodDeclarationExpr MethodDeclarationExpr);
+    public void visit(MethodDeclarationVarArgsExpr MethodDeclarationVarArgsExpr);
     public void visit(MethodDeclarationParsExpr MethodDeclarationParsExpr);
     public void visit(MethodDeclListNo MethodDeclListNo);
     public void visit(MethodDeclListMultiple MethodDeclListMultiple);
@@ -155,6 +162,7 @@ public interface Visitor {
     public void visit(Type Type);
     public void visit(NoDecl NoDecl);
     public void visit(AllDeclListMultiple AllDeclListMultiple);
+    public void visit(ProgramName ProgramName);
     public void visit(Program Program);
 
 }

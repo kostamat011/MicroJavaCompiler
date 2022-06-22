@@ -1,0 +1,163 @@
+INFO  18:12:41,181 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  18:12:41,196 - #2 program
+INFO  18:12:41,196 - #48 test302
+INFO  18:12:41,196 - #48 int
+INFO  18:12:41,197 - #48 x
+INFO  18:12:41,197 - #39 ,
+INFO  18:12:41,197 - #48 y
+INFO  18:12:41,197 - #39 ,
+INFO  18:12:41,197 - #48 z
+INFO  18:12:41,197 - #38 ;
+INFO  18:12:41,197 - #48 char
+INFO  18:12:41,198 - #48 c
+INFO  18:12:41,198 - #39 ,
+INFO  18:12:41,198 - #48 a
+INFO  18:12:41,198 - #39 ,
+INFO  18:12:41,198 - #48 b
+INFO  18:12:41,198 - #38 ;
+INFO  18:12:41,198 - #44 {
+INFO  18:12:41,198 - #14 void
+INFO  18:12:41,198 - #48 m1
+INFO  18:12:41,198 - #40 (
+INFO  18:12:41,198 - #48 int
+INFO  18:12:41,198 - #48 a
+INFO  18:12:41,208 - #39 ,
+INFO  18:12:41,208 - #48 int
+INFO  18:12:41,208 - #48 b
+INFO  18:12:41,208 - #39 ,
+INFO  18:12:41,208 - #48 int
+INFO  18:12:41,208 - #48 c
+INFO  18:12:41,208 - #39 ,
+INFO  18:12:41,208 - #48 int
+INFO  18:12:41,208 - #48 d
+INFO  18:12:41,208 - #41 )
+INFO  18:12:41,208 - #48 int
+INFO  18:12:41,208 - #48 xy
+INFO  18:12:41,208 - #39 ,
+INFO  18:12:41,209 - #48 zc
+INFO  18:12:41,209 - #38 ;
+INFO  18:12:41,209 - #44 {
+INFO  18:12:41,209 - #45 }
+INFO  18:12:41,209 - #45 }
+INFO  18:12:41,210 - Program(
+  AllDeclListMultiple(
+    AllDeclListMultiple(
+      NoDecl(
+      ) [NoDecl]
+      GlobalVarDeclaration(
+        GlobalVarDeclarationExpr(
+          Type(
+          ) [Type]
+          GlobalVarDeclListMultiple(
+            GlobalVarDeclListMultiple(
+              GlobalVarDeclListSingle(
+                GlobalVarDeclarationSingle(
+                  NoArray(
+                  ) [NoArray]
+                ) [GlobalVarDeclarationSingle]
+              ) [GlobalVarDeclListSingle]
+              GlobalVarDeclarationSingle(
+                NoArray(
+                ) [NoArray]
+              ) [GlobalVarDeclarationSingle]
+            ) [GlobalVarDeclListMultiple]
+            GlobalVarDeclarationSingle(
+              NoArray(
+              ) [NoArray]
+            ) [GlobalVarDeclarationSingle]
+          ) [GlobalVarDeclListMultiple]
+        ) [GlobalVarDeclarationExpr]
+      ) [GlobalVarDeclaration]
+    ) [AllDeclListMultiple]
+    GlobalVarDeclaration(
+      GlobalVarDeclarationExpr(
+        Type(
+        ) [Type]
+        GlobalVarDeclListMultiple(
+          GlobalVarDeclListMultiple(
+            GlobalVarDeclListSingle(
+              GlobalVarDeclarationSingle(
+                NoArray(
+                ) [NoArray]
+              ) [GlobalVarDeclarationSingle]
+            ) [GlobalVarDeclListSingle]
+            GlobalVarDeclarationSingle(
+              NoArray(
+              ) [NoArray]
+            ) [GlobalVarDeclarationSingle]
+          ) [GlobalVarDeclListMultiple]
+          GlobalVarDeclarationSingle(
+            NoArray(
+            ) [NoArray]
+          ) [GlobalVarDeclarationSingle]
+        ) [GlobalVarDeclListMultiple]
+      ) [GlobalVarDeclarationExpr]
+    ) [GlobalVarDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListNo(
+    ) [MethodDeclListNo]
+    MethodDeclarationParsExpr(
+      MethodTypeVoid(
+      ) [MethodTypeVoid]
+      FormParsMultiple(
+        FormParsMultiple(
+          FormParsMultiple(
+            FormParsSingle(
+              FormParSingle(
+                Type(
+                ) [Type]
+                NoArray(
+                ) [NoArray]
+              ) [FormParSingle]
+            ) [FormParsSingle]
+            FormParSingle(
+              Type(
+              ) [Type]
+              NoArray(
+              ) [NoArray]
+            ) [FormParSingle]
+          ) [FormParsMultiple]
+          FormParSingle(
+            Type(
+            ) [Type]
+            NoArray(
+            ) [NoArray]
+          ) [FormParSingle]
+        ) [FormParsMultiple]
+        FormParSingle(
+          Type(
+          ) [Type]
+          NoArray(
+          ) [NoArray]
+        ) [FormParSingle]
+      ) [FormParsMultiple]
+      VarDeclOptionTrue(
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+        VarDeclarationExpr(
+          Type(
+          ) [Type]
+          VarDeclListMultiple(
+            VarDeclListSingle(
+              VarDeclSingle(
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclSingle]
+            ) [VarDeclListSingle]
+            VarDeclSingle(
+              NoArray(
+              ) [NoArray]
+            ) [VarDeclSingle]
+          ) [VarDeclListMultiple]
+        ) [VarDeclarationExpr]
+      ) [VarDeclOptionTrue]
+      StatementListNo(
+      ) [StatementListNo]
+    ) [MethodDeclarationParsExpr]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  18:12:41,210 - ===================================
+INFO  18:12:41,211 -  Deklarisanih globalnih promenljivih ima = 2
+INFO  18:12:41,211 -  Ifova ima = 0
+INFO  18:12:41,211 -  IfElsova ima = 0

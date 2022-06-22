@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 8/1/2022 6:14:8
+// 22/5/2022 2:20:26
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,11 +9,21 @@ public class VarDeclSingle implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
+    private String varName;
     private ArrBracketsOption ArrBracketsOption;
 
-    public VarDeclSingle (ArrBracketsOption ArrBracketsOption) {
+    public VarDeclSingle (String varName, ArrBracketsOption ArrBracketsOption) {
+        this.varName=varName;
         this.ArrBracketsOption=ArrBracketsOption;
         if(ArrBracketsOption!=null) ArrBracketsOption.setParent(this);
+    }
+
+    public String getVarName() {
+        return varName;
+    }
+
+    public void setVarName(String varName) {
+        this.varName=varName;
     }
 
     public ArrBracketsOption getArrBracketsOption() {
@@ -62,6 +72,9 @@ public class VarDeclSingle implements SyntaxNode {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("VarDeclSingle(\n");
+
+        buffer.append(" "+tab+varName);
+        buffer.append("\n");
 
         if(ArrBracketsOption!=null)
             buffer.append(ArrBracketsOption.toString("  "+tab));

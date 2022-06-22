@@ -1,0 +1,393 @@
+INFO  23:59:26,266 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  23:59:26,282 - #2 program
+INFO  23:59:26,282 - #48 test302
+INFO  23:59:26,283 - #48 int
+INFO  23:59:26,283 - #48 x
+INFO  23:59:26,283 - #39 ,
+INFO  23:59:26,283 - #48 y
+INFO  23:59:26,283 - #39 ,
+INFO  23:59:26,283 - #48 z
+INFO  23:59:26,283 - #38 ;
+INFO  23:59:26,283 - #48 char
+INFO  23:59:26,284 - #48 c
+INFO  23:59:26,284 - #39 ,
+INFO  23:59:26,284 - #48 a
+INFO  23:59:26,284 - #39 ,
+INFO  23:59:26,284 - #48 b
+INFO  23:59:26,284 - #38 ;
+INFO  23:59:26,284 - #16 record
+INFO  23:59:26,284 - #48 rec
+INFO  23:59:26,284 - #44 {
+INFO  23:59:26,284 - #48 int
+INFO  23:59:26,284 - #48 xx
+INFO  23:59:26,284 - #39 ,
+INFO  23:59:26,285 - #48 yy
+INFO  23:59:26,285 - #39 ,
+INFO  23:59:26,285 - #48 zz
+INFO  23:59:26,285 - #38 ;
+INFO  23:59:26,285 - #48 char
+INFO  23:59:26,285 - #48 aa
+INFO  23:59:26,285 - #39 ,
+INFO  23:59:26,285 - #48 bb
+INFO  23:59:26,285 - #39 ,
+INFO  23:59:26,285 - #48 cc
+INFO  23:59:26,285 - #38 ;
+INFO  23:59:26,285 - #48 int
+INFO  23:59:26,285 - #48 o
+INFO  23:59:26,285 - #42 [
+INFO  23:59:26,285 - #43 ]
+INFO  23:59:26,286 - #39 ,
+INFO  23:59:26,286 - #48 z
+INFO  23:59:26,286 - #42 [
+INFO  23:59:26,286 - #43 ]
+INFO  23:59:26,286 - #38 ;
+INFO  23:59:26,286 - #45 }
+INFO  23:59:26,286 - #44 {
+INFO  23:59:26,286 - #14 void
+INFO  23:59:26,286 - #48 m1
+INFO  23:59:26,286 - #40 (
+INFO  23:59:26,286 - #48 int
+INFO  23:59:26,286 - #48 a
+INFO  23:59:26,287 - #39 ,
+INFO  23:59:26,287 - #48 int
+INFO  23:59:26,287 - #48 b
+INFO  23:59:26,287 - #39 ,
+INFO  23:59:26,287 - #48 int
+INFO  23:59:26,287 - #48 c
+INFO  23:59:26,287 - #39 ,
+INFO  23:59:26,287 - #48 int
+INFO  23:59:26,287 - #48 d
+INFO  23:59:26,287 - #39 ,
+INFO  23:59:26,287 - #48 int
+INFO  23:59:26,287 - #47 .
+INFO  23:59:26,287 - #47 .
+INFO  23:59:26,287 - #47 .
+INFO  23:59:26,287 - #48 p1
+INFO  23:59:26,287 - #41 )
+INFO  23:59:26,287 - #48 int
+INFO  23:59:26,287 - #48 xy
+INFO  23:59:26,287 - #39 ,
+INFO  23:59:26,287 - #48 zc
+INFO  23:59:26,287 - #38 ;
+INFO  23:59:26,287 - #44 {
+INFO  23:59:26,287 - #48 rec
+INFO  23:59:26,288 - #47 .
+INFO  23:59:26,288 - #48 xx
+INFO  23:59:26,288 - #27 =
+INFO  23:59:26,288 - #51 4
+INFO  23:59:26,288 - #38 ;
+INFO  23:59:26,288 - #48 rec
+INFO  23:59:26,288 - #47 .
+INFO  23:59:26,289 - #48 o
+INFO  23:59:26,289 - #42 [
+INFO  23:59:26,289 - #51 2
+INFO  23:59:26,289 - #43 ]
+INFO  23:59:26,289 - #27 =
+INFO  23:59:26,289 - #51 3
+INFO  23:59:26,289 - #38 ;
+INFO  23:59:26,289 - #48 rec
+INFO  23:59:26,289 - #47 .
+INFO  23:59:26,289 - #48 o
+INFO  23:59:26,289 - #42 [
+INFO  23:59:26,289 - #51 4
+INFO  23:59:26,289 - #43 ]
+INFO  23:59:26,289 - #27 =
+INFO  23:59:26,289 - #51 4
+INFO  23:59:26,289 - #38 ;
+INFO  23:59:26,289 - #45 }
+INFO  23:59:26,289 - #45 }
+INFO  23:59:26,290 - Program(
+  AllDeclListMultiple(
+    AllDeclListMultiple(
+      AllDeclListMultiple(
+        NoDecl(
+        ) [NoDecl]
+        GlobalVarDeclaration(
+          GlobalVarDeclarationExpr(
+            Type(
+            ) [Type]
+            GlobalVarDeclListMultiple(
+              GlobalVarDeclListMultiple(
+                GlobalVarDeclListSingle(
+                  GlobalVarDeclarationSingle(
+                    NoArray(
+                    ) [NoArray]
+                  ) [GlobalVarDeclarationSingle]
+                ) [GlobalVarDeclListSingle]
+                GlobalVarDeclarationSingle(
+                  NoArray(
+                  ) [NoArray]
+                ) [GlobalVarDeclarationSingle]
+              ) [GlobalVarDeclListMultiple]
+              GlobalVarDeclarationSingle(
+                NoArray(
+                ) [NoArray]
+              ) [GlobalVarDeclarationSingle]
+            ) [GlobalVarDeclListMultiple]
+          ) [GlobalVarDeclarationExpr]
+        ) [GlobalVarDeclaration]
+      ) [AllDeclListMultiple]
+      GlobalVarDeclaration(
+        GlobalVarDeclarationExpr(
+          Type(
+          ) [Type]
+          GlobalVarDeclListMultiple(
+            GlobalVarDeclListMultiple(
+              GlobalVarDeclListSingle(
+                GlobalVarDeclarationSingle(
+                  NoArray(
+                  ) [NoArray]
+                ) [GlobalVarDeclarationSingle]
+              ) [GlobalVarDeclListSingle]
+              GlobalVarDeclarationSingle(
+                NoArray(
+                ) [NoArray]
+              ) [GlobalVarDeclarationSingle]
+            ) [GlobalVarDeclListMultiple]
+            GlobalVarDeclarationSingle(
+              NoArray(
+              ) [NoArray]
+            ) [GlobalVarDeclarationSingle]
+          ) [GlobalVarDeclListMultiple]
+        ) [GlobalVarDeclarationExpr]
+      ) [GlobalVarDeclaration]
+    ) [AllDeclListMultiple]
+    RecordDeclaration(
+      RecordDeclarationExpr(
+        VarDeclOptionTrue(
+          VarDeclOptionTrue(
+            VarDeclOptionTrue(
+              NoVarDeclOption(
+              ) [NoVarDeclOption]
+              VarDeclarationExpr(
+                Type(
+                ) [Type]
+                VarDeclListMultiple(
+                  VarDeclListMultiple(
+                    VarDeclListSingle(
+                      VarDeclSingle(
+                        NoArray(
+                        ) [NoArray]
+                      ) [VarDeclSingle]
+                    ) [VarDeclListSingle]
+                    VarDeclSingle(
+                      NoArray(
+                      ) [NoArray]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListMultiple]
+                  VarDeclSingle(
+                    NoArray(
+                    ) [NoArray]
+                  ) [VarDeclSingle]
+                ) [VarDeclListMultiple]
+              ) [VarDeclarationExpr]
+            ) [VarDeclOptionTrue]
+            VarDeclarationExpr(
+              Type(
+              ) [Type]
+              VarDeclListMultiple(
+                VarDeclListMultiple(
+                  VarDeclListSingle(
+                    VarDeclSingle(
+                      NoArray(
+                      ) [NoArray]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListSingle]
+                  VarDeclSingle(
+                    NoArray(
+                    ) [NoArray]
+                  ) [VarDeclSingle]
+                ) [VarDeclListMultiple]
+                VarDeclSingle(
+                  NoArray(
+                  ) [NoArray]
+                ) [VarDeclSingle]
+              ) [VarDeclListMultiple]
+            ) [VarDeclarationExpr]
+          ) [VarDeclOptionTrue]
+          VarDeclarationExpr(
+            Type(
+            ) [Type]
+            VarDeclListMultiple(
+              VarDeclListSingle(
+                VarDeclSingle(
+                  ArrayBrackets(
+                  ) [ArrayBrackets]
+                ) [VarDeclSingle]
+              ) [VarDeclListSingle]
+              VarDeclSingle(
+                ArrayBrackets(
+                ) [ArrayBrackets]
+              ) [VarDeclSingle]
+            ) [VarDeclListMultiple]
+          ) [VarDeclarationExpr]
+        ) [VarDeclOptionTrue]
+      ) [RecordDeclarationExpr]
+    ) [RecordDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListNo(
+    ) [MethodDeclListNo]
+    MethodDeclarationVarArgsExpr(
+      MethodTypeVoid(
+      ) [MethodTypeVoid]
+      FormParsMultiple(
+        FormParsMultiple(
+          FormParsMultiple(
+            FormParsSingle(
+              FormParSingle(
+                Type(
+                ) [Type]
+                NoArray(
+                ) [NoArray]
+              ) [FormParSingle]
+            ) [FormParsSingle]
+            FormParSingle(
+              Type(
+              ) [Type]
+              NoArray(
+              ) [NoArray]
+            ) [FormParSingle]
+          ) [FormParsMultiple]
+          FormParSingle(
+            Type(
+            ) [Type]
+            NoArray(
+            ) [NoArray]
+          ) [FormParSingle]
+        ) [FormParsMultiple]
+        FormParSingle(
+          Type(
+          ) [Type]
+          NoArray(
+          ) [NoArray]
+        ) [FormParSingle]
+      ) [FormParsMultiple]
+      VarArgsDeclaration(
+        Type(
+        ) [Type]
+      ) [VarArgsDeclaration]
+      VarDeclOptionTrue(
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+        VarDeclarationExpr(
+          Type(
+          ) [Type]
+          VarDeclListMultiple(
+            VarDeclListSingle(
+              VarDeclSingle(
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclSingle]
+            ) [VarDeclListSingle]
+            VarDeclSingle(
+              NoArray(
+              ) [NoArray]
+            ) [VarDeclSingle]
+          ) [VarDeclListMultiple]
+        ) [VarDeclarationExpr]
+      ) [VarDeclOptionTrue]
+      StatementListMultiple(
+        StatementListMultiple(
+          StatementListMultiple(
+            StatementListNo(
+            ) [StatementListNo]
+            StatementSingle(
+              SingleDesignatorStatement(
+                DesignatorStmtAssign(
+                  DesignatorStmtAssignDecl(
+                    NestedDesignator(
+                      IdentMemberDesignator(
+                      ) [IdentMemberDesignator]
+                    ) [NestedDesignator]
+                    ExprPositive(
+                      TermMultiple(
+                        NumConstFactor(
+                        ) [NumConstFactor]
+                        MulopFactorListNo(
+                        ) [MulopFactorListNo]
+                      ) [TermMultiple]
+                      AddopTermListNo(
+                      ) [AddopTermListNo]
+                    ) [ExprPositive]
+                  ) [DesignatorStmtAssignDecl]
+                ) [DesignatorStmtAssign]
+              ) [SingleDesignatorStatement]
+            ) [StatementSingle]
+          ) [StatementListMultiple]
+          StatementSingle(
+            SingleDesignatorStatement(
+              DesignatorStmtAssign(
+                DesignatorStmtAssignDecl(
+                  NestedDesignator(
+                    IdentMemberArrayDesignator(
+                      ExprPositive(
+                        TermMultiple(
+                          NumConstFactor(
+                          ) [NumConstFactor]
+                          MulopFactorListNo(
+                          ) [MulopFactorListNo]
+                        ) [TermMultiple]
+                        AddopTermListNo(
+                        ) [AddopTermListNo]
+                      ) [ExprPositive]
+                    ) [IdentMemberArrayDesignator]
+                  ) [NestedDesignator]
+                  ExprPositive(
+                    TermMultiple(
+                      NumConstFactor(
+                      ) [NumConstFactor]
+                      MulopFactorListNo(
+                      ) [MulopFactorListNo]
+                    ) [TermMultiple]
+                    AddopTermListNo(
+                    ) [AddopTermListNo]
+                  ) [ExprPositive]
+                ) [DesignatorStmtAssignDecl]
+              ) [DesignatorStmtAssign]
+            ) [SingleDesignatorStatement]
+          ) [StatementSingle]
+        ) [StatementListMultiple]
+        StatementSingle(
+          SingleDesignatorStatement(
+            DesignatorStmtAssign(
+              DesignatorStmtAssignDecl(
+                NestedDesignator(
+                  IdentMemberArrayDesignator(
+                    ExprPositive(
+                      TermMultiple(
+                        NumConstFactor(
+                        ) [NumConstFactor]
+                        MulopFactorListNo(
+                        ) [MulopFactorListNo]
+                      ) [TermMultiple]
+                      AddopTermListNo(
+                      ) [AddopTermListNo]
+                    ) [ExprPositive]
+                  ) [IdentMemberArrayDesignator]
+                ) [NestedDesignator]
+                ExprPositive(
+                  TermMultiple(
+                    NumConstFactor(
+                    ) [NumConstFactor]
+                    MulopFactorListNo(
+                    ) [MulopFactorListNo]
+                  ) [TermMultiple]
+                  AddopTermListNo(
+                  ) [AddopTermListNo]
+                ) [ExprPositive]
+              ) [DesignatorStmtAssignDecl]
+            ) [DesignatorStmtAssign]
+          ) [SingleDesignatorStatement]
+        ) [StatementSingle]
+      ) [StatementListMultiple]
+    ) [MethodDeclarationVarArgsExpr]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  23:59:26,290 - ===================================
+INFO  23:59:26,291 -  Deklarisanih globalnih promenljivih ima = 6
+INFO  23:59:26,291 -  Ifova ima = 0
+INFO  23:59:26,291 -  IfElsova ima = 0
+INFO  23:59:26,291 -  Pristupa ugnjezdenim clanovima koji nisu nizovi ima = 1
+INFO  23:59:26,291 -  Pristupa ugnjezdenim clanovima koji su nizovi ima = 2
+INFO  23:59:26,291 -  Pristupa ugnjezdenim clanovima ukupno ima = 3

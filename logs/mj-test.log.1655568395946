@@ -1,0 +1,15 @@
+INFO  18:06:04,429 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  18:06:04,445 - #2 program
+INFO  18:06:04,445 - #48 test302
+INFO  18:06:04,445 - #44 {
+INFO  18:06:04,445 - #45 }
+INFO  18:06:04,446 - Program(
+  NoDecl(
+  ) [NoDecl]
+  MethodDeclListNo(
+  ) [MethodDeclListNo]
+) [Program]
+INFO  18:06:04,446 - ===================================
+INFO  18:06:04,447 -  Deklarisanih globalnih promenljivih ima = 0
+INFO  18:06:04,447 -  Ifova ima = 0
+INFO  18:06:04,447 -  IfElsova ima = 0

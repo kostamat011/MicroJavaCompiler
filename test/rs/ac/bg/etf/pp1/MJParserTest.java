@@ -43,12 +43,18 @@ public class MJParserTest {
 			log.info("===================================");
 
 			// ispis prepoznatih programskih konstrukcija
-			RuleVisitor v = new RuleVisitor();
+			SemanticPass v = new SemanticPass();
 			prog.traverseBottomUp(v); 
 
-			log.info(" Deklarisanih globalnih promenljivih ima = " + v.globalVarDeclCount);
+			/*log.info(" Deklarisanih globalnih promenljivih ima = " + v.globalVarDeclCount);
 			log.info(" Ifova ima = " + v.ifcnt);
 			log.info(" IfElsova ima = " + v.ifelsecnt);
+			log.info(" Pristupa ugnjezdenim clanovima koji nisu nizovi ima = "+ v.membersDesignators);
+			log.info(" Pristupa ugnjezdenim clanovima koji su nizovi ima = " + v.membersArraysDesignators);
+			log.info(" Pristupa ugnjezdenim clanovima ukupno ima = "+ v.nestedDesignators);
+			log.info(" Var args ima =  "+ v.varArgsCnt);*/
+			
+			log.info(" Globalnih promenljivih ima: "+v.localVarCount);
 		} 
 		finally {
 			if (br != null) try { br.close(); } catch (IOException e1) { log.error(e1.getMessage(), e1); }

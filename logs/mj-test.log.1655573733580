@@ -1,0 +1,256 @@
+INFO  19:28:34,038 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  19:28:34,054 - #2 program
+INFO  19:28:34,054 - #48 test302
+INFO  19:28:34,054 - #48 int
+INFO  19:28:34,054 - #48 x
+INFO  19:28:34,054 - #39 ,
+INFO  19:28:34,055 - #48 y
+INFO  19:28:34,055 - #39 ,
+INFO  19:28:34,055 - #48 z
+INFO  19:28:34,055 - #38 ;
+INFO  19:28:34,055 - #48 char
+INFO  19:28:34,055 - #48 c
+INFO  19:28:34,055 - #39 ,
+INFO  19:28:34,055 - #48 a
+INFO  19:28:34,055 - #39 ,
+INFO  19:28:34,055 - #48 b
+INFO  19:28:34,055 - #38 ;
+INFO  19:28:34,055 - #16 record
+INFO  19:28:34,055 - #48 rec
+INFO  19:28:34,055 - #44 {
+INFO  19:28:34,056 - #48 int
+INFO  19:28:34,056 - #48 xx
+INFO  19:28:34,056 - #39 ,
+INFO  19:28:34,065 - #48 yy
+INFO  19:28:34,065 - #39 ,
+INFO  19:28:34,065 - #48 zz
+INFO  19:28:34,065 - #38 ;
+INFO  19:28:34,065 - #48 char
+INFO  19:28:34,065 - #48 aa
+INFO  19:28:34,065 - #39 ,
+INFO  19:28:34,065 - #48 bb
+INFO  19:28:34,065 - #39 ,
+INFO  19:28:34,065 - #48 cc
+INFO  19:28:34,065 - #38 ;
+INFO  19:28:34,065 - #45 }
+INFO  19:28:34,065 - #44 {
+INFO  19:28:34,066 - #14 void
+INFO  19:28:34,066 - #48 m1
+INFO  19:28:34,066 - #40 (
+INFO  19:28:34,066 - #48 int
+INFO  19:28:34,066 - #48 a
+INFO  19:28:34,066 - #39 ,
+INFO  19:28:34,066 - #48 int
+INFO  19:28:34,066 - #48 b
+INFO  19:28:34,066 - #39 ,
+INFO  19:28:34,066 - #48 int
+INFO  19:28:34,066 - #48 c
+INFO  19:28:34,066 - #39 ,
+INFO  19:28:34,066 - #48 int
+INFO  19:28:34,067 - #48 d
+INFO  19:28:34,067 - #41 )
+INFO  19:28:34,067 - #48 int
+INFO  19:28:34,067 - #48 xy
+INFO  19:28:34,067 - #39 ,
+INFO  19:28:34,067 - #48 zc
+INFO  19:28:34,067 - #38 ;
+INFO  19:28:34,067 - #44 {
+INFO  19:28:34,067 - #48 rec
+INFO  19:28:34,067 - #47 .
+ERROR 19:28:34,067 - 
+Sintaksna greska na liniji 18
+INFO  19:28:34,067 - #48 xx
+INFO  19:28:34,067 - #27 =
+INFO  19:28:34,067 - #51 4
+INFO  19:28:34,067 - #38 ;
+INFO  19:28:34,068 - #45 }
+INFO  19:28:34,068 - #45 }
+ERROR 19:28:34,068 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
+INFO  19:28:34,068 - Program(
+  AllDeclListMultiple(
+    AllDeclListMultiple(
+      AllDeclListMultiple(
+        NoDecl(
+        ) [NoDecl]
+        GlobalVarDeclaration(
+          GlobalVarDeclarationExpr(
+            Type(
+            ) [Type]
+            GlobalVarDeclListMultiple(
+              GlobalVarDeclListMultiple(
+                GlobalVarDeclListSingle(
+                  GlobalVarDeclarationSingle(
+                    NoArray(
+                    ) [NoArray]
+                  ) [GlobalVarDeclarationSingle]
+                ) [GlobalVarDeclListSingle]
+                GlobalVarDeclarationSingle(
+                  NoArray(
+                  ) [NoArray]
+                ) [GlobalVarDeclarationSingle]
+              ) [GlobalVarDeclListMultiple]
+              GlobalVarDeclarationSingle(
+                NoArray(
+                ) [NoArray]
+              ) [GlobalVarDeclarationSingle]
+            ) [GlobalVarDeclListMultiple]
+          ) [GlobalVarDeclarationExpr]
+        ) [GlobalVarDeclaration]
+      ) [AllDeclListMultiple]
+      GlobalVarDeclaration(
+        GlobalVarDeclarationExpr(
+          Type(
+          ) [Type]
+          GlobalVarDeclListMultiple(
+            GlobalVarDeclListMultiple(
+              GlobalVarDeclListSingle(
+                GlobalVarDeclarationSingle(
+                  NoArray(
+                  ) [NoArray]
+                ) [GlobalVarDeclarationSingle]
+              ) [GlobalVarDeclListSingle]
+              GlobalVarDeclarationSingle(
+                NoArray(
+                ) [NoArray]
+              ) [GlobalVarDeclarationSingle]
+            ) [GlobalVarDeclListMultiple]
+            GlobalVarDeclarationSingle(
+              NoArray(
+              ) [NoArray]
+            ) [GlobalVarDeclarationSingle]
+          ) [GlobalVarDeclListMultiple]
+        ) [GlobalVarDeclarationExpr]
+      ) [GlobalVarDeclaration]
+    ) [AllDeclListMultiple]
+    RecordDeclaration(
+      RecordDeclarationExpr(
+        VarDeclOptionTrue(
+          VarDeclOptionTrue(
+            NoVarDeclOption(
+            ) [NoVarDeclOption]
+            VarDeclarationExpr(
+              Type(
+              ) [Type]
+              VarDeclListMultiple(
+                VarDeclListMultiple(
+                  VarDeclListSingle(
+                    VarDeclSingle(
+                      NoArray(
+                      ) [NoArray]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListSingle]
+                  VarDeclSingle(
+                    NoArray(
+                    ) [NoArray]
+                  ) [VarDeclSingle]
+                ) [VarDeclListMultiple]
+                VarDeclSingle(
+                  NoArray(
+                  ) [NoArray]
+                ) [VarDeclSingle]
+              ) [VarDeclListMultiple]
+            ) [VarDeclarationExpr]
+          ) [VarDeclOptionTrue]
+          VarDeclarationExpr(
+            Type(
+            ) [Type]
+            VarDeclListMultiple(
+              VarDeclListMultiple(
+                VarDeclListSingle(
+                  VarDeclSingle(
+                    NoArray(
+                    ) [NoArray]
+                  ) [VarDeclSingle]
+                ) [VarDeclListSingle]
+                VarDeclSingle(
+                  NoArray(
+                  ) [NoArray]
+                ) [VarDeclSingle]
+              ) [VarDeclListMultiple]
+              VarDeclSingle(
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclSingle]
+            ) [VarDeclListMultiple]
+          ) [VarDeclarationExpr]
+        ) [VarDeclOptionTrue]
+      ) [RecordDeclarationExpr]
+    ) [RecordDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListNo(
+    ) [MethodDeclListNo]
+    MethodDeclarationParsExpr(
+      MethodTypeVoid(
+      ) [MethodTypeVoid]
+      FormParsMultiple(
+        FormParsMultiple(
+          FormParsMultiple(
+            FormParsSingle(
+              FormParSingle(
+                Type(
+                ) [Type]
+                NoArray(
+                ) [NoArray]
+              ) [FormParSingle]
+            ) [FormParsSingle]
+            FormParSingle(
+              Type(
+              ) [Type]
+              NoArray(
+              ) [NoArray]
+            ) [FormParSingle]
+          ) [FormParsMultiple]
+          FormParSingle(
+            Type(
+            ) [Type]
+            NoArray(
+            ) [NoArray]
+          ) [FormParSingle]
+        ) [FormParsMultiple]
+        FormParSingle(
+          Type(
+          ) [Type]
+          NoArray(
+          ) [NoArray]
+        ) [FormParSingle]
+      ) [FormParsMultiple]
+      VarDeclOptionTrue(
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+        VarDeclarationExpr(
+          Type(
+          ) [Type]
+          VarDeclListMultiple(
+            VarDeclListSingle(
+              VarDeclSingle(
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclSingle]
+            ) [VarDeclListSingle]
+            VarDeclSingle(
+              NoArray(
+              ) [NoArray]
+            ) [VarDeclSingle]
+          ) [VarDeclListMultiple]
+        ) [VarDeclarationExpr]
+      ) [VarDeclOptionTrue]
+      StatementListMultiple(
+        StatementListNo(
+        ) [StatementListNo]
+        StatementSingle(
+          SingleDesignatorStatement(
+            DesignatorStmtAssign(
+              AssignError(
+              ) [AssignError]
+            ) [DesignatorStmtAssign]
+          ) [SingleDesignatorStatement]
+        ) [StatementSingle]
+      ) [StatementListMultiple]
+    ) [MethodDeclarationParsExpr]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  19:28:34,069 - ===================================
+INFO  19:28:34,069 -  Deklarisanih globalnih promenljivih ima = 6
+INFO  19:28:34,069 -  Ifova ima = 0
+INFO  19:28:34,069 -  IfElsova ima = 0

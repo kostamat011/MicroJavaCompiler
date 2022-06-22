@@ -1,17 +1,27 @@
 // generated with ast extension for cup
 // version 0.8
-// 8/1/2022 6:14:8
+// 22/5/2022 2:20:26
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class RecordDeclarationExpr extends RecordDecl {
 
+    private String recordName;
     private VarDeclOption VarDeclOption;
 
-    public RecordDeclarationExpr (VarDeclOption VarDeclOption) {
+    public RecordDeclarationExpr (String recordName, VarDeclOption VarDeclOption) {
+        this.recordName=recordName;
         this.VarDeclOption=VarDeclOption;
         if(VarDeclOption!=null) VarDeclOption.setParent(this);
+    }
+
+    public String getRecordName() {
+        return recordName;
+    }
+
+    public void setRecordName(String recordName) {
+        this.recordName=recordName;
     }
 
     public VarDeclOption getVarDeclOption() {
@@ -44,6 +54,9 @@ public class RecordDeclarationExpr extends RecordDecl {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("RecordDeclarationExpr(\n");
+
+        buffer.append(" "+tab+recordName);
+        buffer.append("\n");
 
         if(VarDeclOption!=null)
             buffer.append(VarDeclOption.toString("  "+tab));

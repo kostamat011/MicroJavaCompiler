@@ -1,0 +1,55 @@
+INFO  18:07:54,303 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  18:07:54,319 - #2 program
+INFO  18:07:54,319 - #48 test302
+INFO  18:07:54,319 - #7 const
+INFO  18:07:54,319 - #48 int
+INFO  18:07:54,319 - #48 x
+INFO  18:07:54,319 - #27 =
+INFO  18:07:54,319 - #51 5
+INFO  18:07:54,319 - #39 ,
+INFO  18:07:54,320 - #48 y
+INFO  18:07:54,320 - #27 =
+INFO  18:07:54,320 - #51 2
+INFO  18:07:54,320 - #39 ,
+INFO  18:07:54,320 - #48 z
+INFO  18:07:54,320 - #27 =
+INFO  18:07:54,320 - #51 3
+INFO  18:07:54,320 - #38 ;
+INFO  18:07:54,320 - #44 {
+INFO  18:07:54,320 - #45 }
+INFO  18:07:54,321 - Program(
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    ConstDeclaration(
+      ConstDeclarationExpr(
+        Type(
+        ) [Type]
+        ConstAssignListMultiple(
+          ConstAssignListMultiple(
+            ConstAssignSingle(
+              ConstAssign(
+                NumberConst(
+                ) [NumberConst]
+              ) [ConstAssign]
+            ) [ConstAssignSingle]
+            ConstAssign(
+              NumberConst(
+              ) [NumberConst]
+            ) [ConstAssign]
+          ) [ConstAssignListMultiple]
+          ConstAssign(
+            NumberConst(
+            ) [NumberConst]
+          ) [ConstAssign]
+        ) [ConstAssignListMultiple]
+      ) [ConstDeclarationExpr]
+    ) [ConstDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListNo(
+  ) [MethodDeclListNo]
+) [Program]
+INFO  18:07:54,331 - ===================================
+INFO  18:07:54,332 -  Deklarisanih globalnih promenljivih ima = 0
+INFO  18:07:54,332 -  Ifova ima = 0
+INFO  18:07:54,332 -  IfElsova ima = 0

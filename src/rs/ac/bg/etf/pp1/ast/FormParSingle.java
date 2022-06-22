@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 8/1/2022 6:14:8
+// 22/5/2022 2:20:26
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,11 +8,13 @@ package rs.ac.bg.etf.pp1.ast;
 public class FormParSingle extends FormPar {
 
     private Type Type;
+    private String formParName;
     private ArrBracketsOption ArrBracketsOption;
 
-    public FormParSingle (Type Type, ArrBracketsOption ArrBracketsOption) {
+    public FormParSingle (Type Type, String formParName, ArrBracketsOption ArrBracketsOption) {
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
+        this.formParName=formParName;
         this.ArrBracketsOption=ArrBracketsOption;
         if(ArrBracketsOption!=null) ArrBracketsOption.setParent(this);
     }
@@ -23,6 +25,14 @@ public class FormParSingle extends FormPar {
 
     public void setType(Type Type) {
         this.Type=Type;
+    }
+
+    public String getFormParName() {
+        return formParName;
+    }
+
+    public void setFormParName(String formParName) {
+        this.formParName=formParName;
     }
 
     public ArrBracketsOption getArrBracketsOption() {
@@ -63,6 +73,9 @@ public class FormParSingle extends FormPar {
             buffer.append(Type.toString("  "+tab));
         else
             buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        buffer.append(" "+tab+formParName);
         buffer.append("\n");
 
         if(ArrBracketsOption!=null)

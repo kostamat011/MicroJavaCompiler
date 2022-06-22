@@ -1,20 +1,30 @@
 // generated with ast extension for cup
 // version 0.8
-// 8/1/2022 6:14:8
+// 22/5/2022 2:20:26
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ClassDeclarationExpr extends ClassDecl {
 
+    private String className;
     private VarDeclOption VarDeclOption;
     private ClassMethodDeclOption ClassMethodDeclOption;
 
-    public ClassDeclarationExpr (VarDeclOption VarDeclOption, ClassMethodDeclOption ClassMethodDeclOption) {
+    public ClassDeclarationExpr (String className, VarDeclOption VarDeclOption, ClassMethodDeclOption ClassMethodDeclOption) {
+        this.className=className;
         this.VarDeclOption=VarDeclOption;
         if(VarDeclOption!=null) VarDeclOption.setParent(this);
         this.ClassMethodDeclOption=ClassMethodDeclOption;
         if(ClassMethodDeclOption!=null) ClassMethodDeclOption.setParent(this);
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className=className;
     }
 
     public VarDeclOption getVarDeclOption() {
@@ -58,6 +68,9 @@ public class ClassDeclarationExpr extends ClassDecl {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("ClassDeclarationExpr(\n");
+
+        buffer.append(" "+tab+className);
+        buffer.append("\n");
 
         if(VarDeclOption!=null)
             buffer.append(VarDeclOption.toString("  "+tab));

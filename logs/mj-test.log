@@ -1,690 +1,185 @@
-INFO  06:19:32,221 - Compiling source file: E:\FAKULTET\IV GOD\PP\projekat\workspace\MJCompiler\test\program.mj
-INFO  06:19:32,265 - #2 program
-INFO  06:19:32,265 - #48 test302
-INFO  06:19:32,265 - #7 const
-INFO  06:19:32,266 - #48 int
-INFO  06:19:32,266 - #48 jedan
-INFO  06:19:32,266 - #27 =
-INFO  06:19:32,266 - #51 1
-INFO  06:19:32,266 - #38 ;
-INFO  06:19:32,268 - #48 int
-INFO  06:19:32,268 - #48 i
-INFO  06:19:32,268 - #38 ;
-INFO  06:19:32,269 - #48 bool
-INFO  06:19:32,269 - #48 ibool
-INFO  06:19:32,270 - #38 ;
-INFO  06:19:32,270 - #48 int
-INFO  06:19:32,270 - #48 niz2
-INFO  06:19:32,270 - #38 ;
-INFO  06:19:32,270 - #16 record
-INFO  06:19:32,270 - #48 Test
-INFO  06:19:32,270 - #44 {
-INFO  06:19:32,270 - #48 int
-INFO  06:19:32,271 - #48 niz
-INFO  06:19:32,271 - #42 [
-INFO  06:19:32,271 - #43 ]
-INFO  06:19:32,271 - #38 ;
-INFO  06:19:32,272 - #48 int
-INFO  06:19:32,273 - #48 a
-INFO  06:19:32,273 - #38 ;
-INFO  06:19:32,273 - #45 }
-INFO  06:19:32,273 - #48 Test
-INFO  06:19:32,273 - #48 t1
-INFO  06:19:32,273 - #39 ,
-INFO  06:19:32,273 - #48 t2
-INFO  06:19:32,273 - #38 ;
-INFO  06:19:32,273 - #44 {
-INFO  06:19:32,274 - #48 int
-INFO  06:19:32,274 - #48 sum
-INFO  06:19:32,274 - #40 (
-INFO  06:19:32,274 - #48 int
-INFO  06:19:32,274 - #48 z
-INFO  06:19:32,274 - #39 ,
-INFO  06:19:32,275 - #48 int
-INFO  06:19:32,275 - #48 d
-INFO  06:19:32,275 - #41 )
-INFO  06:19:32,275 - #44 {
-INFO  06:19:32,275 - #15 return
-INFO  06:19:32,275 - #48 z
-INFO  06:19:32,276 - #22 +
-INFO  06:19:32,277 - #48 d
-INFO  06:19:32,278 - #38 ;
-INFO  06:19:32,278 - #45 }
-INFO  06:19:32,278 - #48 int
-INFO  06:19:32,279 - #48 inkrement
-INFO  06:19:32,279 - #40 (
-INFO  06:19:32,279 - #48 int
-INFO  06:19:32,279 - #48 a
-INFO  06:19:32,279 - #39 ,
-INFO  06:19:32,279 - #48 int
-INFO  06:19:32,279 - #48 inc
-INFO  06:19:32,279 - #41 )
-INFO  06:19:32,279 - #48 int
-INFO  06:19:32,279 - #48 pom
-INFO  06:19:32,279 - #38 ;
-INFO  06:19:32,280 - #44 {
-INFO  06:19:32,280 - #5 if
-INFO  06:19:32,280 - #40 (
-INFO  06:19:32,280 - #48 inc
-INFO  06:19:32,280 - #28 ==
-INFO  06:19:32,280 - #48 jedan
-INFO  06:19:32,281 - #41 )
-INFO  06:19:32,281 - #48 pom
-INFO  06:19:32,281 - #27 =
-INFO  06:19:32,281 - #51 1
-INFO  06:19:32,281 - #38 ;
-INFO  06:19:32,282 - #6 else
-INFO  06:19:32,282 - #5 if
-INFO  06:19:32,282 - #40 (
-INFO  06:19:32,282 - #48 inc
-INFO  06:19:32,282 - #28 ==
-INFO  06:19:32,283 - #51 2
-INFO  06:19:32,283 - #41 )
-INFO  06:19:32,283 - #48 pom
-INFO  06:19:32,283 - #27 =
-INFO  06:19:32,283 - #48 a
-INFO  06:19:32,283 - #38 ;
-INFO  06:19:32,283 - #15 return
-INFO  06:19:32,283 - #48 sum
-INFO  06:19:32,283 - #40 (
-INFO  06:19:32,283 - #48 a
-INFO  06:19:32,283 - #39 ,
-INFO  06:19:32,284 - #48 pom
-INFO  06:19:32,284 - #41 )
-INFO  06:19:32,284 - #38 ;
-INFO  06:19:32,284 - #45 }
-INFO  06:19:32,284 - #48 bool
-INFO  06:19:32,284 - #48 verify
-INFO  06:19:32,284 - #40 (
-INFO  06:19:32,284 - #41 )
-INFO  06:19:32,284 - #44 {
-INFO  06:19:32,284 - #12 print
-INFO  06:19:32,284 - #40 (
-INFO  06:19:32,284 - #50 v
-INFO  06:19:32,284 - #41 )
-INFO  06:19:32,286 - #38 ;
-INFO  06:19:32,286 - #15 return
-INFO  06:19:32,286 - #49 false
-INFO  06:19:32,286 - #38 ;
-INFO  06:19:32,287 - #45 }
-INFO  06:19:32,287 - #14 void
-INFO  06:19:32,287 - #48 main
-INFO  06:19:32,287 - #40 (
-INFO  06:19:32,287 - #41 )
-INFO  06:19:32,287 - #44 {
-INFO  06:19:32,287 - #5 if
-INFO  06:19:32,287 - #40 (
-INFO  06:19:32,288 - #51 1
-INFO  06:19:32,288 - #29 !=
-INFO  06:19:32,288 - #51 1
-INFO  06:19:32,288 - #41 )
-INFO  06:19:32,288 - #12 print
-INFO  06:19:32,288 - #40 (
-INFO  06:19:32,288 - #23 -
-INFO  06:19:32,288 - #51 6
-INFO  06:19:32,288 - #41 )
-INFO  06:19:32,289 - #38 ;
-INFO  06:19:32,289 - #6 else
-INFO  06:19:32,289 - #12 print
-INFO  06:19:32,289 - #40 (
-INFO  06:19:32,289 - #51 0
-INFO  06:19:32,289 - #41 )
-INFO  06:19:32,289 - #38 ;
-INFO  06:19:32,289 - #48 ibool
-INFO  06:19:32,289 - #27 =
-INFO  06:19:32,289 - #49 false
-INFO  06:19:32,289 - #38 ;
-INFO  06:19:32,289 - #48 i
-INFO  06:19:32,289 - #27 =
-INFO  06:19:32,290 - #51 0
-INFO  06:19:32,290 - #38 ;
-INFO  06:19:32,290 - #9 do
-INFO  06:19:32,290 - #44 {
-INFO  06:19:32,290 - #5 if
-INFO  06:19:32,290 - #40 (
-INFO  06:19:32,290 - #48 i
-INFO  06:19:32,290 - #28 ==
-INFO  06:19:32,290 - #51 2
-INFO  06:19:32,290 - #41 )
-INFO  06:19:32,290 - #48 ibool
-INFO  06:19:32,290 - #27 =
-INFO  06:19:32,290 - #49 true
-INFO  06:19:32,290 - #38 ;
-INFO  06:19:32,291 - #48 i
-INFO  06:19:32,291 - #36 ++
-INFO  06:19:32,291 - #38 ;
-INFO  06:19:32,291 - #45 }
-INFO  06:19:32,291 - #10 while
-INFO  06:19:32,291 - #40 (
-INFO  06:19:32,291 - #48 i
-INFO  06:19:32,291 - #32 <
-INFO  06:19:32,291 - #51 5
-INFO  06:19:32,292 - #41 )
-INFO  06:19:32,292 - #38 ;
-INFO  06:19:32,292 - #5 if
-INFO  06:19:32,292 - #40 (
-INFO  06:19:32,293 - #48 ibool
-INFO  06:19:32,293 - #41 )
-INFO  06:19:32,293 - #5 if
-INFO  06:19:32,293 - #40 (
-INFO  06:19:32,293 - #48 i
-INFO  06:19:32,293 - #28 ==
-INFO  06:19:32,293 - #51 5
-INFO  06:19:32,293 - #41 )
-INFO  06:19:32,293 - #12 print
-INFO  06:19:32,294 - #40 (
-INFO  06:19:32,294 - #51 1
-INFO  06:19:32,294 - #41 )
-INFO  06:19:32,294 - #38 ;
-INFO  06:19:32,294 - #6 else
-INFO  06:19:32,294 - #12 print
-INFO  06:19:32,294 - #40 (
-INFO  06:19:32,294 - #23 -
-INFO  06:19:32,294 - #51 1
-INFO  06:19:32,294 - #41 )
-INFO  06:19:32,294 - #38 ;
-INFO  06:19:32,294 - #48 t1
-INFO  06:19:32,294 - #27 =
-INFO  06:19:32,294 - #11 new
-INFO  06:19:32,294 - #48 Test
-INFO  06:19:32,294 - #38 ;
-ERROR 06:19:32,294 - 
-Sintaksna greska na liniji 55
-INFO  06:19:32,295 - #48 t1
-INFO  06:19:32,295 - #47 .
-INFO  06:19:32,295 - #48 a
-INFO  06:19:32,295 - #27 =
-INFO  06:19:32,295 - #51 2
-INFO  06:19:32,295 - #38 ;
-INFO  06:19:32,295 - #48 t1
-INFO  06:19:32,296 - #47 .
-INFO  06:19:32,296 - #48 niz
-INFO  06:19:32,296 - #27 =
-INFO  06:19:32,296 - #11 new
-INFO  06:19:32,296 - #48 int
-INFO  06:19:32,296 - #42 [
-INFO  06:19:32,296 - #51 3
-INFO  06:19:32,296 - #43 ]
-INFO  06:19:32,296 - #38 ;
-INFO  06:19:32,296 - #48 t1
-INFO  06:19:32,296 - #47 .
-INFO  06:19:32,296 - #48 niz
-INFO  06:19:32,296 - #42 [
-INFO  06:19:32,296 - #51 0
-INFO  06:19:32,296 - #43 ]
-INFO  06:19:32,296 - #27 =
-INFO  06:19:32,296 - #51 1
-INFO  06:19:32,296 - #24 *
-INFO  06:19:32,296 - #48 t1
-INFO  06:19:32,296 - #47 .
-INFO  06:19:32,297 - #48 a
-INFO  06:19:32,297 - #38 ;
-INFO  06:19:32,297 - #48 t1
-INFO  06:19:32,297 - #47 .
-INFO  06:19:32,297 - #48 niz
-INFO  06:19:32,297 - #42 [
-INFO  06:19:32,297 - #51 1
-INFO  06:19:32,297 - #43 ]
-INFO  06:19:32,297 - #27 =
-INFO  06:19:32,297 - #51 2
-INFO  06:19:32,297 - #24 *
-INFO  06:19:32,297 - #48 t1
-INFO  06:19:32,297 - #47 .
-INFO  06:19:32,297 - #48 a
-INFO  06:19:32,297 - #38 ;
-INFO  06:19:32,297 - #48 t1
-INFO  06:19:32,297 - #47 .
-INFO  06:19:32,297 - #48 niz
-INFO  06:19:32,297 - #42 [
-INFO  06:19:32,298 - #51 2
-INFO  06:19:32,298 - #43 ]
-INFO  06:19:32,298 - #27 =
-INFO  06:19:32,298 - #48 sum
-INFO  06:19:32,298 - #40 (
-INFO  06:19:32,298 - #48 t1
-INFO  06:19:32,298 - #47 .
-INFO  06:19:32,298 - #48 niz
-INFO  06:19:32,298 - #42 [
-INFO  06:19:32,298 - #51 1
-INFO  06:19:32,298 - #43 ]
-INFO  06:19:32,298 - #39 ,
-INFO  06:19:32,298 - #48 t1
-INFO  06:19:32,298 - #47 .
-INFO  06:19:32,298 - #48 niz
-INFO  06:19:32,298 - #42 [
-INFO  06:19:32,299 - #51 0
-INFO  06:19:32,299 - #43 ]
-INFO  06:19:32,299 - #41 )
-INFO  06:19:32,299 - #24 *
-INFO  06:19:32,300 - #48 t1
-INFO  06:19:32,300 - #47 .
-INFO  06:19:32,300 - #48 a
-INFO  06:19:32,300 - #22 +
-INFO  06:19:32,300 - #51 1
-INFO  06:19:32,300 - #38 ;
-INFO  06:19:32,309 - #5 if
-INFO  06:19:32,309 - #40 (
-INFO  06:19:32,309 - #48 verify
-ERROR 06:19:32,309 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
-INFO  06:19:32,310 - #40 (
-INFO  06:19:32,310 - #41 )
-INFO  06:19:32,311 - #35 ||
-INFO  06:19:32,311 - #48 t1
-INFO  06:19:32,311 - #47 .
-ERROR 06:19:32,311 - 
-Sintaksna greska na liniji 61
-INFO  06:19:32,311 - #48 niz
-INFO  06:19:32,311 - #42 [
-INFO  06:19:32,311 - #51 2
-INFO  06:19:32,311 - #43 ]
-INFO  06:19:32,311 - #28 ==
-INFO  06:19:32,312 - #51 4
-INFO  06:19:32,312 - #41 )
-INFO  06:19:32,312 - #12 print
-INFO  06:19:32,312 - #40 (
-INFO  06:19:32,312 - #48 ord
-ERROR 06:19:32,312 - Izvrsen oporovak prilikom greske u logickom izrazu unutar if naredbe do ) u liniji 61
-INFO  06:19:32,312 - #40 (
-INFO  06:19:32,312 - #50 A
-INFO  06:19:32,313 - #41 )
-INFO  06:19:32,313 - #41 )
-INFO  06:19:32,313 - #38 ;
-INFO  06:19:32,313 - #6 else
-INFO  06:19:32,313 - #12 print
-INFO  06:19:32,313 - #40 (
-INFO  06:19:32,313 - #48 ord
-INFO  06:19:32,313 - #40 (
-INFO  06:19:32,313 - #50 a
-INFO  06:19:32,313 - #41 )
-INFO  06:19:32,313 - #41 )
-INFO  06:19:32,314 - #38 ;
-INFO  06:19:32,314 - #12 print
-INFO  06:19:32,314 - #40 (
-INFO  06:19:32,314 - #48 eol
-INFO  06:19:32,314 - #41 )
-INFO  06:19:32,314 - #38 ;
-INFO  06:19:32,314 - #48 i
-INFO  06:19:32,314 - #27 =
-INFO  06:19:32,314 - #51 0
-INFO  06:19:32,314 - #38 ;
-INFO  06:19:32,314 - #9 do
-INFO  06:19:32,314 - #44 {
-INFO  06:19:32,315 - #5 if
-INFO  06:19:32,315 - #40 (
-INFO  06:19:32,315 - #48 i
-INFO  06:19:32,315 - #28 ==
-INFO  06:19:32,315 - #51 3
-INFO  06:19:32,315 - #41 )
-INFO  06:19:32,315 - #44 {
-INFO  06:19:32,315 - #48 i
-INFO  06:19:32,315 - #36 ++
-INFO  06:19:32,315 - #38 ;
-INFO  06:19:32,315 - #4 continue
-INFO  06:19:32,315 - #38 ;
-INFO  06:19:32,315 - #45 }
-INFO  06:19:32,316 - #5 if
-INFO  06:19:32,316 - #40 (
-INFO  06:19:32,316 - #48 i
-INFO  06:19:32,316 - #28 ==
-INFO  06:19:32,316 - #51 4
-INFO  06:19:32,317 - #41 )
-INFO  06:19:32,317 - #3 break
-INFO  06:19:32,317 - #38 ;
-INFO  06:19:32,318 - #48 i
-INFO  06:19:32,319 - #27 =
-INFO  06:19:32,319 - #48 inkrement
-INFO  06:19:32,319 - #40 (
-INFO  06:19:32,319 - #48 i
-INFO  06:19:32,319 - #39 ,
-INFO  06:19:32,319 - #51 1
-INFO  06:19:32,319 - #41 )
-INFO  06:19:32,319 - #38 ;
-INFO  06:19:32,319 - #45 }
-INFO  06:19:32,319 - #10 while
-INFO  06:19:32,319 - #40 (
-INFO  06:19:32,319 - #48 i
-INFO  06:19:32,319 - #32 <
-INFO  06:19:32,319 - #51 10
-INFO  06:19:32,319 - #41 )
-INFO  06:19:32,320 - #38 ;
-INFO  06:19:32,320 - #5 if
-INFO  06:19:32,320 - #40 (
-INFO  06:19:32,320 - #48 i
-INFO  06:19:32,320 - #28 ==
-INFO  06:19:32,320 - #51 3
-INFO  06:19:32,320 - #34 &&
-INFO  06:19:32,320 - #48 verify
-INFO  06:19:32,320 - #40 (
-INFO  06:19:32,320 - #41 )
-INFO  06:19:32,320 - #41 )
-INFO  06:19:32,320 - #12 print
-INFO  06:19:32,320 - #40 (
-INFO  06:19:32,320 - #23 -
-INFO  06:19:32,320 - #51 4
-INFO  06:19:32,320 - #41 )
-INFO  06:19:32,320 - #38 ;
-INFO  06:19:32,320 - #6 else
-INFO  06:19:32,320 - #12 print
-INFO  06:19:32,320 - #40 (
-INFO  06:19:32,320 - #51 4
-INFO  06:19:32,320 - #41 )
-INFO  06:19:32,320 - #38 ;
-INFO  06:19:32,320 - #13 read
-INFO  06:19:32,320 - #40 (
-INFO  06:19:32,321 - #48 t1
-INFO  06:19:32,321 - #47 .
-ERROR 06:19:32,321 - 
-Sintaksna greska na liniji 79
-INFO  06:19:32,321 - #48 niz
-INFO  06:19:32,321 - #42 [
-INFO  06:19:32,321 - #51 0
-INFO  06:19:32,321 - #43 ]
-INFO  06:19:32,321 - #41 )
-INFO  06:19:32,321 - #38 ;
-INFO  06:19:32,321 - #13 read
-INFO  06:19:32,321 - #40 (
-INFO  06:19:32,321 - #48 t1
-ERROR 06:19:32,321 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
-INFO  06:19:32,321 - #47 .
-ERROR 06:19:32,321 - 
-Sintaksna greska na liniji 80
-INFO  06:19:32,321 - #48 niz
-INFO  06:19:32,322 - #42 [
-INFO  06:19:32,322 - #51 1
-INFO  06:19:32,322 - #43 ]
-INFO  06:19:32,322 - #41 )
-INFO  06:19:32,322 - #38 ;
-INFO  06:19:32,322 - #13 read
-INFO  06:19:32,322 - #40 (
-INFO  06:19:32,322 - #48 t1
-ERROR 06:19:32,322 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
-INFO  06:19:32,322 - #47 .
-ERROR 06:19:32,322 - 
-Sintaksna greska na liniji 81
-INFO  06:19:32,322 - #48 niz
-INFO  06:19:32,326 - #42 [
-INFO  06:19:32,326 - #51 2
-INFO  06:19:32,326 - #43 ]
-INFO  06:19:32,327 - #41 )
-INFO  06:19:32,327 - #38 ;
-INFO  06:19:32,327 - #12 print
-INFO  06:19:32,327 - #40 (
-INFO  06:19:32,327 - #48 eol
-ERROR 06:19:32,327 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
-INFO  06:19:32,327 - #41 )
-INFO  06:19:32,327 - #38 ;
-INFO  06:19:32,327 - #12 print
-INFO  06:19:32,328 - #40 (
-INFO  06:19:32,328 - #48 sum
-INFO  06:19:32,328 - #40 (
-INFO  06:19:32,328 - #48 sum
-INFO  06:19:32,328 - #40 (
-INFO  06:19:32,328 - #48 t1
-INFO  06:19:32,328 - #47 .
-ERROR 06:19:32,329 - 
-Sintaksna greska na liniji 84
-INFO  06:19:32,329 - #48 niz
-INFO  06:19:32,329 - #42 [
-INFO  06:19:32,329 - #51 0
-INFO  06:19:32,329 - #43 ]
-INFO  06:19:32,329 - #39 ,
-INFO  06:19:32,329 - #48 t1
-INFO  06:19:32,329 - #47 .
-INFO  06:19:32,329 - #48 niz
-INFO  06:19:32,329 - #42 [
-INFO  06:19:32,329 - #51 1
-INFO  06:19:32,329 - #43 ]
-INFO  06:19:32,330 - #41 )
-INFO  06:19:32,330 - #39 ,
-INFO  06:19:32,330 - #48 t1
-INFO  06:19:32,330 - #47 .
-INFO  06:19:32,330 - #48 niz
-INFO  06:19:32,330 - #42 [
-INFO  06:19:32,330 - #51 2
-INFO  06:19:32,330 - #43 ]
-INFO  06:19:32,330 - #41 )
-INFO  06:19:32,330 - #41 )
-INFO  06:19:32,330 - #38 ;
-INFO  06:19:32,330 - #12 print
-INFO  06:19:32,330 - #40 (
-INFO  06:19:32,330 - #48 eol
-ERROR 06:19:32,330 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
-INFO  06:19:32,330 - #41 )
-INFO  06:19:32,330 - #38 ;
-INFO  06:19:32,330 - #12 print
-INFO  06:19:32,330 - #40 (
-INFO  06:19:32,330 - #48 inkrement
-INFO  06:19:32,331 - #40 (
-INFO  06:19:32,331 - #48 t1
-INFO  06:19:32,331 - #47 .
-ERROR 06:19:32,331 - 
-Sintaksna greska na liniji 87
-INFO  06:19:32,331 - #48 niz
-INFO  06:19:32,331 - #42 [
-INFO  06:19:32,331 - #51 2
-INFO  06:19:32,331 - #43 ]
-INFO  06:19:32,331 - #39 ,
-INFO  06:19:32,331 - #51 2
-INFO  06:19:32,331 - #41 )
-INFO  06:19:32,331 - #41 )
-INFO  06:19:32,331 - #38 ;
-INFO  06:19:32,331 - #48 t2
-INFO  06:19:32,331 - #27 =
-INFO  06:19:32,331 - #11 new
-ERROR 06:19:32,331 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
-INFO  06:19:32,331 - #48 Test
-INFO  06:19:32,331 - #38 ;
-ERROR 06:19:32,331 - 
-Sintaksna greska na liniji 89
-INFO  06:19:32,332 - #48 t2
-INFO  06:19:32,332 - #47 .
-INFO  06:19:32,332 - #48 a
-INFO  06:19:32,332 - #27 =
-INFO  06:19:32,332 - #51 3
-INFO  06:19:32,332 - #38 ;
-INFO  06:19:32,332 - #48 t2
-INFO  06:19:32,332 - #47 .
-INFO  06:19:32,332 - #48 niz
-INFO  06:19:32,332 - #27 =
-INFO  06:19:32,332 - #11 new
-INFO  06:19:32,332 - #48 int
-INFO  06:19:32,333 - #42 [
-INFO  06:19:32,333 - #51 3
-INFO  06:19:32,333 - #43 ]
-INFO  06:19:32,333 - #38 ;
-INFO  06:19:32,333 - #48 i
-INFO  06:19:32,334 - #27 =
-INFO  06:19:32,334 - #51 0
-ERROR 06:19:32,334 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
-INFO  06:19:32,334 - #38 ;
-INFO  06:19:32,334 - #9 do
-INFO  06:19:32,334 - #44 {
-INFO  06:19:32,334 - #48 t2
-INFO  06:19:32,334 - #47 .
-ERROR 06:19:32,334 - 
-Sintaksna greska na liniji 94
-INFO  06:19:32,334 - #48 niz
-INFO  06:19:32,334 - #42 [
-INFO  06:19:32,334 - #48 i
-INFO  06:19:32,335 - #43 ]
-INFO  06:19:32,335 - #27 =
-INFO  06:19:32,335 - #48 t1
-INFO  06:19:32,338 - #47 .
-INFO  06:19:32,338 - #48 niz
-INFO  06:19:32,338 - #42 [
-INFO  06:19:32,338 - #48 i
-INFO  06:19:32,339 - #43 ]
-INFO  06:19:32,339 - #24 *
-INFO  06:19:32,339 - #51 2
-INFO  06:19:32,339 - #24 *
-INFO  06:19:32,339 - #48 t2
-INFO  06:19:32,339 - #47 .
-INFO  06:19:32,339 - #48 a
-INFO  06:19:32,339 - #38 ;
-INFO  06:19:32,339 - #48 i
-INFO  06:19:32,340 - #36 ++
-INFO  06:19:32,342 - #38 ;
-ERROR 06:19:32,342 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 4
-INFO  06:19:32,342 - #45 }
-INFO  06:19:32,342 - #10 while
-INFO  06:19:32,342 - #40 (
-INFO  06:19:32,343 - #48 i
-INFO  06:19:32,343 - #32 <
-INFO  06:19:32,343 - #51 3
-INFO  06:19:32,343 - #41 )
-INFO  06:19:32,343 - #38 ;
-INFO  06:19:32,343 - #12 print
-INFO  06:19:32,343 - #40 (
-INFO  06:19:32,344 - #48 t2
-INFO  06:19:32,344 - #47 .
-ERROR 06:19:32,344 - 
-Sintaksna greska na liniji 97
-INFO  06:19:32,344 - #48 niz
-INFO  06:19:32,345 - #42 [
-INFO  06:19:32,345 - #51 0
-INFO  06:19:32,345 - #43 ]
-INFO  06:19:32,346 - #41 )
-INFO  06:19:32,347 - #38 ;
-INFO  06:19:32,347 - #12 print
-INFO  06:19:32,347 - #40 (
-INFO  06:19:32,347 - #48 t2
-ERROR 06:19:32,347 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
-INFO  06:19:32,347 - #47 .
-ERROR 06:19:32,347 - 
-Sintaksna greska na liniji 98
-INFO  06:19:32,347 - #48 niz
-INFO  06:19:32,348 - #42 [
-INFO  06:19:32,348 - #51 1
-INFO  06:19:32,348 - #43 ]
-INFO  06:19:32,348 - #41 )
-INFO  06:19:32,348 - #38 ;
-INFO  06:19:32,348 - #12 print
-INFO  06:19:32,348 - #40 (
-INFO  06:19:32,348 - #48 t2
-ERROR 06:19:32,348 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
-INFO  06:19:32,348 - #47 .
-ERROR 06:19:32,348 - 
-Sintaksna greska na liniji 99
-INFO  06:19:32,348 - #48 niz
-INFO  06:19:32,348 - #42 [
-INFO  06:19:32,348 - #51 2
-INFO  06:19:32,349 - #43 ]
-INFO  06:19:32,349 - #41 )
-INFO  06:19:32,349 - #38 ;
-INFO  06:19:32,349 - #12 print
-INFO  06:19:32,349 - #40 (
-INFO  06:19:32,349 - #48 eol
-ERROR 06:19:32,349 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
-INFO  06:19:32,349 - #41 )
-INFO  06:19:32,349 - #38 ;
-INFO  06:19:32,349 - #48 i
-INFO  06:19:32,350 - #27 =
-INFO  06:19:32,350 - #51 0
-INFO  06:19:32,350 - #38 ;
-INFO  06:19:32,350 - #48 niz2
-INFO  06:19:32,350 - #27 =
-INFO  06:19:32,350 - #51 0
-INFO  06:19:32,350 - #38 ;
-INFO  06:19:32,350 - #9 do
-INFO  06:19:32,350 - #44 {
-INFO  06:19:32,350 - #48 niz2
-INFO  06:19:32,350 - #27 =
-INFO  06:19:32,350 - #48 niz2
-INFO  06:19:32,350 - #22 +
-INFO  06:19:32,351 - #48 t1
-INFO  06:19:32,351 - #47 .
-ERROR 06:19:32,351 - 
-Sintaksna greska na liniji 105
-INFO  06:19:32,351 - #48 niz
-INFO  06:19:32,351 - #42 [
-INFO  06:19:32,351 - #48 i
-INFO  06:19:32,351 - #43 ]
-INFO  06:19:32,351 - #24 *
-INFO  06:19:32,351 - #48 t2
-INFO  06:19:32,351 - #47 .
-INFO  06:19:32,351 - #48 niz
-INFO  06:19:32,351 - #42 [
-INFO  06:19:32,351 - #48 i
-INFO  06:19:32,351 - #43 ]
-INFO  06:19:32,351 - #38 ;
-INFO  06:19:32,352 - #48 i
-INFO  06:19:32,352 - #36 ++
-INFO  06:19:32,352 - #38 ;
-ERROR 06:19:32,352 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 4
-INFO  06:19:32,352 - #45 }
-INFO  06:19:32,352 - #10 while
-INFO  06:19:32,352 - #40 (
-INFO  06:19:32,352 - #48 i
-INFO  06:19:32,352 - #32 <
-INFO  06:19:32,352 - #51 3
-INFO  06:19:32,352 - #41 )
-INFO  06:19:32,352 - #38 ;
-INFO  06:19:32,353 - #12 print
-INFO  06:19:32,353 - #40 (
-INFO  06:19:32,353 - #48 niz2
-INFO  06:19:32,353 - #41 )
-INFO  06:19:32,353 - #38 ;
-INFO  06:19:32,353 - #12 print
-INFO  06:19:32,353 - #40 (
-INFO  06:19:32,353 - #48 eol
-INFO  06:19:32,353 - #41 )
-INFO  06:19:32,353 - #38 ;
-INFO  06:19:32,353 - #45 }
-INFO  06:19:32,353 - #45 }
-INFO  06:19:32,435 - Program(
+INFO  02:54:44,730 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  02:54:44,748 - #2 program
+INFO  02:54:44,748 - #48 test302
+INFO  02:54:44,748 - #48 int
+INFO  02:54:44,748 - #48 x
+INFO  02:54:44,749 - #39 ,
+INFO  02:54:44,749 - #48 y
+INFO  02:54:44,749 - #39 ,
+INFO  02:54:44,749 - #48 z
+INFO  02:54:44,749 - #38 ;
+INFO  02:54:44,749 - #48 int
+INFO  02:54:44,749 - #48 x
+INFO  02:54:44,749 - #38 ;
+INFO  02:54:44,750 - #48 char
+INFO  02:54:44,750 - #48 c
+INFO  02:54:44,750 - #39 ,
+INFO  02:54:44,750 - #48 a
+INFO  02:54:44,750 - #39 ,
+INFO  02:54:44,750 - #48 b
+INFO  02:54:44,750 - #38 ;
+INFO  02:54:44,750 - #16 record
+INFO  02:54:44,750 - #48 rec
+INFO  02:54:44,750 - #44 {
+INFO  02:54:44,759 - #48 int
+INFO  02:54:44,759 - #48 xx
+INFO  02:54:44,759 - #39 ,
+INFO  02:54:44,759 - #48 yy
+INFO  02:54:44,759 - #39 ,
+INFO  02:54:44,759 - #48 zz
+INFO  02:54:44,759 - #38 ;
+INFO  02:54:44,759 - #48 char
+INFO  02:54:44,760 - #48 aa
+INFO  02:54:44,760 - #39 ,
+INFO  02:54:44,760 - #48 bb
+INFO  02:54:44,760 - #39 ,
+INFO  02:54:44,760 - #48 cc
+INFO  02:54:44,760 - #38 ;
+INFO  02:54:44,760 - #48 int
+INFO  02:54:44,760 - #48 o
+INFO  02:54:44,760 - #42 [
+INFO  02:54:44,760 - #43 ]
+INFO  02:54:44,760 - #39 ,
+INFO  02:54:44,760 - #48 z
+INFO  02:54:44,760 - #42 [
+INFO  02:54:44,760 - #43 ]
+INFO  02:54:44,760 - #38 ;
+INFO  02:54:44,760 - #48 bool
+INFO  02:54:44,760 - #48 a
+INFO  02:54:44,760 - #39 ,
+INFO  02:54:44,760 - #48 x
+INFO  02:54:44,760 - #38 ;
+INFO  02:54:44,760 - #45 }
+INFO  02:54:44,760 - #44 {
+INFO  02:54:44,761 - #14 void
+INFO  02:54:44,761 - #48 m1
+INFO  02:54:44,761 - #40 (
+INFO  02:54:44,761 - #48 int
+INFO  02:54:44,761 - #48 a
+INFO  02:54:44,761 - #39 ,
+INFO  02:54:44,761 - #48 int
+INFO  02:54:44,761 - #48 b
+INFO  02:54:44,761 - #39 ,
+INFO  02:54:44,761 - #48 int
+INFO  02:54:44,761 - #48 c
+INFO  02:54:44,761 - #39 ,
+INFO  02:54:44,761 - #48 int
+INFO  02:54:44,761 - #48 d
+INFO  02:54:44,761 - #39 ,
+INFO  02:54:44,762 - #48 int
+INFO  02:54:44,762 - #47 .
+INFO  02:54:44,762 - #47 .
+INFO  02:54:44,762 - #47 .
+INFO  02:54:44,762 - #48 p1
+INFO  02:54:44,762 - #41 )
+INFO  02:54:44,762 - #48 int
+INFO  02:54:44,762 - #48 xy
+INFO  02:54:44,762 - #39 ,
+INFO  02:54:44,762 - #48 zc
+INFO  02:54:44,762 - #38 ;
+INFO  02:54:44,762 - #44 {
+INFO  02:54:44,762 - #48 int
+INFO  02:54:44,762 - #48 xx
+ERROR 02:54:44,762 - 
+Sintaksna greska na liniji 22
+INFO  02:54:44,762 - #38 ;
+INFO  02:54:44,762 - #48 rec
+INFO  02:54:44,762 - #47 .
+INFO  02:54:44,763 - #48 xx
+ERROR 02:54:44,763 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
+INFO  02:54:44,763 - #27 =
+INFO  02:54:44,763 - #51 4
+INFO  02:54:44,763 - #38 ;
+INFO  02:54:44,764 - #48 rec
+INFO  02:54:44,764 - #47 .
+INFO  02:54:44,764 - #48 o
+INFO  02:54:44,764 - #42 [
+INFO  02:54:44,764 - #51 2
+INFO  02:54:44,764 - #43 ]
+INFO  02:54:44,764 - #27 =
+INFO  02:54:44,764 - #51 3
+INFO  02:54:44,764 - #38 ;
+INFO  02:54:44,764 - #48 rec
+INFO  02:54:44,764 - #47 .
+INFO  02:54:44,764 - #48 o
+INFO  02:54:44,764 - #42 [
+INFO  02:54:44,764 - #51 4
+INFO  02:54:44,764 - #43 ]
+INFO  02:54:44,764 - #27 =
+INFO  02:54:44,764 - #51 4
+INFO  02:54:44,764 - #38 ;
+INFO  02:54:44,764 - #45 }
+INFO  02:54:44,764 - #14 void
+INFO  02:54:44,765 - #48 m2
+INFO  02:54:44,765 - #40 (
+INFO  02:54:44,765 - #48 int
+INFO  02:54:44,765 - #48 a
+INFO  02:54:44,765 - #39 ,
+INFO  02:54:44,765 - #48 int
+INFO  02:54:44,765 - #48 b
+INFO  02:54:44,765 - #39 ,
+INFO  02:54:44,765 - #48 int
+INFO  02:54:44,765 - #47 .
+INFO  02:54:44,765 - #47 .
+INFO  02:54:44,765 - #47 .
+INFO  02:54:44,765 - #48 p
+INFO  02:54:44,765 - #39 ,
+ERROR 02:54:44,765 - 
+Sintaksna greska na liniji 28
+INFO  02:54:44,765 - #48 int
+INFO  02:54:44,765 - #48 p
+INFO  02:54:44,765 - #41 )
+ERROR 02:54:44,765 - Izvrsen oporovak prilikom greske u formalnom parametru do , ili ) u liniji 28
+INFO  02:54:44,766 - #44 {
+INFO  02:54:44,766 - #45 }
+INFO  02:54:44,766 - #45 }
+INFO  02:54:44,766 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
   AllDeclListMultiple(
     AllDeclListMultiple(
       AllDeclListMultiple(
         AllDeclListMultiple(
-          AllDeclListMultiple(
-            AllDeclListMultiple(
-              NoDecl(
-              ) [NoDecl]
-              ConstDeclaration(
-                ConstDeclarationExpr(
-                  Type(
-                  ) [Type]
-                  ConstAssignSingle(
-                    ConstAssign(
-                      NumberConst(
-                      ) [NumberConst]
-                    ) [ConstAssign]
-                  ) [ConstAssignSingle]
-                ) [ConstDeclarationExpr]
-              ) [ConstDeclaration]
-            ) [AllDeclListMultiple]
-            GlobalVarDeclaration(
-              GlobalVarDeclarationExpr(
-                Type(
-                ) [Type]
-                GlobalVarDeclListSingle(
-                  GlobalVarDeclarationSingle(
-                    NoArray(
-                    ) [NoArray]
-                  ) [GlobalVarDeclarationSingle]
-                ) [GlobalVarDeclListSingle]
-              ) [GlobalVarDeclarationExpr]
-            ) [GlobalVarDeclaration]
-          ) [AllDeclListMultiple]
+          NoDecl(
+          ) [NoDecl]
           GlobalVarDeclaration(
             GlobalVarDeclarationExpr(
               Type(
+               int
               ) [Type]
-              GlobalVarDeclListSingle(
+              GlobalVarDeclListMultiple(
+                GlobalVarDeclListMultiple(
+                  GlobalVarDeclListSingle(
+                    GlobalVarDeclarationSingle(
+                     x
+                      NoArray(
+                      ) [NoArray]
+                    ) [GlobalVarDeclarationSingle]
+                  ) [GlobalVarDeclListSingle]
+                  GlobalVarDeclarationSingle(
+                   y
+                    NoArray(
+                    ) [NoArray]
+                  ) [GlobalVarDeclarationSingle]
+                ) [GlobalVarDeclListMultiple]
                 GlobalVarDeclarationSingle(
+                 z
                   NoArray(
                   ) [NoArray]
                 ) [GlobalVarDeclarationSingle]
-              ) [GlobalVarDeclListSingle]
+              ) [GlobalVarDeclListMultiple]
             ) [GlobalVarDeclarationExpr]
           ) [GlobalVarDeclaration]
         ) [AllDeclListMultiple]
         GlobalVarDeclaration(
           GlobalVarDeclarationExpr(
             Type(
+             int
             ) [Type]
             GlobalVarDeclListSingle(
               GlobalVarDeclarationSingle(
+               x
                 NoArray(
                 ) [NoArray]
               ) [GlobalVarDeclarationSingle]
@@ -692,1340 +187,229 @@ INFO  06:19:32,435 - Program(
           ) [GlobalVarDeclarationExpr]
         ) [GlobalVarDeclaration]
       ) [AllDeclListMultiple]
-      RecordDeclaration(
-        RecordDeclarationExpr(
+      GlobalVarDeclaration(
+        GlobalVarDeclarationExpr(
+          Type(
+           char
+          ) [Type]
+          GlobalVarDeclListMultiple(
+            GlobalVarDeclListMultiple(
+              GlobalVarDeclListSingle(
+                GlobalVarDeclarationSingle(
+                 c
+                  NoArray(
+                  ) [NoArray]
+                ) [GlobalVarDeclarationSingle]
+              ) [GlobalVarDeclListSingle]
+              GlobalVarDeclarationSingle(
+               a
+                NoArray(
+                ) [NoArray]
+              ) [GlobalVarDeclarationSingle]
+            ) [GlobalVarDeclListMultiple]
+            GlobalVarDeclarationSingle(
+             b
+              NoArray(
+              ) [NoArray]
+            ) [GlobalVarDeclarationSingle]
+          ) [GlobalVarDeclListMultiple]
+        ) [GlobalVarDeclarationExpr]
+      ) [GlobalVarDeclaration]
+    ) [AllDeclListMultiple]
+    RecordDeclaration(
+      RecordDeclarationExpr(
+       rec
+        VarDeclOptionTrue(
           VarDeclOptionTrue(
             VarDeclOptionTrue(
-              NoVarDeclOption(
-              ) [NoVarDeclOption]
+              VarDeclOptionTrue(
+                NoVarDeclOption(
+                ) [NoVarDeclOption]
+                VarDeclarationExpr(
+                  Type(
+                   int
+                  ) [Type]
+                  VarDeclListMultiple(
+                    VarDeclListMultiple(
+                      VarDeclListSingle(
+                        VarDeclSingle(
+                         xx
+                          NoArray(
+                          ) [NoArray]
+                        ) [VarDeclSingle]
+                      ) [VarDeclListSingle]
+                      VarDeclSingle(
+                       yy
+                        NoArray(
+                        ) [NoArray]
+                      ) [VarDeclSingle]
+                    ) [VarDeclListMultiple]
+                    VarDeclSingle(
+                     zz
+                      NoArray(
+                      ) [NoArray]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListMultiple]
+                ) [VarDeclarationExpr]
+              ) [VarDeclOptionTrue]
               VarDeclarationExpr(
                 Type(
+                 char
                 ) [Type]
-                VarDeclListSingle(
+                VarDeclListMultiple(
+                  VarDeclListMultiple(
+                    VarDeclListSingle(
+                      VarDeclSingle(
+                       aa
+                        NoArray(
+                        ) [NoArray]
+                      ) [VarDeclSingle]
+                    ) [VarDeclListSingle]
+                    VarDeclSingle(
+                     bb
+                      NoArray(
+                      ) [NoArray]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListMultiple]
                   VarDeclSingle(
-                    ArrayBrackets(
-                    ) [ArrayBrackets]
+                   cc
+                    NoArray(
+                    ) [NoArray]
                   ) [VarDeclSingle]
-                ) [VarDeclListSingle]
+                ) [VarDeclListMultiple]
               ) [VarDeclarationExpr]
             ) [VarDeclOptionTrue]
             VarDeclarationExpr(
               Type(
+               int
               ) [Type]
+              VarDeclListMultiple(
+                VarDeclListSingle(
+                  VarDeclSingle(
+                   o
+                    ArrayBrackets(
+                    ) [ArrayBrackets]
+                  ) [VarDeclSingle]
+                ) [VarDeclListSingle]
+                VarDeclSingle(
+                 z
+                  ArrayBrackets(
+                  ) [ArrayBrackets]
+                ) [VarDeclSingle]
+              ) [VarDeclListMultiple]
+            ) [VarDeclarationExpr]
+          ) [VarDeclOptionTrue]
+          VarDeclarationExpr(
+            Type(
+             bool
+            ) [Type]
+            VarDeclListMultiple(
               VarDeclListSingle(
                 VarDeclSingle(
+                 a
                   NoArray(
                   ) [NoArray]
                 ) [VarDeclSingle]
               ) [VarDeclListSingle]
-            ) [VarDeclarationExpr]
-          ) [VarDeclOptionTrue]
-        ) [RecordDeclarationExpr]
-      ) [RecordDeclaration]
-    ) [AllDeclListMultiple]
-    GlobalVarDeclaration(
-      GlobalVarDeclarationExpr(
-        Type(
-        ) [Type]
-        GlobalVarDeclListMultiple(
-          GlobalVarDeclListSingle(
-            GlobalVarDeclarationSingle(
-              NoArray(
-              ) [NoArray]
-            ) [GlobalVarDeclarationSingle]
-          ) [GlobalVarDeclListSingle]
-          GlobalVarDeclarationSingle(
-            NoArray(
-            ) [NoArray]
-          ) [GlobalVarDeclarationSingle]
-        ) [GlobalVarDeclListMultiple]
-      ) [GlobalVarDeclarationExpr]
-    ) [GlobalVarDeclaration]
+              VarDeclSingle(
+               x
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclSingle]
+            ) [VarDeclListMultiple]
+          ) [VarDeclarationExpr]
+        ) [VarDeclOptionTrue]
+      ) [RecordDeclarationExpr]
+    ) [RecordDeclaration]
   ) [AllDeclListMultiple]
   MethodDeclListMultiple(
     MethodDeclListMultiple(
-      MethodDeclListMultiple(
-        MethodDeclListMultiple(
-          MethodDeclListNo(
-          ) [MethodDeclListNo]
-          MethodDeclarationParsExpr(
-            MethodTypeType(
-              Type(
-              ) [Type]
-            ) [MethodTypeType]
+      MethodDeclListNo(
+      ) [MethodDeclListNo]
+      MethodDeclarationVarArgsExpr(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+       m1
+        FormParsMultiple(
+          FormParsMultiple(
             FormParsMultiple(
               FormParsSingle(
                 FormParSingle(
                   Type(
+                   int
                   ) [Type]
+                 a
                   NoArray(
                   ) [NoArray]
                 ) [FormParSingle]
               ) [FormParsSingle]
               FormParSingle(
                 Type(
+                 int
                 ) [Type]
+               b
                 NoArray(
                 ) [NoArray]
               ) [FormParSingle]
             ) [FormParsMultiple]
-            NoVarDeclOption(
-            ) [NoVarDeclOption]
-            StatementListMultiple(
-              StatementListNo(
-              ) [StatementListNo]
-              StatementSingle(
-                SingleReturnExprStatement(
-                  ExprPositive(
-                    TermMultiple(
-                      DesignatorEmptyFactor(
-                        IdentDesignator(
-                        ) [IdentDesignator]
-                      ) [DesignatorEmptyFactor]
-                      MulopFactorListNo(
-                      ) [MulopFactorListNo]
-                    ) [TermMultiple]
-                    AddopTermListMultiple(
-                      AddopTermListNo(
-                      ) [AddopTermListNo]
-                      AddopPlus(
-                      ) [AddopPlus]
-                      TermMultiple(
-                        DesignatorEmptyFactor(
-                          IdentDesignator(
-                          ) [IdentDesignator]
-                        ) [DesignatorEmptyFactor]
-                        MulopFactorListNo(
-                        ) [MulopFactorListNo]
-                      ) [TermMultiple]
-                    ) [AddopTermListMultiple]
-                  ) [ExprPositive]
-                ) [SingleReturnExprStatement]
-              ) [StatementSingle]
-            ) [StatementListMultiple]
-          ) [MethodDeclarationParsExpr]
-        ) [MethodDeclListMultiple]
-        MethodDeclarationParsExpr(
-          MethodTypeType(
-            Type(
-            ) [Type]
-          ) [MethodTypeType]
-          FormParsMultiple(
-            FormParsSingle(
-              FormParSingle(
-                Type(
-                ) [Type]
-                NoArray(
-                ) [NoArray]
-              ) [FormParSingle]
-            ) [FormParsSingle]
             FormParSingle(
               Type(
+               int
               ) [Type]
+             c
               NoArray(
               ) [NoArray]
             ) [FormParSingle]
           ) [FormParsMultiple]
-          VarDeclOptionTrue(
-            NoVarDeclOption(
-            ) [NoVarDeclOption]
-            VarDeclarationExpr(
-              Type(
-              ) [Type]
+          FormParSingle(
+            Type(
+             int
+            ) [Type]
+           d
+            NoArray(
+            ) [NoArray]
+          ) [FormParSingle]
+        ) [FormParsMultiple]
+        VarArgsDeclaration(
+          Type(
+           int
+          ) [Type]
+         p1
+        ) [VarArgsDeclaration]
+        VarDeclOptionTrue(
+          NoVarDeclOption(
+          ) [NoVarDeclOption]
+          VarDeclarationExpr(
+            Type(
+             int
+            ) [Type]
+            VarDeclListMultiple(
               VarDeclListSingle(
                 VarDeclSingle(
+                 xy
                   NoArray(
                   ) [NoArray]
                 ) [VarDeclSingle]
               ) [VarDeclListSingle]
-            ) [VarDeclarationExpr]
-          ) [VarDeclOptionTrue]
-          StatementListMultiple(
-            StatementListMultiple(
-              StatementListNo(
-              ) [StatementListNo]
-              StatementSingle(
-                IfElseStatement(
-                  IfConditionListSingle(
-                    CondTermListSingle(
-                      CondFactExprRelop(
-                        ExprPositive(
-                          TermMultiple(
-                            DesignatorEmptyFactor(
-                              IdentDesignator(
-                              ) [IdentDesignator]
-                            ) [DesignatorEmptyFactor]
-                            MulopFactorListNo(
-                            ) [MulopFactorListNo]
-                          ) [TermMultiple]
-                          AddopTermListNo(
-                          ) [AddopTermListNo]
-                        ) [ExprPositive]
-                        RelopEQUAL(
-                        ) [RelopEQUAL]
-                        ExprPositive(
-                          TermMultiple(
-                            DesignatorEmptyFactor(
-                              IdentDesignator(
-                              ) [IdentDesignator]
-                            ) [DesignatorEmptyFactor]
-                            MulopFactorListNo(
-                            ) [MulopFactorListNo]
-                          ) [TermMultiple]
-                          AddopTermListNo(
-                          ) [AddopTermListNo]
-                        ) [ExprPositive]
-                      ) [CondFactExprRelop]
-                    ) [CondTermListSingle]
-                  ) [IfConditionListSingle]
-                  StatementSingle(
-                    SingleDesignatorStatement(
-                      DesignatorStmtAssign(
-                        DesignatorStmtAssignDecl(
-                          IdentDesignator(
-                          ) [IdentDesignator]
-                          ExprPositive(
-                            TermMultiple(
-                              NumConstFactor(
-                              ) [NumConstFactor]
-                              MulopFactorListNo(
-                              ) [MulopFactorListNo]
-                            ) [TermMultiple]
-                            AddopTermListNo(
-                            ) [AddopTermListNo]
-                          ) [ExprPositive]
-                        ) [DesignatorStmtAssignDecl]
-                      ) [DesignatorStmtAssign]
-                    ) [SingleDesignatorStatement]
-                  ) [StatementSingle]
-                  StatementSingle(
-                    IfStatement(
-                      IfConditionListSingle(
-                        CondTermListSingle(
-                          CondFactExprRelop(
-                            ExprPositive(
-                              TermMultiple(
-                                DesignatorEmptyFactor(
-                                  IdentDesignator(
-                                  ) [IdentDesignator]
-                                ) [DesignatorEmptyFactor]
-                                MulopFactorListNo(
-                                ) [MulopFactorListNo]
-                              ) [TermMultiple]
-                              AddopTermListNo(
-                              ) [AddopTermListNo]
-                            ) [ExprPositive]
-                            RelopEQUAL(
-                            ) [RelopEQUAL]
-                            ExprPositive(
-                              TermMultiple(
-                                NumConstFactor(
-                                ) [NumConstFactor]
-                                MulopFactorListNo(
-                                ) [MulopFactorListNo]
-                              ) [TermMultiple]
-                              AddopTermListNo(
-                              ) [AddopTermListNo]
-                            ) [ExprPositive]
-                          ) [CondFactExprRelop]
-                        ) [CondTermListSingle]
-                      ) [IfConditionListSingle]
-                      StatementSingle(
-                        SingleDesignatorStatement(
-                          DesignatorStmtAssign(
-                            DesignatorStmtAssignDecl(
-                              IdentDesignator(
-                              ) [IdentDesignator]
-                              ExprPositive(
-                                TermMultiple(
-                                  DesignatorEmptyFactor(
-                                    IdentDesignator(
-                                    ) [IdentDesignator]
-                                  ) [DesignatorEmptyFactor]
-                                  MulopFactorListNo(
-                                  ) [MulopFactorListNo]
-                                ) [TermMultiple]
-                                AddopTermListNo(
-                                ) [AddopTermListNo]
-                              ) [ExprPositive]
-                            ) [DesignatorStmtAssignDecl]
-                          ) [DesignatorStmtAssign]
-                        ) [SingleDesignatorStatement]
-                      ) [StatementSingle]
-                    ) [IfStatement]
-                  ) [StatementSingle]
-                ) [IfElseStatement]
-              ) [StatementSingle]
-            ) [StatementListMultiple]
-            StatementSingle(
-              SingleReturnExprStatement(
-                ExprPositive(
-                  TermMultiple(
-                    DesignatorParensActFactor(
-                      IdentDesignator(
-                      ) [IdentDesignator]
-                      ActParsMultiExpr(
-                        ActParsSingleExpr(
-                          ExprPositive(
-                            TermMultiple(
-                              DesignatorEmptyFactor(
-                                IdentDesignator(
-                                ) [IdentDesignator]
-                              ) [DesignatorEmptyFactor]
-                              MulopFactorListNo(
-                              ) [MulopFactorListNo]
-                            ) [TermMultiple]
-                            AddopTermListNo(
-                            ) [AddopTermListNo]
-                          ) [ExprPositive]
-                        ) [ActParsSingleExpr]
-                        ExprPositive(
-                          TermMultiple(
-                            DesignatorEmptyFactor(
-                              IdentDesignator(
-                              ) [IdentDesignator]
-                            ) [DesignatorEmptyFactor]
-                            MulopFactorListNo(
-                            ) [MulopFactorListNo]
-                          ) [TermMultiple]
-                          AddopTermListNo(
-                          ) [AddopTermListNo]
-                        ) [ExprPositive]
-                      ) [ActParsMultiExpr]
-                    ) [DesignatorParensActFactor]
-                    MulopFactorListNo(
-                    ) [MulopFactorListNo]
-                  ) [TermMultiple]
-                  AddopTermListNo(
-                  ) [AddopTermListNo]
-                ) [ExprPositive]
-              ) [SingleReturnExprStatement]
-            ) [StatementSingle]
-          ) [StatementListMultiple]
-        ) [MethodDeclarationParsExpr]
-      ) [MethodDeclListMultiple]
-      MethodDeclarationExpr(
-        MethodTypeType(
-          Type(
-          ) [Type]
-        ) [MethodTypeType]
-        NoVarDeclOption(
-        ) [NoVarDeclOption]
-        StatementListMultiple(
-          StatementListMultiple(
-            StatementListNo(
-            ) [StatementListNo]
-            StatementSingle(
-              SinglePrintStatement(
-                ExprPositive(
-                  TermMultiple(
-                    CharConstFactor(
-                    ) [CharConstFactor]
-                    MulopFactorListNo(
-                    ) [MulopFactorListNo]
-                  ) [TermMultiple]
-                  AddopTermListNo(
-                  ) [AddopTermListNo]
-                ) [ExprPositive]
-                NumConstNo(
-                ) [NumConstNo]
-              ) [SinglePrintStatement]
-            ) [StatementSingle]
-          ) [StatementListMultiple]
-          StatementSingle(
-            SingleReturnExprStatement(
-              ExprPositive(
-                TermMultiple(
-                  BoolConstFactor(
-                  ) [BoolConstFactor]
-                  MulopFactorListNo(
-                  ) [MulopFactorListNo]
-                ) [TermMultiple]
-                AddopTermListNo(
-                ) [AddopTermListNo]
-              ) [ExprPositive]
-            ) [SingleReturnExprStatement]
-          ) [StatementSingle]
-        ) [StatementListMultiple]
-      ) [MethodDeclarationExpr]
-    ) [MethodDeclListMultiple]
-    MethodDeclarationExpr(
-      MethodTypeVoid(
-      ) [MethodTypeVoid]
-      NoVarDeclOption(
-      ) [NoVarDeclOption]
-      StatementListMultiple(
+              VarDeclSingle(
+               zc
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclSingle]
+            ) [VarDeclListMultiple]
+          ) [VarDeclarationExpr]
+        ) [VarDeclOptionTrue]
         StatementListMultiple(
           StatementListMultiple(
             StatementListMultiple(
               StatementListMultiple(
-                StatementListMultiple(
-                  StatementListMultiple(
-                    StatementListMultiple(
-                      StatementListMultiple(
-                        StatementListMultiple(
-                          StatementListMultiple(
-                            StatementListMultiple(
-                              StatementListMultiple(
-                                StatementListMultiple(
-                                  StatementListMultiple(
-                                    StatementListMultiple(
-                                      StatementListMultiple(
-                                        StatementListMultiple(
-                                          StatementListMultiple(
-                                            StatementListMultiple(
-                                              StatementListMultiple(
-                                                StatementListMultiple(
-                                                  StatementListMultiple(
-                                                    StatementListMultiple(
-                                                      StatementListMultiple(
-                                                        StatementListMultiple(
-                                                          StatementListMultiple(
-                                                            StatementListMultiple(
-                                                              StatementListMultiple(
-                                                                StatementListMultiple(
-                                                                  StatementListNo(
-                                                                  ) [StatementListNo]
-                                                                  StatementSingle(
-                                                                    IfElseStatement(
-                                                                      IfConditionListSingle(
-                                                                        CondTermListSingle(
-                                                                          CondFactExprRelop(
-                                                                            ExprPositive(
-                                                                              TermMultiple(
-                                                                                NumConstFactor(
-                                                                                ) [NumConstFactor]
-                                                                                MulopFactorListNo(
-                                                                                ) [MulopFactorListNo]
-                                                                              ) [TermMultiple]
-                                                                              AddopTermListNo(
-                                                                              ) [AddopTermListNo]
-                                                                            ) [ExprPositive]
-                                                                            RelopNOTEQUAL(
-                                                                            ) [RelopNOTEQUAL]
-                                                                            ExprPositive(
-                                                                              TermMultiple(
-                                                                                NumConstFactor(
-                                                                                ) [NumConstFactor]
-                                                                                MulopFactorListNo(
-                                                                                ) [MulopFactorListNo]
-                                                                              ) [TermMultiple]
-                                                                              AddopTermListNo(
-                                                                              ) [AddopTermListNo]
-                                                                            ) [ExprPositive]
-                                                                          ) [CondFactExprRelop]
-                                                                        ) [CondTermListSingle]
-                                                                      ) [IfConditionListSingle]
-                                                                      StatementSingle(
-                                                                        SinglePrintStatement(
-                                                                          ExprNegative(
-                                                                            TermMultiple(
-                                                                              NumConstFactor(
-                                                                              ) [NumConstFactor]
-                                                                              MulopFactorListNo(
-                                                                              ) [MulopFactorListNo]
-                                                                            ) [TermMultiple]
-                                                                            AddopTermListNo(
-                                                                            ) [AddopTermListNo]
-                                                                          ) [ExprNegative]
-                                                                          NumConstNo(
-                                                                          ) [NumConstNo]
-                                                                        ) [SinglePrintStatement]
-                                                                      ) [StatementSingle]
-                                                                      StatementSingle(
-                                                                        SinglePrintStatement(
-                                                                          ExprPositive(
-                                                                            TermMultiple(
-                                                                              NumConstFactor(
-                                                                              ) [NumConstFactor]
-                                                                              MulopFactorListNo(
-                                                                              ) [MulopFactorListNo]
-                                                                            ) [TermMultiple]
-                                                                            AddopTermListNo(
-                                                                            ) [AddopTermListNo]
-                                                                          ) [ExprPositive]
-                                                                          NumConstNo(
-                                                                          ) [NumConstNo]
-                                                                        ) [SinglePrintStatement]
-                                                                      ) [StatementSingle]
-                                                                    ) [IfElseStatement]
-                                                                  ) [StatementSingle]
-                                                                ) [StatementListMultiple]
-                                                                StatementSingle(
-                                                                  SingleDesignatorStatement(
-                                                                    DesignatorStmtAssign(
-                                                                      DesignatorStmtAssignDecl(
-                                                                        IdentDesignator(
-                                                                        ) [IdentDesignator]
-                                                                        ExprPositive(
-                                                                          TermMultiple(
-                                                                            BoolConstFactor(
-                                                                            ) [BoolConstFactor]
-                                                                            MulopFactorListNo(
-                                                                            ) [MulopFactorListNo]
-                                                                          ) [TermMultiple]
-                                                                          AddopTermListNo(
-                                                                          ) [AddopTermListNo]
-                                                                        ) [ExprPositive]
-                                                                      ) [DesignatorStmtAssignDecl]
-                                                                    ) [DesignatorStmtAssign]
-                                                                  ) [SingleDesignatorStatement]
-                                                                ) [StatementSingle]
-                                                              ) [StatementListMultiple]
-                                                              StatementSingle(
-                                                                SingleDesignatorStatement(
-                                                                  DesignatorStmtAssign(
-                                                                    DesignatorStmtAssignDecl(
-                                                                      IdentDesignator(
-                                                                      ) [IdentDesignator]
-                                                                      ExprPositive(
-                                                                        TermMultiple(
-                                                                          NumConstFactor(
-                                                                          ) [NumConstFactor]
-                                                                          MulopFactorListNo(
-                                                                          ) [MulopFactorListNo]
-                                                                        ) [TermMultiple]
-                                                                        AddopTermListNo(
-                                                                        ) [AddopTermListNo]
-                                                                      ) [ExprPositive]
-                                                                    ) [DesignatorStmtAssignDecl]
-                                                                  ) [DesignatorStmtAssign]
-                                                                ) [SingleDesignatorStatement]
-                                                              ) [StatementSingle]
-                                                            ) [StatementListMultiple]
-                                                            StatementSingle(
-                                                              DoWhileStatement(
-                                                                StatementListMultiple(
-                                                                  StatementListNo(
-                                                                  ) [StatementListNo]
-                                                                  StatementMultiple(
-                                                                    StatementsInBraces(
-                                                                      StatementListMultiple(
-                                                                        StatementListMultiple(
-                                                                          StatementListNo(
-                                                                          ) [StatementListNo]
-                                                                          StatementSingle(
-                                                                            IfStatement(
-                                                                              IfConditionListSingle(
-                                                                                CondTermListSingle(
-                                                                                  CondFactExprRelop(
-                                                                                    ExprPositive(
-                                                                                      TermMultiple(
-                                                                                        DesignatorEmptyFactor(
-                                                                                          IdentDesignator(
-                                                                                          ) [IdentDesignator]
-                                                                                        ) [DesignatorEmptyFactor]
-                                                                                        MulopFactorListNo(
-                                                                                        ) [MulopFactorListNo]
-                                                                                      ) [TermMultiple]
-                                                                                      AddopTermListNo(
-                                                                                      ) [AddopTermListNo]
-                                                                                    ) [ExprPositive]
-                                                                                    RelopEQUAL(
-                                                                                    ) [RelopEQUAL]
-                                                                                    ExprPositive(
-                                                                                      TermMultiple(
-                                                                                        NumConstFactor(
-                                                                                        ) [NumConstFactor]
-                                                                                        MulopFactorListNo(
-                                                                                        ) [MulopFactorListNo]
-                                                                                      ) [TermMultiple]
-                                                                                      AddopTermListNo(
-                                                                                      ) [AddopTermListNo]
-                                                                                    ) [ExprPositive]
-                                                                                  ) [CondFactExprRelop]
-                                                                                ) [CondTermListSingle]
-                                                                              ) [IfConditionListSingle]
-                                                                              StatementSingle(
-                                                                                SingleDesignatorStatement(
-                                                                                  DesignatorStmtAssign(
-                                                                                    DesignatorStmtAssignDecl(
-                                                                                      IdentDesignator(
-                                                                                      ) [IdentDesignator]
-                                                                                      ExprPositive(
-                                                                                        TermMultiple(
-                                                                                          BoolConstFactor(
-                                                                                          ) [BoolConstFactor]
-                                                                                          MulopFactorListNo(
-                                                                                          ) [MulopFactorListNo]
-                                                                                        ) [TermMultiple]
-                                                                                        AddopTermListNo(
-                                                                                        ) [AddopTermListNo]
-                                                                                      ) [ExprPositive]
-                                                                                    ) [DesignatorStmtAssignDecl]
-                                                                                  ) [DesignatorStmtAssign]
-                                                                                ) [SingleDesignatorStatement]
-                                                                              ) [StatementSingle]
-                                                                            ) [IfStatement]
-                                                                          ) [StatementSingle]
-                                                                        ) [StatementListMultiple]
-                                                                        StatementSingle(
-                                                                          SingleDesignatorStatement(
-                                                                            DesignatorStmtPlusPlus(
-                                                                              IdentDesignator(
-                                                                              ) [IdentDesignator]
-                                                                            ) [DesignatorStmtPlusPlus]
-                                                                          ) [SingleDesignatorStatement]
-                                                                        ) [StatementSingle]
-                                                                      ) [StatementListMultiple]
-                                                                    ) [StatementsInBraces]
-                                                                  ) [StatementMultiple]
-                                                                ) [StatementListMultiple]
-                                                                ConditionListSingle(
-                                                                  CondTermListSingle(
-                                                                    CondFactExprRelop(
-                                                                      ExprPositive(
-                                                                        TermMultiple(
-                                                                          DesignatorEmptyFactor(
-                                                                            IdentDesignator(
-                                                                            ) [IdentDesignator]
-                                                                          ) [DesignatorEmptyFactor]
-                                                                          MulopFactorListNo(
-                                                                          ) [MulopFactorListNo]
-                                                                        ) [TermMultiple]
-                                                                        AddopTermListNo(
-                                                                        ) [AddopTermListNo]
-                                                                      ) [ExprPositive]
-                                                                      RelopLS(
-                                                                      ) [RelopLS]
-                                                                      ExprPositive(
-                                                                        TermMultiple(
-                                                                          NumConstFactor(
-                                                                          ) [NumConstFactor]
-                                                                          MulopFactorListNo(
-                                                                          ) [MulopFactorListNo]
-                                                                        ) [TermMultiple]
-                                                                        AddopTermListNo(
-                                                                        ) [AddopTermListNo]
-                                                                      ) [ExprPositive]
-                                                                    ) [CondFactExprRelop]
-                                                                  ) [CondTermListSingle]
-                                                                ) [ConditionListSingle]
-                                                              ) [DoWhileStatement]
-                                                            ) [StatementSingle]
-                                                          ) [StatementListMultiple]
-                                                          StatementSingle(
-                                                            IfStatement(
-                                                              IfConditionListSingle(
-                                                                CondTermListSingle(
-                                                                  CondFactExpr(
-                                                                    ExprPositive(
-                                                                      TermMultiple(
-                                                                        DesignatorEmptyFactor(
-                                                                          IdentDesignator(
-                                                                          ) [IdentDesignator]
-                                                                        ) [DesignatorEmptyFactor]
-                                                                        MulopFactorListNo(
-                                                                        ) [MulopFactorListNo]
-                                                                      ) [TermMultiple]
-                                                                      AddopTermListNo(
-                                                                      ) [AddopTermListNo]
-                                                                    ) [ExprPositive]
-                                                                  ) [CondFactExpr]
-                                                                ) [CondTermListSingle]
-                                                              ) [IfConditionListSingle]
-                                                              StatementSingle(
-                                                                IfElseStatement(
-                                                                  IfConditionListSingle(
-                                                                    CondTermListSingle(
-                                                                      CondFactExprRelop(
-                                                                        ExprPositive(
-                                                                          TermMultiple(
-                                                                            DesignatorEmptyFactor(
-                                                                              IdentDesignator(
-                                                                              ) [IdentDesignator]
-                                                                            ) [DesignatorEmptyFactor]
-                                                                            MulopFactorListNo(
-                                                                            ) [MulopFactorListNo]
-                                                                          ) [TermMultiple]
-                                                                          AddopTermListNo(
-                                                                          ) [AddopTermListNo]
-                                                                        ) [ExprPositive]
-                                                                        RelopEQUAL(
-                                                                        ) [RelopEQUAL]
-                                                                        ExprPositive(
-                                                                          TermMultiple(
-                                                                            NumConstFactor(
-                                                                            ) [NumConstFactor]
-                                                                            MulopFactorListNo(
-                                                                            ) [MulopFactorListNo]
-                                                                          ) [TermMultiple]
-                                                                          AddopTermListNo(
-                                                                          ) [AddopTermListNo]
-                                                                        ) [ExprPositive]
-                                                                      ) [CondFactExprRelop]
-                                                                    ) [CondTermListSingle]
-                                                                  ) [IfConditionListSingle]
-                                                                  StatementSingle(
-                                                                    SinglePrintStatement(
-                                                                      ExprPositive(
-                                                                        TermMultiple(
-                                                                          NumConstFactor(
-                                                                          ) [NumConstFactor]
-                                                                          MulopFactorListNo(
-                                                                          ) [MulopFactorListNo]
-                                                                        ) [TermMultiple]
-                                                                        AddopTermListNo(
-                                                                        ) [AddopTermListNo]
-                                                                      ) [ExprPositive]
-                                                                      NumConstNo(
-                                                                      ) [NumConstNo]
-                                                                    ) [SinglePrintStatement]
-                                                                  ) [StatementSingle]
-                                                                  StatementSingle(
-                                                                    SinglePrintStatement(
-                                                                      ExprNegative(
-                                                                        TermMultiple(
-                                                                          NumConstFactor(
-                                                                          ) [NumConstFactor]
-                                                                          MulopFactorListNo(
-                                                                          ) [MulopFactorListNo]
-                                                                        ) [TermMultiple]
-                                                                        AddopTermListNo(
-                                                                        ) [AddopTermListNo]
-                                                                      ) [ExprNegative]
-                                                                      NumConstNo(
-                                                                      ) [NumConstNo]
-                                                                    ) [SinglePrintStatement]
-                                                                  ) [StatementSingle]
-                                                                ) [IfElseStatement]
-                                                              ) [StatementSingle]
-                                                            ) [IfStatement]
-                                                          ) [StatementSingle]
-                                                        ) [StatementListMultiple]
-                                                        StatementSingle(
-                                                          SingleDesignatorStatement(
-                                                            DesignatorStmtAssign(
-                                                              AssignError(
-                                                              ) [AssignError]
-                                                            ) [DesignatorStmtAssign]
-                                                          ) [SingleDesignatorStatement]
-                                                        ) [StatementSingle]
-                                                      ) [StatementListMultiple]
-                                                      StatementSingle(
-                                                        IfElseStatement(
-                                                          IfConditionError(
-                                                          ) [IfConditionError]
-                                                          StatementSingle(
-                                                            SinglePrintStatement(
-                                                              ExprPositive(
-                                                                TermMultiple(
-                                                                  DesignatorParensActFactor(
-                                                                    IdentDesignator(
-                                                                    ) [IdentDesignator]
-                                                                    ActParsSingleExpr(
-                                                                      ExprPositive(
-                                                                        TermMultiple(
-                                                                          CharConstFactor(
-                                                                          ) [CharConstFactor]
-                                                                          MulopFactorListNo(
-                                                                          ) [MulopFactorListNo]
-                                                                        ) [TermMultiple]
-                                                                        AddopTermListNo(
-                                                                        ) [AddopTermListNo]
-                                                                      ) [ExprPositive]
-                                                                    ) [ActParsSingleExpr]
-                                                                  ) [DesignatorParensActFactor]
-                                                                  MulopFactorListNo(
-                                                                  ) [MulopFactorListNo]
-                                                                ) [TermMultiple]
-                                                                AddopTermListNo(
-                                                                ) [AddopTermListNo]
-                                                              ) [ExprPositive]
-                                                              NumConstNo(
-                                                              ) [NumConstNo]
-                                                            ) [SinglePrintStatement]
-                                                          ) [StatementSingle]
-                                                          StatementSingle(
-                                                            SinglePrintStatement(
-                                                              ExprPositive(
-                                                                TermMultiple(
-                                                                  DesignatorParensActFactor(
-                                                                    IdentDesignator(
-                                                                    ) [IdentDesignator]
-                                                                    ActParsSingleExpr(
-                                                                      ExprPositive(
-                                                                        TermMultiple(
-                                                                          CharConstFactor(
-                                                                          ) [CharConstFactor]
-                                                                          MulopFactorListNo(
-                                                                          ) [MulopFactorListNo]
-                                                                        ) [TermMultiple]
-                                                                        AddopTermListNo(
-                                                                        ) [AddopTermListNo]
-                                                                      ) [ExprPositive]
-                                                                    ) [ActParsSingleExpr]
-                                                                  ) [DesignatorParensActFactor]
-                                                                  MulopFactorListNo(
-                                                                  ) [MulopFactorListNo]
-                                                                ) [TermMultiple]
-                                                                AddopTermListNo(
-                                                                ) [AddopTermListNo]
-                                                              ) [ExprPositive]
-                                                              NumConstNo(
-                                                              ) [NumConstNo]
-                                                            ) [SinglePrintStatement]
-                                                          ) [StatementSingle]
-                                                        ) [IfElseStatement]
-                                                      ) [StatementSingle]
-                                                    ) [StatementListMultiple]
-                                                    StatementSingle(
-                                                      SinglePrintStatement(
-                                                        ExprPositive(
-                                                          TermMultiple(
-                                                            DesignatorEmptyFactor(
-                                                              IdentDesignator(
-                                                              ) [IdentDesignator]
-                                                            ) [DesignatorEmptyFactor]
-                                                            MulopFactorListNo(
-                                                            ) [MulopFactorListNo]
-                                                          ) [TermMultiple]
-                                                          AddopTermListNo(
-                                                          ) [AddopTermListNo]
-                                                        ) [ExprPositive]
-                                                        NumConstNo(
-                                                        ) [NumConstNo]
-                                                      ) [SinglePrintStatement]
-                                                    ) [StatementSingle]
-                                                  ) [StatementListMultiple]
-                                                  StatementSingle(
-                                                    SingleDesignatorStatement(
-                                                      DesignatorStmtAssign(
-                                                        DesignatorStmtAssignDecl(
-                                                          IdentDesignator(
-                                                          ) [IdentDesignator]
-                                                          ExprPositive(
-                                                            TermMultiple(
-                                                              NumConstFactor(
-                                                              ) [NumConstFactor]
-                                                              MulopFactorListNo(
-                                                              ) [MulopFactorListNo]
-                                                            ) [TermMultiple]
-                                                            AddopTermListNo(
-                                                            ) [AddopTermListNo]
-                                                          ) [ExprPositive]
-                                                        ) [DesignatorStmtAssignDecl]
-                                                      ) [DesignatorStmtAssign]
-                                                    ) [SingleDesignatorStatement]
-                                                  ) [StatementSingle]
-                                                ) [StatementListMultiple]
-                                                StatementSingle(
-                                                  DoWhileStatement(
-                                                    StatementListMultiple(
-                                                      StatementListNo(
-                                                      ) [StatementListNo]
-                                                      StatementMultiple(
-                                                        StatementsInBraces(
-                                                          StatementListMultiple(
-                                                            StatementListMultiple(
-                                                              StatementListMultiple(
-                                                                StatementListNo(
-                                                                ) [StatementListNo]
-                                                                StatementSingle(
-                                                                  IfStatement(
-                                                                    IfConditionListSingle(
-                                                                      CondTermListSingle(
-                                                                        CondFactExprRelop(
-                                                                          ExprPositive(
-                                                                            TermMultiple(
-                                                                              DesignatorEmptyFactor(
-                                                                                IdentDesignator(
-                                                                                ) [IdentDesignator]
-                                                                              ) [DesignatorEmptyFactor]
-                                                                              MulopFactorListNo(
-                                                                              ) [MulopFactorListNo]
-                                                                            ) [TermMultiple]
-                                                                            AddopTermListNo(
-                                                                            ) [AddopTermListNo]
-                                                                          ) [ExprPositive]
-                                                                          RelopEQUAL(
-                                                                          ) [RelopEQUAL]
-                                                                          ExprPositive(
-                                                                            TermMultiple(
-                                                                              NumConstFactor(
-                                                                              ) [NumConstFactor]
-                                                                              MulopFactorListNo(
-                                                                              ) [MulopFactorListNo]
-                                                                            ) [TermMultiple]
-                                                                            AddopTermListNo(
-                                                                            ) [AddopTermListNo]
-                                                                          ) [ExprPositive]
-                                                                        ) [CondFactExprRelop]
-                                                                      ) [CondTermListSingle]
-                                                                    ) [IfConditionListSingle]
-                                                                    StatementMultiple(
-                                                                      StatementsInBraces(
-                                                                        StatementListMultiple(
-                                                                          StatementListMultiple(
-                                                                            StatementListNo(
-                                                                            ) [StatementListNo]
-                                                                            StatementSingle(
-                                                                              SingleDesignatorStatement(
-                                                                                DesignatorStmtPlusPlus(
-                                                                                  IdentDesignator(
-                                                                                  ) [IdentDesignator]
-                                                                                ) [DesignatorStmtPlusPlus]
-                                                                              ) [SingleDesignatorStatement]
-                                                                            ) [StatementSingle]
-                                                                          ) [StatementListMultiple]
-                                                                          StatementSingle(
-                                                                            SingleContinueStatement(
-                                                                            ) [SingleContinueStatement]
-                                                                          ) [StatementSingle]
-                                                                        ) [StatementListMultiple]
-                                                                      ) [StatementsInBraces]
-                                                                    ) [StatementMultiple]
-                                                                  ) [IfStatement]
-                                                                ) [StatementSingle]
-                                                              ) [StatementListMultiple]
-                                                              StatementSingle(
-                                                                IfStatement(
-                                                                  IfConditionListSingle(
-                                                                    CondTermListSingle(
-                                                                      CondFactExprRelop(
-                                                                        ExprPositive(
-                                                                          TermMultiple(
-                                                                            DesignatorEmptyFactor(
-                                                                              IdentDesignator(
-                                                                              ) [IdentDesignator]
-                                                                            ) [DesignatorEmptyFactor]
-                                                                            MulopFactorListNo(
-                                                                            ) [MulopFactorListNo]
-                                                                          ) [TermMultiple]
-                                                                          AddopTermListNo(
-                                                                          ) [AddopTermListNo]
-                                                                        ) [ExprPositive]
-                                                                        RelopEQUAL(
-                                                                        ) [RelopEQUAL]
-                                                                        ExprPositive(
-                                                                          TermMultiple(
-                                                                            NumConstFactor(
-                                                                            ) [NumConstFactor]
-                                                                            MulopFactorListNo(
-                                                                            ) [MulopFactorListNo]
-                                                                          ) [TermMultiple]
-                                                                          AddopTermListNo(
-                                                                          ) [AddopTermListNo]
-                                                                        ) [ExprPositive]
-                                                                      ) [CondFactExprRelop]
-                                                                    ) [CondTermListSingle]
-                                                                  ) [IfConditionListSingle]
-                                                                  StatementSingle(
-                                                                    SingleBreakStatement(
-                                                                    ) [SingleBreakStatement]
-                                                                  ) [StatementSingle]
-                                                                ) [IfStatement]
-                                                              ) [StatementSingle]
-                                                            ) [StatementListMultiple]
-                                                            StatementSingle(
-                                                              SingleDesignatorStatement(
-                                                                DesignatorStmtAssign(
-                                                                  DesignatorStmtAssignDecl(
-                                                                    IdentDesignator(
-                                                                    ) [IdentDesignator]
-                                                                    ExprPositive(
-                                                                      TermMultiple(
-                                                                        DesignatorParensActFactor(
-                                                                          IdentDesignator(
-                                                                          ) [IdentDesignator]
-                                                                          ActParsMultiExpr(
-                                                                            ActParsSingleExpr(
-                                                                              ExprPositive(
-                                                                                TermMultiple(
-                                                                                  DesignatorEmptyFactor(
-                                                                                    IdentDesignator(
-                                                                                    ) [IdentDesignator]
-                                                                                  ) [DesignatorEmptyFactor]
-                                                                                  MulopFactorListNo(
-                                                                                  ) [MulopFactorListNo]
-                                                                                ) [TermMultiple]
-                                                                                AddopTermListNo(
-                                                                                ) [AddopTermListNo]
-                                                                              ) [ExprPositive]
-                                                                            ) [ActParsSingleExpr]
-                                                                            ExprPositive(
-                                                                              TermMultiple(
-                                                                                NumConstFactor(
-                                                                                ) [NumConstFactor]
-                                                                                MulopFactorListNo(
-                                                                                ) [MulopFactorListNo]
-                                                                              ) [TermMultiple]
-                                                                              AddopTermListNo(
-                                                                              ) [AddopTermListNo]
-                                                                            ) [ExprPositive]
-                                                                          ) [ActParsMultiExpr]
-                                                                        ) [DesignatorParensActFactor]
-                                                                        MulopFactorListNo(
-                                                                        ) [MulopFactorListNo]
-                                                                      ) [TermMultiple]
-                                                                      AddopTermListNo(
-                                                                      ) [AddopTermListNo]
-                                                                    ) [ExprPositive]
-                                                                  ) [DesignatorStmtAssignDecl]
-                                                                ) [DesignatorStmtAssign]
-                                                              ) [SingleDesignatorStatement]
-                                                            ) [StatementSingle]
-                                                          ) [StatementListMultiple]
-                                                        ) [StatementsInBraces]
-                                                      ) [StatementMultiple]
-                                                    ) [StatementListMultiple]
-                                                    ConditionListSingle(
-                                                      CondTermListSingle(
-                                                        CondFactExprRelop(
-                                                          ExprPositive(
-                                                            TermMultiple(
-                                                              DesignatorEmptyFactor(
-                                                                IdentDesignator(
-                                                                ) [IdentDesignator]
-                                                              ) [DesignatorEmptyFactor]
-                                                              MulopFactorListNo(
-                                                              ) [MulopFactorListNo]
-                                                            ) [TermMultiple]
-                                                            AddopTermListNo(
-                                                            ) [AddopTermListNo]
-                                                          ) [ExprPositive]
-                                                          RelopLS(
-                                                          ) [RelopLS]
-                                                          ExprPositive(
-                                                            TermMultiple(
-                                                              NumConstFactor(
-                                                              ) [NumConstFactor]
-                                                              MulopFactorListNo(
-                                                              ) [MulopFactorListNo]
-                                                            ) [TermMultiple]
-                                                            AddopTermListNo(
-                                                            ) [AddopTermListNo]
-                                                          ) [ExprPositive]
-                                                        ) [CondFactExprRelop]
-                                                      ) [CondTermListSingle]
-                                                    ) [ConditionListSingle]
-                                                  ) [DoWhileStatement]
-                                                ) [StatementSingle]
-                                              ) [StatementListMultiple]
-                                              StatementSingle(
-                                                IfElseStatement(
-                                                  IfConditionListSingle(
-                                                    CondTermListMultiple(
-                                                      CondTermListSingle(
-                                                        CondFactExprRelop(
-                                                          ExprPositive(
-                                                            TermMultiple(
-                                                              DesignatorEmptyFactor(
-                                                                IdentDesignator(
-                                                                ) [IdentDesignator]
-                                                              ) [DesignatorEmptyFactor]
-                                                              MulopFactorListNo(
-                                                              ) [MulopFactorListNo]
-                                                            ) [TermMultiple]
-                                                            AddopTermListNo(
-                                                            ) [AddopTermListNo]
-                                                          ) [ExprPositive]
-                                                          RelopEQUAL(
-                                                          ) [RelopEQUAL]
-                                                          ExprPositive(
-                                                            TermMultiple(
-                                                              NumConstFactor(
-                                                              ) [NumConstFactor]
-                                                              MulopFactorListNo(
-                                                              ) [MulopFactorListNo]
-                                                            ) [TermMultiple]
-                                                            AddopTermListNo(
-                                                            ) [AddopTermListNo]
-                                                          ) [ExprPositive]
-                                                        ) [CondFactExprRelop]
-                                                      ) [CondTermListSingle]
-                                                      CondFactExpr(
-                                                        ExprPositive(
-                                                          TermMultiple(
-                                                            DesignatorParensFactor(
-                                                              IdentDesignator(
-                                                              ) [IdentDesignator]
-                                                            ) [DesignatorParensFactor]
-                                                            MulopFactorListNo(
-                                                            ) [MulopFactorListNo]
-                                                          ) [TermMultiple]
-                                                          AddopTermListNo(
-                                                          ) [AddopTermListNo]
-                                                        ) [ExprPositive]
-                                                      ) [CondFactExpr]
-                                                    ) [CondTermListMultiple]
-                                                  ) [IfConditionListSingle]
-                                                  StatementSingle(
-                                                    SinglePrintStatement(
-                                                      ExprNegative(
-                                                        TermMultiple(
-                                                          NumConstFactor(
-                                                          ) [NumConstFactor]
-                                                          MulopFactorListNo(
-                                                          ) [MulopFactorListNo]
-                                                        ) [TermMultiple]
-                                                        AddopTermListNo(
-                                                        ) [AddopTermListNo]
-                                                      ) [ExprNegative]
-                                                      NumConstNo(
-                                                      ) [NumConstNo]
-                                                    ) [SinglePrintStatement]
-                                                  ) [StatementSingle]
-                                                  StatementSingle(
-                                                    SinglePrintStatement(
-                                                      ExprPositive(
-                                                        TermMultiple(
-                                                          NumConstFactor(
-                                                          ) [NumConstFactor]
-                                                          MulopFactorListNo(
-                                                          ) [MulopFactorListNo]
-                                                        ) [TermMultiple]
-                                                        AddopTermListNo(
-                                                        ) [AddopTermListNo]
-                                                      ) [ExprPositive]
-                                                      NumConstNo(
-                                                      ) [NumConstNo]
-                                                    ) [SinglePrintStatement]
-                                                  ) [StatementSingle]
-                                                ) [IfElseStatement]
-                                              ) [StatementSingle]
-                                            ) [StatementListMultiple]
-                                            StatementSingle(
-                                              SingleDesignatorStatement(
-                                                DesignatorStmtAssign(
-                                                  AssignError(
-                                                  ) [AssignError]
-                                                ) [DesignatorStmtAssign]
-                                              ) [SingleDesignatorStatement]
-                                            ) [StatementSingle]
-                                          ) [StatementListMultiple]
-                                          StatementSingle(
-                                            SingleDesignatorStatement(
-                                              DesignatorStmtAssign(
-                                                AssignError(
-                                                ) [AssignError]
-                                              ) [DesignatorStmtAssign]
-                                            ) [SingleDesignatorStatement]
-                                          ) [StatementSingle]
-                                        ) [StatementListMultiple]
-                                        StatementSingle(
-                                          SingleDesignatorStatement(
-                                            DesignatorStmtAssign(
-                                              AssignError(
-                                              ) [AssignError]
-                                            ) [DesignatorStmtAssign]
-                                          ) [SingleDesignatorStatement]
-                                        ) [StatementSingle]
-                                      ) [StatementListMultiple]
-                                      StatementSingle(
-                                        SinglePrintStatement(
-                                          ExprPositive(
-                                            TermMultiple(
-                                              DesignatorEmptyFactor(
-                                                IdentDesignator(
-                                                ) [IdentDesignator]
-                                              ) [DesignatorEmptyFactor]
-                                              MulopFactorListNo(
-                                              ) [MulopFactorListNo]
-                                            ) [TermMultiple]
-                                            AddopTermListNo(
-                                            ) [AddopTermListNo]
-                                          ) [ExprPositive]
-                                          NumConstNo(
-                                          ) [NumConstNo]
-                                        ) [SinglePrintStatement]
-                                      ) [StatementSingle]
-                                    ) [StatementListMultiple]
-                                    StatementSingle(
-                                      SingleDesignatorStatement(
-                                        DesignatorStmtAssign(
-                                          AssignError(
-                                          ) [AssignError]
-                                        ) [DesignatorStmtAssign]
-                                      ) [SingleDesignatorStatement]
-                                    ) [StatementSingle]
-                                  ) [StatementListMultiple]
-                                  StatementSingle(
-                                    SinglePrintStatement(
-                                      ExprPositive(
-                                        TermMultiple(
-                                          DesignatorEmptyFactor(
-                                            IdentDesignator(
-                                            ) [IdentDesignator]
-                                          ) [DesignatorEmptyFactor]
-                                          MulopFactorListNo(
-                                          ) [MulopFactorListNo]
-                                        ) [TermMultiple]
-                                        AddopTermListNo(
-                                        ) [AddopTermListNo]
-                                      ) [ExprPositive]
-                                      NumConstNo(
-                                      ) [NumConstNo]
-                                    ) [SinglePrintStatement]
-                                  ) [StatementSingle]
-                                ) [StatementListMultiple]
-                                StatementSingle(
-                                  SingleDesignatorStatement(
-                                    DesignatorStmtAssign(
-                                      AssignError(
-                                      ) [AssignError]
-                                    ) [DesignatorStmtAssign]
-                                  ) [SingleDesignatorStatement]
-                                ) [StatementSingle]
-                              ) [StatementListMultiple]
-                              StatementSingle(
-                                SingleDesignatorStatement(
-                                  DesignatorStmtAssign(
-                                    AssignError(
-                                    ) [AssignError]
-                                  ) [DesignatorStmtAssign]
-                                ) [SingleDesignatorStatement]
-                              ) [StatementSingle]
-                            ) [StatementListMultiple]
-                            StatementSingle(
-                              SingleDesignatorStatement(
-                                DesignatorStmtAssign(
-                                  DesignatorStmtAssignDecl(
-                                    IdentDesignator(
-                                    ) [IdentDesignator]
-                                    ExprPositive(
-                                      TermMultiple(
-                                        NumConstFactor(
-                                        ) [NumConstFactor]
-                                        MulopFactorListNo(
-                                        ) [MulopFactorListNo]
-                                      ) [TermMultiple]
-                                      AddopTermListNo(
-                                      ) [AddopTermListNo]
-                                    ) [ExprPositive]
-                                  ) [DesignatorStmtAssignDecl]
-                                ) [DesignatorStmtAssign]
-                              ) [SingleDesignatorStatement]
-                            ) [StatementSingle]
-                          ) [StatementListMultiple]
-                          StatementSingle(
-                            DoWhileStatement(
-                              StatementListMultiple(
-                                StatementListNo(
-                                ) [StatementListNo]
-                                StatementMultiple(
-                                  StatementsInBraces(
-                                    StatementListMultiple(
-                                      StatementListMultiple(
-                                        StatementListNo(
-                                        ) [StatementListNo]
-                                        StatementSingle(
-                                          SingleDesignatorStatement(
-                                            DesignatorStmtAssign(
-                                              AssignError(
-                                              ) [AssignError]
-                                            ) [DesignatorStmtAssign]
-                                          ) [SingleDesignatorStatement]
-                                        ) [StatementSingle]
-                                      ) [StatementListMultiple]
-                                      StatementSingle(
-                                        SingleDesignatorStatement(
-                                          DesignatorStmtPlusPlus(
-                                            IdentDesignator(
-                                            ) [IdentDesignator]
-                                          ) [DesignatorStmtPlusPlus]
-                                        ) [SingleDesignatorStatement]
-                                      ) [StatementSingle]
-                                    ) [StatementListMultiple]
-                                  ) [StatementsInBraces]
-                                ) [StatementMultiple]
-                              ) [StatementListMultiple]
-                              ConditionListSingle(
-                                CondTermListSingle(
-                                  CondFactExprRelop(
-                                    ExprPositive(
-                                      TermMultiple(
-                                        DesignatorEmptyFactor(
-                                          IdentDesignator(
-                                          ) [IdentDesignator]
-                                        ) [DesignatorEmptyFactor]
-                                        MulopFactorListNo(
-                                        ) [MulopFactorListNo]
-                                      ) [TermMultiple]
-                                      AddopTermListNo(
-                                      ) [AddopTermListNo]
-                                    ) [ExprPositive]
-                                    RelopLS(
-                                    ) [RelopLS]
-                                    ExprPositive(
-                                      TermMultiple(
-                                        NumConstFactor(
-                                        ) [NumConstFactor]
-                                        MulopFactorListNo(
-                                        ) [MulopFactorListNo]
-                                      ) [TermMultiple]
-                                      AddopTermListNo(
-                                      ) [AddopTermListNo]
-                                    ) [ExprPositive]
-                                  ) [CondFactExprRelop]
-                                ) [CondTermListSingle]
-                              ) [ConditionListSingle]
-                            ) [DoWhileStatement]
-                          ) [StatementSingle]
-                        ) [StatementListMultiple]
-                        StatementSingle(
-                          SingleDesignatorStatement(
-                            DesignatorStmtAssign(
-                              AssignError(
-                              ) [AssignError]
-                            ) [DesignatorStmtAssign]
-                          ) [SingleDesignatorStatement]
-                        ) [StatementSingle]
-                      ) [StatementListMultiple]
-                      StatementSingle(
-                        SingleDesignatorStatement(
-                          DesignatorStmtAssign(
-                            AssignError(
-                            ) [AssignError]
-                          ) [DesignatorStmtAssign]
-                        ) [SingleDesignatorStatement]
-                      ) [StatementSingle]
-                    ) [StatementListMultiple]
-                    StatementSingle(
-                      SingleDesignatorStatement(
-                        DesignatorStmtAssign(
-                          AssignError(
-                          ) [AssignError]
-                        ) [DesignatorStmtAssign]
-                      ) [SingleDesignatorStatement]
-                    ) [StatementSingle]
-                  ) [StatementListMultiple]
-                  StatementSingle(
-                    SinglePrintStatement(
-                      ExprPositive(
-                        TermMultiple(
-                          DesignatorEmptyFactor(
-                            IdentDesignator(
-                            ) [IdentDesignator]
-                          ) [DesignatorEmptyFactor]
-                          MulopFactorListNo(
-                          ) [MulopFactorListNo]
-                        ) [TermMultiple]
-                        AddopTermListNo(
-                        ) [AddopTermListNo]
-                      ) [ExprPositive]
-                      NumConstNo(
-                      ) [NumConstNo]
-                    ) [SinglePrintStatement]
-                  ) [StatementSingle]
-                ) [StatementListMultiple]
+                StatementListNo(
+                ) [StatementListNo]
                 StatementSingle(
                   SingleDesignatorStatement(
                     DesignatorStmtAssign(
-                      DesignatorStmtAssignDecl(
-                        IdentDesignator(
-                        ) [IdentDesignator]
-                        ExprPositive(
-                          TermMultiple(
-                            NumConstFactor(
-                            ) [NumConstFactor]
-                            MulopFactorListNo(
-                            ) [MulopFactorListNo]
-                          ) [TermMultiple]
-                          AddopTermListNo(
-                          ) [AddopTermListNo]
-                        ) [ExprPositive]
-                      ) [DesignatorStmtAssignDecl]
+                      AssignError(
+                      ) [AssignError]
                     ) [DesignatorStmtAssign]
                   ) [SingleDesignatorStatement]
                 ) [StatementSingle]
@@ -2034,11 +418,16 @@ INFO  06:19:32,435 - Program(
                 SingleDesignatorStatement(
                   DesignatorStmtAssign(
                     DesignatorStmtAssignDecl(
-                      IdentDesignator(
-                      ) [IdentDesignator]
+                      NestedDesignator(
+                        IdentMemberDesignator(
+                         rec
+                         xx
+                        ) [IdentMemberDesignator]
+                      ) [NestedDesignator]
                       ExprPositive(
                         TermMultiple(
                           NumConstFactor(
+                           4
                           ) [NumConstFactor]
                           MulopFactorListNo(
                           ) [MulopFactorListNo]
@@ -2052,57 +441,54 @@ INFO  06:19:32,435 - Program(
               ) [StatementSingle]
             ) [StatementListMultiple]
             StatementSingle(
-              DoWhileStatement(
-                StatementListMultiple(
-                  StatementListNo(
-                  ) [StatementListNo]
-                  StatementMultiple(
-                    StatementsInBraces(
-                      StatementListMultiple(
-                        StatementListMultiple(
-                          StatementListNo(
-                          ) [StatementListNo]
-                          StatementSingle(
-                            SingleDesignatorStatement(
-                              DesignatorStmtAssign(
-                                AssignError(
-                                ) [AssignError]
-                              ) [DesignatorStmtAssign]
-                            ) [SingleDesignatorStatement]
-                          ) [StatementSingle]
-                        ) [StatementListMultiple]
-                        StatementSingle(
-                          SingleDesignatorStatement(
-                            DesignatorStmtPlusPlus(
-                              IdentDesignator(
-                              ) [IdentDesignator]
-                            ) [DesignatorStmtPlusPlus]
-                          ) [SingleDesignatorStatement]
-                        ) [StatementSingle]
-                      ) [StatementListMultiple]
-                    ) [StatementsInBraces]
-                  ) [StatementMultiple]
-                ) [StatementListMultiple]
-                ConditionListSingle(
-                  CondTermListSingle(
-                    CondFactExprRelop(
-                      ExprPositive(
-                        TermMultiple(
-                          DesignatorEmptyFactor(
-                            IdentDesignator(
-                            ) [IdentDesignator]
-                          ) [DesignatorEmptyFactor]
-                          MulopFactorListNo(
-                          ) [MulopFactorListNo]
-                        ) [TermMultiple]
-                        AddopTermListNo(
-                        ) [AddopTermListNo]
-                      ) [ExprPositive]
-                      RelopLS(
-                      ) [RelopLS]
+              SingleDesignatorStatement(
+                DesignatorStmtAssign(
+                  DesignatorStmtAssignDecl(
+                    NestedDesignator(
+                      IdentMemberArrayDesignator(
+                       rec
+                       o
+                        ExprPositive(
+                          TermMultiple(
+                            NumConstFactor(
+                             2
+                            ) [NumConstFactor]
+                            MulopFactorListNo(
+                            ) [MulopFactorListNo]
+                          ) [TermMultiple]
+                          AddopTermListNo(
+                          ) [AddopTermListNo]
+                        ) [ExprPositive]
+                      ) [IdentMemberArrayDesignator]
+                    ) [NestedDesignator]
+                    ExprPositive(
+                      TermMultiple(
+                        NumConstFactor(
+                         3
+                        ) [NumConstFactor]
+                        MulopFactorListNo(
+                        ) [MulopFactorListNo]
+                      ) [TermMultiple]
+                      AddopTermListNo(
+                      ) [AddopTermListNo]
+                    ) [ExprPositive]
+                  ) [DesignatorStmtAssignDecl]
+                ) [DesignatorStmtAssign]
+              ) [SingleDesignatorStatement]
+            ) [StatementSingle]
+          ) [StatementListMultiple]
+          StatementSingle(
+            SingleDesignatorStatement(
+              DesignatorStmtAssign(
+                DesignatorStmtAssignDecl(
+                  NestedDesignator(
+                    IdentMemberArrayDesignator(
+                     rec
+                     o
                       ExprPositive(
                         TermMultiple(
                           NumConstFactor(
+                           4
                           ) [NumConstFactor]
                           MulopFactorListNo(
                           ) [MulopFactorListNo]
@@ -2110,54 +496,72 @@ INFO  06:19:32,435 - Program(
                         AddopTermListNo(
                         ) [AddopTermListNo]
                       ) [ExprPositive]
-                    ) [CondFactExprRelop]
-                  ) [CondTermListSingle]
-                ) [ConditionListSingle]
-              ) [DoWhileStatement]
-            ) [StatementSingle]
-          ) [StatementListMultiple]
-          StatementSingle(
-            SinglePrintStatement(
-              ExprPositive(
-                TermMultiple(
-                  DesignatorEmptyFactor(
-                    IdentDesignator(
-                    ) [IdentDesignator]
-                  ) [DesignatorEmptyFactor]
-                  MulopFactorListNo(
-                  ) [MulopFactorListNo]
-                ) [TermMultiple]
-                AddopTermListNo(
-                ) [AddopTermListNo]
-              ) [ExprPositive]
-              NumConstNo(
-              ) [NumConstNo]
-            ) [SinglePrintStatement]
+                    ) [IdentMemberArrayDesignator]
+                  ) [NestedDesignator]
+                  ExprPositive(
+                    TermMultiple(
+                      NumConstFactor(
+                       4
+                      ) [NumConstFactor]
+                      MulopFactorListNo(
+                      ) [MulopFactorListNo]
+                    ) [TermMultiple]
+                    AddopTermListNo(
+                    ) [AddopTermListNo]
+                  ) [ExprPositive]
+                ) [DesignatorStmtAssignDecl]
+              ) [DesignatorStmtAssign]
+            ) [SingleDesignatorStatement]
           ) [StatementSingle]
         ) [StatementListMultiple]
-        StatementSingle(
-          SinglePrintStatement(
-            ExprPositive(
-              TermMultiple(
-                DesignatorEmptyFactor(
-                  IdentDesignator(
-                  ) [IdentDesignator]
-                ) [DesignatorEmptyFactor]
-                MulopFactorListNo(
-                ) [MulopFactorListNo]
-              ) [TermMultiple]
-              AddopTermListNo(
-              ) [AddopTermListNo]
-            ) [ExprPositive]
-            NumConstNo(
-            ) [NumConstNo]
-          ) [SinglePrintStatement]
-        ) [StatementSingle]
-      ) [StatementListMultiple]
-    ) [MethodDeclarationExpr]
+      ) [MethodDeclarationVarArgsExpr]
+    ) [MethodDeclListMultiple]
+    MethodDeclarationParsExpr(
+      MethodTypeVoid(
+      ) [MethodTypeVoid]
+     m2
+      FormParsMultiple(
+        FormParsMultiple(
+          FormParsMultiple(
+            FormParsSingle(
+              FormParSingle(
+                Type(
+                 int
+                ) [Type]
+               a
+                NoArray(
+                ) [NoArray]
+              ) [FormParSingle]
+            ) [FormParsSingle]
+            FormParSingle(
+              Type(
+               int
+              ) [Type]
+             b
+              NoArray(
+              ) [NoArray]
+            ) [FormParSingle]
+          ) [FormParsMultiple]
+          FormParError(
+          ) [FormParError]
+        ) [FormParsMultiple]
+        FormParSingle(
+          Type(
+           int
+          ) [Type]
+         p
+          NoArray(
+          ) [NoArray]
+        ) [FormParSingle]
+      ) [FormParsMultiple]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListNo(
+      ) [StatementListNo]
+    ) [MethodDeclarationParsExpr]
   ) [MethodDeclListMultiple]
 ) [Program]
-INFO  06:19:32,445 - ===================================
-INFO  06:19:32,453 -  Deklarisanih globalnih promenljivih ima = 4
-INFO  06:19:32,453 -  Ifova ima = 5
-INFO  06:19:32,453 -  IfElsova ima = 5
+INFO  02:54:44,767 - ===================================
+INFO  02:54:44,769 - Evo nas u program name
+INFO  02:54:44,769 - Evo nas u program
+INFO  02:54:44,769 -  Globalnih promenljivih ima: 12

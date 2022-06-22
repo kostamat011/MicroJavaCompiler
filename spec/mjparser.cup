@@ -53,10 +53,10 @@ terminal AND, OR, PLUSPLUS, MINUSMINUS, SEMICOLON, COMMA, LPAREN, RPAREN;
 terminal LBRCK, RBRCK, LBRACE, RBRACE, DBLDOT, DOT;
 
 
-terminal IDENT;
-terminal BOOL_CONST;
-terminal CHAR_CONST;
-terminal NUMBER_CONST;
+terminal String IDENT;
+terminal Boolean BOOL_CONST;
+terminal Character CHAR_CONST;
+terminal Integer NUMBER_CONST;
 
 nonterminal AllDeclList, SingleDecl, RecordDecl;
 nonterminal ConstDecl, ConstAssignList, ConstAssign, ConstType;
@@ -64,23 +64,28 @@ nonterminal VarDecl, VarDeclList, VarDeclSingle, VarDeclOption, ArrBracketsOptio
 nonterminal GlobalVarDecl, GlobalVarDeclList, GlobalVarDeclSingle;
 nonterminal ClassDecl, ClassMethodDeclOption;
 nonterminal MethodDecl, MethodDeclList, MethodDeclOption, MethodType;
-nonterminal FormParsOption, FormPars, FormPar;
+nonterminal FormParsOption, FormPars, FormPar, VarArgs;
 nonterminal StatementList, Statement, Statements, SingleStatement;
-nonterminal DesignatorStatement, DesignatorStatementAssign, Designator, Expr, NumConstOption;
+nonterminal DesignatorStatement, DesignatorStatementAssign, Designator, MemberDesignator, Expr, NumConstOption;
 nonterminal Mulop, Addop, Term, Factor, MulopFactorList, AddopTermList, ActPars, ActParsOption;
 nonterminal Condition, IfCondition, CondTerm, CondFact, Relop;
-nonterminal Program, Type;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgramName;
 
 
 precedence left ELSE;
 
-Program ::= (Program) PROG IDENT:progName AllDeclList LBRACE MethodDeclList RBRACE;
+Program ::= (Program) PROG ProgramName:progName AllDeclList LBRACE MethodDeclList RBRACE;
+
+ProgramName ::= (ProgramName) IDENT:name;
 
 AllDeclList ::= (AllDeclListMultiple) AllDeclList SingleDecl
 				| (NoDecl) /* epsilon */
 				;
 
-Type ::= (Type) IDENT:typeName;
+Type ::= (Type) IDENT:name;
 
 SingleDecl ::= (ConstDeclaration) ConstDecl
 			|  (GlobalVarDeclaration) GlobalVarDecl
@@ -141,8 +146,11 @@ MethodDeclList ::= (MethodDeclListMultiple) MethodDeclList MethodDecl
 				;
 
 MethodDecl ::= (MethodDeclarationParsExpr) MethodType IDENT:methodName LPAREN FormPars RPAREN VarDeclOption LBRACE StatementList RBRACE
+			|  (MethodDeclarationVarArgsExpr) MethodType IDENT:methodName LPAREN FormPars COMMA VarArgs RPAREN VarDeclOption LBRACE StatementList RBRACE
 			|  (MethodDeclarationExpr) MethodType IDENT:methodName LPAREN RPAREN VarDeclOption LBRACE StatementList RBRACE
 			;
+			
+VarArgs ::= (VarArgsDeclaration) Type DOT DOT DOT IDENT:varArgsName;
 
 MethodType ::= (MethodTypeType) Type
 			|  (MethodTypeVoid) VOID
@@ -226,9 +234,14 @@ Relop ::= (RelopGT) GT
 	   ;
 
 Designator ::= (IdentDesignator) IDENT
-			|  (IdentExprDesignator) IDENT LBRCK Expr RBRCK
+			|  (IdentArrayDesignator) IDENT LBRCK Expr RBRCK
+			|  (NestedDesignator) MemberDesignator
 			;
-	
+			
+MemberDesignator ::= (IdentMemberDesignator) IDENT DOT IDENT:memberName
+				  |  (IdentMemberArrayDesignator) IDENT DOT IDENT:memberArrayName LBRCK Expr RBRCK
+				  ;
+
 DesignatorStatement ::= (DesignatorStmtAssign) DesignatorStatementAssign
 					|   (DesignatorStmtPlusPlus) Designator PLUSPLUS
 					|   (DesignatorStmtMinusMinus) Designator MINUSMINUS
