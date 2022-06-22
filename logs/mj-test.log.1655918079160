@@ -1,0 +1,136 @@
+INFO  19:14:00,264 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  19:14:00,282 - #2 program
+INFO  19:14:00,282 - #48 test302
+INFO  19:14:00,282 - #16 record
+INFO  19:14:00,283 - #48 rec
+INFO  19:14:00,283 - #44 {
+INFO  19:14:00,283 - #48 int
+INFO  19:14:00,283 - #48 x1
+INFO  19:14:00,284 - #39 ,
+INFO  19:14:00,284 - #48 p
+INFO  19:14:00,284 - #39 ,
+INFO  19:14:00,284 - #48 z
+INFO  19:14:00,284 - #42 [
+INFO  19:14:00,284 - #43 ]
+INFO  19:14:00,284 - #38 ;
+INFO  19:14:00,284 - #48 char
+INFO  19:14:00,285 - #48 m
+INFO  19:14:00,285 - #38 ;
+INFO  19:14:00,285 - #45 }
+INFO  19:14:00,285 - #44 {
+INFO  19:14:00,285 - #14 void
+INFO  19:14:00,285 - #48 main
+INFO  19:14:00,285 - #40 (
+INFO  19:14:00,286 - #41 )
+INFO  19:14:00,286 - #44 {
+INFO  19:14:00,286 - #45 }
+INFO  19:14:00,286 - #14 void
+INFO  19:14:00,286 - #48 a
+INFO  19:14:00,286 - #40 (
+INFO  19:14:00,286 - #41 )
+INFO  19:14:00,286 - #44 {
+INFO  19:14:00,286 - #15 return
+INFO  19:14:00,286 - #38 ;
+INFO  19:14:00,286 - #45 }
+INFO  19:14:00,287 - #45 }
+INFO  19:14:00,287 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    RecordDeclaration(
+      RecordDeclarationExpr(
+        RecordName(
+         rec
+        ) [RecordName]
+        VarDeclOptionTrue(
+          VarDeclOptionTrue(
+            NoVarDeclOption(
+            ) [NoVarDeclOption]
+            VarDeclarationExpr(
+              Type(
+               int
+              ) [Type]
+              VarDeclListMultiple(
+                VarDeclListMultiple(
+                  VarDeclListSingle(
+                    VarDeclSingle(
+                     x1
+                      NoArray(
+                      ) [NoArray]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListSingle]
+                  VarDeclSingle(
+                   p
+                    NoArray(
+                    ) [NoArray]
+                  ) [VarDeclSingle]
+                ) [VarDeclListMultiple]
+                VarDeclSingle(
+                 z
+                  ArrayBrackets(
+                  ) [ArrayBrackets]
+                ) [VarDeclSingle]
+              ) [VarDeclListMultiple]
+            ) [VarDeclarationExpr]
+          ) [VarDeclOptionTrue]
+          VarDeclarationExpr(
+            Type(
+             char
+            ) [Type]
+            VarDeclListSingle(
+              VarDeclSingle(
+               m
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclSingle]
+            ) [VarDeclListSingle]
+          ) [VarDeclarationExpr]
+        ) [VarDeclOptionTrue]
+      ) [RecordDeclarationExpr]
+    ) [RecordDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListMultiple(
+      MethodDeclListNo(
+      ) [MethodDeclListNo]
+      MethodDeclaration(
+        MethodSignaturePlain(
+          MethodTypeVoid(
+          ) [MethodTypeVoid]
+          MethodName(
+           main
+          ) [MethodName]
+        ) [MethodSignaturePlain]
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+        StatementListNo(
+        ) [StatementListNo]
+      ) [MethodDeclaration]
+    ) [MethodDeclListMultiple]
+    MethodDeclaration(
+      MethodSignaturePlain(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+        MethodName(
+         a
+        ) [MethodName]
+      ) [MethodSignaturePlain]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListMultiple(
+        StatementListNo(
+        ) [StatementListNo]
+        StatementSingle(
+          SingleReturnStatement(
+          ) [SingleReturnStatement]
+        ) [StatementSingle]
+      ) [StatementListMultiple]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  19:14:00,287 - ===================================
+ERROR 19:14:00,290 - Using return statement in void method a
+INFO  19:14:00,290 - One or more errors found!

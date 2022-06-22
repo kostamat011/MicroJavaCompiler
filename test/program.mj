@@ -8,11 +8,15 @@ record rec
 	char m;
 }
 
-char m;
 
 {
-	void main()
+	void main(int p)
 	{
 	}	
+	
+	int a()
+	{
+		return;
+	}
 }
 

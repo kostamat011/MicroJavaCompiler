@@ -66,13 +66,15 @@ nonterminal ClassDecl, ClassMethodDeclOption;
 nonterminal MethodDecl, MethodDeclList, MethodDeclOption, MethodSignature, MethodType;
 nonterminal FormParsOption, FormPars, FormPar, VarArgs;
 nonterminal StatementList, Statement, Statements, SingleStatement;
-nonterminal DesignatorStatement, DesignatorStatementAssign, Designator, MemberDesignator, Expr, NumConstOption;
+nonterminal DesignatorStatement, DesignatorStatementAssign, Designator, MemberDesignator, NumConstOption;
 nonterminal Mulop, Addop, Term, Factor, MulopFactorList, AddopTermList, ActPars, ActParsOption;
 nonterminal Condition, IfCondition, CondTerm, CondFact, Relop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgramName, RecordName, MethodName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgramName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj RecordName, MethodName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Expr;
 
 
 precedence left ELSE;

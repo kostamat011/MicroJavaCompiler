@@ -1,0 +1,125 @@
+INFO  06:35:56,782 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  06:35:56,799 - #2 program
+INFO  06:35:56,799 - #48 test302
+INFO  06:35:56,799 - #16 record
+INFO  06:35:56,800 - #48 rec
+INFO  06:35:56,800 - #44 {
+INFO  06:35:56,800 - #48 int
+INFO  06:35:56,800 - #48 x1
+INFO  06:35:56,800 - #39 ,
+INFO  06:35:56,801 - #48 p
+INFO  06:35:56,801 - #39 ,
+INFO  06:35:56,801 - #48 z
+INFO  06:35:56,801 - #42 [
+INFO  06:35:56,801 - #43 ]
+INFO  06:35:56,801 - #38 ;
+INFO  06:35:56,801 - #48 char
+INFO  06:35:56,801 - #48 m
+INFO  06:35:56,802 - #38 ;
+INFO  06:35:56,802 - #45 }
+INFO  06:35:56,802 - #48 char
+INFO  06:35:56,802 - #48 m
+INFO  06:35:56,802 - #38 ;
+INFO  06:35:56,802 - #44 {
+INFO  06:35:56,812 - #14 void
+INFO  06:35:56,812 - #48 main
+INFO  06:35:56,812 - #40 (
+INFO  06:35:56,812 - #41 )
+INFO  06:35:56,813 - #44 {
+INFO  06:35:56,813 - #45 }
+INFO  06:35:56,813 - #45 }
+INFO  06:35:56,813 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    AllDeclListMultiple(
+      NoDecl(
+      ) [NoDecl]
+      RecordDeclaration(
+        RecordDeclarationExpr(
+          RecordName(
+           rec
+          ) [RecordName]
+          VarDeclOptionTrue(
+            VarDeclOptionTrue(
+              NoVarDeclOption(
+              ) [NoVarDeclOption]
+              VarDeclarationExpr(
+                Type(
+                 int
+                ) [Type]
+                VarDeclListMultiple(
+                  VarDeclListMultiple(
+                    VarDeclListSingle(
+                      VarDeclSingle(
+                       x1
+                        NoArray(
+                        ) [NoArray]
+                      ) [VarDeclSingle]
+                    ) [VarDeclListSingle]
+                    VarDeclSingle(
+                     p
+                      NoArray(
+                      ) [NoArray]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListMultiple]
+                  VarDeclSingle(
+                   z
+                    ArrayBrackets(
+                    ) [ArrayBrackets]
+                  ) [VarDeclSingle]
+                ) [VarDeclListMultiple]
+              ) [VarDeclarationExpr]
+            ) [VarDeclOptionTrue]
+            VarDeclarationExpr(
+              Type(
+               char
+              ) [Type]
+              VarDeclListSingle(
+                VarDeclSingle(
+                 m
+                  NoArray(
+                  ) [NoArray]
+                ) [VarDeclSingle]
+              ) [VarDeclListSingle]
+            ) [VarDeclarationExpr]
+          ) [VarDeclOptionTrue]
+        ) [RecordDeclarationExpr]
+      ) [RecordDeclaration]
+    ) [AllDeclListMultiple]
+    GlobalVarDeclaration(
+      GlobalVarDeclarationExpr(
+        Type(
+         char
+        ) [Type]
+        GlobalVarDeclListSingle(
+          GlobalVarDeclarationSingle(
+           m
+            NoArray(
+            ) [NoArray]
+          ) [GlobalVarDeclarationSingle]
+        ) [GlobalVarDeclListSingle]
+      ) [GlobalVarDeclarationExpr]
+    ) [GlobalVarDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListNo(
+    ) [MethodDeclListNo]
+    MethodDeclaration(
+      MethodSignaturePlain(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+        MethodName(
+         main
+        ) [MethodName]
+      ) [MethodSignaturePlain]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListNo(
+      ) [StatementListNo]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  06:35:56,814 - ===================================
+INFO  06:35:56,816 - Compile successful!

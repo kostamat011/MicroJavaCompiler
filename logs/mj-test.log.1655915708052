@@ -1,0 +1,157 @@
+INFO  18:34:30,548 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  18:34:30,857 - #2 program
+INFO  18:34:30,858 - #48 test302
+INFO  18:34:30,858 - #16 record
+INFO  18:34:30,862 - #48 rec
+INFO  18:34:30,862 - #44 {
+INFO  18:34:30,865 - #48 int
+INFO  18:34:30,868 - #48 x1
+INFO  18:34:30,870 - #39 ,
+INFO  18:34:30,876 - #48 p
+INFO  18:34:30,876 - #39 ,
+INFO  18:34:30,877 - #48 z
+INFO  18:34:30,877 - #42 [
+INFO  18:34:30,877 - #43 ]
+INFO  18:34:30,877 - #38 ;
+INFO  18:34:30,879 - #48 char
+INFO  18:34:30,880 - #48 m
+INFO  18:34:30,880 - #38 ;
+INFO  18:34:30,880 - #45 }
+INFO  18:34:30,880 - #48 char
+INFO  18:34:30,880 - #48 m
+INFO  18:34:30,880 - #38 ;
+INFO  18:34:30,880 - #44 {
+INFO  18:34:30,890 - #14 void
+INFO  18:34:30,892 - #48 m
+INFO  18:34:30,895 - #40 (
+INFO  18:34:30,898 - #48 int
+INFO  18:34:30,898 - #48 a
+INFO  18:34:30,898 - #41 )
+INFO  18:34:30,898 - #48 int
+INFO  18:34:30,898 - #48 a
+INFO  18:34:30,898 - #38 ;
+INFO  18:34:30,898 - #44 {
+INFO  18:34:30,898 - #45 }
+INFO  18:34:30,901 - #45 }
+INFO  18:34:30,905 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    AllDeclListMultiple(
+      NoDecl(
+      ) [NoDecl]
+      RecordDeclaration(
+        RecordDeclarationExpr(
+          RecordName(
+           rec
+          ) [RecordName]
+          VarDeclOptionTrue(
+            VarDeclOptionTrue(
+              NoVarDeclOption(
+              ) [NoVarDeclOption]
+              VarDeclarationExpr(
+                Type(
+                 int
+                ) [Type]
+                VarDeclListMultiple(
+                  VarDeclListMultiple(
+                    VarDeclListSingle(
+                      VarDeclSingle(
+                       x1
+                        NoArray(
+                        ) [NoArray]
+                      ) [VarDeclSingle]
+                    ) [VarDeclListSingle]
+                    VarDeclSingle(
+                     p
+                      NoArray(
+                      ) [NoArray]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListMultiple]
+                  VarDeclSingle(
+                   z
+                    ArrayBrackets(
+                    ) [ArrayBrackets]
+                  ) [VarDeclSingle]
+                ) [VarDeclListMultiple]
+              ) [VarDeclarationExpr]
+            ) [VarDeclOptionTrue]
+            VarDeclarationExpr(
+              Type(
+               char
+              ) [Type]
+              VarDeclListSingle(
+                VarDeclSingle(
+                 m
+                  NoArray(
+                  ) [NoArray]
+                ) [VarDeclSingle]
+              ) [VarDeclListSingle]
+            ) [VarDeclarationExpr]
+          ) [VarDeclOptionTrue]
+        ) [RecordDeclarationExpr]
+      ) [RecordDeclaration]
+    ) [AllDeclListMultiple]
+    GlobalVarDeclaration(
+      GlobalVarDeclarationExpr(
+        Type(
+         char
+        ) [Type]
+        GlobalVarDeclListSingle(
+          GlobalVarDeclarationSingle(
+           m
+            NoArray(
+            ) [NoArray]
+          ) [GlobalVarDeclarationSingle]
+        ) [GlobalVarDeclListSingle]
+      ) [GlobalVarDeclarationExpr]
+    ) [GlobalVarDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListNo(
+    ) [MethodDeclListNo]
+    MethodDeclaration(
+      MethodSignatureParams(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+        MethodName(
+         m
+        ) [MethodName]
+        FormParsSingle(
+          FormParSingle(
+            Type(
+             int
+            ) [Type]
+           a
+            NoArray(
+            ) [NoArray]
+          ) [FormParSingle]
+        ) [FormParsSingle]
+      ) [MethodSignatureParams]
+      VarDeclOptionTrue(
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+        VarDeclarationExpr(
+          Type(
+           int
+          ) [Type]
+          VarDeclListSingle(
+            VarDeclSingle(
+             a
+              NoArray(
+              ) [NoArray]
+            ) [VarDeclSingle]
+          ) [VarDeclListSingle]
+        ) [VarDeclarationExpr]
+      ) [VarDeclOptionTrue]
+      StatementListNo(
+      ) [StatementListNo]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  18:34:30,905 - ===================================
+ERROR 18:34:30,914 - Name m is already defined.
+ERROR 18:34:30,914 - Cannot declare local variable outside Method or Record
+ERROR 18:34:30,914 - No main method found
+INFO  18:34:30,914 - One or more errors found!

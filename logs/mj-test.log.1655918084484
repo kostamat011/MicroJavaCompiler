@@ -1,0 +1,135 @@
+INFO  19:14:39,161 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  19:14:39,180 - #2 program
+INFO  19:14:39,180 - #48 test302
+INFO  19:14:39,180 - #16 record
+INFO  19:14:39,180 - #48 rec
+INFO  19:14:39,180 - #44 {
+INFO  19:14:39,180 - #48 int
+INFO  19:14:39,180 - #48 x1
+INFO  19:14:39,181 - #39 ,
+INFO  19:14:39,181 - #48 p
+INFO  19:14:39,181 - #39 ,
+INFO  19:14:39,181 - #48 z
+INFO  19:14:39,181 - #42 [
+INFO  19:14:39,181 - #43 ]
+INFO  19:14:39,181 - #38 ;
+INFO  19:14:39,182 - #48 char
+INFO  19:14:39,182 - #48 m
+INFO  19:14:39,182 - #38 ;
+INFO  19:14:39,182 - #45 }
+INFO  19:14:39,182 - #44 {
+INFO  19:14:39,182 - #14 void
+INFO  19:14:39,182 - #48 main
+INFO  19:14:39,183 - #40 (
+INFO  19:14:39,192 - #41 )
+INFO  19:14:39,192 - #44 {
+INFO  19:14:39,192 - #45 }
+INFO  19:14:39,192 - #14 void
+INFO  19:14:39,192 - #48 a
+INFO  19:14:39,192 - #40 (
+INFO  19:14:39,192 - #41 )
+INFO  19:14:39,192 - #44 {
+INFO  19:14:39,192 - #15 return
+INFO  19:14:39,192 - #38 ;
+INFO  19:14:39,192 - #45 }
+INFO  19:14:39,193 - #45 }
+INFO  19:14:39,193 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    RecordDeclaration(
+      RecordDeclarationExpr(
+        RecordName(
+         rec
+        ) [RecordName]
+        VarDeclOptionTrue(
+          VarDeclOptionTrue(
+            NoVarDeclOption(
+            ) [NoVarDeclOption]
+            VarDeclarationExpr(
+              Type(
+               int
+              ) [Type]
+              VarDeclListMultiple(
+                VarDeclListMultiple(
+                  VarDeclListSingle(
+                    VarDeclSingle(
+                     x1
+                      NoArray(
+                      ) [NoArray]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListSingle]
+                  VarDeclSingle(
+                   p
+                    NoArray(
+                    ) [NoArray]
+                  ) [VarDeclSingle]
+                ) [VarDeclListMultiple]
+                VarDeclSingle(
+                 z
+                  ArrayBrackets(
+                  ) [ArrayBrackets]
+                ) [VarDeclSingle]
+              ) [VarDeclListMultiple]
+            ) [VarDeclarationExpr]
+          ) [VarDeclOptionTrue]
+          VarDeclarationExpr(
+            Type(
+             char
+            ) [Type]
+            VarDeclListSingle(
+              VarDeclSingle(
+               m
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclSingle]
+            ) [VarDeclListSingle]
+          ) [VarDeclarationExpr]
+        ) [VarDeclOptionTrue]
+      ) [RecordDeclarationExpr]
+    ) [RecordDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListMultiple(
+      MethodDeclListNo(
+      ) [MethodDeclListNo]
+      MethodDeclaration(
+        MethodSignaturePlain(
+          MethodTypeVoid(
+          ) [MethodTypeVoid]
+          MethodName(
+           main
+          ) [MethodName]
+        ) [MethodSignaturePlain]
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+        StatementListNo(
+        ) [StatementListNo]
+      ) [MethodDeclaration]
+    ) [MethodDeclListMultiple]
+    MethodDeclaration(
+      MethodSignaturePlain(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+        MethodName(
+         a
+        ) [MethodName]
+      ) [MethodSignaturePlain]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListMultiple(
+        StatementListNo(
+        ) [StatementListNo]
+        StatementSingle(
+          SingleReturnStatement(
+          ) [SingleReturnStatement]
+        ) [StatementSingle]
+      ) [StatementListMultiple]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  19:14:39,193 - ===================================
+INFO  19:14:39,196 - Compile successful!

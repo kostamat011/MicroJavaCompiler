@@ -92,7 +92,6 @@ nonterminal DesignatorStatement DesignatorStatement;
 nonterminal DesignatorStatementAssign DesignatorStatementAssign;
 nonterminal Designator Designator;
 nonterminal MemberDesignator MemberDesignator;
-nonterminal Expr Expr;
 nonterminal NumConstOption NumConstOption;
 nonterminal Mulop Mulop;
 nonterminal Addop Addop;
@@ -110,7 +109,9 @@ nonterminal Relop Relop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgramName, RecordName, MethodName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgramName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj RecordName, MethodName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Expr;
 
 
 precedence left ELSE;

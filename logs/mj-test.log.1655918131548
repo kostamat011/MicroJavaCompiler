@@ -1,0 +1,148 @@
+INFO  19:15:12,583 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  19:15:12,600 - #2 program
+INFO  19:15:12,601 - #48 test302
+INFO  19:15:12,601 - #16 record
+INFO  19:15:12,601 - #48 rec
+INFO  19:15:12,601 - #44 {
+INFO  19:15:12,601 - #48 int
+INFO  19:15:12,601 - #48 x1
+INFO  19:15:12,602 - #39 ,
+INFO  19:15:12,602 - #48 p
+INFO  19:15:12,602 - #39 ,
+INFO  19:15:12,602 - #48 z
+INFO  19:15:12,602 - #42 [
+INFO  19:15:12,602 - #43 ]
+INFO  19:15:12,602 - #38 ;
+INFO  19:15:12,602 - #48 char
+INFO  19:15:12,603 - #48 m
+INFO  19:15:12,603 - #38 ;
+INFO  19:15:12,603 - #45 }
+INFO  19:15:12,603 - #44 {
+INFO  19:15:12,603 - #14 void
+INFO  19:15:12,603 - #48 main
+INFO  19:15:12,603 - #40 (
+INFO  19:15:12,613 - #41 )
+INFO  19:15:12,613 - #44 {
+INFO  19:15:12,613 - #45 }
+INFO  19:15:12,613 - #14 void
+INFO  19:15:12,613 - #48 a
+INFO  19:15:12,613 - #40 (
+INFO  19:15:12,613 - #41 )
+INFO  19:15:12,613 - #44 {
+INFO  19:15:12,613 - #15 return
+INFO  19:15:12,613 - #51 1
+INFO  19:15:12,613 - #38 ;
+INFO  19:15:12,614 - #45 }
+INFO  19:15:12,614 - #45 }
+INFO  19:15:12,614 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    RecordDeclaration(
+      RecordDeclarationExpr(
+        RecordName(
+         rec
+        ) [RecordName]
+        VarDeclOptionTrue(
+          VarDeclOptionTrue(
+            NoVarDeclOption(
+            ) [NoVarDeclOption]
+            VarDeclarationExpr(
+              Type(
+               int
+              ) [Type]
+              VarDeclListMultiple(
+                VarDeclListMultiple(
+                  VarDeclListSingle(
+                    VarDeclSingle(
+                     x1
+                      NoArray(
+                      ) [NoArray]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListSingle]
+                  VarDeclSingle(
+                   p
+                    NoArray(
+                    ) [NoArray]
+                  ) [VarDeclSingle]
+                ) [VarDeclListMultiple]
+                VarDeclSingle(
+                 z
+                  ArrayBrackets(
+                  ) [ArrayBrackets]
+                ) [VarDeclSingle]
+              ) [VarDeclListMultiple]
+            ) [VarDeclarationExpr]
+          ) [VarDeclOptionTrue]
+          VarDeclarationExpr(
+            Type(
+             char
+            ) [Type]
+            VarDeclListSingle(
+              VarDeclSingle(
+               m
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclSingle]
+            ) [VarDeclListSingle]
+          ) [VarDeclarationExpr]
+        ) [VarDeclOptionTrue]
+      ) [RecordDeclarationExpr]
+    ) [RecordDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListMultiple(
+      MethodDeclListNo(
+      ) [MethodDeclListNo]
+      MethodDeclaration(
+        MethodSignaturePlain(
+          MethodTypeVoid(
+          ) [MethodTypeVoid]
+          MethodName(
+           main
+          ) [MethodName]
+        ) [MethodSignaturePlain]
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+        StatementListNo(
+        ) [StatementListNo]
+      ) [MethodDeclaration]
+    ) [MethodDeclListMultiple]
+    MethodDeclaration(
+      MethodSignaturePlain(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+        MethodName(
+         a
+        ) [MethodName]
+      ) [MethodSignaturePlain]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListMultiple(
+        StatementListNo(
+        ) [StatementListNo]
+        StatementSingle(
+          SingleReturnExprStatement(
+            ExprPositive(
+              TermMultiple(
+                NumConstFactor(
+                 1
+                ) [NumConstFactor]
+                MulopFactorListNo(
+                ) [MulopFactorListNo]
+              ) [TermMultiple]
+              AddopTermListNo(
+              ) [AddopTermListNo]
+            ) [ExprPositive]
+          ) [SingleReturnExprStatement]
+        ) [StatementSingle]
+      ) [StatementListMultiple]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  19:15:12,615 - ===================================
+ERROR 19:15:12,618 - Return statement with expression is invalid for method of type void
+INFO  19:15:12,618 - One or more errors found!

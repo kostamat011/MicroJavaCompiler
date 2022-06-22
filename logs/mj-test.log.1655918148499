@@ -1,0 +1,140 @@
+INFO  19:15:31,549 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  19:15:31,568 - #2 program
+INFO  19:15:31,568 - #48 test302
+INFO  19:15:31,568 - #16 record
+INFO  19:15:31,568 - #48 rec
+INFO  19:15:31,568 - #44 {
+INFO  19:15:31,569 - #48 int
+INFO  19:15:31,569 - #48 x1
+INFO  19:15:31,569 - #39 ,
+INFO  19:15:31,569 - #48 p
+INFO  19:15:31,570 - #39 ,
+INFO  19:15:31,570 - #48 z
+INFO  19:15:31,570 - #42 [
+INFO  19:15:31,570 - #43 ]
+INFO  19:15:31,570 - #38 ;
+INFO  19:15:31,570 - #48 char
+INFO  19:15:31,570 - #48 m
+INFO  19:15:31,570 - #38 ;
+INFO  19:15:31,570 - #45 }
+INFO  19:15:31,570 - #44 {
+INFO  19:15:31,570 - #14 void
+INFO  19:15:31,571 - #48 main
+INFO  19:15:31,571 - #40 (
+INFO  19:15:31,581 - #41 )
+INFO  19:15:31,581 - #44 {
+INFO  19:15:31,581 - #45 }
+INFO  19:15:31,581 - #48 int
+INFO  19:15:31,581 - #48 a
+INFO  19:15:31,581 - #40 (
+INFO  19:15:31,581 - #41 )
+INFO  19:15:31,581 - #44 {
+INFO  19:15:31,581 - #15 return
+INFO  19:15:31,582 - #38 ;
+INFO  19:15:31,582 - #45 }
+INFO  19:15:31,582 - #45 }
+INFO  19:15:31,582 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    RecordDeclaration(
+      RecordDeclarationExpr(
+        RecordName(
+         rec
+        ) [RecordName]
+        VarDeclOptionTrue(
+          VarDeclOptionTrue(
+            NoVarDeclOption(
+            ) [NoVarDeclOption]
+            VarDeclarationExpr(
+              Type(
+               int
+              ) [Type]
+              VarDeclListMultiple(
+                VarDeclListMultiple(
+                  VarDeclListSingle(
+                    VarDeclSingle(
+                     x1
+                      NoArray(
+                      ) [NoArray]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListSingle]
+                  VarDeclSingle(
+                   p
+                    NoArray(
+                    ) [NoArray]
+                  ) [VarDeclSingle]
+                ) [VarDeclListMultiple]
+                VarDeclSingle(
+                 z
+                  ArrayBrackets(
+                  ) [ArrayBrackets]
+                ) [VarDeclSingle]
+              ) [VarDeclListMultiple]
+            ) [VarDeclarationExpr]
+          ) [VarDeclOptionTrue]
+          VarDeclarationExpr(
+            Type(
+             char
+            ) [Type]
+            VarDeclListSingle(
+              VarDeclSingle(
+               m
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclSingle]
+            ) [VarDeclListSingle]
+          ) [VarDeclarationExpr]
+        ) [VarDeclOptionTrue]
+      ) [RecordDeclarationExpr]
+    ) [RecordDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListMultiple(
+      MethodDeclListNo(
+      ) [MethodDeclListNo]
+      MethodDeclaration(
+        MethodSignaturePlain(
+          MethodTypeVoid(
+          ) [MethodTypeVoid]
+          MethodName(
+           main
+          ) [MethodName]
+        ) [MethodSignaturePlain]
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+        StatementListNo(
+        ) [StatementListNo]
+      ) [MethodDeclaration]
+    ) [MethodDeclListMultiple]
+    MethodDeclaration(
+      MethodSignaturePlain(
+        MethodTypeType(
+          Type(
+           int
+          ) [Type]
+        ) [MethodTypeType]
+        MethodName(
+         a
+        ) [MethodName]
+      ) [MethodSignaturePlain]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListMultiple(
+        StatementListNo(
+        ) [StatementListNo]
+        StatementSingle(
+          SingleReturnStatement(
+          ) [SingleReturnStatement]
+        ) [StatementSingle]
+      ) [StatementListMultiple]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  19:15:31,582 - ===================================
+ERROR 19:15:31,585 - Return statement without expression is invalid for method of type int
+ERROR 19:15:31,585 - Missing return statement for method of type int
+INFO  19:15:31,585 - One or more errors found!

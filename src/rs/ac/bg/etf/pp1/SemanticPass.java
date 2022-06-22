@@ -5,33 +5,51 @@ import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.symboltable.Tab;
 import rs.etf.pp1.symboltable.concepts.Obj;
 import rs.etf.pp1.symboltable.concepts.Struct;
+import rs.etf.pp1.symboltable.structure.SymbolDataStructure;
 
 public class SemanticPass extends VisitorAdaptor {
-	// visit statistics
-		//
-		int globalVarCount = 0;
-		int localVarCount = 0;
-		int fieldCount = 0;
-		boolean mainFound = false;
 
-		
 		Logger log = Logger.getLogger(getClass());
+
+		// defined global vars count
+		//
+		private int globalVarCount = 0;
 		
 		// current type for vars and constants
 		//
-		private Struct currType;
+		private Struct currType = Tab.noType;
 		
 		// current type for methods
 		//
-		private Struct currMethodType;
+		private Struct currMethodType = Tab.noType;
+		
+		// current method type name
+		//
+		private String currMethodTypeName = null;
 		
 		// current method
 		//
-		private Obj currMethod;
+		private Obj currMethod = Tab.noObj;
+		
+		// count of local vars declared in current method
+		//
+		private int localVarCount = 0;
 		
 		// is return statement found for current method
 		//
-		private boolean currMethodReturnFound;
+		private boolean currMethodReturnFound = false;
+		
+		// is main method found in program definiton
+		//
+		private boolean mainFound = false;
+		
+		// current record 
+		//
+		private Obj currRecord = Tab.noObj;
+		
+		// count of fields declared in current record
+		//
+		private int fieldCount = 0;
 		
 		// Symbol table extensions
 		//
@@ -44,14 +62,6 @@ public class SemanticPass extends VisitorAdaptor {
 		public SemanticPass() {
 			Tab.init();
 			Tab.currentScope.addToLocals(new Obj(Obj.Type, "bool", boolType));
-			
-			// init current type to no type
-			//
-			currType = currMethodType = Tab.noType;
-			
-			// init current method to none
-			//
-			currMethod = Tab.noObj;
 		}
 		
 		// check if successful semantic pass
@@ -131,31 +141,13 @@ public class SemanticPass extends VisitorAdaptor {
 			return true;
 		}
 		
-		private String getMethodTypeName(MethodDeclaration method) {
-			MethodSignature sig = method.getMethodSignature();
-			MethodType type = null;
-			if(sig instanceof MethodSignaturePlain) {
-				type = ((MethodSignaturePlain)sig).getMethodType();
-			}
-			else if(sig instanceof MethodSignatureParams) {
-				type = ((MethodSignatureParams)sig).getMethodType();
-			} 
-			else if(sig instanceof MethodSignatureVarArgs) {
-				type = ((MethodSignatureVarArgs)sig).getMethodType();
-			}
-			
-			if(type == null) return null;
-			else if(type instanceof MethodTypeVoid) {
-				return "void";
-			}
-			else if(type instanceof MethodTypeType) {
-				return ((MethodTypeType)type).getType().getName();
-			}
-			else {
-				return null;
-			}
+		private void resetMethodData() {
+			currMethod = Tab.noObj;
+			currMethodType = Tab.noType;
+			currMethodTypeName = null;
+			currMethodReturnFound = false;
+			localVarCount = 0;
 		}
-		
 		
 		/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 		
@@ -216,8 +208,15 @@ public class SemanticPass extends VisitorAdaptor {
 				reportError("Variable with name " + varDecl.getVarName() + " already defined in current scope.", varDecl);
 			} else {
 				boolean isArray = (varDecl.getArrBracketsOption() != null);
+				if(currMethod != Tab.noObj && currRecord == Tab.noObj) {
+					localVarCount++;
+				} else if(currMethod == Tab.noObj && currRecord != Tab.noObj) {
+					fieldCount++;
+				} else {
+					reportError("Cannot declare local variable outside Method or Record", varDecl);
+					return;
+				}
 				insertVarToTable(varDecl.getVarName(), isArray);
-				localVarCount++;
 			}
 		}
 		
@@ -259,7 +258,7 @@ public class SemanticPass extends VisitorAdaptor {
 			if(findSymbolInTable(recordName.getName())) {
 				reportError("Name " + recordName.getName() + " is already defined.", recordName);
 			} else {
-				recordName.obj = Tab.insert(Obj.Type, recordName.getName(), recordType);
+				currRecord = recordName.obj = Tab.insert(Obj.Type, recordName.getName(), recordType);
 				Tab.openScope();
 			}
 		}
@@ -269,6 +268,7 @@ public class SemanticPass extends VisitorAdaptor {
 		public void visit(RecordDeclarationExpr record) {
 			Tab.chainLocalSymbols(record.getRecordName().obj);
 			Tab.closeScope();
+			currRecord = Tab.noObj;
 		}
 		
 		
@@ -280,12 +280,14 @@ public class SemanticPass extends VisitorAdaptor {
 		//
 		public void visit(MethodTypeVoid methodTypeVoid) {
 			currMethodType = Tab.noType;
+			currMethodTypeName = "void";
 		}
 		
 		// Return type
 		//
 		public void visit(MethodTypeType methodType) {
 			currMethodType = methodType.getType().struct;
+			currMethodTypeName = methodType.getType().getName();
 		}
 		
 		/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -348,12 +350,7 @@ public class SemanticPass extends VisitorAdaptor {
 		//
 		public void visit(MethodDeclaration method) {
 			if( (currMethodType != Tab.noType) && !currMethodReturnFound) {
-				reportError("Missing return statement for method of type " + getMethodTypeName(method), method);
-				return;
-			}
-			
-			if( (currMethodType == Tab.noType) && currMethodReturnFound) {
-				reportError("Using return statement in void method " + currMethod.getName(), method);
+				reportError("Missing return statement for method of type " + currMethodTypeName, method);
 				return;
 			}
 			
@@ -362,11 +359,100 @@ public class SemanticPass extends VisitorAdaptor {
 				return;
 			}
 			
-			currMethod = Tab.noObj;
-			currMethodReturnFound = false;
-			localVarCount = 0;
+			resetMethodData();
 		}
 		
 		/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+		
+		/* Visiting formal parameters */
+		
+		public void visit(FormPars formPars) {
+			// at this moment current scope will contain only formal params visited so far
+			//
+			SymbolDataStructure pars = Tab.currentScope().getLocals();
+			currMethod.setLocals(pars);
+		}
+		
+		// Single Formal parameter visit
+		//
+		public void visit(FormPar formPar) {
+			if(formPar instanceof FormParSingle) {
+				FormParSingle param = (FormParSingle)formPar;
+				
+				if(findSymbolInCurrentScope(param.getFormParName())) {
+					reportError("Name of formal parameter "+param.getFormParName()+" is already defined.",param);
+					return;
+				}
+				
+				boolean isArray = (param.getArrBracketsOption() != null);
+				
+				insertVarToTable(param.getFormParName(), isArray);
+			}
+		}
+		
+		// VarArgs visit
+		//
+		public void visit(VarArgsDeclaration varArgs) {
+			String varArgName = varArgs.getVarArgsName();
+			if(findSymbolInCurrentScope(varArgName)) {
+				reportError("Name of var arg "+varArgName+" is already defined.", varArgs);
+				return;
+			}
+			// insert var args to table as an array
+			//
+			insertVarToTable(varArgName,true);
+		}
+		
+		/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+		
+		/* Visiting statements */
+		
+		// return
+		//
+		public void visit(SingleReturnStatement ret) {
+			if(currMethod == Tab.noObj) {
+				reportError("Return statement found outside the method",ret);
+				return;
+			}
+			
+			if(currMethodType != Tab.noType) {
+				reportError("Return statement without expression is invalid for method of type "+ currMethodTypeName,ret);
+				return;
+			}
+			
+			currMethodReturnFound = true;
+		}
+		
+		// return expr
+		//
+		public void visit(SingleReturnExprStatement ret) {
+			if(currMethod == Tab.noObj) {
+				reportError("Return statement found outside the method",ret);
+				return;
+			}
+			
+			if(currMethodType == Tab.noType) {
+				reportError("Return statement with expression is invalid for method of type void", ret);
+				return;
+			}
+			
+			Struct returnExprType = ret.getExpr().obj.getType();
+			
+			if(!returnExprType.compatibleWith(currMethodType)) {
+				reportError("Return statement returning wrong type, " + currMethodTypeName + " expected", ret );
+				return;
+			}
+			
+			currMethodReturnFound = true;
+		}
+		
+		/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+		
+		/* Visiting expressions */
+		
+		
+		
+		/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
 	
 }

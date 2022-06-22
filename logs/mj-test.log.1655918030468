@@ -1,0 +1,136 @@
+INFO  18:35:08,053 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  18:35:08,071 - #2 program
+INFO  18:35:08,071 - #48 test302
+INFO  18:35:08,071 - #16 record
+INFO  18:35:08,071 - #48 rec
+INFO  18:35:08,071 - #44 {
+INFO  18:35:08,072 - #48 int
+INFO  18:35:08,072 - #48 x1
+INFO  18:35:08,072 - #39 ,
+INFO  18:35:08,073 - #48 p
+INFO  18:35:08,073 - #39 ,
+INFO  18:35:08,073 - #48 z
+INFO  18:35:08,073 - #42 [
+INFO  18:35:08,073 - #43 ]
+INFO  18:35:08,073 - #38 ;
+INFO  18:35:08,073 - #48 char
+INFO  18:35:08,073 - #48 m
+INFO  18:35:08,073 - #38 ;
+INFO  18:35:08,073 - #45 }
+INFO  18:35:08,073 - #44 {
+INFO  18:35:08,074 - #14 void
+INFO  18:35:08,074 - #48 m
+INFO  18:35:08,074 - #40 (
+INFO  18:35:08,084 - #48 int
+INFO  18:35:08,084 - #48 a
+INFO  18:35:08,084 - #41 )
+INFO  18:35:08,084 - #48 int
+INFO  18:35:08,084 - #48 a
+INFO  18:35:08,084 - #38 ;
+INFO  18:35:08,084 - #44 {
+INFO  18:35:08,084 - #45 }
+INFO  18:35:08,084 - #45 }
+INFO  18:35:08,085 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    RecordDeclaration(
+      RecordDeclarationExpr(
+        RecordName(
+         rec
+        ) [RecordName]
+        VarDeclOptionTrue(
+          VarDeclOptionTrue(
+            NoVarDeclOption(
+            ) [NoVarDeclOption]
+            VarDeclarationExpr(
+              Type(
+               int
+              ) [Type]
+              VarDeclListMultiple(
+                VarDeclListMultiple(
+                  VarDeclListSingle(
+                    VarDeclSingle(
+                     x1
+                      NoArray(
+                      ) [NoArray]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListSingle]
+                  VarDeclSingle(
+                   p
+                    NoArray(
+                    ) [NoArray]
+                  ) [VarDeclSingle]
+                ) [VarDeclListMultiple]
+                VarDeclSingle(
+                 z
+                  ArrayBrackets(
+                  ) [ArrayBrackets]
+                ) [VarDeclSingle]
+              ) [VarDeclListMultiple]
+            ) [VarDeclarationExpr]
+          ) [VarDeclOptionTrue]
+          VarDeclarationExpr(
+            Type(
+             char
+            ) [Type]
+            VarDeclListSingle(
+              VarDeclSingle(
+               m
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclSingle]
+            ) [VarDeclListSingle]
+          ) [VarDeclarationExpr]
+        ) [VarDeclOptionTrue]
+      ) [RecordDeclarationExpr]
+    ) [RecordDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListNo(
+    ) [MethodDeclListNo]
+    MethodDeclaration(
+      MethodSignatureParams(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+        MethodName(
+         m
+        ) [MethodName]
+        FormParsSingle(
+          FormParSingle(
+            Type(
+             int
+            ) [Type]
+           a
+            NoArray(
+            ) [NoArray]
+          ) [FormParSingle]
+        ) [FormParsSingle]
+      ) [MethodSignatureParams]
+      VarDeclOptionTrue(
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+        VarDeclarationExpr(
+          Type(
+           int
+          ) [Type]
+          VarDeclListSingle(
+            VarDeclSingle(
+             a
+              NoArray(
+              ) [NoArray]
+            ) [VarDeclSingle]
+          ) [VarDeclListSingle]
+        ) [VarDeclarationExpr]
+      ) [VarDeclOptionTrue]
+      StatementListNo(
+      ) [StatementListNo]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  18:35:08,085 - ===================================
+ERROR 18:35:08,088 - No main method found
+INFO  18:35:08,088 - One or more errors found!
