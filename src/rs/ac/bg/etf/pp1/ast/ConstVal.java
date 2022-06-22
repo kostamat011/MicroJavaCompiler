@@ -1,11 +1,11 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/5/2022 2:20:27
+// 22/5/2022 3:52:45
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public abstract class ConstType implements SyntaxNode {
+public abstract class ConstVal implements SyntaxNode {
 
     private SyntaxNode parent;
 

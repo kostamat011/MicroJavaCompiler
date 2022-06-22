@@ -2,17 +2,14 @@
 
 program test302
 
-int x, y, z;
-int x;
-char c, a, b;
+const bool a = false;
 
 record rec 
 {
 	int xx, yy, zz;
 
 	char aa, bb, cc;
-	int o[], z[];
-	bool a, x;
+	int o[];
 }
 
 {

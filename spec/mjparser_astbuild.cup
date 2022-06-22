@@ -64,7 +64,7 @@ nonterminal RecordDecl RecordDecl;
 nonterminal ConstDecl ConstDecl;
 nonterminal ConstAssignList ConstAssignList;
 nonterminal ConstAssign ConstAssign;
-nonterminal ConstType ConstType;
+nonterminal ConstVal ConstVal;
 nonterminal VarDecl VarDecl;
 nonterminal VarDeclList VarDeclList;
 nonterminal VarDeclSingle VarDeclSingle;
@@ -136,9 +136,9 @@ ConstAssignList ::= (ConstAssignListMultiple) ConstAssignList:C1 COMMA ConstAssi
 				  |	(ConstAssignSingle) ConstAssign:C1 {: RESULT=new ConstAssignSingle(C1); RESULT.setLine(C1left); :}
 				  ;
 
-ConstAssign ::= (ConstAssign) IDENT:constName ASSIGN ConstType:constVal {: RESULT=new ConstAssign(constName, constVal); RESULT.setLine(constNameleft); :};
+ConstAssign ::= (ConstAssign) IDENT:constName ASSIGN ConstVal:C1 {: RESULT=new ConstAssign(constName, C1); RESULT.setLine(constNameleft); :};
 
-ConstType ::= (NumberConst) NUMBER_CONST:numVal {: RESULT=new NumberConst(numVal); RESULT.setLine(numValleft); :}
+ConstVal ::= (NumberConst) NUMBER_CONST:numVal {: RESULT=new NumberConst(numVal); RESULT.setLine(numValleft); :}
 			| (CharConst) CHAR_CONST:charVal {: RESULT=new CharConst(charVal); RESULT.setLine(charValleft); :}
 			| (BoolConst) BOOL_CONST:boolVal {: RESULT=new BoolConst(boolVal); RESULT.setLine(boolValleft); :}
 			;

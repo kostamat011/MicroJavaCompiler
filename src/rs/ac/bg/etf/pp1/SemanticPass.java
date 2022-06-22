@@ -44,11 +44,17 @@ public class SemanticPass extends VisitorAdaptor {
 		currType = Tab.noType;
 	}
 	
+	// check if successful semantic pass
+	//
+	private boolean error = false;
+	
+	public boolean isSuccessful() {
+		return !error;
+	}
+	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 	
 	/* Errors util methods */
-	
-	private boolean error = false;
 	
 	private void reportError(String msg, SyntaxNode node) {
 		error = true;
@@ -63,9 +69,58 @@ public class SemanticPass extends VisitorAdaptor {
 	
 	/* Other util methods */
 	
-	private boolean findSymbol(String name) {
+	private boolean findSymbolInTable(String name) {
 		return (Tab.find(name) != Tab.noObj);
 	}
+	
+	private boolean findSymbolInCurrentScope(String name) {
+		return (Tab.currentScope.findSymbol(name) != null);
+	}
+	
+	private void insertVarToTable(String name, boolean isArray) {
+		if(isArray) {
+			Tab.insert(Obj.Var, name, new Struct(Struct.Array, currType));
+		} else {
+			Tab.insert(Obj.Var, name, currType);
+		}
+	}
+	
+	private boolean insertConstToTable(String name, ConstVal constVal) {
+		
+		// insert const of correct type and set address to const value
+		// in case of type mismatch between current type and const literal type return false
+		//
+		if(constVal instanceof NumberConst) {
+			if(currType != Tab.intType) {
+				return false;
+			}
+			Obj insertedConst  = Tab.insert(Obj.Con, name, Tab.intType);
+			insertedConst.setAdr(((NumberConst)constVal).getNumVal());
+		} 
+		
+		else if (constVal instanceof BoolConst) {
+			if(currType != boolType) {
+				return false;
+			}
+			Obj insertedConst  = Tab.insert(Obj.Con, name, boolType);
+			insertedConst.setAdr((((BoolConst)constVal).getBoolVal()) ? 1 : 0);
+		} 
+		
+		else if (constVal instanceof CharConst) {
+			if(currType != Tab.charType) {
+				return false;
+			}
+			Obj insertedConst  = Tab.insert(Obj.Con, name, Tab.charType);
+			insertedConst.setAdr(((CharConst)constVal).getCharVal());
+		}
+		
+		else {
+			return false;
+		}
+		
+		return true;
+	}
+	
 	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 	
@@ -74,7 +129,7 @@ public class SemanticPass extends VisitorAdaptor {
 	// Program name - start of program
 	//
 	public void visit(ProgramName progName) {
-		log.info("Evo nas u program name");
+		//log.info("Evo nas u program name");
 		progName.obj = Tab.insert(Obj.Prog, progName.getName(), Tab.noType);
 		Tab.openScope();
 	}
@@ -83,7 +138,7 @@ public class SemanticPass extends VisitorAdaptor {
 	// Program - end of program
 	//
 	public void visit(Program prog) {
-		log.info("Evo nas u program");
+		//log.info("Evo nas u program");
 		Tab.chainLocalSymbols(prog.getProgramName().obj);
 		Tab.closeScope();
 	}
@@ -109,20 +164,46 @@ public class SemanticPass extends VisitorAdaptor {
 	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 	
-	/* Visiting var declaration */
+	/* Visiting variable declaration */
 	
+	// local vars
+	//
 	public void visit(VarDeclSingle varDecl) {
-		if(Tab.currentScope.findSymbol(varDecl.getVarName()) != null) {
-			reportError("Variable name already defined in current scope.", varDecl);
-		}
-		
-		if(varDecl.getArrBracketsOption() != null) {
-			Tab.insert(Obj.Var, varDecl.getVarName(), new Struct(Struct.Array, currType));
+		if(findSymbolInCurrentScope(varDecl.getVarName())) {
+			reportError("Variable with name " + varDecl.getVarName() + " already defined in current scope.", varDecl);
 		} else {
-			Tab.insert(Obj.Var, varDecl.getVarName(), currType);
+			boolean isArray = (varDecl.getArrBracketsOption() != null);
+			insertVarToTable(varDecl.getVarName(), isArray);
+			localVarCount++;
 		}
-		
-		localVarCount++;
+	}
+	
+	// global vars
+	//
+	public void visit(GlobalVarDeclarationSingle globalVarDecl) {
+		if(findSymbolInCurrentScope(globalVarDecl.getVarName())) {
+			reportError("Global variable with name " + globalVarDecl.getVarName() + " is already defined.", globalVarDecl);
+		} else {
+			boolean isArray = (globalVarDecl.getArrBracketsOption() != null);
+			insertVarToTable(globalVarDecl.getVarName(), isArray);
+			globalVarCount++;
+		}
+	}
+	
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	
+	/* Visiting const assignment */
+	
+	public void visit(ConstAssign constAssign) {
+		if(findSymbolInCurrentScope(constAssign.getConstName())) {
+			reportError("Constant with name " + constAssign.getConstName() + " is already defined.", constAssign);
+		} else {
+			if(!insertConstToTable(constAssign.getConstName(), constAssign.getConstVal())) {
+				reportError("Invalid constant type",constAssign);
+			} else {
+				// success
+			}
+		}
 	}
 	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */

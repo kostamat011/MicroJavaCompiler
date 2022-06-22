@@ -54,7 +54,11 @@ public class MJParserTest {
 			log.info(" Pristupa ugnjezdenim clanovima ukupno ima = "+ v.nestedDesignators);
 			log.info(" Var args ima =  "+ v.varArgsCnt);*/
 			
-			log.info(" Globalnih promenljivih ima: "+v.localVarCount);
+			if(v.isSuccessful()) {
+				log.info("Compile successful!");
+			} else {
+				log.info("One or more errors found!");
+			}
 		} 
 		finally {
 			if (br != null) try { br.close(); } catch (IOException e1) { log.error(e1.getMessage(), e1); }

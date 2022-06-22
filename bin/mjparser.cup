@@ -59,7 +59,7 @@ terminal Character CHAR_CONST;
 terminal Integer NUMBER_CONST;
 
 nonterminal AllDeclList, SingleDecl, RecordDecl;
-nonterminal ConstDecl, ConstAssignList, ConstAssign, ConstType;
+nonterminal ConstDecl, ConstAssignList, ConstAssign, ConstVal;
 nonterminal VarDecl, VarDeclList, VarDeclSingle, VarDeclOption, ArrBracketsOption;
 nonterminal GlobalVarDecl, GlobalVarDeclList, GlobalVarDeclSingle;
 nonterminal ClassDecl, ClassMethodDeclOption;
@@ -99,9 +99,9 @@ ConstAssignList ::= (ConstAssignListMultiple) ConstAssignList COMMA ConstAssign
 				  |	(ConstAssignSingle) ConstAssign
 				  ;
 
-ConstAssign ::= (ConstAssign) IDENT:constName ASSIGN ConstType:constVal;
+ConstAssign ::= (ConstAssign) IDENT:constName ASSIGN ConstVal;
 
-ConstType ::= (NumberConst) NUMBER_CONST:numVal
+ConstVal ::= (NumberConst) NUMBER_CONST:numVal
 			| (CharConst) CHAR_CONST:charVal
 			| (BoolConst) BOOL_CONST:boolVal
 			;

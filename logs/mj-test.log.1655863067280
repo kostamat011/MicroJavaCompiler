@@ -1,0 +1,11 @@
+INFO  03:55:38,948 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  03:55:38,965 - #2 program
+INFO  03:55:38,965 - #48 test302
+INFO  03:55:38,965 - #7 const
+INFO  03:55:38,965 - #48 int
+INFO  03:55:38,965 - #48 a
+INFO  03:55:38,965 - #27 =
+INFO  03:55:38,965 - #48 s
+ERROR 03:55:38,965 - 
+Sintaksna greska na liniji 5
+ERROR 03:55:38,966 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 5

@@ -1,11 +1,11 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/5/2022 2:20:26
+// 22/5/2022 3:52:45
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class NumberConst extends ConstType {
+public class NumberConst extends ConstVal {
 
     private Integer numVal;
 
