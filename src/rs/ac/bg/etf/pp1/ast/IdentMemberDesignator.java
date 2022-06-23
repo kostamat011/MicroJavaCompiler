@@ -1,26 +1,26 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/5/2022 19:13:25
+// 23/5/2022 21:14:19
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class IdentMemberDesignator extends MemberDesignator {
+public class IdentMemberDesignator extends Designator {
 
-    private String I1;
+    private String ident;
     private String memberName;
 
-    public IdentMemberDesignator (String I1, String memberName) {
-        this.I1=I1;
+    public IdentMemberDesignator (String ident, String memberName) {
+        this.ident=ident;
         this.memberName=memberName;
     }
 
-    public String getI1() {
-        return I1;
+    public String getIdent() {
+        return ident;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setIdent(String ident) {
+        this.ident=ident;
     }
 
     public String getMemberName() {
@@ -51,7 +51,7 @@ public class IdentMemberDesignator extends MemberDesignator {
         buffer.append(tab);
         buffer.append("IdentMemberDesignator(\n");
 
-        buffer.append(" "+tab+I1);
+        buffer.append(" "+tab+ident);
         buffer.append("\n");
 
         buffer.append(" "+tab+memberName);

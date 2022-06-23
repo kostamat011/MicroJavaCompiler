@@ -1,5 +1,4 @@
 
-
 package rs.ac.bg.etf.pp1;
 
 import java_cup.runtime.*;
@@ -33,9 +32,7 @@ parser code {:
         log.error(msg.toString());
     }
 
-
 :}
-
 
 scan with {:
 	Symbol s = this.getScanner().next_token();
@@ -44,6 +41,8 @@ scan with {:
 	return s;
 :}
 
+/****************************************************************************************************/
+/* Terminals */
 
 terminal PROG, BREAK, CONT, IF, ELSE, CONST, CLASS, DO, WHILE, NEW;
 terminal PRINT, READ, VOID, RETURN, RECORD, ENUM, SUPER, GOTO, THIS, EXT;
@@ -52,32 +51,58 @@ terminal PLUS, MINUS, MUL, DIV, PCT, ASSIGN, EQUAL, NOT_EQUAL, GT, GTE, LS, LSE;
 terminal AND, OR, PLUSPLUS, MINUSMINUS, SEMICOLON, COMMA, LPAREN, RPAREN;
 terminal LBRCK, RBRCK, LBRACE, RBRACE, DBLDOT, DOT;
 
-
 terminal String IDENT;
 terminal Boolean BOOL_CONST;
 terminal Character CHAR_CONST;
 terminal Integer NUMBER_CONST;
 
-nonterminal AllDeclList, SingleDecl, RecordDecl;
+/****************************************************************************************************/
+/* Non - Terminals */
+
+/* type */
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
+
+/* program */
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgramName;
+
+/* declarations */
+nonterminal AllDeclList, SingleDecl;
 nonterminal ConstDecl, ConstAssignList, ConstAssign, ConstVal;
 nonterminal VarDecl, VarDeclList, VarDeclSingle, VarDeclOption, ArrBracketsOption;
 nonterminal GlobalVarDecl, GlobalVarDeclList, GlobalVarDeclSingle;
 nonterminal ClassDecl, ClassMethodDeclOption;
+
+/* records */
+nonterminal rs.etf.pp1.symboltable.concepts.Obj RecordName;
+nonterminal RecordDecl;
+
+/* methods */
+nonterminal rs.etf.pp1.symboltable.concepts.Obj MethodName;
 nonterminal MethodDecl, MethodDeclList, MethodDeclOption, MethodSignature, MethodType;
+
+/* formal parameters */
 nonterminal FormParsOption, FormPars, FormPar, VarArgs;
+
+/* statements */
 nonterminal StatementList, Statement, Statements, SingleStatement;
-nonterminal DesignatorStatement, DesignatorStatementAssign, Designator, MemberDesignator, NumConstOption;
-nonterminal Mulop, Addop, Term, Factor, MulopFactorList, AddopTermList, ActPars, ActParsOption;
+
+/* designators and designator statements */
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator;
+nonterminal DesignatorStatement, DesignatorStatementAssign, NumConstOption;
+
+/* expressions, terms, factors */
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Expr, Term, Factor;
+nonterminal Mulop, Addop;
+
+/* actual parameters */
+nonterminal ActPars, ActParsOption;
+
+/* conditions */
 nonterminal Condition, IfCondition, CondTerm, CondFact, Relop;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
-
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgramName;
-nonterminal rs.etf.pp1.symboltable.concepts.Obj RecordName, MethodName;
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Expr;
-
-
 precedence left ELSE;
+
+/****************************************************************************************************/
 
 Program ::= (Program) PROG ProgramName:progName AllDeclList LBRACE MethodDeclList RBRACE;
 
@@ -198,20 +223,15 @@ NumConstOption ::= (NumConstYes) COMMA NUMBER_CONST
 				|  (NumConstNo) /* epsilon */
 				;
 				
-Expr ::= (ExprPositive) Term AddopTermList
-	  |  (ExprNegative) MINUS Term AddopTermList
+Expr ::= (SingleTermExprPositive) Term 
+	  |  (SingleTermExprNegative) MINUS Term 
+	  |  (MultiTermExpr) Expr Addop Term
 	  ;
 	  
-AddopTermList ::= (AddopTermListMultiple) AddopTermList Addop Term
-			   |  (AddopTermListNo) /* epsilon */
-			   ;
-	  
-Term ::= (TermMultiple) Factor MulopFactorList;
- 
-MulopFactorList ::= (MulopFactorListMultiple) MulopFactorList Mulop Factor
-				 |  (MulopFactorListNo) /* epsilon */
-				 ;
-				 
+Term ::= (SingleFactorTerm) Factor
+      |  (MultiFactorTerm) Term Mulop Factor
+	  ;
+
 Factor ::= (NumConstFactor) NUMBER_CONST
 		| (CharConstFactor) CHAR_CONST
 		| (ExprFactor) LPAREN Expr RPAREN
@@ -239,14 +259,11 @@ Relop ::= (RelopGT) GT
 	   |  (RelopLSE) LSE
 	   ;
 
-Designator ::= (IdentDesignator) IDENT
-			|  (IdentArrayDesignator) IDENT LBRCK Expr RBRCK
-			|  (NestedDesignator) MemberDesignator
+Designator ::= (IdentDesignator) IDENT:ident
+			|  (IdentArrayDesignator) IDENT:ident LBRCK Expr RBRCK
+			|  (IdentMemberDesignator) IDENT:ident DOT IDENT:memberName
+			|  (IdentMemberArrayDesignator) IDENT:ident DOT IDENT:memberArrayName LBRCK Expr RBRCK
 			;
-			
-MemberDesignator ::= (IdentMemberDesignator) IDENT DOT IDENT:memberName
-				  |  (IdentMemberArrayDesignator) IDENT DOT IDENT:memberArrayName LBRCK Expr RBRCK
-				  ;
 
 DesignatorStatement ::= (DesignatorStmtAssign) DesignatorStatementAssign
 					|   (DesignatorStmtPlusPlus) Designator PLUSPLUS
@@ -267,18 +284,18 @@ ActParsOption ::= (ActParsYes) ActPars
 				| (ActParsNo) /* epsilon */
 				;
 				
-Condition ::= (ConditionListMultiple) Condition OR CondTerm
-		   |  (ConditionListSingle) CondTerm
+Condition ::= (ConditionSingle) CondTerm
+		   |  (ConditionMultiple) Condition OR CondTerm
 		   ;
 		   
-IfCondition ::= (IfConditionListMultiple) Condition OR CondTerm
-		   |  	(IfConditionListSingle) CondTerm
+IfCondition ::= (IfConditionSingle) CondTerm
+		   |  	(IfConditionMultiple) Condition OR CondTerm
 		   |  	(IfConditionError) error:l
 			{: parser.report_error("Izvrsen oporovak prilikom greske u logickom izrazu unutar if naredbe do ) u liniji " + lleft, null); :}
 		   ;
 		   
-CondTerm ::= (CondTermListMultiple) CondTerm AND CondFact
-		   | (CondTermListSingle) CondFact
+CondTerm ::= (CondTermListSingle) CondFact
+		   | (CondTermListMultiple) CondTerm AND CondFact
 		   ;
 		   
 CondFact ::= (CondFactExpr) Expr

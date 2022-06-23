@@ -1,134 +1,185 @@
-INFO  19:15:48,510 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
-INFO  19:15:48,528 - #2 program
-INFO  19:15:48,528 - #48 test302
-INFO  19:15:48,528 - #16 record
-INFO  19:15:48,529 - #48 rec
-INFO  19:15:48,529 - #44 {
-INFO  19:15:48,529 - #48 int
-INFO  19:15:48,529 - #48 x1
-INFO  19:15:48,529 - #39 ,
-INFO  19:15:48,530 - #48 p
-INFO  19:15:48,530 - #39 ,
-INFO  19:15:48,530 - #48 z
-INFO  19:15:48,530 - #42 [
-INFO  19:15:48,530 - #43 ]
-INFO  19:15:48,530 - #38 ;
-INFO  19:15:48,530 - #48 char
-INFO  19:15:48,530 - #48 m
-INFO  19:15:48,530 - #38 ;
-INFO  19:15:48,530 - #45 }
-INFO  19:15:48,531 - #44 {
-INFO  19:15:48,531 - #14 void
-INFO  19:15:48,531 - #48 main
-INFO  19:15:48,531 - #40 (
-INFO  19:15:48,531 - #48 int
-INFO  19:15:48,531 - #48 p
-INFO  19:15:48,531 - #41 )
-INFO  19:15:48,532 - #44 {
-INFO  19:15:48,532 - #45 }
-INFO  19:15:48,532 - #48 int
-INFO  19:15:48,532 - #48 a
-INFO  19:15:48,532 - #40 (
-INFO  19:15:48,532 - #41 )
-INFO  19:15:48,532 - #44 {
-INFO  19:15:48,532 - #15 return
-INFO  19:15:48,532 - #38 ;
-INFO  19:15:48,532 - #45 }
-INFO  19:15:48,532 - #45 }
-INFO  19:15:48,533 - Program(
+INFO  21:19:12,212 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  21:19:12,229 - #2 program
+INFO  21:19:12,229 - #48 test302
+INFO  21:19:12,229 - #16 record
+INFO  21:19:12,230 - #48 rec
+INFO  21:19:12,230 - #44 {
+INFO  21:19:12,230 - #48 int
+INFO  21:19:12,230 - #48 x1
+INFO  21:19:12,230 - #39 ,
+INFO  21:19:12,231 - #48 p
+INFO  21:19:12,231 - #39 ,
+INFO  21:19:12,231 - #48 z
+INFO  21:19:12,231 - #42 [
+INFO  21:19:12,231 - #43 ]
+INFO  21:19:12,231 - #38 ;
+INFO  21:19:12,231 - #48 char
+INFO  21:19:12,231 - #48 m
+INFO  21:19:12,231 - #38 ;
+INFO  21:19:12,231 - #45 }
+INFO  21:19:12,231 - #48 char
+INFO  21:19:12,232 - #48 m
+INFO  21:19:12,232 - #38 ;
+INFO  21:19:12,232 - #48 char
+INFO  21:19:12,242 - #48 p
+INFO  21:19:12,242 - #38 ;
+INFO  21:19:12,242 - #44 {
+INFO  21:19:12,242 - #14 void
+INFO  21:19:12,242 - #48 main
+INFO  21:19:12,242 - #40 (
+INFO  21:19:12,242 - #41 )
+INFO  21:19:12,242 - #44 {
+INFO  21:19:12,243 - #48 p
+INFO  21:19:12,243 - #27 =
+INFO  21:19:12,243 - #51 5
+INFO  21:19:12,243 - #38 ;
+INFO  21:19:12,243 - #45 }
+INFO  21:19:12,243 - #14 void
+INFO  21:19:12,243 - #48 a
+INFO  21:19:12,243 - #40 (
+INFO  21:19:12,243 - #41 )
+INFO  21:19:12,243 - #44 {
+INFO  21:19:12,243 - #48 main
+INFO  21:19:12,243 - #27 =
+INFO  21:19:12,244 - #51 5
+INFO  21:19:12,244 - #38 ;
+INFO  21:19:12,244 - #15 return
+INFO  21:19:12,244 - #38 ;
+INFO  21:19:12,244 - #45 }
+INFO  21:19:12,244 - #45 }
+INFO  21:19:12,244 - Program(
   ProgramName(
    test302
   ) [ProgramName]
   AllDeclListMultiple(
-    NoDecl(
-    ) [NoDecl]
-    RecordDeclaration(
-      RecordDeclarationExpr(
-        RecordName(
-         rec
-        ) [RecordName]
-        VarDeclOptionTrue(
-          VarDeclOptionTrue(
-            NoVarDeclOption(
-            ) [NoVarDeclOption]
-            VarDeclarationExpr(
-              Type(
-               int
-              ) [Type]
-              VarDeclListMultiple(
-                VarDeclListMultiple(
-                  VarDeclListSingle(
+    AllDeclListMultiple(
+      AllDeclListMultiple(
+        NoDecl(
+        ) [NoDecl]
+        RecordDeclaration(
+          RecordDeclarationExpr(
+            RecordName(
+             rec
+            ) [RecordName]
+            VarDeclOptionTrue(
+              VarDeclOptionTrue(
+                NoVarDeclOption(
+                ) [NoVarDeclOption]
+                VarDeclarationExpr(
+                  Type(
+                   int
+                  ) [Type]
+                  VarDeclListMultiple(
+                    VarDeclListMultiple(
+                      VarDeclListSingle(
+                        VarDeclSingle(
+                         x1
+                          NoArray(
+                          ) [NoArray]
+                        ) [VarDeclSingle]
+                      ) [VarDeclListSingle]
+                      VarDeclSingle(
+                       p
+                        NoArray(
+                        ) [NoArray]
+                      ) [VarDeclSingle]
+                    ) [VarDeclListMultiple]
                     VarDeclSingle(
-                     x1
-                      NoArray(
-                      ) [NoArray]
+                     z
+                      ArrayBrackets(
+                      ) [ArrayBrackets]
                     ) [VarDeclSingle]
-                  ) [VarDeclListSingle]
+                  ) [VarDeclListMultiple]
+                ) [VarDeclarationExpr]
+              ) [VarDeclOptionTrue]
+              VarDeclarationExpr(
+                Type(
+                 char
+                ) [Type]
+                VarDeclListSingle(
                   VarDeclSingle(
-                   p
+                   m
                     NoArray(
                     ) [NoArray]
                   ) [VarDeclSingle]
-                ) [VarDeclListMultiple]
-                VarDeclSingle(
-                 z
-                  ArrayBrackets(
-                  ) [ArrayBrackets]
-                ) [VarDeclSingle]
-              ) [VarDeclListMultiple]
-            ) [VarDeclarationExpr]
-          ) [VarDeclOptionTrue]
-          VarDeclarationExpr(
-            Type(
-             char
-            ) [Type]
-            VarDeclListSingle(
-              VarDeclSingle(
-               m
-                NoArray(
-                ) [NoArray]
-              ) [VarDeclSingle]
-            ) [VarDeclListSingle]
-          ) [VarDeclarationExpr]
-        ) [VarDeclOptionTrue]
-      ) [RecordDeclarationExpr]
-    ) [RecordDeclaration]
+                ) [VarDeclListSingle]
+              ) [VarDeclarationExpr]
+            ) [VarDeclOptionTrue]
+          ) [RecordDeclarationExpr]
+        ) [RecordDeclaration]
+      ) [AllDeclListMultiple]
+      GlobalVarDeclaration(
+        GlobalVarDeclarationExpr(
+          Type(
+           char
+          ) [Type]
+          GlobalVarDeclListSingle(
+            GlobalVarDeclarationSingle(
+             m
+              NoArray(
+              ) [NoArray]
+            ) [GlobalVarDeclarationSingle]
+          ) [GlobalVarDeclListSingle]
+        ) [GlobalVarDeclarationExpr]
+      ) [GlobalVarDeclaration]
+    ) [AllDeclListMultiple]
+    GlobalVarDeclaration(
+      GlobalVarDeclarationExpr(
+        Type(
+         char
+        ) [Type]
+        GlobalVarDeclListSingle(
+          GlobalVarDeclarationSingle(
+           p
+            NoArray(
+            ) [NoArray]
+          ) [GlobalVarDeclarationSingle]
+        ) [GlobalVarDeclListSingle]
+      ) [GlobalVarDeclarationExpr]
+    ) [GlobalVarDeclaration]
   ) [AllDeclListMultiple]
   MethodDeclListMultiple(
     MethodDeclListMultiple(
       MethodDeclListNo(
       ) [MethodDeclListNo]
       MethodDeclaration(
-        MethodSignatureParams(
+        MethodSignaturePlain(
           MethodTypeVoid(
           ) [MethodTypeVoid]
           MethodName(
            main
           ) [MethodName]
-          FormParsSingle(
-            FormParSingle(
-              Type(
-               int
-              ) [Type]
-             p
-              NoArray(
-              ) [NoArray]
-            ) [FormParSingle]
-          ) [FormParsSingle]
-        ) [MethodSignatureParams]
+        ) [MethodSignaturePlain]
         NoVarDeclOption(
         ) [NoVarDeclOption]
-        StatementListNo(
-        ) [StatementListNo]
+        StatementListMultiple(
+          StatementListNo(
+          ) [StatementListNo]
+          StatementSingle(
+            SingleDesignatorStatement(
+              DesignatorStmtAssign(
+                DesignatorStmtAssignDecl(
+                  IdentDesignator(
+                   p
+                  ) [IdentDesignator]
+                  SingleTermExprPositive(
+                    SingleFactorTerm(
+                      NumConstFactor(
+                       5
+                      ) [NumConstFactor]
+                    ) [SingleFactorTerm]
+                  ) [SingleTermExprPositive]
+                ) [DesignatorStmtAssignDecl]
+              ) [DesignatorStmtAssign]
+            ) [SingleDesignatorStatement]
+          ) [StatementSingle]
+        ) [StatementListMultiple]
       ) [MethodDeclaration]
     ) [MethodDeclListMultiple]
     MethodDeclaration(
       MethodSignaturePlain(
-        MethodTypeType(
-          Type(
-           int
-          ) [Type]
-        ) [MethodTypeType]
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
         MethodName(
          a
         ) [MethodName]
@@ -136,8 +187,28 @@ INFO  19:15:48,533 - Program(
       NoVarDeclOption(
       ) [NoVarDeclOption]
       StatementListMultiple(
-        StatementListNo(
-        ) [StatementListNo]
+        StatementListMultiple(
+          StatementListNo(
+          ) [StatementListNo]
+          StatementSingle(
+            SingleDesignatorStatement(
+              DesignatorStmtAssign(
+                DesignatorStmtAssignDecl(
+                  IdentDesignator(
+                   main
+                  ) [IdentDesignator]
+                  SingleTermExprPositive(
+                    SingleFactorTerm(
+                      NumConstFactor(
+                       5
+                      ) [NumConstFactor]
+                    ) [SingleFactorTerm]
+                  ) [SingleTermExprPositive]
+                ) [DesignatorStmtAssignDecl]
+              ) [DesignatorStmtAssign]
+            ) [SingleDesignatorStatement]
+          ) [StatementSingle]
+        ) [StatementListMultiple]
         StatementSingle(
           SingleReturnStatement(
           ) [SingleReturnStatement]
@@ -146,9 +217,5 @@ INFO  19:15:48,533 - Program(
     ) [MethodDeclaration]
   ) [MethodDeclListMultiple]
 ) [Program]
-INFO  19:15:48,533 - ===================================
-ERROR 19:15:48,536 - Main method must have no parameters.
-ERROR 19:15:48,536 - Return statement without expression is invalid for method of type int
-ERROR 19:15:48,536 - Missing return statement for method of type int
-ERROR 19:15:48,536 - No main method found
-INFO  19:15:48,536 - One or more errors found!
+INFO  21:19:12,245 - ===================================
+INFO  21:19:12,247 - Compile successful!

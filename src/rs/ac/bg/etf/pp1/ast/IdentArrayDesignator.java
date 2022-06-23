@@ -1,27 +1,27 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/5/2022 19:13:25
+// 23/5/2022 21:14:19
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class IdentArrayDesignator extends Designator {
 
-    private String I1;
+    private String ident;
     private Expr Expr;
 
-    public IdentArrayDesignator (String I1, Expr Expr) {
-        this.I1=I1;
+    public IdentArrayDesignator (String ident, Expr Expr) {
+        this.ident=ident;
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
     }
 
-    public String getI1() {
-        return I1;
+    public String getIdent() {
+        return ident;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setIdent(String ident) {
+        this.ident=ident;
     }
 
     public Expr getExpr() {
@@ -55,7 +55,7 @@ public class IdentArrayDesignator extends Designator {
         buffer.append(tab);
         buffer.append("IdentArrayDesignator(\n");
 
-        buffer.append(" "+tab+I1);
+        buffer.append(" "+tab+ident);
         buffer.append("\n");
 
         if(Expr!=null)

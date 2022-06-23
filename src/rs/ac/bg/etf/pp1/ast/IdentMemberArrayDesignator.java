@@ -1,29 +1,29 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/5/2022 19:13:25
+// 23/5/2022 21:14:19
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class IdentMemberArrayDesignator extends MemberDesignator {
+public class IdentMemberArrayDesignator extends Designator {
 
-    private String I1;
+    private String ident;
     private String memberArrayName;
     private Expr Expr;
 
-    public IdentMemberArrayDesignator (String I1, String memberArrayName, Expr Expr) {
-        this.I1=I1;
+    public IdentMemberArrayDesignator (String ident, String memberArrayName, Expr Expr) {
+        this.ident=ident;
         this.memberArrayName=memberArrayName;
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
     }
 
-    public String getI1() {
-        return I1;
+    public String getIdent() {
+        return ident;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setIdent(String ident) {
+        this.ident=ident;
     }
 
     public String getMemberArrayName() {
@@ -65,7 +65,7 @@ public class IdentMemberArrayDesignator extends MemberDesignator {
         buffer.append(tab);
         buffer.append("IdentMemberArrayDesignator(\n");
 
-        buffer.append(" "+tab+I1);
+        buffer.append(" "+tab+ident);
         buffer.append("\n");
 
         buffer.append(" "+tab+memberArrayName);

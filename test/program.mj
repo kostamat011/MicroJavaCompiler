@@ -8,14 +8,18 @@ record rec
 	char m;
 }
 
+char m;
+char p;
 
 {
-	void main(int p)
+	void main()
 	{
+		p = 5;
 	}	
 	
-	int a()
+	void a()
 	{
+		main = 5;
 		return;
 	}
 }

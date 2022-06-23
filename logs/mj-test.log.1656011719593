@@ -1,0 +1,160 @@
+INFO  21:15:13,914 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  21:15:13,931 - #2 program
+INFO  21:15:13,931 - #48 test302
+INFO  21:15:13,931 - #16 record
+INFO  21:15:13,931 - #48 rec
+INFO  21:15:13,932 - #44 {
+INFO  21:15:13,932 - #48 int
+INFO  21:15:13,932 - #48 x1
+INFO  21:15:13,932 - #39 ,
+INFO  21:15:13,933 - #48 p
+INFO  21:15:13,933 - #39 ,
+INFO  21:15:13,933 - #48 z
+INFO  21:15:13,933 - #42 [
+INFO  21:15:13,933 - #43 ]
+INFO  21:15:13,933 - #38 ;
+INFO  21:15:13,933 - #48 char
+INFO  21:15:13,933 - #48 m
+INFO  21:15:13,933 - #38 ;
+INFO  21:15:13,933 - #45 }
+INFO  21:15:13,933 - #44 {
+INFO  21:15:13,934 - #14 void
+INFO  21:15:13,934 - #48 main
+INFO  21:15:13,934 - #40 (
+INFO  21:15:13,944 - #41 )
+INFO  21:15:13,944 - #44 {
+INFO  21:15:13,944 - #48 m
+INFO  21:15:13,944 - #27 =
+INFO  21:15:13,944 - #51 2
+INFO  21:15:13,944 - #38 ;
+INFO  21:15:13,944 - #45 }
+INFO  21:15:13,945 - #14 void
+INFO  21:15:13,945 - #48 a
+INFO  21:15:13,945 - #40 (
+INFO  21:15:13,945 - #41 )
+INFO  21:15:13,945 - #44 {
+INFO  21:15:13,945 - #15 return
+INFO  21:15:13,945 - #38 ;
+INFO  21:15:13,945 - #45 }
+INFO  21:15:13,945 - #45 }
+INFO  21:15:13,945 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    RecordDeclaration(
+      RecordDeclarationExpr(
+        RecordName(
+         rec
+        ) [RecordName]
+        VarDeclOptionTrue(
+          VarDeclOptionTrue(
+            NoVarDeclOption(
+            ) [NoVarDeclOption]
+            VarDeclarationExpr(
+              Type(
+               int
+              ) [Type]
+              VarDeclListMultiple(
+                VarDeclListMultiple(
+                  VarDeclListSingle(
+                    VarDeclSingle(
+                     x1
+                      NoArray(
+                      ) [NoArray]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListSingle]
+                  VarDeclSingle(
+                   p
+                    NoArray(
+                    ) [NoArray]
+                  ) [VarDeclSingle]
+                ) [VarDeclListMultiple]
+                VarDeclSingle(
+                 z
+                  ArrayBrackets(
+                  ) [ArrayBrackets]
+                ) [VarDeclSingle]
+              ) [VarDeclListMultiple]
+            ) [VarDeclarationExpr]
+          ) [VarDeclOptionTrue]
+          VarDeclarationExpr(
+            Type(
+             char
+            ) [Type]
+            VarDeclListSingle(
+              VarDeclSingle(
+               m
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclSingle]
+            ) [VarDeclListSingle]
+          ) [VarDeclarationExpr]
+        ) [VarDeclOptionTrue]
+      ) [RecordDeclarationExpr]
+    ) [RecordDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListMultiple(
+      MethodDeclListNo(
+      ) [MethodDeclListNo]
+      MethodDeclaration(
+        MethodSignaturePlain(
+          MethodTypeVoid(
+          ) [MethodTypeVoid]
+          MethodName(
+           main
+          ) [MethodName]
+        ) [MethodSignaturePlain]
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+        StatementListMultiple(
+          StatementListNo(
+          ) [StatementListNo]
+          StatementSingle(
+            SingleDesignatorStatement(
+              DesignatorStmtAssign(
+                DesignatorStmtAssignDecl(
+                  IdentDesignator(
+                   m
+                  ) [IdentDesignator]
+                  SingleTermExprPositive(
+                    SingleFactorTerm(
+                      NumConstFactor(
+                       2
+                      ) [NumConstFactor]
+                    ) [SingleFactorTerm]
+                  ) [SingleTermExprPositive]
+                ) [DesignatorStmtAssignDecl]
+              ) [DesignatorStmtAssign]
+            ) [SingleDesignatorStatement]
+          ) [StatementSingle]
+        ) [StatementListMultiple]
+      ) [MethodDeclaration]
+    ) [MethodDeclListMultiple]
+    MethodDeclaration(
+      MethodSignaturePlain(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+        MethodName(
+         a
+        ) [MethodName]
+      ) [MethodSignaturePlain]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListMultiple(
+        StatementListNo(
+        ) [StatementListNo]
+        StatementSingle(
+          SingleReturnStatement(
+          ) [SingleReturnStatement]
+        ) [StatementSingle]
+      ) [StatementListMultiple]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  21:15:13,945 - ===================================
+ERROR 21:15:13,948 - Symbol m is not defined.
+INFO  21:15:13,948 - One or more errors found!

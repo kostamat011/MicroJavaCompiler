@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/5/2022 19:13:25
+// 23/5/2022 21:14:19
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -11,7 +11,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(MethodDecl MethodDecl) { }
     public void visit(MethodDeclOption MethodDeclOption) { }
     public void visit(Relop Relop) { }
-    public void visit(MulopFactorList MulopFactorList) { }
     public void visit(MethodType MethodType) { }
     public void visit(MethodSignature MethodSignature) { }
     public void visit(AllDeclList AllDeclList) { }
@@ -30,7 +29,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DesignatorStatementAssign DesignatorStatementAssign) { }
     public void visit(IfCondition IfCondition) { }
     public void visit(GlobalVarDeclSingle GlobalVarDeclSingle) { }
-    public void visit(MemberDesignator MemberDesignator) { }
     public void visit(VarDeclList VarDeclList) { }
     public void visit(Expr Expr) { }
     public void visit(ConstVal ConstVal) { }
@@ -53,16 +51,15 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ClassMethodDeclOption ClassMethodDeclOption) { }
     public void visit(FormPars FormPars) { }
     public void visit(GlobalVarDeclList GlobalVarDeclList) { }
-    public void visit(AddopTermList AddopTermList) { }
     public void visit(CondFactExprRelop CondFactExprRelop) { visit(); }
     public void visit(CondFactExpr CondFactExpr) { visit(); }
-    public void visit(CondTermListSingle CondTermListSingle) { visit(); }
     public void visit(CondTermListMultiple CondTermListMultiple) { visit(); }
+    public void visit(CondTermListSingle CondTermListSingle) { visit(); }
     public void visit(IfConditionError IfConditionError) { visit(); }
-    public void visit(IfConditionListSingle IfConditionListSingle) { visit(); }
-    public void visit(IfConditionListMultiple IfConditionListMultiple) { visit(); }
-    public void visit(ConditionListSingle ConditionListSingle) { visit(); }
-    public void visit(ConditionListMultiple ConditionListMultiple) { visit(); }
+    public void visit(IfConditionMultiple IfConditionMultiple) { visit(); }
+    public void visit(IfConditionSingle IfConditionSingle) { visit(); }
+    public void visit(ConditionMultiple ConditionMultiple) { visit(); }
+    public void visit(ConditionSingle ConditionSingle) { visit(); }
     public void visit(ActParsNo ActParsNo) { visit(); }
     public void visit(ActParsYes ActParsYes) { visit(); }
     public void visit(ActParsSingleExpr ActParsSingleExpr) { visit(); }
@@ -75,7 +72,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DesignatorStmtAssign DesignatorStmtAssign) { visit(); }
     public void visit(IdentMemberArrayDesignator IdentMemberArrayDesignator) { visit(); }
     public void visit(IdentMemberDesignator IdentMemberDesignator) { visit(); }
-    public void visit(NestedDesignator NestedDesignator) { visit(); }
     public void visit(IdentArrayDesignator IdentArrayDesignator) { visit(); }
     public void visit(IdentDesignator IdentDesignator) { visit(); }
     public void visit(RelopLSE RelopLSE) { visit(); }
@@ -97,13 +93,11 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ExprFactor ExprFactor) { visit(); }
     public void visit(CharConstFactor CharConstFactor) { visit(); }
     public void visit(NumConstFactor NumConstFactor) { visit(); }
-    public void visit(MulopFactorListNo MulopFactorListNo) { visit(); }
-    public void visit(MulopFactorListMultiple MulopFactorListMultiple) { visit(); }
-    public void visit(TermMultiple TermMultiple) { visit(); }
-    public void visit(AddopTermListNo AddopTermListNo) { visit(); }
-    public void visit(AddopTermListMultiple AddopTermListMultiple) { visit(); }
-    public void visit(ExprNegative ExprNegative) { visit(); }
-    public void visit(ExprPositive ExprPositive) { visit(); }
+    public void visit(MultiFactorTerm MultiFactorTerm) { visit(); }
+    public void visit(SingleFactorTerm SingleFactorTerm) { visit(); }
+    public void visit(MultiTermExpr MultiTermExpr) { visit(); }
+    public void visit(SingleTermExprNegative SingleTermExprNegative) { visit(); }
+    public void visit(SingleTermExprPositive SingleTermExprPositive) { visit(); }
     public void visit(NumConstNo NumConstNo) { visit(); }
     public void visit(NumConstYes NumConstYes) { visit(); }
     public void visit(DoWhileStatement DoWhileStatement) { visit(); }

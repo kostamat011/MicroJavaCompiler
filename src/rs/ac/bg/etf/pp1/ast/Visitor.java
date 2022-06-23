@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 22/5/2022 19:13:25
+// 23/5/2022 21:14:19
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -11,7 +11,6 @@ public interface Visitor {
     public void visit(MethodDecl MethodDecl);
     public void visit(MethodDeclOption MethodDeclOption);
     public void visit(Relop Relop);
-    public void visit(MulopFactorList MulopFactorList);
     public void visit(MethodType MethodType);
     public void visit(MethodSignature MethodSignature);
     public void visit(AllDeclList AllDeclList);
@@ -30,7 +29,6 @@ public interface Visitor {
     public void visit(DesignatorStatementAssign DesignatorStatementAssign);
     public void visit(IfCondition IfCondition);
     public void visit(GlobalVarDeclSingle GlobalVarDeclSingle);
-    public void visit(MemberDesignator MemberDesignator);
     public void visit(VarDeclList VarDeclList);
     public void visit(Expr Expr);
     public void visit(ConstVal ConstVal);
@@ -53,16 +51,15 @@ public interface Visitor {
     public void visit(ClassMethodDeclOption ClassMethodDeclOption);
     public void visit(FormPars FormPars);
     public void visit(GlobalVarDeclList GlobalVarDeclList);
-    public void visit(AddopTermList AddopTermList);
     public void visit(CondFactExprRelop CondFactExprRelop);
     public void visit(CondFactExpr CondFactExpr);
-    public void visit(CondTermListSingle CondTermListSingle);
     public void visit(CondTermListMultiple CondTermListMultiple);
+    public void visit(CondTermListSingle CondTermListSingle);
     public void visit(IfConditionError IfConditionError);
-    public void visit(IfConditionListSingle IfConditionListSingle);
-    public void visit(IfConditionListMultiple IfConditionListMultiple);
-    public void visit(ConditionListSingle ConditionListSingle);
-    public void visit(ConditionListMultiple ConditionListMultiple);
+    public void visit(IfConditionMultiple IfConditionMultiple);
+    public void visit(IfConditionSingle IfConditionSingle);
+    public void visit(ConditionMultiple ConditionMultiple);
+    public void visit(ConditionSingle ConditionSingle);
     public void visit(ActParsNo ActParsNo);
     public void visit(ActParsYes ActParsYes);
     public void visit(ActParsSingleExpr ActParsSingleExpr);
@@ -75,7 +72,6 @@ public interface Visitor {
     public void visit(DesignatorStmtAssign DesignatorStmtAssign);
     public void visit(IdentMemberArrayDesignator IdentMemberArrayDesignator);
     public void visit(IdentMemberDesignator IdentMemberDesignator);
-    public void visit(NestedDesignator NestedDesignator);
     public void visit(IdentArrayDesignator IdentArrayDesignator);
     public void visit(IdentDesignator IdentDesignator);
     public void visit(RelopLSE RelopLSE);
@@ -97,13 +93,11 @@ public interface Visitor {
     public void visit(ExprFactor ExprFactor);
     public void visit(CharConstFactor CharConstFactor);
     public void visit(NumConstFactor NumConstFactor);
-    public void visit(MulopFactorListNo MulopFactorListNo);
-    public void visit(MulopFactorListMultiple MulopFactorListMultiple);
-    public void visit(TermMultiple TermMultiple);
-    public void visit(AddopTermListNo AddopTermListNo);
-    public void visit(AddopTermListMultiple AddopTermListMultiple);
-    public void visit(ExprNegative ExprNegative);
-    public void visit(ExprPositive ExprPositive);
+    public void visit(MultiFactorTerm MultiFactorTerm);
+    public void visit(SingleFactorTerm SingleFactorTerm);
+    public void visit(MultiTermExpr MultiTermExpr);
+    public void visit(SingleTermExprNegative SingleTermExprNegative);
+    public void visit(SingleTermExprPositive SingleTermExprPositive);
     public void visit(NumConstNo NumConstNo);
     public void visit(NumConstYes NumConstYes);
     public void visit(DoWhileStatement DoWhileStatement);

@@ -1,0 +1,131 @@
+INFO  21:14:55,713 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  21:14:55,731 - #2 program
+INFO  21:14:55,731 - #48 test302
+INFO  21:14:55,731 - #16 record
+INFO  21:14:55,731 - #48 rec
+INFO  21:14:55,731 - #44 {
+INFO  21:14:55,732 - #48 int
+INFO  21:14:55,732 - #48 x1
+INFO  21:14:55,732 - #39 ,
+INFO  21:14:55,733 - #48 p
+INFO  21:14:55,733 - #39 ,
+INFO  21:14:55,733 - #48 z
+INFO  21:14:55,733 - #42 [
+INFO  21:14:55,733 - #43 ]
+INFO  21:14:55,733 - #38 ;
+INFO  21:14:55,733 - #48 char
+INFO  21:14:55,733 - #48 m
+INFO  21:14:55,733 - #38 ;
+INFO  21:14:55,733 - #45 }
+INFO  21:14:55,733 - #44 {
+INFO  21:14:55,733 - #14 void
+INFO  21:14:55,734 - #48 main
+INFO  21:14:55,734 - #40 (
+INFO  21:14:55,744 - #41 )
+INFO  21:14:55,744 - #44 {
+INFO  21:14:55,744 - #45 }
+INFO  21:14:55,744 - #48 int
+INFO  21:14:55,744 - #48 a
+INFO  21:14:55,744 - #40 (
+INFO  21:14:55,744 - #41 )
+INFO  21:14:55,744 - #44 {
+INFO  21:14:55,744 - #45 }
+INFO  21:14:55,744 - #45 }
+INFO  21:14:55,745 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    NoDecl(
+    ) [NoDecl]
+    RecordDeclaration(
+      RecordDeclarationExpr(
+        RecordName(
+         rec
+        ) [RecordName]
+        VarDeclOptionTrue(
+          VarDeclOptionTrue(
+            NoVarDeclOption(
+            ) [NoVarDeclOption]
+            VarDeclarationExpr(
+              Type(
+               int
+              ) [Type]
+              VarDeclListMultiple(
+                VarDeclListMultiple(
+                  VarDeclListSingle(
+                    VarDeclSingle(
+                     x1
+                      NoArray(
+                      ) [NoArray]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListSingle]
+                  VarDeclSingle(
+                   p
+                    NoArray(
+                    ) [NoArray]
+                  ) [VarDeclSingle]
+                ) [VarDeclListMultiple]
+                VarDeclSingle(
+                 z
+                  ArrayBrackets(
+                  ) [ArrayBrackets]
+                ) [VarDeclSingle]
+              ) [VarDeclListMultiple]
+            ) [VarDeclarationExpr]
+          ) [VarDeclOptionTrue]
+          VarDeclarationExpr(
+            Type(
+             char
+            ) [Type]
+            VarDeclListSingle(
+              VarDeclSingle(
+               m
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclSingle]
+            ) [VarDeclListSingle]
+          ) [VarDeclarationExpr]
+        ) [VarDeclOptionTrue]
+      ) [RecordDeclarationExpr]
+    ) [RecordDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListMultiple(
+      MethodDeclListNo(
+      ) [MethodDeclListNo]
+      MethodDeclaration(
+        MethodSignaturePlain(
+          MethodTypeVoid(
+          ) [MethodTypeVoid]
+          MethodName(
+           main
+          ) [MethodName]
+        ) [MethodSignaturePlain]
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+        StatementListNo(
+        ) [StatementListNo]
+      ) [MethodDeclaration]
+    ) [MethodDeclListMultiple]
+    MethodDeclaration(
+      MethodSignaturePlain(
+        MethodTypeType(
+          Type(
+           int
+          ) [Type]
+        ) [MethodTypeType]
+        MethodName(
+         a
+        ) [MethodName]
+      ) [MethodSignaturePlain]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListNo(
+      ) [StatementListNo]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  21:14:55,745 - ===================================
+ERROR 21:14:55,748 - Missing return statement for method of type int
+INFO  21:14:55,748 - One or more errors found!
