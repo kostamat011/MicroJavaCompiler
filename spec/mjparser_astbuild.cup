@@ -121,6 +121,11 @@ nonterminal Addop Addop;
 /* actual parameters */
 nonterminal ActPars ActPars;
 nonterminal ActParsOption ActParsOption;
+nonterminal ActParsLeftParen ActParsLeftParen;
+nonterminal ActParsRightParen ActParsRightParen;
+
+/* method call */
+nonterminal rs.etf.pp1.symboltable.concepts.Obj MethodCall;
 
 /* conditions */
 nonterminal Condition Condition;
@@ -267,8 +272,7 @@ Factor ::= (NumConstFactor) NUMBER_CONST:N1 {: RESULT=new NumConstFactor(N1); RE
 		| (BoolConstFactor) BOOL_CONST:B1 {: RESULT=new BoolConstFactor(B1); RESULT.setLine(B1left); :}
 		| (NewTypeFactor) NEW Type:T1 LBRCK Expr:E2 RBRCK {: RESULT=new NewTypeFactor(T1, E2); RESULT.setLine(T1left); :}
 		| (DesignatorEmptyFactor) Designator:D1 {: RESULT=new DesignatorEmptyFactor(D1); RESULT.setLine(D1left); :}
-		| (DesignatorParensFactor) Designator:D1 LPAREN RPAREN {: RESULT=new DesignatorParensFactor(D1); RESULT.setLine(D1left); :}
-		| (DesignatorParensActFactor) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new DesignatorParensActFactor(D1, A2); RESULT.setLine(D1left); :}
+		| (MethodCallFactor) MethodCall:M1 {: RESULT=new MethodCallFactor(M1); RESULT.setLine(M1left); :}
 		;
 
 Addop ::= (AddopPlus) PLUS {: RESULT=new AddopPlus(); :}
@@ -297,10 +301,10 @@ Designator ::= (IdentDesignator) IDENT:ident {: RESULT=new IdentDesignator(ident
 DesignatorStatement ::= (DesignatorStmtAssign) DesignatorStatementAssign:D1 {: RESULT=new DesignatorStmtAssign(D1); RESULT.setLine(D1left); :}
 					|   (DesignatorStmtPlusPlus) Designator:D1 PLUSPLUS {: RESULT=new DesignatorStmtPlusPlus(D1); RESULT.setLine(D1left); :}
 					|   (DesignatorStmtMinusMinus) Designator:D1 MINUSMINUS {: RESULT=new DesignatorStmtMinusMinus(D1); RESULT.setLine(D1left); :}
-					|   (DesignatorStmtActPars) Designator:D1 LPAREN ActParsOption:A2 RPAREN {: RESULT=new DesignatorStmtActPars(D1, A2); RESULT.setLine(D1left); :}
+					|   (DesignatorStmtMethodCall) MethodCall:M1 {: RESULT=new DesignatorStmtMethodCall(M1); RESULT.setLine(M1left); :}
 					;
 
-DesignatorStatementAssign ::= (DesignatorStmtAssignDecl) Designator:D1 ASSIGN Expr:E2 {: RESULT=new DesignatorStmtAssignDecl(D1, E2); RESULT.setLine(D1left); :}
+DesignatorStatementAssign ::= (DesignatorStmtAssignCorrect) Designator:D1 ASSIGN Expr:E2 {: RESULT=new DesignatorStmtAssignCorrect(D1, E2); RESULT.setLine(D1left); :}
 							| (AssignError) error:l
 							{: parser.report_error("Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji " + lleft, null); :} {: RESULT=new AssignError(); :} 
 							;
@@ -312,6 +316,12 @@ ActPars ::= (ActParsMultiExpr) ActPars:A1 COMMA Expr:E2 {: RESULT=new ActParsMul
 ActParsOption ::= (ActParsYes) ActPars:A1 {: RESULT=new ActParsYes(A1); RESULT.setLine(A1left); :}
 				| (ActParsNo) {: RESULT=new ActParsNo(); :} /* epsilon */
 				;
+
+ActParsLeftParen ::= (ActParsLeftParen) LPAREN {: RESULT=new ActParsLeftParen(); :};
+
+ActParsRightParen ::= (ActParsRightParen) RPAREN {: RESULT=new ActParsRightParen(); :};
+
+MethodCall ::= (MethodCall) Designator:D1 ActParsLeftParen:A2 ActParsOption:A3 ActParsRightParen:A4 {: RESULT=new MethodCall(D1, A2, A3, A4); RESULT.setLine(D1left); :};
 				
 Condition ::= (ConditionSingle) CondTerm:C1 {: RESULT=new ConditionSingle(C1); RESULT.setLine(C1left); :}
 		   |  (ConditionMultiple) Condition:C1 OR CondTerm:C2 {: RESULT=new ConditionMultiple(C1, C2); RESULT.setLine(C1left); :}

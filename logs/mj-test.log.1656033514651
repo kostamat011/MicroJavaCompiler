@@ -1,0 +1,223 @@
+INFO  03:18:21,889 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  03:18:21,907 - #2 program
+INFO  03:18:21,907 - #48 test302
+INFO  03:18:21,907 - #16 record
+INFO  03:18:21,907 - #48 rec
+INFO  03:18:21,907 - #44 {
+INFO  03:18:21,907 - #48 int
+INFO  03:18:21,908 - #48 x1
+INFO  03:18:21,908 - #39 ,
+INFO  03:18:21,908 - #48 p
+INFO  03:18:21,908 - #39 ,
+INFO  03:18:21,908 - #48 z
+INFO  03:18:21,909 - #42 [
+INFO  03:18:21,909 - #43 ]
+INFO  03:18:21,909 - #38 ;
+INFO  03:18:21,909 - #48 char
+INFO  03:18:21,909 - #48 m
+INFO  03:18:21,909 - #38 ;
+INFO  03:18:21,909 - #45 }
+INFO  03:18:21,909 - #48 char
+INFO  03:18:21,909 - #48 m
+INFO  03:18:21,909 - #38 ;
+INFO  03:18:21,909 - #48 char
+INFO  03:18:21,919 - #48 p
+INFO  03:18:21,919 - #38 ;
+INFO  03:18:21,919 - #44 {
+INFO  03:18:21,919 - #14 void
+INFO  03:18:21,919 - #48 main
+INFO  03:18:21,919 - #40 (
+INFO  03:18:21,920 - #41 )
+INFO  03:18:21,920 - #44 {
+INFO  03:18:21,920 - #48 p
+INFO  03:18:21,920 - #27 =
+INFO  03:18:21,920 - #51 5
+INFO  03:18:21,920 - #38 ;
+INFO  03:18:21,920 - #45 }
+INFO  03:18:21,920 - #14 void
+INFO  03:18:21,920 - #48 a
+INFO  03:18:21,921 - #40 (
+INFO  03:18:21,921 - #41 )
+INFO  03:18:21,921 - #44 {
+INFO  03:18:21,921 - #48 main
+INFO  03:18:21,921 - #27 =
+INFO  03:18:21,921 - #51 5
+INFO  03:18:21,921 - #38 ;
+INFO  03:18:21,921 - #15 return
+INFO  03:18:21,921 - #38 ;
+INFO  03:18:21,921 - #45 }
+INFO  03:18:21,921 - #45 }
+INFO  03:18:21,922 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    AllDeclListMultiple(
+      AllDeclListMultiple(
+        NoDecl(
+        ) [NoDecl]
+        RecordDeclaration(
+          RecordDeclarationExpr(
+            RecordName(
+             rec
+            ) [RecordName]
+            VarDeclOptionTrue(
+              VarDeclOptionTrue(
+                NoVarDeclOption(
+                ) [NoVarDeclOption]
+                VarDeclarationExpr(
+                  Type(
+                   int
+                  ) [Type]
+                  VarDeclListMultiple(
+                    VarDeclListMultiple(
+                      VarDeclListSingle(
+                        VarDeclSingle(
+                         x1
+                          NoArray(
+                          ) [NoArray]
+                        ) [VarDeclSingle]
+                      ) [VarDeclListSingle]
+                      VarDeclSingle(
+                       p
+                        NoArray(
+                        ) [NoArray]
+                      ) [VarDeclSingle]
+                    ) [VarDeclListMultiple]
+                    VarDeclSingle(
+                     z
+                      ArrayBrackets(
+                      ) [ArrayBrackets]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListMultiple]
+                ) [VarDeclarationExpr]
+              ) [VarDeclOptionTrue]
+              VarDeclarationExpr(
+                Type(
+                 char
+                ) [Type]
+                VarDeclListSingle(
+                  VarDeclSingle(
+                   m
+                    NoArray(
+                    ) [NoArray]
+                  ) [VarDeclSingle]
+                ) [VarDeclListSingle]
+              ) [VarDeclarationExpr]
+            ) [VarDeclOptionTrue]
+          ) [RecordDeclarationExpr]
+        ) [RecordDeclaration]
+      ) [AllDeclListMultiple]
+      GlobalVarDeclaration(
+        GlobalVarDeclarationExpr(
+          Type(
+           char
+          ) [Type]
+          GlobalVarDeclListSingle(
+            GlobalVarDeclarationSingle(
+             m
+              NoArray(
+              ) [NoArray]
+            ) [GlobalVarDeclarationSingle]
+          ) [GlobalVarDeclListSingle]
+        ) [GlobalVarDeclarationExpr]
+      ) [GlobalVarDeclaration]
+    ) [AllDeclListMultiple]
+    GlobalVarDeclaration(
+      GlobalVarDeclarationExpr(
+        Type(
+         char
+        ) [Type]
+        GlobalVarDeclListSingle(
+          GlobalVarDeclarationSingle(
+           p
+            NoArray(
+            ) [NoArray]
+          ) [GlobalVarDeclarationSingle]
+        ) [GlobalVarDeclListSingle]
+      ) [GlobalVarDeclarationExpr]
+    ) [GlobalVarDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListMultiple(
+      MethodDeclListNo(
+      ) [MethodDeclListNo]
+      MethodDeclaration(
+        MethodSignaturePlain(
+          MethodTypeVoid(
+          ) [MethodTypeVoid]
+          MethodName(
+           main
+          ) [MethodName]
+        ) [MethodSignaturePlain]
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+        StatementListMultiple(
+          StatementListNo(
+          ) [StatementListNo]
+          StatementSingle(
+            SingleDesignatorStatement(
+              DesignatorStmtAssign(
+                DesignatorStmtAssignCorrect(
+                  IdentDesignator(
+                   p
+                  ) [IdentDesignator]
+                  SingleTermExprPositive(
+                    SingleFactorTerm(
+                      NumConstFactor(
+                       5
+                      ) [NumConstFactor]
+                    ) [SingleFactorTerm]
+                  ) [SingleTermExprPositive]
+                ) [DesignatorStmtAssignCorrect]
+              ) [DesignatorStmtAssign]
+            ) [SingleDesignatorStatement]
+          ) [StatementSingle]
+        ) [StatementListMultiple]
+      ) [MethodDeclaration]
+    ) [MethodDeclListMultiple]
+    MethodDeclaration(
+      MethodSignaturePlain(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+        MethodName(
+         a
+        ) [MethodName]
+      ) [MethodSignaturePlain]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListMultiple(
+        StatementListMultiple(
+          StatementListNo(
+          ) [StatementListNo]
+          StatementSingle(
+            SingleDesignatorStatement(
+              DesignatorStmtAssign(
+                DesignatorStmtAssignCorrect(
+                  IdentDesignator(
+                   main
+                  ) [IdentDesignator]
+                  SingleTermExprPositive(
+                    SingleFactorTerm(
+                      NumConstFactor(
+                       5
+                      ) [NumConstFactor]
+                    ) [SingleFactorTerm]
+                  ) [SingleTermExprPositive]
+                ) [DesignatorStmtAssignCorrect]
+              ) [DesignatorStmtAssign]
+            ) [SingleDesignatorStatement]
+          ) [StatementSingle]
+        ) [StatementListMultiple]
+        StatementSingle(
+          SingleReturnStatement(
+          ) [SingleReturnStatement]
+        ) [StatementSingle]
+      ) [StatementListMultiple]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  03:18:21,922 - ===================================
+ERROR 03:18:21,926 - Invalid assignment. Types are incompatible.
+ERROR 03:18:21,926 - Symbol main is used like an assignable type but is not.
+INFO  03:18:21,926 - One or more errors found!

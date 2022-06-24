@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/5/2022 21:14:19
+// 24/5/2022 4:12:29
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -60,13 +60,16 @@ public interface Visitor {
     public void visit(IfConditionSingle IfConditionSingle);
     public void visit(ConditionMultiple ConditionMultiple);
     public void visit(ConditionSingle ConditionSingle);
+    public void visit(MethodCall MethodCall);
+    public void visit(ActParsRightParen ActParsRightParen);
+    public void visit(ActParsLeftParen ActParsLeftParen);
     public void visit(ActParsNo ActParsNo);
     public void visit(ActParsYes ActParsYes);
     public void visit(ActParsSingleExpr ActParsSingleExpr);
     public void visit(ActParsMultiExpr ActParsMultiExpr);
     public void visit(AssignError AssignError);
-    public void visit(DesignatorStmtAssignDecl DesignatorStmtAssignDecl);
-    public void visit(DesignatorStmtActPars DesignatorStmtActPars);
+    public void visit(DesignatorStmtAssignCorrect DesignatorStmtAssignCorrect);
+    public void visit(DesignatorStmtMethodCall DesignatorStmtMethodCall);
     public void visit(DesignatorStmtMinusMinus DesignatorStmtMinusMinus);
     public void visit(DesignatorStmtPlusPlus DesignatorStmtPlusPlus);
     public void visit(DesignatorStmtAssign DesignatorStmtAssign);
@@ -85,8 +88,7 @@ public interface Visitor {
     public void visit(MulopMul MulopMul);
     public void visit(AddopMinus AddopMinus);
     public void visit(AddopPlus AddopPlus);
-    public void visit(DesignatorParensActFactor DesignatorParensActFactor);
-    public void visit(DesignatorParensFactor DesignatorParensFactor);
+    public void visit(MethodCallFactor MethodCallFactor);
     public void visit(DesignatorEmptyFactor DesignatorEmptyFactor);
     public void visit(NewTypeFactor NewTypeFactor);
     public void visit(BoolConstFactor BoolConstFactor);

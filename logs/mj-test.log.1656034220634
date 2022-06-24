@@ -1,0 +1,244 @@
+INFO  03:30:01,980 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  03:30:01,999 - #2 program
+INFO  03:30:01,999 - #48 test302
+INFO  03:30:01,999 - #16 record
+INFO  03:30:01,999 - #48 rec
+INFO  03:30:01,999 - #44 {
+INFO  03:30:01,999 - #48 int
+INFO  03:30:02,000 - #48 x1
+INFO  03:30:02,000 - #39 ,
+INFO  03:30:02,001 - #48 p
+INFO  03:30:02,001 - #39 ,
+INFO  03:30:02,001 - #48 z
+INFO  03:30:02,001 - #42 [
+INFO  03:30:02,001 - #43 ]
+INFO  03:30:02,001 - #38 ;
+INFO  03:30:02,001 - #48 char
+INFO  03:30:02,001 - #48 m
+INFO  03:30:02,001 - #38 ;
+INFO  03:30:02,001 - #45 }
+INFO  03:30:02,001 - #48 char
+INFO  03:30:02,002 - #48 m
+INFO  03:30:02,002 - #38 ;
+INFO  03:30:02,002 - #48 char
+INFO  03:30:02,011 - #48 p
+INFO  03:30:02,011 - #38 ;
+INFO  03:30:02,011 - #44 {
+INFO  03:30:02,011 - #48 char
+INFO  03:30:02,011 - #48 b
+INFO  03:30:02,011 - #40 (
+INFO  03:30:02,011 - #41 )
+INFO  03:30:02,011 - #44 {
+INFO  03:30:02,011 - #15 return
+INFO  03:30:02,012 - #48 p
+INFO  03:30:02,012 - #38 ;
+INFO  03:30:02,012 - #45 }
+INFO  03:30:02,012 - #14 void
+INFO  03:30:02,012 - #48 main
+INFO  03:30:02,012 - #40 (
+INFO  03:30:02,012 - #41 )
+INFO  03:30:02,012 - #44 {
+INFO  03:30:02,012 - #45 }
+INFO  03:30:02,012 - #14 void
+INFO  03:30:02,012 - #48 a
+INFO  03:30:02,013 - #40 (
+INFO  03:30:02,013 - #41 )
+INFO  03:30:02,013 - #44 {
+INFO  03:30:02,013 - #48 p
+INFO  03:30:02,013 - #27 =
+INFO  03:30:02,013 - #50 3
+INFO  03:30:02,013 - #38 ;
+INFO  03:30:02,013 - #15 return
+INFO  03:30:02,013 - #38 ;
+INFO  03:30:02,013 - #45 }
+INFO  03:30:02,013 - #45 }
+INFO  03:30:02,014 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    AllDeclListMultiple(
+      AllDeclListMultiple(
+        NoDecl(
+        ) [NoDecl]
+        RecordDeclaration(
+          RecordDeclarationExpr(
+            RecordName(
+             rec
+            ) [RecordName]
+            VarDeclOptionTrue(
+              VarDeclOptionTrue(
+                NoVarDeclOption(
+                ) [NoVarDeclOption]
+                VarDeclarationExpr(
+                  Type(
+                   int
+                  ) [Type]
+                  VarDeclListMultiple(
+                    VarDeclListMultiple(
+                      VarDeclListSingle(
+                        VarDeclSingle(
+                         x1
+                          NoArray(
+                          ) [NoArray]
+                        ) [VarDeclSingle]
+                      ) [VarDeclListSingle]
+                      VarDeclSingle(
+                       p
+                        NoArray(
+                        ) [NoArray]
+                      ) [VarDeclSingle]
+                    ) [VarDeclListMultiple]
+                    VarDeclSingle(
+                     z
+                      ArrayBrackets(
+                      ) [ArrayBrackets]
+                    ) [VarDeclSingle]
+                  ) [VarDeclListMultiple]
+                ) [VarDeclarationExpr]
+              ) [VarDeclOptionTrue]
+              VarDeclarationExpr(
+                Type(
+                 char
+                ) [Type]
+                VarDeclListSingle(
+                  VarDeclSingle(
+                   m
+                    NoArray(
+                    ) [NoArray]
+                  ) [VarDeclSingle]
+                ) [VarDeclListSingle]
+              ) [VarDeclarationExpr]
+            ) [VarDeclOptionTrue]
+          ) [RecordDeclarationExpr]
+        ) [RecordDeclaration]
+      ) [AllDeclListMultiple]
+      GlobalVarDeclaration(
+        GlobalVarDeclarationExpr(
+          Type(
+           char
+          ) [Type]
+          GlobalVarDeclListSingle(
+            GlobalVarDeclarationSingle(
+             m
+              NoArray(
+              ) [NoArray]
+            ) [GlobalVarDeclarationSingle]
+          ) [GlobalVarDeclListSingle]
+        ) [GlobalVarDeclarationExpr]
+      ) [GlobalVarDeclaration]
+    ) [AllDeclListMultiple]
+    GlobalVarDeclaration(
+      GlobalVarDeclarationExpr(
+        Type(
+         char
+        ) [Type]
+        GlobalVarDeclListSingle(
+          GlobalVarDeclarationSingle(
+           p
+            NoArray(
+            ) [NoArray]
+          ) [GlobalVarDeclarationSingle]
+        ) [GlobalVarDeclListSingle]
+      ) [GlobalVarDeclarationExpr]
+    ) [GlobalVarDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListMultiple(
+      MethodDeclListMultiple(
+        MethodDeclListNo(
+        ) [MethodDeclListNo]
+        MethodDeclaration(
+          MethodSignaturePlain(
+            MethodTypeType(
+              Type(
+               char
+              ) [Type]
+            ) [MethodTypeType]
+            MethodName(
+             b
+            ) [MethodName]
+          ) [MethodSignaturePlain]
+          NoVarDeclOption(
+          ) [NoVarDeclOption]
+          StatementListMultiple(
+            StatementListNo(
+            ) [StatementListNo]
+            StatementSingle(
+              SingleReturnExprStatement(
+                SingleTermExprPositive(
+                  SingleFactorTerm(
+                    DesignatorEmptyFactor(
+                      IdentDesignator(
+                       p
+                      ) [IdentDesignator]
+                    ) [DesignatorEmptyFactor]
+                  ) [SingleFactorTerm]
+                ) [SingleTermExprPositive]
+              ) [SingleReturnExprStatement]
+            ) [StatementSingle]
+          ) [StatementListMultiple]
+        ) [MethodDeclaration]
+      ) [MethodDeclListMultiple]
+      MethodDeclaration(
+        MethodSignaturePlain(
+          MethodTypeVoid(
+          ) [MethodTypeVoid]
+          MethodName(
+           main
+          ) [MethodName]
+        ) [MethodSignaturePlain]
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+        StatementListNo(
+        ) [StatementListNo]
+      ) [MethodDeclaration]
+    ) [MethodDeclListMultiple]
+    MethodDeclaration(
+      MethodSignaturePlain(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+        MethodName(
+         a
+        ) [MethodName]
+      ) [MethodSignaturePlain]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListMultiple(
+        StatementListMultiple(
+          StatementListNo(
+          ) [StatementListNo]
+          StatementSingle(
+            SingleDesignatorStatement(
+              DesignatorStmtAssign(
+                DesignatorStmtAssignCorrect(
+                  IdentDesignator(
+                   p
+                  ) [IdentDesignator]
+                  SingleTermExprPositive(
+                    SingleFactorTerm(
+                      CharConstFactor(
+                       3
+                      ) [CharConstFactor]
+                    ) [SingleFactorTerm]
+                  ) [SingleTermExprPositive]
+                ) [DesignatorStmtAssignCorrect]
+              ) [DesignatorStmtAssign]
+            ) [SingleDesignatorStatement]
+          ) [StatementSingle]
+        ) [StatementListMultiple]
+        StatementSingle(
+          SingleReturnStatement(
+          ) [SingleReturnStatement]
+        ) [StatementSingle]
+      ) [StatementListMultiple]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  03:30:02,014 - ===================================
+INFO  03:30:02,017 - 1
+ERROR 03:30:02,017 - Return statement returning wrong type, char expected
+ERROR 03:30:02,017 - Missing return statement for method of type char
+INFO  03:30:02,017 - 2 3
+ERROR 03:30:02,017 - Invalid assignment. Types are incompatible.
+INFO  03:30:02,017 - One or more errors found!

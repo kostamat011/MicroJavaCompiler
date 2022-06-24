@@ -10,17 +10,25 @@ record rec
 
 char m;
 char p;
+int k;
+int kp[];
 
 {
+	char b(int b, int x, int c)
+	{
+		return p;
+	}
+	
 	void main()
 	{
-		p = 5;
+		b(1,2,3);
 	}	
 	
-	void a()
+	int a()
 	{
-		main = 5;
-		return;
+		k--;
+		len(kp);
+		return k;
 	}
 }
 

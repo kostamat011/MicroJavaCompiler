@@ -95,7 +95,10 @@ nonterminal rs.etf.pp1.symboltable.concepts.Obj Expr, Term, Factor;
 nonterminal Mulop, Addop;
 
 /* actual parameters */
-nonterminal ActPars, ActParsOption;
+nonterminal ActPars, ActParsOption, ActParsLeftParen, ActParsRightParen;
+
+/* method call */
+nonterminal rs.etf.pp1.symboltable.concepts.Obj MethodCall;
 
 /* conditions */
 nonterminal Condition, IfCondition, CondTerm, CondFact, Relop;
@@ -238,8 +241,7 @@ Factor ::= (NumConstFactor) NUMBER_CONST
 		| (BoolConstFactor) BOOL_CONST
 		| (NewTypeFactor) NEW Type LBRCK Expr RBRCK
 		| (DesignatorEmptyFactor) Designator
-		| (DesignatorParensFactor) Designator LPAREN RPAREN
-		| (DesignatorParensActFactor) Designator LPAREN ActPars RPAREN
+		| (MethodCallFactor) MethodCall
 		;
 
 Addop ::= (AddopPlus) PLUS
@@ -268,10 +270,10 @@ Designator ::= (IdentDesignator) IDENT:ident
 DesignatorStatement ::= (DesignatorStmtAssign) DesignatorStatementAssign
 					|   (DesignatorStmtPlusPlus) Designator PLUSPLUS
 					|   (DesignatorStmtMinusMinus) Designator MINUSMINUS
-					|   (DesignatorStmtActPars) Designator LPAREN ActParsOption RPAREN
+					|   (DesignatorStmtMethodCall) MethodCall
 					;
 
-DesignatorStatementAssign ::= (DesignatorStmtAssignDecl) Designator ASSIGN Expr
+DesignatorStatementAssign ::= (DesignatorStmtAssignCorrect) Designator ASSIGN Expr
 							| (AssignError) error:l
 							{: parser.report_error("Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji " + lleft, null); :} 
 							;
@@ -283,6 +285,12 @@ ActPars ::= (ActParsMultiExpr) ActPars COMMA Expr
 ActParsOption ::= (ActParsYes) ActPars
 				| (ActParsNo) /* epsilon */
 				;
+
+ActParsLeftParen ::= (ActParsLeftParen) LPAREN;
+
+ActParsRightParen ::= (ActParsRightParen) RPAREN;
+
+MethodCall ::= (MethodCall) Designator ActParsLeftParen ActParsOption ActParsRightParen;
 				
 Condition ::= (ConditionSingle) CondTerm
 		   |  (ConditionMultiple) Condition OR CondTerm

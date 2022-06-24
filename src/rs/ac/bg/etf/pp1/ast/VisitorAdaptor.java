@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/5/2022 21:14:19
+// 24/5/2022 4:12:29
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -60,13 +60,16 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(IfConditionSingle IfConditionSingle) { visit(); }
     public void visit(ConditionMultiple ConditionMultiple) { visit(); }
     public void visit(ConditionSingle ConditionSingle) { visit(); }
+    public void visit(MethodCall MethodCall) { visit(); }
+    public void visit(ActParsRightParen ActParsRightParen) { visit(); }
+    public void visit(ActParsLeftParen ActParsLeftParen) { visit(); }
     public void visit(ActParsNo ActParsNo) { visit(); }
     public void visit(ActParsYes ActParsYes) { visit(); }
     public void visit(ActParsSingleExpr ActParsSingleExpr) { visit(); }
     public void visit(ActParsMultiExpr ActParsMultiExpr) { visit(); }
     public void visit(AssignError AssignError) { visit(); }
-    public void visit(DesignatorStmtAssignDecl DesignatorStmtAssignDecl) { visit(); }
-    public void visit(DesignatorStmtActPars DesignatorStmtActPars) { visit(); }
+    public void visit(DesignatorStmtAssignCorrect DesignatorStmtAssignCorrect) { visit(); }
+    public void visit(DesignatorStmtMethodCall DesignatorStmtMethodCall) { visit(); }
     public void visit(DesignatorStmtMinusMinus DesignatorStmtMinusMinus) { visit(); }
     public void visit(DesignatorStmtPlusPlus DesignatorStmtPlusPlus) { visit(); }
     public void visit(DesignatorStmtAssign DesignatorStmtAssign) { visit(); }
@@ -85,8 +88,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(MulopMul MulopMul) { visit(); }
     public void visit(AddopMinus AddopMinus) { visit(); }
     public void visit(AddopPlus AddopPlus) { visit(); }
-    public void visit(DesignatorParensActFactor DesignatorParensActFactor) { visit(); }
-    public void visit(DesignatorParensFactor DesignatorParensFactor) { visit(); }
+    public void visit(MethodCallFactor MethodCallFactor) { visit(); }
     public void visit(DesignatorEmptyFactor DesignatorEmptyFactor) { visit(); }
     public void visit(NewTypeFactor NewTypeFactor) { visit(); }
     public void visit(BoolConstFactor BoolConstFactor) { visit(); }

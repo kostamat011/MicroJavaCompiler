@@ -1,5 +1,8 @@
 package rs.ac.bg.etf.pp1;
 
+import java.util.ArrayList;
+import java.util.Stack;
+
 import org.apache.log4j.Logger;
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.symboltable.Tab;
@@ -50,6 +53,10 @@ public class SemanticPass extends VisitorAdaptor {
 	// count of fields declared in current record
 	//
 	private int fieldCount = 0;
+	
+	// stack of lists of actual params for method calls
+	//
+	private Stack<ArrayList<Obj>> listsOfActParamsStack = new Stack<ArrayList<Obj>>();
 
 	// Symbol table extensions
 	//
@@ -172,6 +179,28 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 		return "";
 	}
+	
+	private boolean isInt(Obj o) {
+		return o.getType().getKind() == Struct.Int;
+	}
+	
+	private boolean isChar(Obj o) {
+		return o.getType().getKind() == Struct.Char;
+	}
+	
+	private boolean isCharArray(Obj o) {
+		return (o.getType().getKind() == Struct.Array) && (o.getType().getElemType().getKind() == Struct.Char);
+	}
+	
+	private boolean isIntArray(Obj o) {
+		return (o.getType().getKind() == Struct.Array) && (o.getType().getElemType().getKind() == Struct.Int);
+	}
+	
+	private boolean isAssignableType(Obj o) {
+		return (o.getKind() == Obj.Var) || (o.getKind() == Obj.Fld) || (o.getKind() == Obj.Elem);
+	}
+	
+	
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -230,7 +259,7 @@ public class SemanticPass extends VisitorAdaptor {
 		if (findSymbolInCurrentScope(varDecl.getVarName())) {
 			reportError("Variable with name " + varDecl.getVarName() + " already defined in current scope.", varDecl);
 		} else {
-			boolean isArray = (varDecl.getArrBracketsOption() != null);
+			boolean isArray = (varDecl.getArrBracketsOption() instanceof ArrayBrackets);
 			if (currMethod != Tab.noObj && currRecord == Tab.noObj) {
 				localVarCount++;
 			} else if (currMethod == Tab.noObj && currRecord != Tab.noObj) {
@@ -250,7 +279,7 @@ public class SemanticPass extends VisitorAdaptor {
 			reportError("Global variable with name " + globalVarDecl.getVarName() + " is already defined.",
 					globalVarDecl);
 		} else {
-			boolean isArray = (globalVarDecl.getArrBracketsOption() != null);
+			boolean isArray = (globalVarDecl.getArrBracketsOption() instanceof ArrayBrackets);
 			insertVarToTable(globalVarDecl.getVarName(), isArray);
 			globalVarCount++;
 		}
@@ -381,6 +410,8 @@ public class SemanticPass extends VisitorAdaptor {
 			reportError("Method " + currMethod.getName() + " has more than 256 local variables.", method);
 			return;
 		}
+		
+		Tab.closeScope();
 
 		resetMethodData();
 	}
@@ -389,7 +420,7 @@ public class SemanticPass extends VisitorAdaptor {
 
 	/* Visiting formal parameters */
 
-	public void visit(FormPars formPars) {
+	public void visit(FormParsMultiple formPars) {
 		// at this moment current scope will contain only formal params visited so far
 		//
 		SymbolDataStructure pars = Tab.currentScope().getLocals();
@@ -398,21 +429,18 @@ public class SemanticPass extends VisitorAdaptor {
 
 	// Single Formal parameter visit
 	//
-	public void visit(FormPar formPar) {
-		if (formPar instanceof FormParSingle) {
-			FormParSingle param = (FormParSingle) formPar;
+	public void visit(FormParSingle formPar) {
+		FormParSingle param = (FormParSingle) formPar;
 
-			if (findSymbolInCurrentScope(param.getFormParName())) {
-				reportError("Name of formal parameter " + param.getFormParName() + " is already defined.", param);
-				return;
-			}
-
-			boolean isArray = (param.getArrBracketsOption() != null);
-			insertVarToTable(param.getFormParName(), isArray);
-
-			currMethod.setLevel(currMethod.getLevel() + 1);
-
+		if (findSymbolInCurrentScope(param.getFormParName()) || currMethod.getName().equals(param.getFormParName())) {
+			reportError("Name of formal parameter " + param.getFormParName() + " is already defined.", param);
+			return;
 		}
+
+		boolean isArray = (param.getArrBracketsOption() instanceof ArrayBrackets);
+		insertVarToTable(param.getFormParName(), isArray);
+
+		currMethod.setLevel(currMethod.getLevel() + 1);
 	}
 
 	// VarArgs visit
@@ -465,12 +493,78 @@ public class SemanticPass extends VisitorAdaptor {
 
 		if (!returnExprType.compatibleWith(currMethodType)) {
 			reportError("Return statement returning wrong type, " + currMethodTypeName + " expected", ret);
-			return;
 		}
 
 		currMethodReturnFound = true;
 	}
 
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	
+	/* Visiting designator statements */
+	
+	// Assignment e.g. x = 5
+	//
+	public void visit(DesignatorStmtAssignCorrect stmt) {
+		Obj designator = stmt.getDesignator().obj;
+		if(designator == null) {
+			return;
+		}
+		
+		if(!isAssignableType(designator)) {
+			reportError("Symbol " + designator.getName() + " is used like an assignable type but is not.", stmt);
+			return;
+		}
+		
+		Obj expr = stmt.getExpr().obj;
+		
+		if(expr == null) {
+			return;
+		}
+		
+		//reportInfo(expr.getType().getKind()+" "+designator.getType().getKind(),null);
+		if(!expr.getType().assignableTo(designator.getType())) {
+			reportError("Invalid assignment. Types are incompatible.", stmt);
+			return;
+		}
+		
+	}
+	
+	// Increment e.g. x++
+	//
+	public void visit(DesignatorStmtPlusPlus stmt) {
+		Obj designator = stmt.getDesignator().obj;
+		if(designator == null) {
+			return;
+		}
+		if(!isAssignableType(designator)) {
+			reportError("Invalid increment. Object must be variable, element or field.", stmt);
+			return;
+		}
+		if(!isInt(designator)) {
+			reportError("Invalid increment. Type must be int.", stmt);
+		}
+	}
+	
+	// Decrement e.g. x--
+	//
+	public void visit(DesignatorStmtMinusMinus stmt) {
+		Obj designator = stmt.getDesignator().obj;
+		if(designator == null) {
+			return;
+		}
+		if(!isAssignableType(designator)) {
+			reportError("Invalid decrement. Object must be variable, element or field.", stmt);
+			return;
+		}
+		if(!isInt(designator)) {
+			reportError("Invalid decrement. Type must be int.", stmt);
+		}
+	}
+	
+	public void visit(DesignatorStmtMethodCall stmt) {
+		//
+	}
+	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 	/* Visiting expressions, terms, factors */
@@ -551,6 +645,23 @@ public class SemanticPass extends VisitorAdaptor {
 		factor.obj = factor.getExpr().obj;
 	}
 
+	// Designator factor e.g. x
+	//
+	public void visit(DesignatorEmptyFactor factor) {
+		Obj designatorObj = factor.getDesignator().obj;
+		if (!isAssignableType(designatorObj)){
+			reportError("Symbol " + designatorObj.getName() + " is used like an assignable type but is not.", factor);
+			return;
+		}
+		factor.obj = designatorObj;
+	}
+	
+	// Method call factor e.g foo(3, 4, 5)
+	//
+	public void visit(MethodCallFactor factor) {
+		 factor.obj = factor.getMethodCall().obj;
+	}
+
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 	/* Visting Designators */
@@ -576,7 +687,7 @@ public class SemanticPass extends VisitorAdaptor {
 
 		Obj symbolNode = Tab.find(designator.getIdent());
 
-		if ((symbolNode.getKind() != Obj.Var) || symbolNode.getType().getKind() != Struct.Array) {
+		if (symbolNode.getType().getKind() != Struct.Array) {
 			reportError("Symbol " + designator.getIdent() + " is used like an array but is not.", designator);
 			return;
 		}
@@ -605,15 +716,16 @@ public class SemanticPass extends VisitorAdaptor {
 			reportError("Symbol " + designator.getIdent() + " is used like a record but is not.", designator);
 			return;
 		}
-		
+
 		SymbolDataStructure ownersMembers = owner.getType().getMembersTable();
-		
+
 		Obj member = ownersMembers.searchKey(designator.getMemberName());
-		if(member.equals(Tab.noObj)) {
-			reportError("Symbol " + designator.getMemberName() + " is not defined under " + designator.getIdent(), designator);
+		if (member.equals(Tab.noObj)) {
+			reportError("Symbol " + designator.getMemberName() + " is not defined under " + designator.getIdent(),
+					designator);
 			return;
 		}
-		
+
 		designator.obj = member;
 	}
 
@@ -624,37 +736,150 @@ public class SemanticPass extends VisitorAdaptor {
 			reportError("Symbol " + designator.getIdent() + " is not defined.", designator);
 			return;
 		}
-		
+
 		Obj owner = Tab.find(designator.getIdent());
 
 		if ((owner.getKind() != Obj.Type) || owner.getType().getKind() != Record) {
 			reportError("Symbol " + designator.getIdent() + " is used like a record but is not.", designator);
 			return;
 		}
-		
+
 		SymbolDataStructure ownersMembers = owner.getType().getMembersTable();
-		
+
 		Obj member = ownersMembers.searchKey(designator.getMemberArrayName());
-		if(member.equals(Tab.noObj)) {
-			reportError("Symbol " + designator.getMemberArrayName() + " is not defined under " + designator.getIdent(), designator);
+		if (member.equals(Tab.noObj)) {
+			reportError("Symbol " + designator.getMemberArrayName() + " is not defined under " + designator.getIdent(),
+					designator);
 			return;
 		}
-		
-		if(member.getKind() != Obj.Var || member.getType().getKind() != Struct.Array) {
+
+		if (member.getKind() != Obj.Var || member.getType().getKind() != Struct.Array) {
 			reportError("Symbol " + designator.getIdent() + " is used like an array but is not.", designator);
 			return;
 		}
-		
+
 		Obj expr = designator.getExpr().obj;
 
 		if (expr.getType() != Tab.intType) {
 			reportError("Expression in array braces does not evaluate to integer type.", designator);
 			return;
 		}
-		
+
 		designator.obj = new Obj(Obj.Elem, member.getName(), member.getType().getElemType());
 	}
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	
+	/* Visiting actual parameters and method call */
+	
+	
+	// Single actual parameter (expression)
+	//
+	public void visit(ActParsSingleExpr pars) {
+		ArrayList<Obj> actParams = listsOfActParamsStack.pop();
+		actParams.add(pars.getExpr().obj);
+		listsOfActParamsStack.push(actParams);
+	}
+	
+	public void visit(ActParsMultiExpr pars) {
+		ArrayList<Obj> actParams = listsOfActParamsStack.pop();
+		actParams.add(pars.getExpr().obj);
+		listsOfActParamsStack.push(actParams);
+	}
+	
+	// Left Paren - start of act pars
+	//
+	public void visit(ActParsLeftParen parsLParen) {
+		listsOfActParamsStack.push(new  ArrayList<Obj>());
+	}
+	
+	// Right Paren - end of act pars
+	//
+	public void visit(ActParsRightParen parsRParen) {
+		// nothing
+	}
+	
+	// Method call - with or without params
+	//
+	public void visit(MethodCall call) {
+		Obj methodDesignator = call.getDesignator().obj;
+		if (methodDesignator.getKind() != Obj.Meth){
+			reportError("Symbol " + methodDesignator.getName() + " is used like a method but is not a method.", call);
+			return;
+		}
+		
+		// method call with params
+		//
+		if(call.getActParsOption() instanceof ActParsYes) {
+			ArrayList<Obj> actualParams = listsOfActParamsStack.pop();
+			if(actualParams.size() != methodDesignator.getLevel()) {
+				reportError("Invalid number of function parameters.", call);
+				return;
+			}
+			
+			// predefined chr(e)
+			//
+			if(methodDesignator.getName().equals("chr")) {
+				if(!isInt(actualParams.get(0))) {
+					reportError("Wrong parameter type for predefined method chr. Expected int.",call);
+					return;
+				}
+			}
+			
+			// predefined ord(c)
+			//
+			if(methodDesignator.getName().equals("ord")) {
+				if(!isChar(actualParams.get(0))) {
+					reportError("Wrong parameter type for predefined method ord. Expected char.",call);
+					return;
+				}
+			}
+			
+			// predefined len(a)
+			//
+			if(methodDesignator.getName().equals("len")) {
+				if(!isIntArray(actualParams.get(0)) && !isCharArray(actualParams.get(0))) {
+					reportError("Wrong parameter type for predefined method len. Expected array.",call);
+					return;
+				}
+			}
+			
+			// user defined method
+			//
+			ArrayList<Obj> formalArgs = new ArrayList<Obj>(methodDesignator.getLocalSymbols());
+			if(actualParams.size() != formalArgs.size()) {
+				reportError("Invalid number of function parameters.", call);
+				return;
+			}
+			int i = 0;
+			for(Obj arg: formalArgs) {
+				Obj param = actualParams.get(i++);
+				if(!param.getType().assignableTo(arg.getType())) {
+					reportError("Type of paramater incompatible with argument type.",call);
+					return;
+				}
+			}
+			
+			call.obj = methodDesignator;
+		}
+		
+		// method call without params
+		//
+		else if(call.getActParsOption() instanceof ActParsNo) {
+			
+		}
+		
+		// undefined method call
+		//
+		else {
+			reportError("Invalid method call",call);
+		}
+		
+	}
+	
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	
+	/**/
+
 
 }
