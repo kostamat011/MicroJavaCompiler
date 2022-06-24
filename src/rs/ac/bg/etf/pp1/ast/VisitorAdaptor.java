@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 24/5/2022 4:12:29
+// 24/5/2022 21:54:11
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -51,15 +51,15 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ClassMethodDeclOption ClassMethodDeclOption) { }
     public void visit(FormPars FormPars) { }
     public void visit(GlobalVarDeclList GlobalVarDeclList) { }
-    public void visit(CondFactExprRelop CondFactExprRelop) { visit(); }
-    public void visit(CondFactExpr CondFactExpr) { visit(); }
-    public void visit(CondTermListMultiple CondTermListMultiple) { visit(); }
-    public void visit(CondTermListSingle CondTermListSingle) { visit(); }
+    public void visit(CondMultiExprFact CondMultiExprFact) { visit(); }
+    public void visit(CondSingleExprFact CondSingleExprFact) { visit(); }
+    public void visit(CondMultiFactTerm CondMultiFactTerm) { visit(); }
+    public void visit(CondSingleFactTerm CondSingleFactTerm) { visit(); }
     public void visit(IfConditionError IfConditionError) { visit(); }
-    public void visit(IfConditionMultiple IfConditionMultiple) { visit(); }
-    public void visit(IfConditionSingle IfConditionSingle) { visit(); }
-    public void visit(ConditionMultiple ConditionMultiple) { visit(); }
-    public void visit(ConditionSingle ConditionSingle) { visit(); }
+    public void visit(IfConditionMultiTerm IfConditionMultiTerm) { visit(); }
+    public void visit(IfConditionSingleTerm IfConditionSingleTerm) { visit(); }
+    public void visit(ConditionMultiTerm ConditionMultiTerm) { visit(); }
+    public void visit(ConditionSingleTerm ConditionSingleTerm) { visit(); }
     public void visit(MethodCall MethodCall) { visit(); }
     public void visit(ActParsRightParen ActParsRightParen) { visit(); }
     public void visit(ActParsLeftParen ActParsLeftParen) { visit(); }
@@ -90,6 +90,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(AddopPlus AddopPlus) { visit(); }
     public void visit(MethodCallFactor MethodCallFactor) { visit(); }
     public void visit(DesignatorEmptyFactor DesignatorEmptyFactor) { visit(); }
+    public void visit(NewTypeArrayFactor NewTypeArrayFactor) { visit(); }
     public void visit(NewTypeFactor NewTypeFactor) { visit(); }
     public void visit(BoolConstFactor BoolConstFactor) { visit(); }
     public void visit(ExprFactor ExprFactor) { visit(); }
@@ -102,6 +103,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(SingleTermExprPositive SingleTermExprPositive) { visit(); }
     public void visit(NumConstNo NumConstNo) { visit(); }
     public void visit(NumConstYes NumConstYes) { visit(); }
+    public void visit(DoEnter DoEnter) { visit(); }
     public void visit(DoWhileStatement DoWhileStatement) { visit(); }
     public void visit(IfElseStatement IfElseStatement) { visit(); }
     public void visit(IfStatement IfStatement) { visit(); }
@@ -117,7 +119,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(StatementMultiple StatementMultiple) { visit(); }
     public void visit(StatementSingle StatementSingle) { visit(); }
     public void visit(StatementsInBraces StatementsInBraces) { visit(); }
-    public void visit(FormParError FormParError) { visit(); }
     public void visit(FormParSingle FormParSingle) { visit(); }
     public void visit(FormParsSingle FormParsSingle) { visit(); }
     public void visit(FormParsMultiple FormParsMultiple) { visit(); }
@@ -125,9 +126,11 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(MethodTypeVoid MethodTypeVoid) { visit(); }
     public void visit(MethodTypeType MethodTypeType) { visit(); }
     public void visit(MethodName MethodName) { visit(); }
+    public void visit(FormParsEnd FormParsEnd) { visit(); }
     public void visit(MethodSignaturePlain MethodSignaturePlain) { visit(); }
     public void visit(MethodSignatureVarArgs MethodSignatureVarArgs) { visit(); }
     public void visit(MethodSignatureParams MethodSignatureParams) { visit(); }
+    public void visit(MethodSignatureVarArgsOnly MethodSignatureVarArgsOnly) { visit(); }
     public void visit(MethodDeclaration MethodDeclaration) { visit(); }
     public void visit(MethodDeclListNo MethodDeclListNo) { visit(); }
     public void visit(MethodDeclListMultiple MethodDeclListMultiple) { visit(); }

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 24/5/2022 4:12:29
+// 24/5/2022 21:54:11
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -51,15 +51,15 @@ public interface Visitor {
     public void visit(ClassMethodDeclOption ClassMethodDeclOption);
     public void visit(FormPars FormPars);
     public void visit(GlobalVarDeclList GlobalVarDeclList);
-    public void visit(CondFactExprRelop CondFactExprRelop);
-    public void visit(CondFactExpr CondFactExpr);
-    public void visit(CondTermListMultiple CondTermListMultiple);
-    public void visit(CondTermListSingle CondTermListSingle);
+    public void visit(CondMultiExprFact CondMultiExprFact);
+    public void visit(CondSingleExprFact CondSingleExprFact);
+    public void visit(CondMultiFactTerm CondMultiFactTerm);
+    public void visit(CondSingleFactTerm CondSingleFactTerm);
     public void visit(IfConditionError IfConditionError);
-    public void visit(IfConditionMultiple IfConditionMultiple);
-    public void visit(IfConditionSingle IfConditionSingle);
-    public void visit(ConditionMultiple ConditionMultiple);
-    public void visit(ConditionSingle ConditionSingle);
+    public void visit(IfConditionMultiTerm IfConditionMultiTerm);
+    public void visit(IfConditionSingleTerm IfConditionSingleTerm);
+    public void visit(ConditionMultiTerm ConditionMultiTerm);
+    public void visit(ConditionSingleTerm ConditionSingleTerm);
     public void visit(MethodCall MethodCall);
     public void visit(ActParsRightParen ActParsRightParen);
     public void visit(ActParsLeftParen ActParsLeftParen);
@@ -90,6 +90,7 @@ public interface Visitor {
     public void visit(AddopPlus AddopPlus);
     public void visit(MethodCallFactor MethodCallFactor);
     public void visit(DesignatorEmptyFactor DesignatorEmptyFactor);
+    public void visit(NewTypeArrayFactor NewTypeArrayFactor);
     public void visit(NewTypeFactor NewTypeFactor);
     public void visit(BoolConstFactor BoolConstFactor);
     public void visit(ExprFactor ExprFactor);
@@ -102,6 +103,7 @@ public interface Visitor {
     public void visit(SingleTermExprPositive SingleTermExprPositive);
     public void visit(NumConstNo NumConstNo);
     public void visit(NumConstYes NumConstYes);
+    public void visit(DoEnter DoEnter);
     public void visit(DoWhileStatement DoWhileStatement);
     public void visit(IfElseStatement IfElseStatement);
     public void visit(IfStatement IfStatement);
@@ -117,7 +119,6 @@ public interface Visitor {
     public void visit(StatementMultiple StatementMultiple);
     public void visit(StatementSingle StatementSingle);
     public void visit(StatementsInBraces StatementsInBraces);
-    public void visit(FormParError FormParError);
     public void visit(FormParSingle FormParSingle);
     public void visit(FormParsSingle FormParsSingle);
     public void visit(FormParsMultiple FormParsMultiple);
@@ -125,9 +126,11 @@ public interface Visitor {
     public void visit(MethodTypeVoid MethodTypeVoid);
     public void visit(MethodTypeType MethodTypeType);
     public void visit(MethodName MethodName);
+    public void visit(FormParsEnd FormParsEnd);
     public void visit(MethodSignaturePlain MethodSignaturePlain);
     public void visit(MethodSignatureVarArgs MethodSignatureVarArgs);
     public void visit(MethodSignatureParams MethodSignatureParams);
+    public void visit(MethodSignatureVarArgsOnly MethodSignatureVarArgsOnly);
     public void visit(MethodDeclaration MethodDeclaration);
     public void visit(MethodDeclListNo MethodDeclListNo);
     public void visit(MethodDeclListMultiple MethodDeclListMultiple);

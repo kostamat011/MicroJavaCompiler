@@ -1,6 +1,7 @@
 package rs.ac.bg.etf.pp1;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Stack;
 
 import org.apache.log4j.Logger;
@@ -57,12 +58,21 @@ public class SemanticPass extends VisitorAdaptor {
 	// stack of lists of actual params for method calls
 	//
 	private Stack<ArrayList<Obj>> listsOfActParamsStack = new Stack<ArrayList<Obj>>();
+	
+	// level of nesting for do-while loops
+	//
+	private int doWhileLevel = 0;
+	
+	// hash map for keeping info of number of varArgs 
+	//
+	private HashMap<String, Integer> varArgsMethods = new HashMap<String, Integer>();
 
 	// Symbol table extensions
 	//
-	public static final int Record = 8;
+	public static final int MethodDivider = 111;
 	public static final Struct boolType = new Struct(Struct.Bool);
-	public static final Struct recordType = new Struct(Record);
+	public static final Struct classType = new Struct(Struct.Class);
+	public static final Struct methodDividerType = new Struct(MethodDivider);
 
 	// init symbol table before semantic pass begins
 	//
@@ -81,15 +91,25 @@ public class SemanticPass extends VisitorAdaptor {
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-	/* Errors util methods */
+	/* Errors and infos util methods */
 
 	private void reportError(String msg, SyntaxNode node) {
 		error = true;
-		log.error(msg);
+		if(node != null) {
+			int line = node.getLine();
+			log.error("Line " + line + ": " + msg);
+		} else {
+			log.error(msg);
+		}
 	}
 
 	private void reportInfo(String msg, SyntaxNode node) {
-		log.info(msg);
+		if(node != null) {
+			int line = node.getLine();
+			log.info("Line " + line + ": " + msg);
+		} else {
+			log.info(msg);
+		}
 	}
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -188,6 +208,10 @@ public class SemanticPass extends VisitorAdaptor {
 		return o.getType().getKind() == Struct.Char;
 	}
 	
+	private boolean isBool(Obj o) {
+		return o.getType().getKind() == Struct.Bool;
+	}
+	
 	private boolean isCharArray(Obj o) {
 		return (o.getType().getKind() == Struct.Array) && (o.getType().getElemType().getKind() == Struct.Char);
 	}
@@ -200,8 +224,42 @@ public class SemanticPass extends VisitorAdaptor {
 		return (o.getKind() == Obj.Var) || (o.getKind() == Obj.Fld) || (o.getKind() == Obj.Elem);
 	}
 	
+	private boolean isClass(Obj o) {
+		return o.getType().getKind() == Struct.Class;
+	}
 	
-
+	private boolean isArray(Obj o) {
+		return o.getType().getKind() == Struct.Array;
+	}
+	
+	private boolean isConst(Obj o) {
+		return o.getKind() == Obj.Con;
+	}
+	
+	private boolean isFormalArgument(Obj method, Obj arg) {
+		/*ArrayList<Obj> locals = new ArrayList<Obj>(method.getLocalSymbols());
+		for(Obj o : locals) {
+			if(o.getName().equals(arg.getName())) {
+				return true;
+			}
+		}*/
+		return false;
+	}
+	
+	private ArrayList<Obj> extractFormalArgs(ArrayList<Obj> args) {
+		// formal args - before divider
+		// local vars - after divider
+		//
+		ArrayList<Obj> ret  = new ArrayList();
+		for(Obj o : args) {
+			if(o.getType().equals(methodDividerType)) {
+				break;
+			}
+			ret.add(o);
+		}
+		return ret;
+	}
+	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 	/* Visiting program */
@@ -258,7 +316,15 @@ public class SemanticPass extends VisitorAdaptor {
 	public void visit(VarDeclSingle varDecl) {
 		if (findSymbolInCurrentScope(varDecl.getVarName())) {
 			reportError("Variable with name " + varDecl.getVarName() + " already defined in current scope.", varDecl);
-		} else {
+			return;
+		} 
+		
+		if(currMethod != Tab.noObj && currMethod.getName().equals(varDecl.getVarName())) {
+			reportError("Variable with name " + varDecl.getVarName() + " already defined in current scope.", varDecl);
+			return;
+		}
+		
+		else {
 			boolean isArray = (varDecl.getArrBracketsOption() instanceof ArrayBrackets);
 			if (currMethod != Tab.noObj && currRecord == Tab.noObj) {
 				localVarCount++;
@@ -311,7 +377,7 @@ public class SemanticPass extends VisitorAdaptor {
 		if (findSymbolInTable(recordName.getName())) {
 			reportError("Name " + recordName.getName() + " is already defined.", recordName);
 		} else {
-			currRecord = recordName.obj = Tab.insert(Obj.Type, recordName.getName(), recordType);
+			currRecord = recordName.obj = Tab.insert(Obj.Type, recordName.getName(), classType);
 			Tab.openScope();
 		}
 	}
@@ -386,7 +452,10 @@ public class SemanticPass extends VisitorAdaptor {
 		String name = methodSignature.getMethodName().getName();
 		if (name.equals("main")) {
 			reportError("Main method must have no parameters.", methodSignature);
+			mainFound = true;
 		}
+		SymbolDataStructure pars = Tab.currentScope().getLocals();
+		currMethod.setLocals(pars);
 	}
 
 	// Method signature with var args
@@ -395,7 +464,24 @@ public class SemanticPass extends VisitorAdaptor {
 		String name = methodSignature.getMethodName().getName();
 		if (name.equals("main")) {
 			reportError("Main method must have no parameters.", methodSignature);
+			mainFound = true;
 		}
+		varArgsMethods.put(name, 0);
+		SymbolDataStructure pars = Tab.currentScope().getLocals();
+		currMethod.setLocals(pars);
+	}
+	
+	// Method signature with var args without params
+	//
+	public void visit(MethodSignatureVarArgsOnly methodSignature) {
+		String name = methodSignature.getMethodName().getName();
+		if (name.equals("main")) {
+			reportError("Main method must have no parameters.", methodSignature);
+			mainFound = true;
+		}
+		varArgsMethods.put(name, 0);
+		SymbolDataStructure pars = Tab.currentScope().getLocals();
+		currMethod.setLocals(pars);
 	}
 
 	// Method declaration - end of method
@@ -421,10 +507,7 @@ public class SemanticPass extends VisitorAdaptor {
 	/* Visiting formal parameters */
 
 	public void visit(FormParsMultiple formPars) {
-		// at this moment current scope will contain only formal params visited so far
 		//
-		SymbolDataStructure pars = Tab.currentScope().getLocals();
-		currMethod.setLocals(pars);
 	}
 
 	// Single Formal parameter visit
@@ -454,6 +537,18 @@ public class SemanticPass extends VisitorAdaptor {
 		// insert var args to table as an array
 		//
 		insertVarToTable(varArgName, true);
+		
+		currMethod.setLevel(currMethod.getLevel() + 1);
+		SymbolDataStructure pars = Tab.currentScope().getLocals();
+		currMethod.setLocals(pars);
+	}
+	
+	// Right paren mark end of form pars
+	//
+	public void visit(FormParsEnd fpe) {
+		// insert a divder between form params and local vars
+		Tab.insert(Obj.Con, null, methodDividerType);
+		
 	}
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -496,6 +591,59 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 
 		currMethodReturnFound = true;
+	}
+	
+	// read stmt
+	//
+	public void visit(SingleReadStatement stmt) {
+		Obj designator = stmt.getDesignator().obj;
+		if(!isAssignableType(designator)) {
+			reportError("Cannot use read with non-assignable parameter.",stmt);
+			return;
+		}
+		
+		if(!isInt(designator) && !isChar(designator) && !isBool(designator)) {
+			reportError("Cannot use read with var of type other than int, char or bool.",stmt);
+			return;
+		}
+	}
+	
+	// print stmt
+	//
+	public void visit(SinglePrintStatement stmt) {
+		Obj expr = stmt.getExpr().obj;
+		if(!isInt(expr) && !isChar(expr) && !isBool(expr)) {
+			reportError("Expression in print must be of int, char or bool type",stmt);
+			return;
+		}
+	}
+	
+	// continue stmt
+	//
+	public void visit(SingleContinueStatement stmt) {
+		if(doWhileLevel < 1) {
+			reportError("Cannot use continue outside do while loop.",stmt);
+		}
+	}
+	
+	// break stmt
+	//
+	public void visit(SingleBreakStatement stmt) {
+		if(doWhileLevel < 1) {
+			reportError("Cannot use break outside do while loop.",stmt);
+		}
+	}
+	
+	// do while stmt - start
+	//
+	public void visit(DoEnter doEnter) {
+		doWhileLevel ++;
+	}
+	
+	// do while stmt - end
+	//
+	public void visit(DoWhileStatement stmt) {
+		doWhileLevel --;
 	}
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -649,10 +797,6 @@ public class SemanticPass extends VisitorAdaptor {
 	//
 	public void visit(DesignatorEmptyFactor factor) {
 		Obj designatorObj = factor.getDesignator().obj;
-		if (!isAssignableType(designatorObj)){
-			reportError("Symbol " + designatorObj.getName() + " is used like an assignable type but is not.", factor);
-			return;
-		}
 		factor.obj = designatorObj;
 	}
 	
@@ -660,6 +804,26 @@ public class SemanticPass extends VisitorAdaptor {
 	//
 	public void visit(MethodCallFactor factor) {
 		 factor.obj = factor.getMethodCall().obj;
+	}
+	
+	// New type factor e.g. new rec
+	//
+	public void visit(NewTypeFactor factor) {
+		Struct type = factor.getType().struct;
+		if(type.getKind() != Struct.Class) {
+			reportError("Cannot use new with non-class type", factor);
+		}
+		factor.obj = new Obj(Obj.Var, "", classType);
+	}
+	
+	// New type array factor e.g. new rec[5]
+	public void visit(NewTypeArrayFactor factor) {
+		Obj expr = factor.getExpr().obj;
+		if(!isInt(expr)) {
+			reportError("Expected int in array initializer",factor);
+		}
+		Struct newType = new Struct(Struct.Array, expr.getType());
+		factor.obj = new Obj(Obj.Var, "", newType);
 	}
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -673,8 +837,13 @@ public class SemanticPass extends VisitorAdaptor {
 			reportError("Symbol " + designator.getIdent() + " is not defined.", designator);
 			return;
 		}
-
+		
 		designator.obj = Tab.find(designator.getIdent());
+		
+		if(currMethod != Tab.noObj && isFormalArgument(currMethod,designator.obj)) {
+			reportInfo("Access to formal argument detected. Method name: " + currMethod.getName() 
+				+ ", argument name: " + designator.getIdent(), designator);
+		}
 	}
 
 	// a[1]
@@ -700,6 +869,13 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 
 		designator.obj = new Obj(Obj.Elem, symbolNode.getName(), symbolNode.getType().getElemType());
+		
+		reportInfo("Access to array element detected. Array name: " + designator.getIdent(), designator);
+		
+		if(currMethod != Tab.noObj && isFormalArgument(currMethod,designator.obj)) {
+			reportInfo("Access to formal argument detected. Method name: " + currMethod.getName() 
+				+ ", argument name: " + designator.getIdent(), designator);
+		}
 	}
 
 	// rec.a
@@ -712,10 +888,12 @@ public class SemanticPass extends VisitorAdaptor {
 
 		Obj owner = Tab.find(designator.getIdent());
 
-		if ((owner.getKind() != Obj.Type) || owner.getType().getKind() != Record) {
+		if ((owner.getKind() != Obj.Type) || owner.getType().getKind() != Struct.Class) {
 			reportError("Symbol " + designator.getIdent() + " is used like a record but is not.", designator);
 			return;
 		}
+		
+		reportInfo("Record usage detected. Name: " + designator.getIdent(), designator);
 
 		SymbolDataStructure ownersMembers = owner.getType().getMembersTable();
 
@@ -739,7 +917,7 @@ public class SemanticPass extends VisitorAdaptor {
 
 		Obj owner = Tab.find(designator.getIdent());
 
-		if ((owner.getKind() != Obj.Type) || owner.getType().getKind() != Record) {
+		if ((owner.getKind() != Obj.Type) || owner.getType().getKind() != Struct.Class) {
 			reportError("Symbol " + designator.getIdent() + " is used like a record but is not.", designator);
 			return;
 		}
@@ -808,11 +986,25 @@ public class SemanticPass extends VisitorAdaptor {
 			return;
 		}
 		
+		reportInfo("Method Call detected. Method name: " + methodDesignator.getName(), call);
+		
 		// method call with params
 		//
 		if(call.getActParsOption() instanceof ActParsYes) {
+			boolean hasVarArgs = varArgsMethods.containsKey(methodDesignator.getName());
+			
 			ArrayList<Obj> actualParams = listsOfActParamsStack.pop();
-			if(actualParams.size() != methodDesignator.getLevel()) {
+			
+			// if there is less actual parameters - invalid call
+			//
+			if(actualParams.size() < methodDesignator.getLevel()) {
+				reportError("Invalid number of function parameters.", call);
+				return;
+			}
+			
+			// if var args exist for function, there can be more actual params than arguments
+			//
+			if((!hasVarArgs) && (actualParams.size() != methodDesignator.getLevel())) {
 				reportError("Invalid number of function parameters.", call);
 				return;
 			}
@@ -847,17 +1039,40 @@ public class SemanticPass extends VisitorAdaptor {
 			// user defined method
 			//
 			ArrayList<Obj> formalArgs = new ArrayList<Obj>(methodDesignator.getLocalSymbols());
-			if(actualParams.size() != formalArgs.size()) {
-				reportError("Invalid number of function parameters.", call);
-				return;
-			}
-			int i = 0;
-			for(Obj arg: formalArgs) {
-				Obj param = actualParams.get(i++);
+			formalArgs = extractFormalArgs(formalArgs);
+			
+			for(int i=0; i<formalArgs.size(); ++i) {
+				if(hasVarArgs && i==(formalArgs.size()-1)) {
+					break;
+				}
+				Obj arg = formalArgs.get(i);
+				Obj param = actualParams.get(i);
 				if(!param.getType().assignableTo(arg.getType())) {
 					reportError("Type of paramater incompatible with argument type.",call);
 					return;
 				}
+			}
+			
+			if(hasVarArgs) {
+				// now this will be the last element of formal Args, but there can be n more in actual params
+				//
+				int i = formalArgs.size() - 1;
+				Obj varArg = formalArgs.get(i);
+				while(i<actualParams.size()) {
+					Obj param = actualParams.get(i);
+					if(param == null || !param.getType().assignableTo(varArg.getType().getElemType())) {
+						reportError("Type of parameter incompatible with var arg type.", call);
+						return;
+					}
+					i++;
+				}
+				
+				// store number of var args in hashmap
+				//
+				varArgsMethods.replace(methodDesignator.getName(), i - formalArgs.size() + 1);
+				
+				reportInfo("Method "+methodDesignator.getName() + 
+						" has varArgs with " +  varArgsMethods.get(methodDesignator.getName()) + " args", null);
 			}
 			
 			call.obj = methodDesignator;
@@ -866,7 +1081,7 @@ public class SemanticPass extends VisitorAdaptor {
 		// method call without params
 		//
 		else if(call.getActParsOption() instanceof ActParsNo) {
-			
+			call.obj = methodDesignator;
 		}
 		
 		// undefined method call
@@ -879,7 +1094,95 @@ public class SemanticPass extends VisitorAdaptor {
 	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 	
-	/**/
-
+	/* Visiting conditions */
+	
+	// single expression condition factor e.g. x+3
+	//
+	public void visit(CondSingleExprFact fact) {
+		fact.obj = fact.getExpr().obj;
+	}
+	
+	// multi expression with relop condition factor e.g x+3 < 5
+	//
+	public void visit(CondMultiExprFact fact) {
+		Obj factor = fact.getCondFact().obj;
+		Obj expr = fact.getExpr().obj;
+		Relop relop = fact.getRelop();
+		
+		if(isClass(factor) || isClass(expr)) {
+			if(!(isClass(factor) && isClass(expr))) {
+				reportError("Incompatible types in condition.",fact);
+				return;
+			}
+			if(!(relop instanceof RelopEQUAL || relop instanceof RelopNOTEQUAL)) {
+				reportError("Only == and != rel operators allowed for class types.",fact);
+				return;
+			}
+		}
+		
+		if(isArray(factor) || isArray(expr)) {
+			if(!(isArray(factor) && isArray(expr))) {
+				reportError("Incompatible types in condition.",fact);
+				return;
+			}
+			if(!(relop instanceof RelopEQUAL || relop instanceof RelopNOTEQUAL)) {
+				reportError("Only == and != rel operators allowed for array types.",fact);
+				return;
+			}
+		}
+		
+		if(!(expr.getType().assignableTo(factor.getType()))) {
+			reportError("Incompatible types in condition.",fact);
+			return;
+		}
+		
+		fact.obj = new Obj(Obj.Type, "", boolType);
+	}
+	
+	// condition term consisting of single factor
+	//
+	public void visit(CondSingleFactTerm term) {
+		if(!term.getCondFact().obj.getType().equals(boolType)) {
+			reportError("Condition term is not bool type",term);
+			return;
+		}
+		term.obj = term.getCondFact().obj;
+	}
+	
+	// condition term consisting of multiple factors with AND between
+	//
+	public void visit(CondMultiFactTerm term) {
+		if(!(term.getCondFact().obj.getType().equals(boolType) && term.getCondTerm().obj.getType().equals(boolType))) {
+			reportError("Condition term is not bool type",term);
+			return;
+		}
+		term.obj = new Obj(Obj.Type, "", boolType);
+	}
+	
+	// condition with single term
+	//
+	public void visit(ConditionSingleTerm cond) {
+		cond.obj = cond.getCondTerm().obj;
+	}
+	
+	// condition with multiple terms with OR between
+	//
+	public void visit(ConditionMultiTerm cond) {
+		cond.obj = new Obj(Obj.Type, "", boolType);
+	}
+	
+	// if condition with single term
+	//
+	public void visit(IfConditionSingleTerm cond) {
+		cond.obj = cond.getCondTerm().obj;
+	}
+	
+	// if condition with multiple terms with OR between
+	//
+	public void visit(IfConditionMultiTerm cond) {
+		cond.obj = new Obj(Obj.Type, "", boolType);
+	}
+	
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 }

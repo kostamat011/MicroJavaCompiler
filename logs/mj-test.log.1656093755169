@@ -1,0 +1,300 @@
+INFO  20:02:23,716 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  20:02:23,734 - #2 program
+INFO  20:02:23,734 - #48 test301
+INFO  20:02:23,734 - #7 const
+INFO  20:02:23,734 - #48 int
+INFO  20:02:23,734 - #48 nula
+INFO  20:02:23,734 - #27 =
+INFO  20:02:23,734 - #51 0
+INFO  20:02:23,734 - #38 ;
+INFO  20:02:23,735 - #7 const
+INFO  20:02:23,735 - #48 int
+INFO  20:02:23,735 - #48 jedan
+INFO  20:02:23,735 - #27 =
+INFO  20:02:23,735 - #51 1
+INFO  20:02:23,735 - #38 ;
+INFO  20:02:23,735 - #7 const
+INFO  20:02:23,735 - #48 int
+INFO  20:02:23,735 - #48 pet
+INFO  20:02:23,735 - #27 =
+INFO  20:02:23,735 - #51 5
+INFO  20:02:23,735 - #38 ;
+INFO  20:02:23,735 - #48 int
+INFO  20:02:23,744 - #48 niz
+INFO  20:02:23,744 - #42 [
+INFO  20:02:23,744 - #43 ]
+INFO  20:02:23,744 - #38 ;
+INFO  20:02:23,744 - #48 char
+INFO  20:02:23,744 - #48 nizch
+INFO  20:02:23,744 - #42 [
+INFO  20:02:23,744 - #43 ]
+INFO  20:02:23,744 - #38 ;
+INFO  20:02:23,745 - #44 {
+INFO  20:02:23,745 - #48 int
+INFO  20:02:23,745 - #48 p
+INFO  20:02:23,745 - #40 (
+INFO  20:02:23,745 - #48 int
+INFO  20:02:23,745 - #48 x
+INFO  20:02:23,745 - #39 ,
+INFO  20:02:23,745 - #48 int
+INFO  20:02:23,745 - #48 y
+INFO  20:02:23,745 - #42 [
+INFO  20:02:23,745 - #43 ]
+INFO  20:02:23,745 - #39 ,
+INFO  20:02:23,746 - #48 int
+INFO  20:02:23,746 - #48 z
+INFO  20:02:23,746 - #41 )
+INFO  20:02:23,746 - #48 int
+INFO  20:02:23,746 - #48 xx
+INFO  20:02:23,746 - #39 ,
+INFO  20:02:23,746 - #48 yy
+INFO  20:02:23,746 - #38 ;
+INFO  20:02:23,746 - #44 {
+INFO  20:02:23,746 - #48 x
+INFO  20:02:23,747 - #27 =
+INFO  20:02:23,747 - #51 3
+INFO  20:02:23,747 - #38 ;
+INFO  20:02:23,747 - #15 return
+INFO  20:02:23,747 - #51 0
+INFO  20:02:23,747 - #38 ;
+INFO  20:02:23,747 - #45 }
+INFO  20:02:23,747 - #14 void
+INFO  20:02:23,747 - #48 main
+INFO  20:02:23,747 - #40 (
+INFO  20:02:23,747 - #41 )
+INFO  20:02:23,748 - #44 {
+INFO  20:02:23,748 - #48 int
+INFO  20:02:23,748 - #48 c
+ERROR 20:02:23,748 - 
+Sintaksna greska na liniji 22
+INFO  20:02:23,748 - #27 =
+INFO  20:02:23,748 - #48 p
+INFO  20:02:23,748 - #40 (
+INFO  20:02:23,748 - #51 0
+INFO  20:02:23,748 - #41 )
+INFO  20:02:23,748 - #38 ;
+INFO  20:02:23,748 - #45 }
+INFO  20:02:23,748 - #45 }
+ERROR 20:02:23,748 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
+INFO  20:02:23,749 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  AllDeclListMultiple(
+    AllDeclListMultiple(
+      AllDeclListMultiple(
+        AllDeclListMultiple(
+          AllDeclListMultiple(
+            NoDecl(
+            ) [NoDecl]
+            ConstDeclaration(
+              ConstDeclarationExpr(
+                Type(
+                 int
+                ) [Type]
+                ConstAssignSingle(
+                  ConstAssign(
+                   nula
+                    NumberConst(
+                     0
+                    ) [NumberConst]
+                  ) [ConstAssign]
+                ) [ConstAssignSingle]
+              ) [ConstDeclarationExpr]
+            ) [ConstDeclaration]
+          ) [AllDeclListMultiple]
+          ConstDeclaration(
+            ConstDeclarationExpr(
+              Type(
+               int
+              ) [Type]
+              ConstAssignSingle(
+                ConstAssign(
+                 jedan
+                  NumberConst(
+                   1
+                  ) [NumberConst]
+                ) [ConstAssign]
+              ) [ConstAssignSingle]
+            ) [ConstDeclarationExpr]
+          ) [ConstDeclaration]
+        ) [AllDeclListMultiple]
+        ConstDeclaration(
+          ConstDeclarationExpr(
+            Type(
+             int
+            ) [Type]
+            ConstAssignSingle(
+              ConstAssign(
+               pet
+                NumberConst(
+                 5
+                ) [NumberConst]
+              ) [ConstAssign]
+            ) [ConstAssignSingle]
+          ) [ConstDeclarationExpr]
+        ) [ConstDeclaration]
+      ) [AllDeclListMultiple]
+      GlobalVarDeclaration(
+        GlobalVarDeclarationExpr(
+          Type(
+           int
+          ) [Type]
+          GlobalVarDeclListSingle(
+            GlobalVarDeclarationSingle(
+             niz
+              ArrayBrackets(
+              ) [ArrayBrackets]
+            ) [GlobalVarDeclarationSingle]
+          ) [GlobalVarDeclListSingle]
+        ) [GlobalVarDeclarationExpr]
+      ) [GlobalVarDeclaration]
+    ) [AllDeclListMultiple]
+    GlobalVarDeclaration(
+      GlobalVarDeclarationExpr(
+        Type(
+         char
+        ) [Type]
+        GlobalVarDeclListSingle(
+          GlobalVarDeclarationSingle(
+           nizch
+            ArrayBrackets(
+            ) [ArrayBrackets]
+          ) [GlobalVarDeclarationSingle]
+        ) [GlobalVarDeclListSingle]
+      ) [GlobalVarDeclarationExpr]
+    ) [GlobalVarDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListMultiple(
+      MethodDeclListNo(
+      ) [MethodDeclListNo]
+      MethodDeclaration(
+        MethodSignatureParams(
+          MethodTypeType(
+            Type(
+             int
+            ) [Type]
+          ) [MethodTypeType]
+          MethodName(
+           p
+          ) [MethodName]
+          FormParsMultiple(
+            FormParsMultiple(
+              FormParsSingle(
+                FormParSingle(
+                  Type(
+                   int
+                  ) [Type]
+                 x
+                  NoArray(
+                  ) [NoArray]
+                ) [FormParSingle]
+              ) [FormParsSingle]
+              FormParSingle(
+                Type(
+                 int
+                ) [Type]
+               y
+                ArrayBrackets(
+                ) [ArrayBrackets]
+              ) [FormParSingle]
+            ) [FormParsMultiple]
+            FormParSingle(
+              Type(
+               int
+              ) [Type]
+             z
+              NoArray(
+              ) [NoArray]
+            ) [FormParSingle]
+          ) [FormParsMultiple]
+        ) [MethodSignatureParams]
+        VarDeclOptionTrue(
+          NoVarDeclOption(
+          ) [NoVarDeclOption]
+          VarDeclarationExpr(
+            Type(
+             int
+            ) [Type]
+            VarDeclListMultiple(
+              VarDeclListSingle(
+                VarDeclSingle(
+                 xx
+                  NoArray(
+                  ) [NoArray]
+                ) [VarDeclSingle]
+              ) [VarDeclListSingle]
+              VarDeclSingle(
+               yy
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclSingle]
+            ) [VarDeclListMultiple]
+          ) [VarDeclarationExpr]
+        ) [VarDeclOptionTrue]
+        StatementListMultiple(
+          StatementListMultiple(
+            StatementListNo(
+            ) [StatementListNo]
+            StatementSingle(
+              SingleDesignatorStatement(
+                DesignatorStmtAssign(
+                  DesignatorStmtAssignCorrect(
+                    IdentDesignator(
+                     x
+                    ) [IdentDesignator]
+                    SingleTermExprPositive(
+                      SingleFactorTerm(
+                        NumConstFactor(
+                         3
+                        ) [NumConstFactor]
+                      ) [SingleFactorTerm]
+                    ) [SingleTermExprPositive]
+                  ) [DesignatorStmtAssignCorrect]
+                ) [DesignatorStmtAssign]
+              ) [SingleDesignatorStatement]
+            ) [StatementSingle]
+          ) [StatementListMultiple]
+          StatementSingle(
+            SingleReturnExprStatement(
+              SingleTermExprPositive(
+                SingleFactorTerm(
+                  NumConstFactor(
+                   0
+                  ) [NumConstFactor]
+                ) [SingleFactorTerm]
+              ) [SingleTermExprPositive]
+            ) [SingleReturnExprStatement]
+          ) [StatementSingle]
+        ) [StatementListMultiple]
+      ) [MethodDeclaration]
+    ) [MethodDeclListMultiple]
+    MethodDeclaration(
+      MethodSignaturePlain(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+        MethodName(
+         main
+        ) [MethodName]
+      ) [MethodSignaturePlain]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListMultiple(
+        StatementListNo(
+        ) [StatementListNo]
+        StatementSingle(
+          SingleDesignatorStatement(
+            DesignatorStmtAssign(
+              AssignError(
+              ) [AssignError]
+            ) [DesignatorStmtAssign]
+          ) [SingleDesignatorStatement]
+        ) [StatementSingle]
+      ) [StatementListMultiple]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  20:02:23,749 - ===================================
+INFO  20:02:23,752 - Access to formal argument detected. Method name: p, argument name: x
+INFO  20:02:23,752 - Compile successful!

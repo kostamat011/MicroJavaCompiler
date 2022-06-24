@@ -51,6 +51,7 @@ terminal PLUS, MINUS, MUL, DIV, PCT, ASSIGN, EQUAL, NOT_EQUAL, GT, GTE, LS, LSE;
 terminal AND, OR, PLUSPLUS, MINUSMINUS, SEMICOLON, COMMA, LPAREN, RPAREN;
 terminal LBRCK, RBRCK, LBRACE, RBRACE, DBLDOT, DOT;
 
+terminal THREEDOTS;
 terminal String IDENT;
 terminal Boolean BOOL_CONST;
 terminal Character CHAR_CONST;
@@ -100,6 +101,7 @@ nonterminal FormParsOption FormParsOption;
 nonterminal FormPars FormPars;
 nonterminal FormPar FormPar;
 nonterminal VarArgs VarArgs;
+nonterminal FormParsEnd FormParsEnd;
 
 /* statements */
 nonterminal StatementList StatementList;
@@ -128,11 +130,11 @@ nonterminal ActParsRightParen ActParsRightParen;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj MethodCall;
 
 /* conditions */
-nonterminal Condition Condition;
-nonterminal IfCondition IfCondition;
-nonterminal CondTerm CondTerm;
-nonterminal CondFact CondFact;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Condition, IfCondition, CondTerm, CondFact;
 nonterminal Relop Relop;
+
+/* dowhile enter */
+nonterminal DoEnter DoEnter;
 
 precedence left ELSE;
 
@@ -209,10 +211,13 @@ MethodDeclList ::= (MethodDeclListMultiple) MethodDeclList:M1 MethodDecl:M2 {: R
 
 MethodDecl ::= (MethodDeclaration) MethodSignature:M1 VarDeclOption:V2 LBRACE StatementList:S3 RBRACE {: RESULT=new MethodDeclaration(M1, V2, S3); RESULT.setLine(M1left); :};
 
-MethodSignature ::= (MethodSignatureParams) MethodType:M1 MethodName:M2 LPAREN FormPars:F3 RPAREN {: RESULT=new MethodSignatureParams(M1, M2, F3); RESULT.setLine(M1left); :} 
-				 |  (MethodSignatureVarArgs) MethodType:M1 MethodName:M2 LPAREN FormPars:F3 COMMA VarArgs:V4 RPAREN {: RESULT=new MethodSignatureVarArgs(M1, M2, F3, V4); RESULT.setLine(M1left); :}
+MethodSignature ::= (MethodSignatureVarArgsOnly) MethodType:M1 MethodName:M2 LPAREN Type:T3 DOT DOT DOT VarArgs:V4 FormParsEnd:F5 {: RESULT=new MethodSignatureVarArgsOnly(M1, M2, T3, V4, F5); RESULT.setLine(M1left); :}
+				 |  (MethodSignatureParams) MethodType:M1 MethodName:M2 LPAREN FormPars:F3 FormParsEnd:F4 {: RESULT=new MethodSignatureParams(M1, M2, F3, F4); RESULT.setLine(M1left); :}
+				 |  (MethodSignatureVarArgs) MethodType:M1 MethodName:M2 LPAREN FormPars:F3 COMMA Type:T4 DOT DOT DOT VarArgs:V5 FormParsEnd:F6 {: RESULT=new MethodSignatureVarArgs(M1, M2, F3, T4, V5, F6); RESULT.setLine(M1left); :}
 				 |  (MethodSignaturePlain) MethodType:M1 MethodName:M2 LPAREN RPAREN {: RESULT=new MethodSignaturePlain(M1, M2); RESULT.setLine(M1left); :} 
 				 ;
+				 
+FormParsEnd ::= (FormParsEnd) RPAREN {: RESULT=new FormParsEnd(); :};
 
 MethodName ::= (MethodName) IDENT:name {: RESULT=new MethodName(name); RESULT.setLine(nameleft); :};
 
@@ -220,15 +225,14 @@ MethodType ::= (MethodTypeType) Type:T1 {: RESULT=new MethodTypeType(T1); RESULT
 			|  (MethodTypeVoid) VOID {: RESULT=new MethodTypeVoid(); :}
 			; 
 
-VarArgs ::= (VarArgsDeclaration) Type:T1 DOT DOT DOT IDENT:varArgsName {: RESULT=new VarArgsDeclaration(T1, varArgsName); RESULT.setLine(T1left); :};
+VarArgs ::= (VarArgsDeclaration) IDENT:varArgsName {: RESULT=new VarArgsDeclaration(varArgsName); RESULT.setLine(varArgsNameleft); :};
+
 
 FormPars ::= (FormParsMultiple) FormPars:F1 COMMA FormPar:F2 {: RESULT=new FormParsMultiple(F1, F2); RESULT.setLine(F1left); :}
 		   | (FormParsSingle) FormPar:F1 {: RESULT=new FormParsSingle(F1); RESULT.setLine(F1left); :}
 		   ;  
 		   
 FormPar ::= (FormParSingle) Type:formParTypeName IDENT:formParName ArrBracketsOption:A1 {: RESULT=new FormParSingle(formParTypeName, formParName, A1); RESULT.setLine(formParTypeNameleft); :}
-		| (FormParError) error:l
-		{: parser.report_error("Izvrsen oporovak prilikom greske u formalnom parametru do , ili ) u liniji " + lleft, null); :} {: RESULT=new FormParError(); :} 
 		;
 
 Statements ::= (StatementsInBraces) LBRACE StatementList:S1 RBRACE {: RESULT=new StatementsInBraces(S1); RESULT.setLine(S1left); :};
@@ -250,8 +254,10 @@ SingleStatement ::= (SingleDesignatorStatement) DesignatorStatement:D1 SEMICOLON
 				 |  (SingleReturnExprStatement) RETURN Expr:E1 SEMICOLON {: RESULT=new SingleReturnExprStatement(E1); RESULT.setLine(E1left); :}
 				 |  (IfStatement) IF LPAREN IfCondition:I1 RPAREN Statement:S2 {: RESULT=new IfStatement(I1, S2); RESULT.setLine(I1left); :}
 				 |  (IfElseStatement) IF LPAREN IfCondition:I1 RPAREN Statement:S2 ELSE Statement:S3 {: RESULT=new IfElseStatement(I1, S2, S3); RESULT.setLine(I1left); :}
-				 |  (DoWhileStatement) DO StatementList:S1 WHILE LPAREN Condition:C2 RPAREN SEMICOLON {: RESULT=new DoWhileStatement(S1, C2); RESULT.setLine(S1left); :}
+				 |  (DoWhileStatement) DoEnter:D1 StatementList:S2 WHILE LPAREN Condition:C3 RPAREN SEMICOLON {: RESULT=new DoWhileStatement(D1, S2, C3); RESULT.setLine(D1left); :}
 				 ;
+				 
+DoEnter ::= (DoEnter) DO {: RESULT=new DoEnter(); :};
 				 
 NumConstOption ::= (NumConstYes) COMMA NUMBER_CONST:N1 {: RESULT=new NumConstYes(N1); RESULT.setLine(N1left); :}
 				|  (NumConstNo) {: RESULT=new NumConstNo(); :} /* epsilon */
@@ -270,7 +276,8 @@ Factor ::= (NumConstFactor) NUMBER_CONST:N1 {: RESULT=new NumConstFactor(N1); RE
 		| (CharConstFactor) CHAR_CONST:C1 {: RESULT=new CharConstFactor(C1); RESULT.setLine(C1left); :}
 		| (ExprFactor) LPAREN Expr:E1 RPAREN {: RESULT=new ExprFactor(E1); RESULT.setLine(E1left); :}
 		| (BoolConstFactor) BOOL_CONST:B1 {: RESULT=new BoolConstFactor(B1); RESULT.setLine(B1left); :}
-		| (NewTypeFactor) NEW Type:T1 LBRCK Expr:E2 RBRCK {: RESULT=new NewTypeFactor(T1, E2); RESULT.setLine(T1left); :}
+		| (NewTypeFactor) NEW Type:T1 {: RESULT=new NewTypeFactor(T1); RESULT.setLine(T1left); :}
+		| (NewTypeArrayFactor) NEW Type:T1 LBRCK Expr:E2 RBRCK {: RESULT=new NewTypeArrayFactor(T1, E2); RESULT.setLine(T1left); :}
 		| (DesignatorEmptyFactor) Designator:D1 {: RESULT=new DesignatorEmptyFactor(D1); RESULT.setLine(D1left); :}
 		| (MethodCallFactor) MethodCall:M1 {: RESULT=new MethodCallFactor(M1); RESULT.setLine(M1left); :}
 		;
@@ -323,20 +330,20 @@ ActParsRightParen ::= (ActParsRightParen) RPAREN {: RESULT=new ActParsRightParen
 
 MethodCall ::= (MethodCall) Designator:D1 ActParsLeftParen:A2 ActParsOption:A3 ActParsRightParen:A4 {: RESULT=new MethodCall(D1, A2, A3, A4); RESULT.setLine(D1left); :};
 				
-Condition ::= (ConditionSingle) CondTerm:C1 {: RESULT=new ConditionSingle(C1); RESULT.setLine(C1left); :}
-		   |  (ConditionMultiple) Condition:C1 OR CondTerm:C2 {: RESULT=new ConditionMultiple(C1, C2); RESULT.setLine(C1left); :}
+Condition ::= (ConditionSingleTerm) CondTerm:C1 {: RESULT=new ConditionSingleTerm(C1); RESULT.setLine(C1left); :}
+		   |  (ConditionMultiTerm) Condition:C1 OR CondTerm:C2 {: RESULT=new ConditionMultiTerm(C1, C2); RESULT.setLine(C1left); :}
 		   ;
 		   
-IfCondition ::= (IfConditionSingle) CondTerm:C1 {: RESULT=new IfConditionSingle(C1); RESULT.setLine(C1left); :}
-		   |  	(IfConditionMultiple) Condition:C1 OR CondTerm:C2 {: RESULT=new IfConditionMultiple(C1, C2); RESULT.setLine(C1left); :}
+IfCondition ::= (IfConditionSingleTerm) CondTerm:C1 {: RESULT=new IfConditionSingleTerm(C1); RESULT.setLine(C1left); :}
+		   |  	(IfConditionMultiTerm) Condition:C1 OR CondTerm:C2 {: RESULT=new IfConditionMultiTerm(C1, C2); RESULT.setLine(C1left); :}
 		   |  	(IfConditionError) error:l
 			{: parser.report_error("Izvrsen oporovak prilikom greske u logickom izrazu unutar if naredbe do ) u liniji " + lleft, null); :} {: RESULT=new IfConditionError(); :}
 		   ;
 		   
-CondTerm ::= (CondTermListSingle) CondFact:C1 {: RESULT=new CondTermListSingle(C1); RESULT.setLine(C1left); :}
-		   | (CondTermListMultiple) CondTerm:C1 AND CondFact:C2 {: RESULT=new CondTermListMultiple(C1, C2); RESULT.setLine(C1left); :}
+CondTerm ::= (CondSingleFactTerm) CondFact:C1 {: RESULT=new CondSingleFactTerm(C1); RESULT.setLine(C1left); :}
+		   | (CondMultiFactTerm) CondTerm:C1 AND CondFact:C2 {: RESULT=new CondMultiFactTerm(C1, C2); RESULT.setLine(C1left); :}
 		   ;
 		   
-CondFact ::= (CondFactExpr) Expr:E1 {: RESULT=new CondFactExpr(E1); RESULT.setLine(E1left); :}
-		  |  (CondFactExprRelop) Expr:E1 Relop:R2 Expr:E3 {: RESULT=new CondFactExprRelop(E1, R2, E3); RESULT.setLine(E1left); :}
+CondFact ::= (CondSingleExprFact) Expr:E1 {: RESULT=new CondSingleExprFact(E1); RESULT.setLine(E1left); :}
+		  |  (CondMultiExprFact) CondFact:C1 Relop:R2 Expr:E3 {: RESULT=new CondMultiExprFact(C1, R2, E3); RESULT.setLine(C1left); :}
 		  ;

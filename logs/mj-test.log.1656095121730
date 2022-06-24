@@ -1,0 +1,300 @@
+INFO  20:25:04,362 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  20:25:04,379 - #2 program
+INFO  20:25:04,379 - #48 test301
+INFO  20:25:04,380 - #7 const
+INFO  20:25:04,380 - #48 int
+INFO  20:25:04,380 - #48 nula
+INFO  20:25:04,380 - #27 =
+INFO  20:25:04,380 - #51 0
+INFO  20:25:04,380 - #38 ;
+INFO  20:25:04,381 - #7 const
+INFO  20:25:04,381 - #48 int
+INFO  20:25:04,381 - #48 jedan
+INFO  20:25:04,381 - #27 =
+INFO  20:25:04,381 - #51 1
+INFO  20:25:04,382 - #38 ;
+INFO  20:25:04,382 - #7 const
+INFO  20:25:04,382 - #48 int
+INFO  20:25:04,382 - #48 pet
+INFO  20:25:04,382 - #27 =
+INFO  20:25:04,382 - #51 5
+INFO  20:25:04,382 - #38 ;
+INFO  20:25:04,382 - #48 int
+INFO  20:25:04,391 - #48 niz
+INFO  20:25:04,391 - #42 [
+INFO  20:25:04,391 - #43 ]
+INFO  20:25:04,391 - #38 ;
+INFO  20:25:04,391 - #48 char
+INFO  20:25:04,391 - #48 nizch
+INFO  20:25:04,392 - #42 [
+INFO  20:25:04,392 - #43 ]
+INFO  20:25:04,392 - #38 ;
+INFO  20:25:04,392 - #44 {
+INFO  20:25:04,392 - #48 int
+INFO  20:25:04,392 - #48 p
+INFO  20:25:04,392 - #40 (
+INFO  20:25:04,392 - #48 int
+INFO  20:25:04,392 - #48 x
+INFO  20:25:04,392 - #39 ,
+INFO  20:25:04,392 - #48 int
+INFO  20:25:04,393 - #48 y
+INFO  20:25:04,393 - #42 [
+INFO  20:25:04,393 - #43 ]
+INFO  20:25:04,393 - #39 ,
+INFO  20:25:04,393 - #48 int
+INFO  20:25:04,393 - #48 z
+INFO  20:25:04,393 - #41 )
+INFO  20:25:04,393 - #44 {
+INFO  20:25:04,393 - #15 return
+INFO  20:25:04,393 - #51 0
+INFO  20:25:04,394 - #38 ;
+INFO  20:25:04,394 - #45 }
+INFO  20:25:04,394 - #14 void
+INFO  20:25:04,394 - #48 main
+INFO  20:25:04,394 - #40 (
+INFO  20:25:04,394 - #41 )
+INFO  20:25:04,394 - #44 {
+INFO  20:25:04,394 - #48 niz
+INFO  20:25:04,394 - #27 =
+INFO  20:25:04,394 - #48 p
+INFO  20:25:04,394 - #40 (
+INFO  20:25:04,394 - #51 1
+INFO  20:25:04,395 - #39 ,
+INFO  20:25:04,395 - #48 niz
+INFO  20:25:04,395 - #39 ,
+INFO  20:25:04,395 - #51 3
+INFO  20:25:04,395 - #41 )
+INFO  20:25:04,395 - #38 ;
+INFO  20:25:04,396 - #45 }
+INFO  20:25:04,396 - #45 }
+INFO  20:25:04,396 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  AllDeclListMultiple(
+    AllDeclListMultiple(
+      AllDeclListMultiple(
+        AllDeclListMultiple(
+          AllDeclListMultiple(
+            NoDecl(
+            ) [NoDecl]
+            ConstDeclaration(
+              ConstDeclarationExpr(
+                Type(
+                 int
+                ) [Type]
+                ConstAssignSingle(
+                  ConstAssign(
+                   nula
+                    NumberConst(
+                     0
+                    ) [NumberConst]
+                  ) [ConstAssign]
+                ) [ConstAssignSingle]
+              ) [ConstDeclarationExpr]
+            ) [ConstDeclaration]
+          ) [AllDeclListMultiple]
+          ConstDeclaration(
+            ConstDeclarationExpr(
+              Type(
+               int
+              ) [Type]
+              ConstAssignSingle(
+                ConstAssign(
+                 jedan
+                  NumberConst(
+                   1
+                  ) [NumberConst]
+                ) [ConstAssign]
+              ) [ConstAssignSingle]
+            ) [ConstDeclarationExpr]
+          ) [ConstDeclaration]
+        ) [AllDeclListMultiple]
+        ConstDeclaration(
+          ConstDeclarationExpr(
+            Type(
+             int
+            ) [Type]
+            ConstAssignSingle(
+              ConstAssign(
+               pet
+                NumberConst(
+                 5
+                ) [NumberConst]
+              ) [ConstAssign]
+            ) [ConstAssignSingle]
+          ) [ConstDeclarationExpr]
+        ) [ConstDeclaration]
+      ) [AllDeclListMultiple]
+      GlobalVarDeclaration(
+        GlobalVarDeclarationExpr(
+          Type(
+           int
+          ) [Type]
+          GlobalVarDeclListSingle(
+            GlobalVarDeclarationSingle(
+             niz
+              ArrayBrackets(
+              ) [ArrayBrackets]
+            ) [GlobalVarDeclarationSingle]
+          ) [GlobalVarDeclListSingle]
+        ) [GlobalVarDeclarationExpr]
+      ) [GlobalVarDeclaration]
+    ) [AllDeclListMultiple]
+    GlobalVarDeclaration(
+      GlobalVarDeclarationExpr(
+        Type(
+         char
+        ) [Type]
+        GlobalVarDeclListSingle(
+          GlobalVarDeclarationSingle(
+           nizch
+            ArrayBrackets(
+            ) [ArrayBrackets]
+          ) [GlobalVarDeclarationSingle]
+        ) [GlobalVarDeclListSingle]
+      ) [GlobalVarDeclarationExpr]
+    ) [GlobalVarDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListMultiple(
+      MethodDeclListNo(
+      ) [MethodDeclListNo]
+      MethodDeclaration(
+        MethodSignatureParams(
+          MethodTypeType(
+            Type(
+             int
+            ) [Type]
+          ) [MethodTypeType]
+          MethodName(
+           p
+          ) [MethodName]
+          FormParsMultiple(
+            FormParsMultiple(
+              FormParsSingle(
+                FormParSingle(
+                  Type(
+                   int
+                  ) [Type]
+                 x
+                  NoArray(
+                  ) [NoArray]
+                ) [FormParSingle]
+              ) [FormParsSingle]
+              FormParSingle(
+                Type(
+                 int
+                ) [Type]
+               y
+                ArrayBrackets(
+                ) [ArrayBrackets]
+              ) [FormParSingle]
+            ) [FormParsMultiple]
+            FormParSingle(
+              Type(
+               int
+              ) [Type]
+             z
+              NoArray(
+              ) [NoArray]
+            ) [FormParSingle]
+          ) [FormParsMultiple]
+        ) [MethodSignatureParams]
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+        StatementListMultiple(
+          StatementListNo(
+          ) [StatementListNo]
+          StatementSingle(
+            SingleReturnExprStatement(
+              SingleTermExprPositive(
+                SingleFactorTerm(
+                  NumConstFactor(
+                   0
+                  ) [NumConstFactor]
+                ) [SingleFactorTerm]
+              ) [SingleTermExprPositive]
+            ) [SingleReturnExprStatement]
+          ) [StatementSingle]
+        ) [StatementListMultiple]
+      ) [MethodDeclaration]
+    ) [MethodDeclListMultiple]
+    MethodDeclaration(
+      MethodSignaturePlain(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+        MethodName(
+         main
+        ) [MethodName]
+      ) [MethodSignaturePlain]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListMultiple(
+        StatementListNo(
+        ) [StatementListNo]
+        StatementSingle(
+          SingleDesignatorStatement(
+            DesignatorStmtAssign(
+              DesignatorStmtAssignCorrect(
+                IdentDesignator(
+                 niz
+                ) [IdentDesignator]
+                SingleTermExprPositive(
+                  SingleFactorTerm(
+                    MethodCallFactor(
+                      MethodCall(
+                        IdentDesignator(
+                         p
+                        ) [IdentDesignator]
+                        ActParsLeftParen(
+                        ) [ActParsLeftParen]
+                        ActParsYes(
+                          ActParsMultiExpr(
+                            ActParsMultiExpr(
+                              ActParsSingleExpr(
+                                SingleTermExprPositive(
+                                  SingleFactorTerm(
+                                    NumConstFactor(
+                                     1
+                                    ) [NumConstFactor]
+                                  ) [SingleFactorTerm]
+                                ) [SingleTermExprPositive]
+                              ) [ActParsSingleExpr]
+                              SingleTermExprPositive(
+                                SingleFactorTerm(
+                                  DesignatorEmptyFactor(
+                                    IdentDesignator(
+                                     niz
+                                    ) [IdentDesignator]
+                                  ) [DesignatorEmptyFactor]
+                                ) [SingleFactorTerm]
+                              ) [SingleTermExprPositive]
+                            ) [ActParsMultiExpr]
+                            SingleTermExprPositive(
+                              SingleFactorTerm(
+                                NumConstFactor(
+                                 3
+                                ) [NumConstFactor]
+                              ) [SingleFactorTerm]
+                            ) [SingleTermExprPositive]
+                          ) [ActParsMultiExpr]
+                        ) [ActParsYes]
+                        ActParsRightParen(
+                        ) [ActParsRightParen]
+                      ) [MethodCall]
+                    ) [MethodCallFactor]
+                  ) [SingleFactorTerm]
+                ) [SingleTermExprPositive]
+              ) [DesignatorStmtAssignCorrect]
+            ) [DesignatorStmtAssign]
+          ) [SingleDesignatorStatement]
+        ) [StatementSingle]
+      ) [StatementListMultiple]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  20:25:04,397 - ===================================
+INFO  20:25:04,400 - Method Call detected. Method name: p
+ERROR 20:25:04,400 - Invalid assignment. Types are incompatible.
+INFO  20:25:04,400 - One or more errors found!

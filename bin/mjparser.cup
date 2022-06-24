@@ -51,6 +51,7 @@ terminal PLUS, MINUS, MUL, DIV, PCT, ASSIGN, EQUAL, NOT_EQUAL, GT, GTE, LS, LSE;
 terminal AND, OR, PLUSPLUS, MINUSMINUS, SEMICOLON, COMMA, LPAREN, RPAREN;
 terminal LBRCK, RBRCK, LBRACE, RBRACE, DBLDOT, DOT;
 
+terminal THREEDOTS;
 terminal String IDENT;
 terminal Boolean BOOL_CONST;
 terminal Character CHAR_CONST;
@@ -81,7 +82,7 @@ nonterminal rs.etf.pp1.symboltable.concepts.Obj MethodName;
 nonterminal MethodDecl, MethodDeclList, MethodDeclOption, MethodSignature, MethodType;
 
 /* formal parameters */
-nonterminal FormParsOption, FormPars, FormPar, VarArgs;
+nonterminal FormParsOption, FormPars, FormPar, VarArgs, FormParsEnd;
 
 /* statements */
 nonterminal StatementList, Statement, Statements, SingleStatement;
@@ -101,7 +102,11 @@ nonterminal ActPars, ActParsOption, ActParsLeftParen, ActParsRightParen;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj MethodCall;
 
 /* conditions */
-nonterminal Condition, IfCondition, CondTerm, CondFact, Relop;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Condition, IfCondition, CondTerm, CondFact;
+nonterminal Relop;
+
+/* dowhile enter */
+nonterminal DoEnter;
 
 precedence left ELSE;
 
@@ -178,10 +183,13 @@ MethodDeclList ::= (MethodDeclListMultiple) MethodDeclList MethodDecl
 
 MethodDecl ::= (MethodDeclaration) MethodSignature VarDeclOption LBRACE StatementList RBRACE;
 
-MethodSignature ::= (MethodSignatureParams) MethodType MethodName LPAREN FormPars RPAREN 
-				 |  (MethodSignatureVarArgs) MethodType MethodName LPAREN FormPars COMMA VarArgs RPAREN
+MethodSignature ::= (MethodSignatureVarArgsOnly) MethodType MethodName LPAREN Type DOT DOT DOT VarArgs FormParsEnd
+				 |  (MethodSignatureParams) MethodType MethodName LPAREN FormPars FormParsEnd
+				 |  (MethodSignatureVarArgs) MethodType MethodName LPAREN FormPars COMMA Type DOT DOT DOT VarArgs FormParsEnd
 				 |  (MethodSignaturePlain) MethodType MethodName LPAREN RPAREN 
 				 ;
+				 
+FormParsEnd ::= (FormParsEnd) RPAREN;
 
 MethodName ::= (MethodName) IDENT:name;
 
@@ -189,15 +197,14 @@ MethodType ::= (MethodTypeType) Type
 			|  (MethodTypeVoid) VOID
 			; 
 
-VarArgs ::= (VarArgsDeclaration) Type DOT DOT DOT IDENT:varArgsName;
+VarArgs ::= (VarArgsDeclaration) IDENT:varArgsName;
+
 
 FormPars ::= (FormParsMultiple) FormPars COMMA FormPar
 		   | (FormParsSingle) FormPar
 		   ;  
 		   
 FormPar ::= (FormParSingle) Type:formParTypeName IDENT:formParName ArrBracketsOption
-		| (FormParError) error:l
-		{: parser.report_error("Izvrsen oporovak prilikom greske u formalnom parametru do , ili ) u liniji " + lleft, null); :} 
 		;
 
 Statements ::= (StatementsInBraces) LBRACE StatementList RBRACE;
@@ -219,8 +226,10 @@ SingleStatement ::= (SingleDesignatorStatement) DesignatorStatement SEMICOLON
 				 |  (SingleReturnExprStatement) RETURN Expr SEMICOLON
 				 |  (IfStatement) IF LPAREN IfCondition RPAREN Statement
 				 |  (IfElseStatement) IF LPAREN IfCondition RPAREN Statement ELSE Statement
-				 |  (DoWhileStatement) DO StatementList WHILE LPAREN Condition RPAREN SEMICOLON
+				 |  (DoWhileStatement) DoEnter StatementList WHILE LPAREN Condition RPAREN SEMICOLON
 				 ;
+				 
+DoEnter ::= (DoEnter) DO;
 				 
 NumConstOption ::= (NumConstYes) COMMA NUMBER_CONST
 				|  (NumConstNo) /* epsilon */
@@ -239,7 +248,8 @@ Factor ::= (NumConstFactor) NUMBER_CONST
 		| (CharConstFactor) CHAR_CONST
 		| (ExprFactor) LPAREN Expr RPAREN
 		| (BoolConstFactor) BOOL_CONST
-		| (NewTypeFactor) NEW Type LBRCK Expr RBRCK
+		| (NewTypeFactor) NEW Type
+		| (NewTypeArrayFactor) NEW Type LBRCK Expr RBRCK
 		| (DesignatorEmptyFactor) Designator
 		| (MethodCallFactor) MethodCall
 		;
@@ -292,20 +302,20 @@ ActParsRightParen ::= (ActParsRightParen) RPAREN;
 
 MethodCall ::= (MethodCall) Designator ActParsLeftParen ActParsOption ActParsRightParen;
 				
-Condition ::= (ConditionSingle) CondTerm
-		   |  (ConditionMultiple) Condition OR CondTerm
+Condition ::= (ConditionSingleTerm) CondTerm
+		   |  (ConditionMultiTerm) Condition OR CondTerm
 		   ;
 		   
-IfCondition ::= (IfConditionSingle) CondTerm
-		   |  	(IfConditionMultiple) Condition OR CondTerm
+IfCondition ::= (IfConditionSingleTerm) CondTerm
+		   |  	(IfConditionMultiTerm) Condition OR CondTerm
 		   |  	(IfConditionError) error:l
 			{: parser.report_error("Izvrsen oporovak prilikom greske u logickom izrazu unutar if naredbe do ) u liniji " + lleft, null); :}
 		   ;
 		   
-CondTerm ::= (CondTermListSingle) CondFact
-		   | (CondTermListMultiple) CondTerm AND CondFact
+CondTerm ::= (CondSingleFactTerm) CondFact
+		   | (CondMultiFactTerm) CondTerm AND CondFact
 		   ;
 		   
-CondFact ::= (CondFactExpr) Expr
-		  |  (CondFactExprRelop) Expr Relop Expr
+CondFact ::= (CondSingleExprFact) Expr
+		  |  (CondMultiExprFact) CondFact Relop Expr
 		  ;

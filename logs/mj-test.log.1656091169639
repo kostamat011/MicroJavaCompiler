@@ -1,0 +1,422 @@
+INFO  19:19:18,820 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  19:19:18,838 - #2 program
+INFO  19:19:18,838 - #48 test302
+INFO  19:19:18,838 - #16 record
+INFO  19:19:18,838 - #48 rec
+INFO  19:19:18,838 - #44 {
+INFO  19:19:18,838 - #48 int
+INFO  19:19:18,838 - #48 x1
+INFO  19:19:18,839 - #39 ,
+INFO  19:19:18,839 - #48 p
+INFO  19:19:18,839 - #39 ,
+INFO  19:19:18,839 - #48 z
+INFO  19:19:18,839 - #42 [
+INFO  19:19:18,839 - #43 ]
+INFO  19:19:18,840 - #38 ;
+INFO  19:19:18,840 - #48 char
+INFO  19:19:18,840 - #48 m
+INFO  19:19:18,840 - #38 ;
+INFO  19:19:18,840 - #45 }
+INFO  19:19:18,840 - #48 char
+INFO  19:19:18,840 - #48 m
+INFO  19:19:18,840 - #38 ;
+INFO  19:19:18,840 - #48 char
+INFO  19:19:18,849 - #48 p
+INFO  19:19:18,849 - #38 ;
+INFO  19:19:18,849 - #48 int
+INFO  19:19:18,849 - #48 k
+INFO  19:19:18,849 - #38 ;
+INFO  19:19:18,849 - #48 int
+INFO  19:19:18,849 - #48 kp
+INFO  19:19:18,849 - #42 [
+INFO  19:19:18,849 - #43 ]
+INFO  19:19:18,849 - #38 ;
+INFO  19:19:18,849 - #44 {
+INFO  19:19:18,849 - #48 char
+INFO  19:19:18,850 - #48 b
+INFO  19:19:18,850 - #40 (
+INFO  19:19:18,850 - #48 int
+INFO  19:19:18,850 - #48 y
+INFO  19:19:18,850 - #39 ,
+INFO  19:19:18,850 - #48 int
+INFO  19:19:18,850 - #47 .
+INFO  19:19:18,850 - #47 .
+INFO  19:19:18,850 - #47 .
+INFO  19:19:18,850 - #48 var
+INFO  19:19:18,850 - #41 )
+INFO  19:19:18,850 - #44 {
+INFO  19:19:18,851 - #15 return
+INFO  19:19:18,851 - #48 p
+INFO  19:19:18,851 - #38 ;
+INFO  19:19:18,851 - #45 }
+INFO  19:19:18,851 - #14 void
+INFO  19:19:18,851 - #48 main
+INFO  19:19:18,851 - #40 (
+INFO  19:19:18,851 - #41 )
+INFO  19:19:18,852 - #44 {
+INFO  19:19:18,852 - #48 b
+INFO  19:19:18,852 - #40 (
+INFO  19:19:18,852 - #51 1
+INFO  19:19:18,852 - #39 ,
+INFO  19:19:18,852 - #51 2
+INFO  19:19:18,852 - #39 ,
+INFO  19:19:18,852 - #51 3
+INFO  19:19:18,852 - #39 ,
+INFO  19:19:18,852 - #51 4
+INFO  19:19:18,852 - #39 ,
+INFO  19:19:18,852 - #48 rec
+INFO  19:19:18,852 - #41 )
+INFO  19:19:18,852 - #38 ;
+INFO  19:19:18,853 - #45 }
+INFO  19:19:18,853 - #48 int
+INFO  19:19:18,853 - #48 a
+INFO  19:19:18,853 - #40 (
+INFO  19:19:18,853 - #41 )
+INFO  19:19:18,853 - #44 {
+INFO  19:19:18,853 - #48 k
+INFO  19:19:18,853 - #37 --
+INFO  19:19:18,853 - #38 ;
+INFO  19:19:18,853 - #48 len
+INFO  19:19:18,853 - #40 (
+INFO  19:19:18,853 - #48 kp
+INFO  19:19:18,853 - #41 )
+INFO  19:19:18,853 - #38 ;
+INFO  19:19:18,853 - #15 return
+INFO  19:19:18,853 - #48 k
+INFO  19:19:18,854 - #38 ;
+INFO  19:19:18,854 - #45 }
+INFO  19:19:18,854 - #45 }
+INFO  19:19:18,854 - Program(
+  ProgramName(
+   test302
+  ) [ProgramName]
+  AllDeclListMultiple(
+    AllDeclListMultiple(
+      AllDeclListMultiple(
+        AllDeclListMultiple(
+          AllDeclListMultiple(
+            NoDecl(
+            ) [NoDecl]
+            RecordDeclaration(
+              RecordDeclarationExpr(
+                RecordName(
+                 rec
+                ) [RecordName]
+                VarDeclOptionTrue(
+                  VarDeclOptionTrue(
+                    NoVarDeclOption(
+                    ) [NoVarDeclOption]
+                    VarDeclarationExpr(
+                      Type(
+                       int
+                      ) [Type]
+                      VarDeclListMultiple(
+                        VarDeclListMultiple(
+                          VarDeclListSingle(
+                            VarDeclSingle(
+                             x1
+                              NoArray(
+                              ) [NoArray]
+                            ) [VarDeclSingle]
+                          ) [VarDeclListSingle]
+                          VarDeclSingle(
+                           p
+                            NoArray(
+                            ) [NoArray]
+                          ) [VarDeclSingle]
+                        ) [VarDeclListMultiple]
+                        VarDeclSingle(
+                         z
+                          ArrayBrackets(
+                          ) [ArrayBrackets]
+                        ) [VarDeclSingle]
+                      ) [VarDeclListMultiple]
+                    ) [VarDeclarationExpr]
+                  ) [VarDeclOptionTrue]
+                  VarDeclarationExpr(
+                    Type(
+                     char
+                    ) [Type]
+                    VarDeclListSingle(
+                      VarDeclSingle(
+                       m
+                        NoArray(
+                        ) [NoArray]
+                      ) [VarDeclSingle]
+                    ) [VarDeclListSingle]
+                  ) [VarDeclarationExpr]
+                ) [VarDeclOptionTrue]
+              ) [RecordDeclarationExpr]
+            ) [RecordDeclaration]
+          ) [AllDeclListMultiple]
+          GlobalVarDeclaration(
+            GlobalVarDeclarationExpr(
+              Type(
+               char
+              ) [Type]
+              GlobalVarDeclListSingle(
+                GlobalVarDeclarationSingle(
+                 m
+                  NoArray(
+                  ) [NoArray]
+                ) [GlobalVarDeclarationSingle]
+              ) [GlobalVarDeclListSingle]
+            ) [GlobalVarDeclarationExpr]
+          ) [GlobalVarDeclaration]
+        ) [AllDeclListMultiple]
+        GlobalVarDeclaration(
+          GlobalVarDeclarationExpr(
+            Type(
+             char
+            ) [Type]
+            GlobalVarDeclListSingle(
+              GlobalVarDeclarationSingle(
+               p
+                NoArray(
+                ) [NoArray]
+              ) [GlobalVarDeclarationSingle]
+            ) [GlobalVarDeclListSingle]
+          ) [GlobalVarDeclarationExpr]
+        ) [GlobalVarDeclaration]
+      ) [AllDeclListMultiple]
+      GlobalVarDeclaration(
+        GlobalVarDeclarationExpr(
+          Type(
+           int
+          ) [Type]
+          GlobalVarDeclListSingle(
+            GlobalVarDeclarationSingle(
+             k
+              NoArray(
+              ) [NoArray]
+            ) [GlobalVarDeclarationSingle]
+          ) [GlobalVarDeclListSingle]
+        ) [GlobalVarDeclarationExpr]
+      ) [GlobalVarDeclaration]
+    ) [AllDeclListMultiple]
+    GlobalVarDeclaration(
+      GlobalVarDeclarationExpr(
+        Type(
+         int
+        ) [Type]
+        GlobalVarDeclListSingle(
+          GlobalVarDeclarationSingle(
+           kp
+            ArrayBrackets(
+            ) [ArrayBrackets]
+          ) [GlobalVarDeclarationSingle]
+        ) [GlobalVarDeclListSingle]
+      ) [GlobalVarDeclarationExpr]
+    ) [GlobalVarDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListMultiple(
+      MethodDeclListMultiple(
+        MethodDeclListNo(
+        ) [MethodDeclListNo]
+        MethodDeclaration(
+          MethodSignatureVarArgs(
+            MethodTypeType(
+              Type(
+               char
+              ) [Type]
+            ) [MethodTypeType]
+            MethodName(
+             b
+            ) [MethodName]
+            FormParsSingle(
+              FormParSingle(
+                Type(
+                 int
+                ) [Type]
+               y
+                NoArray(
+                ) [NoArray]
+              ) [FormParSingle]
+            ) [FormParsSingle]
+            VarArgsDeclaration(
+              Type(
+               int
+              ) [Type]
+             var
+            ) [VarArgsDeclaration]
+          ) [MethodSignatureVarArgs]
+          NoVarDeclOption(
+          ) [NoVarDeclOption]
+          StatementListMultiple(
+            StatementListNo(
+            ) [StatementListNo]
+            StatementSingle(
+              SingleReturnExprStatement(
+                SingleTermExprPositive(
+                  SingleFactorTerm(
+                    DesignatorEmptyFactor(
+                      IdentDesignator(
+                       p
+                      ) [IdentDesignator]
+                    ) [DesignatorEmptyFactor]
+                  ) [SingleFactorTerm]
+                ) [SingleTermExprPositive]
+              ) [SingleReturnExprStatement]
+            ) [StatementSingle]
+          ) [StatementListMultiple]
+        ) [MethodDeclaration]
+      ) [MethodDeclListMultiple]
+      MethodDeclaration(
+        MethodSignaturePlain(
+          MethodTypeVoid(
+          ) [MethodTypeVoid]
+          MethodName(
+           main
+          ) [MethodName]
+        ) [MethodSignaturePlain]
+        NoVarDeclOption(
+        ) [NoVarDeclOption]
+        StatementListMultiple(
+          StatementListNo(
+          ) [StatementListNo]
+          StatementSingle(
+            SingleDesignatorStatement(
+              DesignatorStmtMethodCall(
+                MethodCall(
+                  IdentDesignator(
+                   b
+                  ) [IdentDesignator]
+                  ActParsLeftParen(
+                  ) [ActParsLeftParen]
+                  ActParsYes(
+                    ActParsMultiExpr(
+                      ActParsMultiExpr(
+                        ActParsMultiExpr(
+                          ActParsMultiExpr(
+                            ActParsSingleExpr(
+                              SingleTermExprPositive(
+                                SingleFactorTerm(
+                                  NumConstFactor(
+                                   1
+                                  ) [NumConstFactor]
+                                ) [SingleFactorTerm]
+                              ) [SingleTermExprPositive]
+                            ) [ActParsSingleExpr]
+                            SingleTermExprPositive(
+                              SingleFactorTerm(
+                                NumConstFactor(
+                                 2
+                                ) [NumConstFactor]
+                              ) [SingleFactorTerm]
+                            ) [SingleTermExprPositive]
+                          ) [ActParsMultiExpr]
+                          SingleTermExprPositive(
+                            SingleFactorTerm(
+                              NumConstFactor(
+                               3
+                              ) [NumConstFactor]
+                            ) [SingleFactorTerm]
+                          ) [SingleTermExprPositive]
+                        ) [ActParsMultiExpr]
+                        SingleTermExprPositive(
+                          SingleFactorTerm(
+                            NumConstFactor(
+                             4
+                            ) [NumConstFactor]
+                          ) [SingleFactorTerm]
+                        ) [SingleTermExprPositive]
+                      ) [ActParsMultiExpr]
+                      SingleTermExprPositive(
+                        SingleFactorTerm(
+                          DesignatorEmptyFactor(
+                            IdentDesignator(
+                             rec
+                            ) [IdentDesignator]
+                          ) [DesignatorEmptyFactor]
+                        ) [SingleFactorTerm]
+                      ) [SingleTermExprPositive]
+                    ) [ActParsMultiExpr]
+                  ) [ActParsYes]
+                  ActParsRightParen(
+                  ) [ActParsRightParen]
+                ) [MethodCall]
+              ) [DesignatorStmtMethodCall]
+            ) [SingleDesignatorStatement]
+          ) [StatementSingle]
+        ) [StatementListMultiple]
+      ) [MethodDeclaration]
+    ) [MethodDeclListMultiple]
+    MethodDeclaration(
+      MethodSignaturePlain(
+        MethodTypeType(
+          Type(
+           int
+          ) [Type]
+        ) [MethodTypeType]
+        MethodName(
+         a
+        ) [MethodName]
+      ) [MethodSignaturePlain]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListMultiple(
+        StatementListMultiple(
+          StatementListMultiple(
+            StatementListNo(
+            ) [StatementListNo]
+            StatementSingle(
+              SingleDesignatorStatement(
+                DesignatorStmtMinusMinus(
+                  IdentDesignator(
+                   k
+                  ) [IdentDesignator]
+                ) [DesignatorStmtMinusMinus]
+              ) [SingleDesignatorStatement]
+            ) [StatementSingle]
+          ) [StatementListMultiple]
+          StatementSingle(
+            SingleDesignatorStatement(
+              DesignatorStmtMethodCall(
+                MethodCall(
+                  IdentDesignator(
+                   len
+                  ) [IdentDesignator]
+                  ActParsLeftParen(
+                  ) [ActParsLeftParen]
+                  ActParsYes(
+                    ActParsSingleExpr(
+                      SingleTermExprPositive(
+                        SingleFactorTerm(
+                          DesignatorEmptyFactor(
+                            IdentDesignator(
+                             kp
+                            ) [IdentDesignator]
+                          ) [DesignatorEmptyFactor]
+                        ) [SingleFactorTerm]
+                      ) [SingleTermExprPositive]
+                    ) [ActParsSingleExpr]
+                  ) [ActParsYes]
+                  ActParsRightParen(
+                  ) [ActParsRightParen]
+                ) [MethodCall]
+              ) [DesignatorStmtMethodCall]
+            ) [SingleDesignatorStatement]
+          ) [StatementSingle]
+        ) [StatementListMultiple]
+        StatementSingle(
+          SingleReturnExprStatement(
+            SingleTermExprPositive(
+              SingleFactorTerm(
+                DesignatorEmptyFactor(
+                  IdentDesignator(
+                   k
+                  ) [IdentDesignator]
+                ) [DesignatorEmptyFactor]
+              ) [SingleFactorTerm]
+            ) [SingleTermExprPositive]
+          ) [SingleReturnExprStatement]
+        ) [StatementSingle]
+      ) [StatementListMultiple]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  19:19:18,855 - ===================================
+ERROR 19:19:18,858 - Symbol rec is used like an assignable type but is not.
+ERROR 19:19:18,858 - Type of parameter incompatible with var arg type.
+INFO  19:19:18,858 - One or more errors found!

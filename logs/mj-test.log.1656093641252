@@ -1,0 +1,252 @@
+INFO  20:00:29,694 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  20:00:29,713 - #2 program
+INFO  20:00:29,713 - #48 test301
+INFO  20:00:29,713 - #7 const
+INFO  20:00:29,713 - #48 int
+INFO  20:00:29,713 - #48 nula
+INFO  20:00:29,713 - #27 =
+INFO  20:00:29,713 - #51 0
+INFO  20:00:29,713 - #38 ;
+INFO  20:00:29,714 - #7 const
+INFO  20:00:29,714 - #48 int
+INFO  20:00:29,714 - #48 jedan
+INFO  20:00:29,714 - #27 =
+INFO  20:00:29,714 - #51 1
+INFO  20:00:29,714 - #38 ;
+INFO  20:00:29,714 - #7 const
+INFO  20:00:29,714 - #48 int
+INFO  20:00:29,714 - #48 pet
+INFO  20:00:29,714 - #27 =
+INFO  20:00:29,714 - #51 5
+INFO  20:00:29,714 - #38 ;
+INFO  20:00:29,715 - #48 int
+INFO  20:00:29,724 - #48 niz
+INFO  20:00:29,724 - #42 [
+INFO  20:00:29,724 - #43 ]
+INFO  20:00:29,724 - #38 ;
+INFO  20:00:29,724 - #48 char
+INFO  20:00:29,724 - #48 nizch
+INFO  20:00:29,724 - #42 [
+INFO  20:00:29,724 - #43 ]
+INFO  20:00:29,724 - #38 ;
+INFO  20:00:29,725 - #44 {
+INFO  20:00:29,725 - #48 int
+INFO  20:00:29,725 - #48 p
+INFO  20:00:29,725 - #40 (
+INFO  20:00:29,725 - #48 int
+INFO  20:00:29,725 - #48 x
+INFO  20:00:29,725 - #39 ,
+INFO  20:00:29,725 - #48 int
+INFO  20:00:29,725 - #48 y
+INFO  20:00:29,725 - #39 ,
+INFO  20:00:29,725 - #48 int
+INFO  20:00:29,725 - #48 z
+INFO  20:00:29,726 - #41 )
+INFO  20:00:29,726 - #48 int
+INFO  20:00:29,726 - #48 xx
+INFO  20:00:29,726 - #39 ,
+INFO  20:00:29,726 - #48 yy
+INFO  20:00:29,726 - #38 ;
+INFO  20:00:29,726 - #44 {
+INFO  20:00:29,727 - #15 return
+INFO  20:00:29,727 - #51 0
+INFO  20:00:29,727 - #38 ;
+INFO  20:00:29,727 - #45 }
+INFO  20:00:29,727 - #14 void
+INFO  20:00:29,727 - #48 main
+INFO  20:00:29,727 - #40 (
+INFO  20:00:29,727 - #41 )
+INFO  20:00:29,727 - #44 {
+INFO  20:00:29,727 - #45 }
+INFO  20:00:29,728 - #45 }
+INFO  20:00:29,728 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  AllDeclListMultiple(
+    AllDeclListMultiple(
+      AllDeclListMultiple(
+        AllDeclListMultiple(
+          AllDeclListMultiple(
+            NoDecl(
+            ) [NoDecl]
+            ConstDeclaration(
+              ConstDeclarationExpr(
+                Type(
+                 int
+                ) [Type]
+                ConstAssignSingle(
+                  ConstAssign(
+                   nula
+                    NumberConst(
+                     0
+                    ) [NumberConst]
+                  ) [ConstAssign]
+                ) [ConstAssignSingle]
+              ) [ConstDeclarationExpr]
+            ) [ConstDeclaration]
+          ) [AllDeclListMultiple]
+          ConstDeclaration(
+            ConstDeclarationExpr(
+              Type(
+               int
+              ) [Type]
+              ConstAssignSingle(
+                ConstAssign(
+                 jedan
+                  NumberConst(
+                   1
+                  ) [NumberConst]
+                ) [ConstAssign]
+              ) [ConstAssignSingle]
+            ) [ConstDeclarationExpr]
+          ) [ConstDeclaration]
+        ) [AllDeclListMultiple]
+        ConstDeclaration(
+          ConstDeclarationExpr(
+            Type(
+             int
+            ) [Type]
+            ConstAssignSingle(
+              ConstAssign(
+               pet
+                NumberConst(
+                 5
+                ) [NumberConst]
+              ) [ConstAssign]
+            ) [ConstAssignSingle]
+          ) [ConstDeclarationExpr]
+        ) [ConstDeclaration]
+      ) [AllDeclListMultiple]
+      GlobalVarDeclaration(
+        GlobalVarDeclarationExpr(
+          Type(
+           int
+          ) [Type]
+          GlobalVarDeclListSingle(
+            GlobalVarDeclarationSingle(
+             niz
+              ArrayBrackets(
+              ) [ArrayBrackets]
+            ) [GlobalVarDeclarationSingle]
+          ) [GlobalVarDeclListSingle]
+        ) [GlobalVarDeclarationExpr]
+      ) [GlobalVarDeclaration]
+    ) [AllDeclListMultiple]
+    GlobalVarDeclaration(
+      GlobalVarDeclarationExpr(
+        Type(
+         char
+        ) [Type]
+        GlobalVarDeclListSingle(
+          GlobalVarDeclarationSingle(
+           nizch
+            ArrayBrackets(
+            ) [ArrayBrackets]
+          ) [GlobalVarDeclarationSingle]
+        ) [GlobalVarDeclListSingle]
+      ) [GlobalVarDeclarationExpr]
+    ) [GlobalVarDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListMultiple(
+      MethodDeclListNo(
+      ) [MethodDeclListNo]
+      MethodDeclaration(
+        MethodSignatureParams(
+          MethodTypeType(
+            Type(
+             int
+            ) [Type]
+          ) [MethodTypeType]
+          MethodName(
+           p
+          ) [MethodName]
+          FormParsMultiple(
+            FormParsMultiple(
+              FormParsSingle(
+                FormParSingle(
+                  Type(
+                   int
+                  ) [Type]
+                 x
+                  NoArray(
+                  ) [NoArray]
+                ) [FormParSingle]
+              ) [FormParsSingle]
+              FormParSingle(
+                Type(
+                 int
+                ) [Type]
+               y
+                NoArray(
+                ) [NoArray]
+              ) [FormParSingle]
+            ) [FormParsMultiple]
+            FormParSingle(
+              Type(
+               int
+              ) [Type]
+             z
+              NoArray(
+              ) [NoArray]
+            ) [FormParSingle]
+          ) [FormParsMultiple]
+        ) [MethodSignatureParams]
+        VarDeclOptionTrue(
+          NoVarDeclOption(
+          ) [NoVarDeclOption]
+          VarDeclarationExpr(
+            Type(
+             int
+            ) [Type]
+            VarDeclListMultiple(
+              VarDeclListSingle(
+                VarDeclSingle(
+                 xx
+                  NoArray(
+                  ) [NoArray]
+                ) [VarDeclSingle]
+              ) [VarDeclListSingle]
+              VarDeclSingle(
+               yy
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclSingle]
+            ) [VarDeclListMultiple]
+          ) [VarDeclarationExpr]
+        ) [VarDeclOptionTrue]
+        StatementListMultiple(
+          StatementListNo(
+          ) [StatementListNo]
+          StatementSingle(
+            SingleReturnExprStatement(
+              SingleTermExprPositive(
+                SingleFactorTerm(
+                  NumConstFactor(
+                   0
+                  ) [NumConstFactor]
+                ) [SingleFactorTerm]
+              ) [SingleTermExprPositive]
+            ) [SingleReturnExprStatement]
+          ) [StatementSingle]
+        ) [StatementListMultiple]
+      ) [MethodDeclaration]
+    ) [MethodDeclListMultiple]
+    MethodDeclaration(
+      MethodSignaturePlain(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+        MethodName(
+         main
+        ) [MethodName]
+      ) [MethodSignaturePlain]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListNo(
+      ) [StatementListNo]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  20:00:29,728 - ===================================
+INFO  20:00:29,732 - Compile successful!

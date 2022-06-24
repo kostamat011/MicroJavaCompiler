@@ -1,0 +1,161 @@
+INFO  19:58:33,934 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  19:58:33,952 - #2 program
+INFO  19:58:33,952 - #48 test301
+INFO  19:58:33,952 - #7 const
+INFO  19:58:33,953 - #48 int
+INFO  19:58:33,953 - #48 nula
+INFO  19:58:33,953 - #27 =
+INFO  19:58:33,953 - #51 0
+INFO  19:58:33,953 - #38 ;
+INFO  19:58:33,953 - #7 const
+INFO  19:58:33,953 - #48 int
+INFO  19:58:33,953 - #48 jedan
+INFO  19:58:33,953 - #27 =
+INFO  19:58:33,954 - #51 1
+INFO  19:58:33,954 - #38 ;
+INFO  19:58:33,954 - #7 const
+INFO  19:58:33,954 - #48 int
+INFO  19:58:33,954 - #48 pet
+INFO  19:58:33,954 - #27 =
+INFO  19:58:33,954 - #51 5
+INFO  19:58:33,954 - #38 ;
+INFO  19:58:33,954 - #48 int
+INFO  19:58:33,963 - #48 niz
+INFO  19:58:33,963 - #42 [
+INFO  19:58:33,963 - #43 ]
+INFO  19:58:33,963 - #38 ;
+INFO  19:58:33,963 - #48 char
+INFO  19:58:33,963 - #48 nizch
+INFO  19:58:33,963 - #42 [
+INFO  19:58:33,963 - #43 ]
+INFO  19:58:33,963 - #38 ;
+INFO  19:58:33,963 - #44 {
+INFO  19:58:33,964 - #14 void
+INFO  19:58:33,964 - #48 main
+INFO  19:58:33,964 - #40 (
+INFO  19:58:33,964 - #48 int
+INFO  19:58:33,964 - #48 a
+INFO  19:58:33,964 - #41 )
+INFO  19:58:33,965 - #44 {
+INFO  19:58:33,965 - #45 }
+INFO  19:58:33,965 - #45 }
+INFO  19:58:33,966 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  AllDeclListMultiple(
+    AllDeclListMultiple(
+      AllDeclListMultiple(
+        AllDeclListMultiple(
+          AllDeclListMultiple(
+            NoDecl(
+            ) [NoDecl]
+            ConstDeclaration(
+              ConstDeclarationExpr(
+                Type(
+                 int
+                ) [Type]
+                ConstAssignSingle(
+                  ConstAssign(
+                   nula
+                    NumberConst(
+                     0
+                    ) [NumberConst]
+                  ) [ConstAssign]
+                ) [ConstAssignSingle]
+              ) [ConstDeclarationExpr]
+            ) [ConstDeclaration]
+          ) [AllDeclListMultiple]
+          ConstDeclaration(
+            ConstDeclarationExpr(
+              Type(
+               int
+              ) [Type]
+              ConstAssignSingle(
+                ConstAssign(
+                 jedan
+                  NumberConst(
+                   1
+                  ) [NumberConst]
+                ) [ConstAssign]
+              ) [ConstAssignSingle]
+            ) [ConstDeclarationExpr]
+          ) [ConstDeclaration]
+        ) [AllDeclListMultiple]
+        ConstDeclaration(
+          ConstDeclarationExpr(
+            Type(
+             int
+            ) [Type]
+            ConstAssignSingle(
+              ConstAssign(
+               pet
+                NumberConst(
+                 5
+                ) [NumberConst]
+              ) [ConstAssign]
+            ) [ConstAssignSingle]
+          ) [ConstDeclarationExpr]
+        ) [ConstDeclaration]
+      ) [AllDeclListMultiple]
+      GlobalVarDeclaration(
+        GlobalVarDeclarationExpr(
+          Type(
+           int
+          ) [Type]
+          GlobalVarDeclListSingle(
+            GlobalVarDeclarationSingle(
+             niz
+              ArrayBrackets(
+              ) [ArrayBrackets]
+            ) [GlobalVarDeclarationSingle]
+          ) [GlobalVarDeclListSingle]
+        ) [GlobalVarDeclarationExpr]
+      ) [GlobalVarDeclaration]
+    ) [AllDeclListMultiple]
+    GlobalVarDeclaration(
+      GlobalVarDeclarationExpr(
+        Type(
+         char
+        ) [Type]
+        GlobalVarDeclListSingle(
+          GlobalVarDeclarationSingle(
+           nizch
+            ArrayBrackets(
+            ) [ArrayBrackets]
+          ) [GlobalVarDeclarationSingle]
+        ) [GlobalVarDeclListSingle]
+      ) [GlobalVarDeclarationExpr]
+    ) [GlobalVarDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListNo(
+    ) [MethodDeclListNo]
+    MethodDeclaration(
+      MethodSignatureParams(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+        MethodName(
+         main
+        ) [MethodName]
+        FormParsSingle(
+          FormParSingle(
+            Type(
+             int
+            ) [Type]
+           a
+            NoArray(
+            ) [NoArray]
+          ) [FormParSingle]
+        ) [FormParsSingle]
+      ) [MethodSignatureParams]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListNo(
+      ) [StatementListNo]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  19:58:33,966 - ===================================
+ERROR 19:58:33,969 - Main method must have no parameters.
+INFO  19:58:33,969 - One or more errors found!

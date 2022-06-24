@@ -87,12 +87,13 @@ import java_cup.runtime.Symbol;
 ":" 			{ return new_symbol(sym.DBLDOT, yytext()); }
 "." 			{ return new_symbol(sym.DOT, yytext()); }
 
+
 "true" 			{ return new_symbol(sym.BOOL_CONST, new Boolean (yytext())); }
 "false" 		{ return new_symbol(sym.BOOL_CONST, new Boolean (yytext())); }
 
 [0-9]+  						{ return new_symbol(sym.NUMBER_CONST, new Integer (yytext())); }
-([a-z]|[A-Z])[a-z|A-Z|0-9|_]* 	{return new_symbol (sym.IDENT, yytext()); }
-"'"[\040-\176]"'" 				{return new_symbol (sym.CHAR_CONST, new Character (yytext().charAt(1)));}
+([a-z]|[A-Z])[a-z|A-Z|0-9|_]* 	{ return new_symbol (sym.IDENT, yytext()); }
+"'"[\040-\176]"'" 				{ return new_symbol (sym.CHAR_CONST, new Character (yytext().charAt(1)));}
 
 "//" 					{yybegin(COMMENT);}
 <COMMENT> . 			{yybegin(COMMENT);}

@@ -1,0 +1,148 @@
+INFO  19:58:40,155 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  19:58:40,173 - #2 program
+INFO  19:58:40,173 - #48 test301
+INFO  19:58:40,173 - #7 const
+INFO  19:58:40,173 - #48 int
+INFO  19:58:40,173 - #48 nula
+INFO  19:58:40,173 - #27 =
+INFO  19:58:40,173 - #51 0
+INFO  19:58:40,173 - #38 ;
+INFO  19:58:40,174 - #7 const
+INFO  19:58:40,174 - #48 int
+INFO  19:58:40,174 - #48 jedan
+INFO  19:58:40,174 - #27 =
+INFO  19:58:40,174 - #51 1
+INFO  19:58:40,174 - #38 ;
+INFO  19:58:40,174 - #7 const
+INFO  19:58:40,174 - #48 int
+INFO  19:58:40,174 - #48 pet
+INFO  19:58:40,174 - #27 =
+INFO  19:58:40,174 - #51 5
+INFO  19:58:40,174 - #38 ;
+INFO  19:58:40,174 - #48 int
+INFO  19:58:40,183 - #48 niz
+INFO  19:58:40,183 - #42 [
+INFO  19:58:40,183 - #43 ]
+INFO  19:58:40,183 - #38 ;
+INFO  19:58:40,183 - #48 char
+INFO  19:58:40,183 - #48 nizch
+INFO  19:58:40,183 - #42 [
+INFO  19:58:40,183 - #43 ]
+INFO  19:58:40,183 - #38 ;
+INFO  19:58:40,184 - #44 {
+INFO  19:58:40,184 - #14 void
+INFO  19:58:40,184 - #48 main
+INFO  19:58:40,184 - #40 (
+INFO  19:58:40,184 - #41 )
+INFO  19:58:40,184 - #44 {
+INFO  19:58:40,184 - #45 }
+INFO  19:58:40,185 - #45 }
+INFO  19:58:40,185 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  AllDeclListMultiple(
+    AllDeclListMultiple(
+      AllDeclListMultiple(
+        AllDeclListMultiple(
+          AllDeclListMultiple(
+            NoDecl(
+            ) [NoDecl]
+            ConstDeclaration(
+              ConstDeclarationExpr(
+                Type(
+                 int
+                ) [Type]
+                ConstAssignSingle(
+                  ConstAssign(
+                   nula
+                    NumberConst(
+                     0
+                    ) [NumberConst]
+                  ) [ConstAssign]
+                ) [ConstAssignSingle]
+              ) [ConstDeclarationExpr]
+            ) [ConstDeclaration]
+          ) [AllDeclListMultiple]
+          ConstDeclaration(
+            ConstDeclarationExpr(
+              Type(
+               int
+              ) [Type]
+              ConstAssignSingle(
+                ConstAssign(
+                 jedan
+                  NumberConst(
+                   1
+                  ) [NumberConst]
+                ) [ConstAssign]
+              ) [ConstAssignSingle]
+            ) [ConstDeclarationExpr]
+          ) [ConstDeclaration]
+        ) [AllDeclListMultiple]
+        ConstDeclaration(
+          ConstDeclarationExpr(
+            Type(
+             int
+            ) [Type]
+            ConstAssignSingle(
+              ConstAssign(
+               pet
+                NumberConst(
+                 5
+                ) [NumberConst]
+              ) [ConstAssign]
+            ) [ConstAssignSingle]
+          ) [ConstDeclarationExpr]
+        ) [ConstDeclaration]
+      ) [AllDeclListMultiple]
+      GlobalVarDeclaration(
+        GlobalVarDeclarationExpr(
+          Type(
+           int
+          ) [Type]
+          GlobalVarDeclListSingle(
+            GlobalVarDeclarationSingle(
+             niz
+              ArrayBrackets(
+              ) [ArrayBrackets]
+            ) [GlobalVarDeclarationSingle]
+          ) [GlobalVarDeclListSingle]
+        ) [GlobalVarDeclarationExpr]
+      ) [GlobalVarDeclaration]
+    ) [AllDeclListMultiple]
+    GlobalVarDeclaration(
+      GlobalVarDeclarationExpr(
+        Type(
+         char
+        ) [Type]
+        GlobalVarDeclListSingle(
+          GlobalVarDeclarationSingle(
+           nizch
+            ArrayBrackets(
+            ) [ArrayBrackets]
+          ) [GlobalVarDeclarationSingle]
+        ) [GlobalVarDeclListSingle]
+      ) [GlobalVarDeclarationExpr]
+    ) [GlobalVarDeclaration]
+  ) [AllDeclListMultiple]
+  MethodDeclListMultiple(
+    MethodDeclListNo(
+    ) [MethodDeclListNo]
+    MethodDeclaration(
+      MethodSignaturePlain(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+        MethodName(
+         main
+        ) [MethodName]
+      ) [MethodSignaturePlain]
+      NoVarDeclOption(
+      ) [NoVarDeclOption]
+      StatementListNo(
+      ) [StatementListNo]
+    ) [MethodDeclaration]
+  ) [MethodDeclListMultiple]
+) [Program]
+INFO  19:58:40,185 - ===================================
+INFO  19:58:40,189 - Compile successful!
