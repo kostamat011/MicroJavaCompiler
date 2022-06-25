@@ -236,13 +236,31 @@ public class SemanticPass extends VisitorAdaptor {
 		return o.getKind() == Obj.Con;
 	}
 	
-	private boolean isFormalArgument(Obj method, Obj arg) {
-		/*ArrayList<Obj> locals = new ArrayList<Obj>(method.getLocalSymbols());
+	private boolean isFormalArgument(Obj method, String name) {
+		ArrayList<Obj> locals = new ArrayList<Obj>(method.getLocalSymbols());
+		locals = extractFormalArgs(locals);
 		for(Obj o : locals) {
-			if(o.getName().equals(arg.getName())) {
+			if(o.getName().equals(name)) {
 				return true;
 			}
-		}*/
+		}
+		return false;
+	}
+	
+	private boolean isLocalVariable(String name) {
+		if(findSymbolInCurrentScope(name) && (currMethod != Tab.noObj) && !isFormalArgument(currMethod, name)) {
+			return true;
+		}
+		return false;
+	}
+	
+	private boolean isGlobalVariable(String name) {
+		if(!findSymbolInCurrentScope(name)) {
+			Obj node = Tab.find(name);
+			if(node.getKind() == Obj.Var) {
+				return true;
+			}
+		}
 		return false;
 	}
 	
@@ -838,9 +856,17 @@ public class SemanticPass extends VisitorAdaptor {
 			return;
 		}
 		
+		if(isLocalVariable(designator.getIdent())) {
+			reportInfo("Using local variable name: "+designator.getIdent(),designator);
+		}
+		
+		else if(isGlobalVariable(designator.getIdent())) {
+			reportInfo("Using global variable name: "+designator.getIdent(),designator);
+		}
+		
 		designator.obj = Tab.find(designator.getIdent());
 		
-		if(currMethod != Tab.noObj && isFormalArgument(currMethod,designator.obj)) {
+		if(currMethod != Tab.noObj && isFormalArgument(currMethod,designator.getIdent())) {
 			reportInfo("Access to formal argument detected. Method name: " + currMethod.getName() 
 				+ ", argument name: " + designator.getIdent(), designator);
 		}
@@ -852,6 +878,14 @@ public class SemanticPass extends VisitorAdaptor {
 		if (!findSymbolInTable(designator.getIdent())) {
 			reportError("Symbol " + designator.getIdent() + " is not defined.", designator);
 			return;
+		}
+		
+		if(isLocalVariable(designator.getIdent())) {
+			reportInfo("Using local variable name: "+designator.getIdent(),designator);
+		}
+		
+		else if(isGlobalVariable(designator.getIdent())) {
+			reportInfo("Using global variable name: "+designator.getIdent(),designator);
 		}
 
 		Obj symbolNode = Tab.find(designator.getIdent());
@@ -872,7 +906,7 @@ public class SemanticPass extends VisitorAdaptor {
 		
 		reportInfo("Access to array element detected. Array name: " + designator.getIdent(), designator);
 		
-		if(currMethod != Tab.noObj && isFormalArgument(currMethod,designator.obj)) {
+		if(currMethod != Tab.noObj && isFormalArgument(currMethod,designator.getIdent())) {
 			reportInfo("Access to formal argument detected. Method name: " + currMethod.getName() 
 				+ ", argument name: " + designator.getIdent(), designator);
 		}
