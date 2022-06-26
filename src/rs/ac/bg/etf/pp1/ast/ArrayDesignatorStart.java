@@ -5,11 +5,24 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class ActParsRightParen implements SyntaxNode {
+public class ArrayDesignatorStart implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    public ActParsRightParen () {
+    public rs.etf.pp1.symboltable.concepts.Obj obj = null;
+
+    private String ident;
+
+    public ArrayDesignatorStart (String ident) {
+        this.ident=ident;
+    }
+
+    public String getIdent() {
+        return ident;
+    }
+
+    public void setIdent(String ident) {
+        this.ident=ident;
     }
 
     public SyntaxNode getParent() {
@@ -46,10 +59,13 @@ public class ActParsRightParen implements SyntaxNode {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("ActParsRightParen(\n");
+        buffer.append("ArrayDesignatorStart(\n");
+
+        buffer.append(" "+tab+ident);
+        buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [ActParsRightParen]");
+        buffer.append(") [ArrayDesignatorStart]");
         return buffer.toString();
     }
 }

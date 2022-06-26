@@ -110,7 +110,7 @@ nonterminal Statements Statements;
 nonterminal SingleStatement SingleStatement;
 
 /* designators and designator statements */
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, ArrayDesignatorStart;
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal DesignatorStatementAssign DesignatorStatementAssign;
 nonterminal NumConstOption NumConstOption;
@@ -300,10 +300,12 @@ Relop ::= (RelopGT) GT {: RESULT=new RelopGT(); :}
 	   ;
 
 Designator ::= (IdentDesignator) IDENT:ident {: RESULT=new IdentDesignator(ident); RESULT.setLine(identleft); :}
-			|  (IdentArrayDesignator) IDENT:ident LBRCK Expr:E1 RBRCK {: RESULT=new IdentArrayDesignator(ident, E1); RESULT.setLine(identleft); :}
+			|  (IdentArrayDesignator) ArrayDesignatorStart:A1 LBRCK Expr:E2 RBRCK {: RESULT=new IdentArrayDesignator(A1, E2); RESULT.setLine(A1left); :}
 			|  (IdentMemberDesignator) IDENT:ident DOT IDENT:memberName {: RESULT=new IdentMemberDesignator(ident, memberName); RESULT.setLine(identleft); :}
 			|  (IdentMemberArrayDesignator) IDENT:ident DOT IDENT:memberArrayName LBRCK Expr:E1 RBRCK {: RESULT=new IdentMemberArrayDesignator(ident, memberArrayName, E1); RESULT.setLine(identleft); :}
 			;
+			
+ArrayDesignatorStart ::= (ArrayDesignatorStart) IDENT:ident {: RESULT=new ArrayDesignatorStart(ident); RESULT.setLine(identleft); :};
 
 DesignatorStatement ::= (DesignatorStmtAssign) DesignatorStatementAssign:D1 {: RESULT=new DesignatorStmtAssign(D1); RESULT.setLine(D1left); :}
 					|   (DesignatorStmtPlusPlus) Designator:D1 PLUSPLUS {: RESULT=new DesignatorStmtPlusPlus(D1); RESULT.setLine(D1left); :}

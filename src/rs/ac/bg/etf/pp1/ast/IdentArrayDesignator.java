@@ -1,27 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/5/2022 3:19:39
+// 26/5/2022 4:39:38
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class IdentArrayDesignator extends Designator {
 
-    private String ident;
+    private ArrayDesignatorStart ArrayDesignatorStart;
     private Expr Expr;
 
-    public IdentArrayDesignator (String ident, Expr Expr) {
-        this.ident=ident;
+    public IdentArrayDesignator (ArrayDesignatorStart ArrayDesignatorStart, Expr Expr) {
+        this.ArrayDesignatorStart=ArrayDesignatorStart;
+        if(ArrayDesignatorStart!=null) ArrayDesignatorStart.setParent(this);
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
     }
 
-    public String getIdent() {
-        return ident;
+    public ArrayDesignatorStart getArrayDesignatorStart() {
+        return ArrayDesignatorStart;
     }
 
-    public void setIdent(String ident) {
-        this.ident=ident;
+    public void setArrayDesignatorStart(ArrayDesignatorStart ArrayDesignatorStart) {
+        this.ArrayDesignatorStart=ArrayDesignatorStart;
     }
 
     public Expr getExpr() {
@@ -37,15 +38,18 @@ public class IdentArrayDesignator extends Designator {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(ArrayDesignatorStart!=null) ArrayDesignatorStart.accept(visitor);
         if(Expr!=null) Expr.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(ArrayDesignatorStart!=null) ArrayDesignatorStart.traverseTopDown(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(ArrayDesignatorStart!=null) ArrayDesignatorStart.traverseBottomUp(visitor);
         if(Expr!=null) Expr.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -55,7 +59,10 @@ public class IdentArrayDesignator extends Designator {
         buffer.append(tab);
         buffer.append("IdentArrayDesignator(\n");
 
-        buffer.append(" "+tab+ident);
+        if(ArrayDesignatorStart!=null)
+            buffer.append(ArrayDesignatorStart.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(Expr!=null)

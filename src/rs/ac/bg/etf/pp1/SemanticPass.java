@@ -77,6 +77,7 @@ public class SemanticPass extends VisitorAdaptor {
 	public SemanticPass() {
 		Tab.init();
 		Tab.currentScope.addToLocals(new Obj(Obj.Type, "bool", boolType));
+		Tab.insert(Obj.Var, "varArgsTemp", Tab.intType);
 	}
 
 	// check if successful semantic pass
@@ -875,23 +876,26 @@ public class SemanticPass extends VisitorAdaptor {
 	// a[1]
 	//
 	public void visit(IdentArrayDesignator designator) {
-		if (!findSymbolInTable(designator.getIdent())) {
-			reportError("Symbol " + designator.getIdent() + " is not defined.", designator);
+		
+		String name = designator.getArrayDesignatorStart().getIdent();
+		
+		if (!findSymbolInTable(name)) {
+			reportError("Symbol " + name + " is not defined.", designator);
 			return;
 		}
 		
-		if(isLocalVariable(designator.getIdent())) {
-			reportInfo("Using local variable name: "+designator.getIdent(),designator);
+		if(isLocalVariable(name)) {
+			reportInfo("Using local variable name: "+name,designator);
 		}
 		
-		else if(isGlobalVariable(designator.getIdent())) {
-			reportInfo("Using global variable name: "+designator.getIdent(),designator);
+		else if(isGlobalVariable(name)) {
+			reportInfo("Using global variable name: "+name,designator);
 		}
 
-		Obj symbolNode = Tab.find(designator.getIdent());
+		Obj symbolNode = Tab.find(name);
 
 		if (symbolNode.getType().getKind() != Struct.Array) {
-			reportError("Symbol " + designator.getIdent() + " is used like an array but is not.", designator);
+			reportError("Symbol " + name + " is used like an array but is not.", designator);
 			return;
 		}
 
@@ -902,15 +906,20 @@ public class SemanticPass extends VisitorAdaptor {
 			return;
 		}
 
-		designator.obj = new Obj(Obj.Elem, symbolNode.getName(), symbolNode.getType().getElemType());
+		designator.obj = new Obj(Obj.Elem, "", symbolNode.getType().getElemType());
 		
-		reportInfo("Access to array element detected. Array name: " + designator.getIdent(), designator);
+		reportInfo("Access to array element detected. Array name: " + name, designator);
 		
-		if(currMethod != Tab.noObj && isFormalArgument(currMethod,designator.getIdent())) {
+		if(currMethod != Tab.noObj && isFormalArgument(currMethod,name)) {
 			reportInfo("Access to formal argument detected. Method name: " + currMethod.getName() 
-				+ ", argument name: " + designator.getIdent(), designator);
+				+ ", argument name: " + name, designator);
 		}
 	}
+	
+	public void visit(ArrayDesignatorStart desig) {
+		desig.obj = Tab.find(desig.getIdent());
+	}
+	
 
 	// rec.a
 	//

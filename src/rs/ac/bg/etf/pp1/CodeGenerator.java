@@ -153,6 +153,35 @@ public class CodeGenerator extends VisitorAdaptor {
 		return ret;
 	}
 	
+	private void handleMulop(Mulop mul) {
+		if(mul instanceof MulopMul) {
+			Code.put(Code.mul);
+			return;
+		}
+		
+		if (mul instanceof MulopDiv) {
+			Code.put(Code.div);
+			return;
+		}
+		
+		if (mul instanceof MulopPct) {
+			Code.put(Code.rem);
+			return;
+		}
+	}
+	
+	private void handleAddop(Addop add) {
+		if(add instanceof AddopPlus) {
+			Code.put(Code.add);
+			return;
+		}
+		
+		if(add instanceof AddopMinus) {
+			Code.put(Code.sub);
+			return;
+		}
+	}
+	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 	
 	/* Visit method signatures */
@@ -292,13 +321,18 @@ public class CodeGenerator extends VisitorAdaptor {
 			
 			// populating array with last num actual pars
 			//
+			Obj tmp = Tab.find("varArgsTemp");
+			if(tmp == Tab.noObj) {
+				reportError("Code generator failure", null);
+				return;
+			}
 			ArrayList<Object> pars = actParamsStack.pop();
 			pars = takeLastN(pars, num);
 			for(int i=0; i<num; ++i) {
 				// save address of array
 				//
 				Code.put(Code.putstatic);
-				Code.put(0);
+				Code.put2(tmp.getAdr());
 				
 				// put index on stack
 				//
@@ -314,14 +348,14 @@ public class CodeGenerator extends VisitorAdaptor {
 					Code.put4((Integer)pars.get(i));
 				}
 				
-				// put param in array
+				// store param in array
 				//
 				Code.put(Code.astore);
 				
 				// put array address on stack
 				//
 				Code.put(Code.getstatic);
-				Code.put(0);
+				Code.put2(tmp.getAdr());
 			}
 		}
 		
@@ -334,8 +368,171 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 	
-	/* Visiting Expressions */
+	/* Visiting Factors */
 	
+	public void visit(NumConstFactor factor) {
+		Code.load(factor.obj);
+	}
+	
+	public void visit(CharConstFactor factor) {
+		Code.load(factor.obj);
+	}
+	
+	public void visit(BoolConstFactor factor) {
+		Code.load(factor.obj);
+	}
+	
+	public void visit(ExprFactor factor) {
+		// do nothing bcz that expression is already on stack
+		//
+	}
+	
+	public void visit(DesignatorEmptyFactor factor) {
+		// done in designator visit
+	}
+	
+	public void visit(MethodCallFactor factor) {
+		// done in MethodCall visit
+	}
+	
+	public void visit(NewTypeFactor factor) {
+		// empty
+	}
+	
+	public void visit(NewTypeArrayFactor factor) {
+		// n is already on stack from expression visit
+		// must calculate size based on type
+		//
+		int isInt = 0;
+		Struct type = factor.getType().struct;
+		if(type.equals(Tab.intType)) {
+			isInt = 1;
+		}
+		
+		Code.put(Code.newarray);
+		Code.put(isInt);
+	}
+	
+	/* Visiting terms */
+	
+	public void visit(SingleFactorTerm term) {
+		// do nothing because that factor is already on stack
+		//
+	}
+
+	public void visit(MultiFactorTerm term) {
+		handleMulop(term.getMulop());
+	}
+	
+	/* Visiting expressions */
+	
+	public void visit(SingleTermExprPositive expr) {
+		// do nothing because that term is already on stack
+		//
+	}
+	
+	public void visit(SingleTermExprNegative expr) {
+		Code.put(Code.const_m1);
+		Code.put(Code.mul);
+	}
+	
+	public void visit(MultiTermExpr expr) {
+		handleAddop(expr.getAddop());
+	}
+
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	
+	/* Visiting designators statements */
+	
+	public void visit(DesignatorStmtAssignCorrect assign) {
+		Code.store(assign.getDesignator().obj);	
+	}
+	
+	// In array element assignment a[expr] = expr;
+	// both expressions will be added to stack in expression visit
+	// no need to visit ArrayDesignator, its enough to put array var on stack
+	//
+	public void visit(ArrayDesignatorStart desig) {
+		Code.load(desig.obj);
+	}
+	
+	public void visit(DesignatorStmtPlusPlus stmt) {
+		Obj d = stmt.getDesignator().obj;
+		
+		// var increment
+		//
+		if(d.getKind() == Obj.Var) {
+			Code.load(d);
+			Code.put(Code.const_1);
+			Code.put(Code.add);
+			Code.store(d);
+		}
+		
+		// array elem increment
+		//
+		else if(stmt.getDesignator().obj.getKind() == Obj.Elem) {
+			// stack: array, index
+			//
+			Code.put(Code.dup2);
+			
+			// stack: array, index, array, index
+			//
+			Code.load(d);
+			
+			// stack: array, index, array[index]
+			//
+			Code.put(Code.const_1);
+			Code.put(Code.add);
+			
+			// stack: array, index, array[index] + 1
+			//
+			Code.put(Code.astore);
+			
+			// stack: empty
+			//
+		}
+	}
+	
+	public void visit(DesignatorStmtMinusMinus stmt) {
+		Obj d = stmt.getDesignator().obj;
+		
+		// var decrement
+		//
+		if(d.getKind() == Obj.Var) {
+			Code.load(d);
+			Code.put(Code.const_m1);
+			Code.put(Code.add);
+			Code.store(d);
+		}
+		
+		// array elem decrement
+		//
+		else if(stmt.getDesignator().obj.getKind() == Obj.Elem) {
+			// stack: array, index
+			//
+			Code.put(Code.dup2);
+			
+			// stack: array, index, array, index
+			//
+			Code.load(d);
+			
+			// stack: array, index, array[index]
+			//
+			Code.put(Code.const_m1);
+			Code.put(Code.add);
+			
+			// stack: array, index, array[index] - 1
+			//
+			Code.put(Code.astore);
+			
+			// stack: empty
+			//
+		}
+	}
+	
+	public void visit(DesignatorStmtMethodCall stmt) {
+		// done in method call visit
+	}
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */	
 	
 }

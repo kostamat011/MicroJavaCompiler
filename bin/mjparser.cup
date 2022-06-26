@@ -88,7 +88,7 @@ nonterminal FormParsOption, FormPars, FormPar, VarArgs, FormParsEnd;
 nonterminal StatementList, Statement, Statements, SingleStatement;
 
 /* designators and designator statements */
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, ArrayDesignatorStart;
 nonterminal DesignatorStatement, DesignatorStatementAssign, NumConstOption;
 
 /* expressions, terms, factors */
@@ -272,10 +272,12 @@ Relop ::= (RelopGT) GT
 	   ;
 
 Designator ::= (IdentDesignator) IDENT:ident
-			|  (IdentArrayDesignator) IDENT:ident LBRCK Expr RBRCK
+			|  (IdentArrayDesignator) ArrayDesignatorStart LBRCK Expr RBRCK
 			|  (IdentMemberDesignator) IDENT:ident DOT IDENT:memberName
 			|  (IdentMemberArrayDesignator) IDENT:ident DOT IDENT:memberArrayName LBRCK Expr RBRCK
 			;
+			
+ArrayDesignatorStart ::= (ArrayDesignatorStart) IDENT:ident;
 
 DesignatorStatement ::= (DesignatorStmtAssign) DesignatorStatementAssign
 					|   (DesignatorStmtPlusPlus) Designator PLUSPLUS
