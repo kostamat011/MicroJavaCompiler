@@ -1,0 +1,197 @@
+ERROR 16:27:55,982 - Source file does not exist.
+INFO  16:29:15,521 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:29:15,539 - #2 program
+INFO  16:29:15,540 - #49 test302
+INFO  16:29:15,540 - #7 const
+INFO  16:29:15,540 - #49 int
+INFO  16:29:15,540 - #49 jedan
+INFO  16:29:15,540 - #27 =
+INFO  16:29:15,540 - #52 1
+INFO  16:29:15,540 - #38 ;
+INFO  16:29:15,541 - #44 {
+INFO  16:29:15,541 - #14 void
+INFO  16:29:15,541 - #49 main
+INFO  16:29:15,541 - #40 (
+INFO  16:29:15,541 - #41 )
+INFO  16:29:15,541 - #44 {
+INFO  16:29:15,542 - #15 return
+INFO  16:29:15,542 - #38 ;
+INFO  16:29:15,542 - #45 }
+INFO  16:29:15,542 - #45 }
+INFO  16:29:15,547 - Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  16:31:03,026 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:31:03,051 - Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  16:31:59,682 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+ERROR 16:31:59,702 - 
+Sintaksna greska na liniji 8
+ERROR 16:31:59,703 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 8
+ERROR 16:31:59,703 - One or more syntax errors found! Compiling unsuccessful!
+INFO  16:32:17,618 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+ERROR 16:32:17,642 - No main method found
+ERROR 16:32:17,642 - One or more semantic errors found! Compiling unsuccessful!
+INFO  16:32:30,118 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:32:30,143 - Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  16:32:34,521 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+ERROR 16:32:34,545 - Line 10: Return statement with expression is invalid for method of type void
+ERROR 16:32:34,545 - One or more semantic errors found! Compiling unsuccessful!
+INFO  16:33:09,023 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:33:09,046 - Line 11: Using local variable name: x
+INFO  16:33:09,047 - Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  16:33:19,653 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:33:19,677 - Line 11: Using local variable name: x
+INFO  16:33:19,677 - Line 12: Using local variable name: x
+INFO  16:33:19,678 - Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  16:33:48,274 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:33:48,299 - Line 11: Using local variable name: x
+INFO  16:33:48,299 - Line 12: Using local variable name: x
+INFO  16:33:48,300 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  16:39:50,919 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:39:50,957 - Line 11: Using local variable name: x
+INFO  16:39:50,957 - Line 12: Using local variable name: x
+INFO  16:39:50,960 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  16:42:09,063 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:42:09,088 - Line 11: Using local variable name: x
+INFO  16:42:09,088 - Line 12: Using local variable name: x
+ERROR 16:42:09,089 - Trying to count formal params of non-method type
+ERROR 16:42:09,089 - One or more errors during code generation! Compiling unsuccessful!
+INFO  16:43:00,639 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:43:00,676 - Line 11: Using local variable name: x
+INFO  16:43:00,676 - Line 12: Using local variable name: x
+INFO  16:48:11,650 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:48:40,756 - Line 11: Using local variable name: x
+INFO  16:48:48,228 - Line 12: Using local variable name: x
+INFO  16:53:22,615 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:53:22,640 - Line 11: Using local variable name: x
+INFO  16:53:22,640 - Line 12: Using local variable name: x
+ERROR 16:53:22,641 - Trying to count formal params of non-method type
+ERROR 16:53:22,641 - One or more errors during code generation! Compiling unsuccessful!
+INFO  16:57:39,242 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:57:44,927 - Line 11: Using local variable name: x
+INFO  16:57:49,831 - Line 12: Using local variable name: x
+INFO  16:58:18,677 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:58:18,714 - Line 11: Using local variable name: x
+INFO  16:58:18,714 - Line 12: Using local variable name: x
+INFO  17:00:24,065 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:00:24,104 - Line 11: Using local variable name: x
+INFO  17:00:24,104 - Line 12: Using local variable name: x
+INFO  17:02:54,641 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:02:54,678 - Line 11: Using local variable name: x
+INFO  17:02:54,678 - Line 12: Using local variable name: x
+INFO  17:03:12,393 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:03:12,417 - Line 11: Using local variable name: x
+INFO  17:03:12,417 - Line 12: Using local variable name: x
+INFO  17:03:12,418 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:12:01,362 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:12:01,386 - Line 11: Using local variable name: x
+INFO  17:12:01,386 - Line 12: Using local variable name: x
+INFO  17:12:01,387 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:21:03,301 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:21:03,326 - Line 11: Using local variable name: x
+INFO  17:21:03,326 - Line 12: Using local variable name: x
+INFO  17:21:03,327 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:21:20,147 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:21:20,173 - Line 11: Using local variable name: x
+INFO  17:21:20,173 - Line 12: Using local variable name: x
+INFO  17:21:20,174 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:21:36,317 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+ERROR 17:21:36,343 - Line 8: Main method must have no parameters.
+INFO  17:21:36,343 - Line 11: Using local variable name: x
+INFO  17:21:36,343 - Line 12: Using local variable name: x
+ERROR 17:21:36,343 - One or more semantic errors found! Compiling unsuccessful!
+INFO  17:22:02,530 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+ERROR 17:22:02,551 - 
+Sintaksna greska na liniji 9
+ERROR 17:22:02,551 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 9
+ERROR 17:22:02,551 - One or more syntax errors found! Compiling unsuccessful!
+INFO  17:22:30,564 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+ERROR 17:22:30,584 - 
+Sintaksna greska na liniji 10
+ERROR 17:22:30,584 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 10
+ERROR 17:22:30,584 - One or more syntax errors found! Compiling unsuccessful!
+INFO  17:23:59,227 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:23:59,252 - Line 12: Using local variable name: x
+ERROR 17:23:59,252 - Line 12: Invalid assignment. Types are incompatible.
+INFO  17:23:59,252 - Line 13: Using local variable name: x
+ERROR 17:23:59,252 - One or more semantic errors found! Compiling unsuccessful!
+INFO  17:24:17,310 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:24:17,335 - Line 12: Using local variable name: y
+INFO  17:24:17,335 - Line 13: Using local variable name: x
+INFO  17:24:17,335 - Line 15: Using local variable name: y
+INFO  17:24:17,336 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:24:40,637 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:24:40,661 - Line 12: Using local variable name: y
+INFO  17:24:40,661 - Line 13: Using local variable name: x
+INFO  17:24:40,661 - Line 15: Using local variable name: y
+INFO  17:24:40,662 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:24:53,347 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:24:53,371 - Line 12: Using local variable name: y
+INFO  17:24:53,371 - Line 13: Using local variable name: x
+INFO  17:24:53,371 - Line 15: Using local variable name: y
+INFO  17:24:53,372 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:25:16,753 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+ERROR 17:25:16,778 - Line 10: Variable with name x already defined in current scope.
+ERROR 17:25:16,778 - One or more semantic errors found! Compiling unsuccessful!
+INFO  17:25:23,336 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+ERROR 17:25:23,360 - Line 10: Variable with name x already defined in current scope.
+ERROR 17:25:23,360 - One or more semantic errors found! Compiling unsuccessful!
+INFO  17:25:27,061 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:25:27,087 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:25:47,483 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:25:47,508 - Line 12: Using local variable name: y
+INFO  17:25:47,508 - Line 12: Access to array element detected. Array name: y
+INFO  17:25:47,509 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:26:19,397 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:26:19,423 - Line 12: Using local variable name: y
+INFO  17:26:19,423 - Line 12: Access to array element detected. Array name: y
+INFO  17:26:19,423 - Line 13: Using local variable name: y
+INFO  17:26:19,423 - Line 13: Access to array element detected. Array name: y
+INFO  17:26:19,424 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:26:53,535 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:26:53,559 - Line 12: Using local variable name: x
+INFO  17:26:53,560 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:27:09,804 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:27:09,828 - Line 12: Using local variable name: x
+INFO  17:27:09,828 - Line 12: Using local variable name: x
+INFO  17:27:09,828 - Line 12: Using local variable name: x
+INFO  17:27:09,828 - Line 12: Using local variable name: x
+INFO  17:27:09,828 - Line 13: Using local variable name: x
+INFO  17:27:09,829 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:27:44,155 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:27:44,179 - Line 12: Using local variable name: y
+INFO  17:27:44,179 - Line 12: Access to array element detected. Array name: y
+INFO  17:27:44,180 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:42:38,712 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:42:38,750 - Line 12: Using local variable name: y
+INFO  17:42:38,750 - Line 12: Access to array element detected. Array name: y
+INFO  17:49:59,118 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:50:37,389 - Line 12: Using local variable name: y
+INFO  17:50:37,390 - Line 12: Access to array element detected. Array name: y
+INFO  17:51:30,284 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:59:25,228 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:59:25,252 - Line 12: Using local variable name: y
+INFO  17:59:25,253 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:59:38,072 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:59:38,097 - Line 12: Using local variable name: y
+INFO  17:59:38,097 - Line 13: Using local variable name: y
+INFO  17:59:38,097 - Line 13: Access to array element detected. Array name: y
+INFO  17:59:38,097 - Line 14: Using local variable name: y
+INFO  17:59:38,097 - Line 14: Access to array element detected. Array name: y
+INFO  17:59:38,098 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj

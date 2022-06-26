@@ -17,6 +17,10 @@ public class SemanticPass extends VisitorAdaptor {
 	//
 	private int globalVarCount = 0;
 
+	public int getGlobalVarCount() {
+		return globalVarCount;
+	}
+
 	// current type for vars and constants
 	//
 	private Struct currType = Tab.noType;
@@ -516,6 +520,7 @@ public class SemanticPass extends VisitorAdaptor {
 			return;
 		}
 		
+		currMethod.setLocals(Tab.currentScope().getLocals());
 		Tab.closeScope();
 
 		resetMethodData();
@@ -920,7 +925,6 @@ public class SemanticPass extends VisitorAdaptor {
 		desig.obj = Tab.find(desig.getIdent());
 	}
 	
-
 	// rec.a
 	//
 	public void visit(IdentMemberDesignator designator) {
@@ -1119,7 +1123,6 @@ public class SemanticPass extends VisitorAdaptor {
 						" has varArgs with " + (i - formalArgs.size() + 1) + " args", null);
 			}
 			
-			call.obj = null;
 		}
 		
 		// method call without params

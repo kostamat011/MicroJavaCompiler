@@ -19,10 +19,18 @@ public class CodeGenerator extends VisitorAdaptor {
 	//
 	private int mainPc;
 	
+	public int getMainPc() {
+		return mainPc;
+	}
+
 	// error found yes or no
 	//
 	private boolean error = false;
 	
+	public boolean isError() {
+		return error;
+	}
+
 	// type of var args for current method call
 	//
 	private Struct currVarArgsType = Tab.noType;
@@ -123,7 +131,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		return cnt;
 	}
 	
-	private int countLocalVars(Obj method) {
+	private int countLocalVars(Obj method, boolean hasPars) {
 		if(method.getKind() != Obj.Meth) {
 			reportError("Trying to count formal params of non-method type",null);
 			return 0;
@@ -131,8 +139,12 @@ public class CodeGenerator extends VisitorAdaptor {
 		ArrayList<Obj> locals = new ArrayList(method.getLocalSymbols());
 		int cnt = 0;
 		boolean dividerFound = false;
+		
+		// if method has params, local vars will be after divider
+		// if method has no params, all locals will be local vars
+		//
 		for(Obj o : locals) {
-			if(dividerFound) {
+			if(dividerFound || !hasPars) {
 				cnt++;
 			}
 			if(o.getType().equals(SemanticPass.methodDividerType)) {
@@ -182,6 +194,18 @@ public class CodeGenerator extends VisitorAdaptor {
 		}
 	}
 	
+	private boolean isInt(Obj o) {
+		return o.getType().getKind() == Struct.Int;
+	}
+	
+	private boolean isChar(Obj o) {
+		return o.getType().getKind() == Struct.Char;
+	}
+	
+	private boolean isBool(Obj o) {
+		return o.getType().getKind() == Struct.Bool;
+	}
+	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 	
 	/* Visit method signatures */
@@ -195,21 +219,24 @@ public class CodeGenerator extends VisitorAdaptor {
 		int value = (currVarArgsType.equals(Tab.charType)) ? 0 : 1;
 		varArgsMethods.put(signature.getMethodName().getName(), 0);
 		
+		Obj method = signature.getMethodName().obj;
+		
 		Code.put(Code.enter);
 		Code.put(1);
-		Code.put(1);
+		int totalLocalsNum = countLocalVars(method, true);
+		Code.put(1 + totalLocalsNum);
 	}
 	
 	// foo(int a, int b)
 	//
 	public void visit(MethodSignatureParams signature) {		
 
-		Obj method = Tab.find(signature.getMethodName().getName());
+		Obj method = signature.getMethodName().obj;
 		
 		// locals contain formal args + local vars + 1 divider 
 		//
 		int formParsNum = countFormalPars(method);
-		int totalLocalsNum = formParsNum + countLocalVars(method);
+		int totalLocalsNum = formParsNum + countLocalVars(method, true);
 		
 		Code.put(Code.enter);
 		Code.put(formParsNum);
@@ -220,12 +247,12 @@ public class CodeGenerator extends VisitorAdaptor {
 	//
 	public void visit(MethodSignatureVarArgs signature) {
 
-		Obj method = Tab.find(signature.getMethodName().getName());
+		Obj method = signature.getMethodName().obj;
 		
 		// locals contain formal args + local vars + 1 divider 
 		//
 		int formParsNum = countFormalPars(method);
-		int totalLocalsNum = formParsNum + countLocalVars(method);
+		int totalLocalsNum = formParsNum + countLocalVars(method,true);
 		
 		// store 0 for char var args, 1 for int
 		//
@@ -241,12 +268,14 @@ public class CodeGenerator extends VisitorAdaptor {
 	//
 	public void visit(MethodSignaturePlain signature) {
 		MethodName name = signature.getMethodName();
+		Obj method = signature.getMethodName().obj;
 		if(name.getName().equals("main")) {
 			mainPc = Code.pc;
 		}
 		Code.put(Code.enter);
 		Code.put(0);
-		Code.put(0);
+		int totalLocalsNum = countLocalVars(method,false);
+		Code.put(totalLocalsNum);
 	}
 	
 	// returning from void method without return statement
@@ -388,7 +417,14 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(DesignatorEmptyFactor factor) {
-		// done in designator visit
+		if(factor.getDesignator() instanceof IdentDesignator) {
+			Code.load(factor.getDesignator().obj);
+		} else if(factor.getDesignator() instanceof IdentArrayDesignator) {
+			// array name and index expr are already on stack
+			// only put load command
+			//
+			Code.put(Code.aload);
+		}
 	}
 	
 	public void visit(MethodCallFactor factor) {
@@ -448,9 +484,10 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.store(assign.getDesignator().obj);	
 	}
 	
-	// In array element assignment a[expr] = expr;
-	// both expressions will be added to stack in expression visit
-	// no need to visit ArrayDesignator, its enough to put array var on stack
+	// In array element designator a[expr]
+	// expression will be added to stack in expression visit
+	// array addres must be added to stack before expression 
+	// so this cannot be done in Designator visit
 	//
 	public void visit(ArrayDesignatorStart desig) {
 		Code.load(desig.obj);
@@ -533,6 +570,61 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(DesignatorStmtMethodCall stmt) {
 		// done in method call visit
 	}
+	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */	
+	
+	/* Visiting print and read statements */
+	
+	public void visit(SinglePrintStatement stmt) {
+		Obj expr = stmt.getExpr().obj;
+		int numConst = 1;
+		if(stmt.getNumConstOption() instanceof NumConstYes) {
+			numConst = ((NumConstYes)stmt.getNumConstOption()).getN1();
+		}
+		
+		// printing int
+		//
+		if(isInt(expr) || isBool(expr)) {
+			if(numConst == 1) {
+				Code.put(Code.const_5);
+				Code.put(Code.print);
+			}
+			else {
+				Code.put(Code.const_5);
+				Code.put(Code.print);
+				for(int i=1; i < numConst; ++i) {
+					Code.load(expr);
+					Code.put(Code.const_5);
+					Code.put(Code.print);
+				}
+			}
+		}
+		
+		// printing char
+		//
+		if(isChar(expr)) {
+			if(numConst == 1) {
+				Code.put(Code.const_1);
+				Code.put(Code.bprint);
+			}
+			else {
+				Code.put(Code.const_1);
+				Code.put(Code.bprint);
+				for(int i=1; i < numConst; ++i) {
+					Code.load(expr);
+					Code.put(Code.const_1);
+					Code.put(Code.bprint);
+				}
+			}
+		}
+		
+		// printing bool
+		//
+		/*if(isBool(expr)) {
+			
+		}*/
+	}
+	
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 	
 }
