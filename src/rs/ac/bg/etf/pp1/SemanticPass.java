@@ -13,8 +13,6 @@ import rs.etf.pp1.symboltable.structure.SymbolDataStructure;
 
 public class SemanticPass extends VisitorAdaptor {
 
-	Logger log = Logger.getLogger(getClass());
-
 	// defined global vars count
 	//
 	private int globalVarCount = 0;
@@ -63,7 +61,7 @@ public class SemanticPass extends VisitorAdaptor {
 	//
 	private int doWhileLevel = 0;
 	
-	// hash map for keeping info of number of varArgs 
+	// hash map for keeping info about varArgs 
 	//
 	private HashMap<String, Integer> varArgsMethods = new HashMap<String, Integer>();
 
@@ -92,6 +90,8 @@ public class SemanticPass extends VisitorAdaptor {
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 	/* Errors and infos util methods */
+	
+	Logger log = Logger.getLogger(getClass());
 
 	private void reportError(String msg, SyntaxNode node) {
 		error = true;
@@ -821,7 +821,7 @@ public class SemanticPass extends VisitorAdaptor {
 	// Method call factor e.g foo(3, 4, 5)
 	//
 	public void visit(MethodCallFactor factor) {
-		 factor.obj = factor.getMethodCall().obj;
+		 factor.obj = factor.getMethodCall().getDesignator().obj;
 	}
 	
 	// New type factor e.g. new rec
@@ -1101,21 +1101,22 @@ public class SemanticPass extends VisitorAdaptor {
 					i++;
 				}
 				
-				// store number of var args in hashmap
+				// store number of var args in obj
 				//
-				varArgsMethods.replace(methodDesignator.getName(), i - formalArgs.size() + 1);
+				call.obj = new Obj(Obj.Con, "varArgsCnt", new Struct(Struct.Int));
+				call.obj.setAdr( i - formalArgs.size() + 1);
 				
 				reportInfo("Method "+methodDesignator.getName() + 
-						" has varArgs with " +  varArgsMethods.get(methodDesignator.getName()) + " args", null);
+						" has varArgs with " + (i - formalArgs.size() + 1) + " args", null);
 			}
 			
-			call.obj = methodDesignator;
+			call.obj = null;
 		}
 		
 		// method call without params
 		//
 		else if(call.getActParsOption() instanceof ActParsNo) {
-			call.obj = methodDesignator;
+			call.obj = null;
 		}
 		
 		// undefined method call
