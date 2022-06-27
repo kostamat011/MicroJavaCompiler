@@ -81,8 +81,6 @@ public class SemanticPass extends VisitorAdaptor {
 	public SemanticPass() {
 		Tab.init();
 		Tab.currentScope.addToLocals(new Obj(Obj.Type, "bool", boolType));
-		Tab.insert(Obj.Var, "varArgsTemp", Tab.intType); // global[0]
-		Tab.insert(Obj.Var, "varArgsTemp2", Tab.intType); // global[1]
 	}
 
 	// check if successful semantic pass
@@ -296,6 +294,8 @@ public class SemanticPass extends VisitorAdaptor {
 		// log.info("Evo nas u program name");
 		progName.obj = Tab.insert(Obj.Prog, progName.getName(), Tab.noType);
 		Tab.openScope();
+		Tab.currentScope.addToLocals(new Obj(Obj.Var, "varArgsTemp", Tab.intType));  // global[0]
+		Tab.currentScope.addToLocals(new Obj(Obj.Var, "varArgsTemp2", Tab.intType)); // global[1]
 	}
 
 	// Program - end of program

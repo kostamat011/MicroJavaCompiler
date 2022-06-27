@@ -1,27 +1,25 @@
-// Test301
-
-program test301
-
-	const int nula = 0;
-	const int jedan = 1;
-	const int pet = 5;
-
-	int niz[];
-	char nizch[];
-	char a;
-	
+program MJProgram
+	char x; char y;
+	int q[];
 {
-	void main()	
-	{
+	int a(int x, int ... y) {
+		x = 0;
+		do {
+		 print(y[x]);
+		 print(eol);
+		 x++;
+		} while(x<3);
 		
-		niz = new int[3];
-		niz[0] = 1;
-		print(niz[0]);
+		return 0;
+	}
 	
-		nizch = new char[3]; 
-		nizch[0] = 'a';
-		print(nizch[0]);
+	void main() int niz[], p;{
+		x = 'a';
+		print(x);
+		p = a(1,8,9,10);
+		print(eol);
+		print(x);
+		
 	}
 }
-
 

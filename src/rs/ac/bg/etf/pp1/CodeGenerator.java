@@ -93,7 +93,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.enter);
 		Code.put(1);
 		Code.put(1);
-		Code.put(Code.load_1);
+		Code.put(Code.load_n);
 		Code.put(Code.exit);
 		Code.put(Code.return_);
 		
@@ -101,7 +101,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.enter);
 		Code.put(1);
 		Code.put(1);
-		Code.put(Code.load_1);
+		Code.put(Code.load_n);
 		Code.put(Code.exit);
 		Code.put(Code.return_);
 		
@@ -109,7 +109,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.enter);
 		Code.put(1);
 		Code.put(1);
-		Code.put(Code.load_1);
+		Code.put(Code.load_n);
 		Code.put(Code.arraylength);
 		Code.put(Code.exit);
 		Code.put(Code.return_);
@@ -462,7 +462,11 @@ public class CodeGenerator extends VisitorAdaptor {
 			// array name and index expr are already on stack
 			// only put load command
 			//
-			Code.put(Code.aload);
+			if(factor.getDesignator().obj.getType() == Tab.intType) { 
+				Code.put(Code.aload);
+			} else {
+				Code.put(Code.baload);
+			}
 		}
 	}
 	
