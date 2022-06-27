@@ -294,8 +294,8 @@ public class SemanticPass extends VisitorAdaptor {
 		// log.info("Evo nas u program name");
 		progName.obj = Tab.insert(Obj.Prog, progName.getName(), Tab.noType);
 		Tab.openScope();
-		Tab.currentScope.addToLocals(new Obj(Obj.Var, "varArgsTemp", Tab.intType));  // global[0]
-		Tab.currentScope.addToLocals(new Obj(Obj.Var, "varArgsTemp2", Tab.intType)); // global[1]
+		Tab.insert(Obj.Var, "varArgsTemp", Tab.intType);
+		Tab.insert(Obj.Var, "varArgsTemp2", Tab.intType);
 	}
 
 	// Program - end of program

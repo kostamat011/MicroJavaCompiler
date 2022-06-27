@@ -1,0 +1,32 @@
+//Test 302
+
+program test302
+
+const int jedan = 1;
+
+int i;
+bool ibool;
+
+int niz2;
+
+int niz[];
+int a;
+
+{
+	void printArgs(int num, char... args)
+		int i;
+	{
+		i = 0;
+		do{
+			print(args[i]);	
+			i++;
+		}while(i < num);
+	}
+	
+	void main()
+	{
+		print(eol);
+		printArgs(5,'t','e','s','t','B');
+	}
+}
+

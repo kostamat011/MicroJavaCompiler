@@ -16,7 +16,7 @@ public class MJCompiler {
 		if( (args.length != 2) || (args[0]==null) || !(args[0] instanceof String) 
 				|| (args[1]==null) || !(args[1] instanceof String) ) {
 			
-			log.error("Invalid arguments for compiler call. Expecting 2 arguments: source, output");
+			System.out.print("Invalid arguments for compiler call. Expecting 2 arguments: source, output");
 			return;
 		}
 
@@ -25,10 +25,10 @@ public class MJCompiler {
 		
 		File source = new File(sourcePath);
 		if(!source.exists()) {
-			log.error("Source file does not exist.");
+			System.out.print("Source file does not exist.");
 			return;
 		} else {
-			log.info("Compiling source file: " + source.getAbsolutePath());
+			System.out.print("Compiling source file: " + source.getAbsolutePath());
 		}
 		
 		File output = new File(outputPath);
@@ -38,46 +38,52 @@ public class MJCompiler {
 		try {
 			reader = new BufferedReader(new FileReader(source));
 			Yylex lexer = new Yylex(reader);
+			System.out.println("\n\nPARSING:----------------------------------");
 			MJParser parser = new MJParser(lexer);
 			
 			Symbol s = parser.parse();
 			
 			if(!parser.isSuccessful()) {
 				System.out.println("\n");
-				log.error("One or more syntax errors found! Compiling unsuccessful!");
+				System.out.print("One or more syntax errors found! Compiling unsuccessful!");
 				return;
+			} else {
+				System.out.println("PARSING SUCCESSFUL");
 			}
 			
 			Program prog = (Program)s.value;
 			
+			System.out.println("\n\nSEMANTIC PASS:----------------------------------");
 			SemanticPass semanticPass = new SemanticPass();
 			prog.traverseBottomUp(semanticPass);
 			
 			if(!semanticPass.isSuccessful()) {
 				System.out.println("\n");
-				log.error("One or more semantic errors found! Compiling unsuccessful!");
+				System.out.print("One or more semantic errors found! Compiling unsuccessful!");
 				return;
+			} else {
+				System.out.println("SEMANTIC PASS SUCCESSFUL");
 			}
 			
 			// code generation
 			//
 			CodeGenerator codeGenerator = new CodeGenerator();
-			Code.dataSize = semanticPass.getGlobalVarCount();
+			Code.dataSize = semanticPass.getGlobalVarCount() + 2; // 2 temp vars needed for var arg calls...
 			prog.traverseBottomUp(codeGenerator);
 			Code.mainPc = codeGenerator.getMainPc();
 			
 			if(codeGenerator.isError()) {
 				System.out.println("\n");
-				log.error("One or more errors during code generation! Compiling unsuccessful!");
+				System.out.print("One or more errors during code generation! Compiling unsuccessful!");
 				return;
 			}
 			
 			Code.write(new FileOutputStream(output));
 			System.out.println("\n");
-			log.info("Successful compilation. Resulting file: " + output.getAbsolutePath());
+			System.out.print("COMPILATION SUCCESSFULL\nResulting file: " + output.getAbsolutePath());
 			
 		} catch (Exception e) {
-			log.error(e.getMessage());
+			//log.error(e.getMessage());
 		} 
 		
 	}

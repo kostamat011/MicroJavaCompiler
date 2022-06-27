@@ -331,7 +331,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	// visiting var args
 	//
-	public void visit(VarArgs var) {
+	public void visit(VarArgsDeclaration var) {
 		Struct type = Tab.noType;
 		if(var.getParent() instanceof MethodSignatureVarArgsOnly) {
 			MethodSignatureVarArgsOnly sig = (MethodSignatureVarArgsOnly)var.getParent();
@@ -413,7 +413,11 @@ public class CodeGenerator extends VisitorAdaptor {
 				Code.put2(0);
 				
 				//stack: param1, param2, param3, array, index, param3
-				Code.put(Code.astore);
+				if(varArgType == 0) {
+					Code.put(Code.bastore);
+				} else {
+					Code.put(Code.astore);
+				}
 				
 				//stack: param1, param2, param3
 				Code.put(Code.pop);
@@ -781,7 +785,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		// must jump over else statement if if statement completed
 		// this will happen when if condition was true
 		//
-		Code.put(Code.jcc + Code.eq); 
+		Code.put(Code.jmp); 
 		ifConditionsAddrStack.push(Code.pc);
 		Code.put2(1);
 		
