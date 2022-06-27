@@ -115,6 +115,10 @@ nonterminal StatementList StatementList;
 nonterminal Statement Statement;
 nonterminal Statements Statements;
 nonterminal SingleStatement SingleStatement;
+nonterminal ElseStart ElseStart;
+nonterminal IfStart IfStart;
+nonterminal WhileStart WhileStart;
+nonterminal WhileCondition WhileCondition;
 
 /* designators and designator statements */
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, ArrayDesignatorStart;
@@ -259,11 +263,19 @@ SingleStatement ::= (SingleDesignatorStatement) DesignatorStatement:D1 SEMICOLON
 				 |  (SingleContinueStatement) CONT SEMICOLON {: RESULT=new SingleContinueStatement(); :}
 				 |  (SingleReturnStatement) RETURN SEMICOLON {: RESULT=new SingleReturnStatement(); :}
 				 |  (SingleReturnExprStatement) RETURN Expr:E1 SEMICOLON {: RESULT=new SingleReturnExprStatement(E1); RESULT.setLine(E1left); :}
-				 |  (IfStatement) IF LPAREN IfCondition:I1 RPAREN Statement:S2 {: RESULT=new IfStatement(I1, S2); RESULT.setLine(I1left); :}
-				 |  (IfElseStatement) IF LPAREN IfCondition:I1 RPAREN Statement:S2 ELSE Statement:S3 {: RESULT=new IfElseStatement(I1, S2, S3); RESULT.setLine(I1left); :}
-				 |  (DoWhileStatement) DoEnter:D1 StatementList:S2 WHILE LPAREN Condition:C3 RPAREN SEMICOLON {: RESULT=new DoWhileStatement(D1, S2, C3); RESULT.setLine(D1left); :}
+				 |  (IfStatement) IfStart:I1 Statement:S2 {: RESULT=new IfStatement(I1, S2); RESULT.setLine(I1left); :}
+				 |  (IfElseStatement) IfStart:I1 Statement:S2 ElseStart:E3 Statement:S4 {: RESULT=new IfElseStatement(I1, S2, E3, S4); RESULT.setLine(I1left); :}
+				 |  (DoWhileStatement) DoEnter:D1 StatementList:S2 WhileCondition:W3 SEMICOLON {: RESULT=new DoWhileStatement(D1, S2, W3); RESULT.setLine(D1left); :}
 				 ;
-				 
+
+WhileCondition ::= (WhileCondition) WhileStart:W1 LPAREN Condition:C2 RPAREN {: RESULT=new WhileCondition(W1, C2); RESULT.setLine(W1left); :};
+
+WhileStart ::= (WhileStart) WHILE {: RESULT=new WhileStart(); :};
+
+IfStart ::= (IfStart) IF LPAREN IfCondition:I1 RPAREN {: RESULT=new IfStart(I1); RESULT.setLine(I1left); :};
+				
+ElseStart ::= (ElseStart) ELSE {: RESULT=new ElseStart(); :};
+
 DoEnter ::= (DoEnter) DO {: RESULT=new DoEnter(); :};
 				 
 NumConstOption ::= (NumConstYes) COMMA NUMBER_CONST:N1 {: RESULT=new NumConstYes(N1); RESULT.setLine(N1left); :}

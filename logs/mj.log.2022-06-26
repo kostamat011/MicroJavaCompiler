@@ -1,0 +1,1156 @@
+ERROR 16:27:55,982 - Source file does not exist.
+INFO  16:29:15,521 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:29:15,539 - #2 program
+INFO  16:29:15,540 - #49 test302
+INFO  16:29:15,540 - #7 const
+INFO  16:29:15,540 - #49 int
+INFO  16:29:15,540 - #49 jedan
+INFO  16:29:15,540 - #27 =
+INFO  16:29:15,540 - #52 1
+INFO  16:29:15,540 - #38 ;
+INFO  16:29:15,541 - #44 {
+INFO  16:29:15,541 - #14 void
+INFO  16:29:15,541 - #49 main
+INFO  16:29:15,541 - #40 (
+INFO  16:29:15,541 - #41 )
+INFO  16:29:15,541 - #44 {
+INFO  16:29:15,542 - #15 return
+INFO  16:29:15,542 - #38 ;
+INFO  16:29:15,542 - #45 }
+INFO  16:29:15,542 - #45 }
+INFO  16:29:15,547 - Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  16:31:03,026 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:31:03,051 - Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  16:31:59,682 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+ERROR 16:31:59,702 - 
+Sintaksna greska na liniji 8
+ERROR 16:31:59,703 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 8
+ERROR 16:31:59,703 - One or more syntax errors found! Compiling unsuccessful!
+INFO  16:32:17,618 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+ERROR 16:32:17,642 - No main method found
+ERROR 16:32:17,642 - One or more semantic errors found! Compiling unsuccessful!
+INFO  16:32:30,118 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:32:30,143 - Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  16:32:34,521 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+ERROR 16:32:34,545 - Line 10: Return statement with expression is invalid for method of type void
+ERROR 16:32:34,545 - One or more semantic errors found! Compiling unsuccessful!
+INFO  16:33:09,023 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:33:09,046 - Line 11: Using local variable name: x
+INFO  16:33:09,047 - Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  16:33:19,653 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:33:19,677 - Line 11: Using local variable name: x
+INFO  16:33:19,677 - Line 12: Using local variable name: x
+INFO  16:33:19,678 - Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  16:33:48,274 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:33:48,299 - Line 11: Using local variable name: x
+INFO  16:33:48,299 - Line 12: Using local variable name: x
+INFO  16:33:48,300 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  16:39:50,919 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:39:50,957 - Line 11: Using local variable name: x
+INFO  16:39:50,957 - Line 12: Using local variable name: x
+INFO  16:39:50,960 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  16:42:09,063 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:42:09,088 - Line 11: Using local variable name: x
+INFO  16:42:09,088 - Line 12: Using local variable name: x
+ERROR 16:42:09,089 - Trying to count formal params of non-method type
+ERROR 16:42:09,089 - One or more errors during code generation! Compiling unsuccessful!
+INFO  16:43:00,639 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:43:00,676 - Line 11: Using local variable name: x
+INFO  16:43:00,676 - Line 12: Using local variable name: x
+INFO  16:48:11,650 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:48:40,756 - Line 11: Using local variable name: x
+INFO  16:48:48,228 - Line 12: Using local variable name: x
+INFO  16:53:22,615 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:53:22,640 - Line 11: Using local variable name: x
+INFO  16:53:22,640 - Line 12: Using local variable name: x
+ERROR 16:53:22,641 - Trying to count formal params of non-method type
+ERROR 16:53:22,641 - One or more errors during code generation! Compiling unsuccessful!
+INFO  16:57:39,242 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:57:44,927 - Line 11: Using local variable name: x
+INFO  16:57:49,831 - Line 12: Using local variable name: x
+INFO  16:58:18,677 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  16:58:18,714 - Line 11: Using local variable name: x
+INFO  16:58:18,714 - Line 12: Using local variable name: x
+INFO  17:00:24,065 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:00:24,104 - Line 11: Using local variable name: x
+INFO  17:00:24,104 - Line 12: Using local variable name: x
+INFO  17:02:54,641 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:02:54,678 - Line 11: Using local variable name: x
+INFO  17:02:54,678 - Line 12: Using local variable name: x
+INFO  17:03:12,393 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:03:12,417 - Line 11: Using local variable name: x
+INFO  17:03:12,417 - Line 12: Using local variable name: x
+INFO  17:03:12,418 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:12:01,362 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:12:01,386 - Line 11: Using local variable name: x
+INFO  17:12:01,386 - Line 12: Using local variable name: x
+INFO  17:12:01,387 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:21:03,301 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:21:03,326 - Line 11: Using local variable name: x
+INFO  17:21:03,326 - Line 12: Using local variable name: x
+INFO  17:21:03,327 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:21:20,147 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:21:20,173 - Line 11: Using local variable name: x
+INFO  17:21:20,173 - Line 12: Using local variable name: x
+INFO  17:21:20,174 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:21:36,317 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+ERROR 17:21:36,343 - Line 8: Main method must have no parameters.
+INFO  17:21:36,343 - Line 11: Using local variable name: x
+INFO  17:21:36,343 - Line 12: Using local variable name: x
+ERROR 17:21:36,343 - One or more semantic errors found! Compiling unsuccessful!
+INFO  17:22:02,530 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+ERROR 17:22:02,551 - 
+Sintaksna greska na liniji 9
+ERROR 17:22:02,551 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 9
+ERROR 17:22:02,551 - One or more syntax errors found! Compiling unsuccessful!
+INFO  17:22:30,564 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+ERROR 17:22:30,584 - 
+Sintaksna greska na liniji 10
+ERROR 17:22:30,584 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 10
+ERROR 17:22:30,584 - One or more syntax errors found! Compiling unsuccessful!
+INFO  17:23:59,227 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:23:59,252 - Line 12: Using local variable name: x
+ERROR 17:23:59,252 - Line 12: Invalid assignment. Types are incompatible.
+INFO  17:23:59,252 - Line 13: Using local variable name: x
+ERROR 17:23:59,252 - One or more semantic errors found! Compiling unsuccessful!
+INFO  17:24:17,310 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:24:17,335 - Line 12: Using local variable name: y
+INFO  17:24:17,335 - Line 13: Using local variable name: x
+INFO  17:24:17,335 - Line 15: Using local variable name: y
+INFO  17:24:17,336 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:24:40,637 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:24:40,661 - Line 12: Using local variable name: y
+INFO  17:24:40,661 - Line 13: Using local variable name: x
+INFO  17:24:40,661 - Line 15: Using local variable name: y
+INFO  17:24:40,662 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:24:53,347 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:24:53,371 - Line 12: Using local variable name: y
+INFO  17:24:53,371 - Line 13: Using local variable name: x
+INFO  17:24:53,371 - Line 15: Using local variable name: y
+INFO  17:24:53,372 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:25:16,753 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+ERROR 17:25:16,778 - Line 10: Variable with name x already defined in current scope.
+ERROR 17:25:16,778 - One or more semantic errors found! Compiling unsuccessful!
+INFO  17:25:23,336 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+ERROR 17:25:23,360 - Line 10: Variable with name x already defined in current scope.
+ERROR 17:25:23,360 - One or more semantic errors found! Compiling unsuccessful!
+INFO  17:25:27,061 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:25:27,087 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:25:47,483 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:25:47,508 - Line 12: Using local variable name: y
+INFO  17:25:47,508 - Line 12: Access to array element detected. Array name: y
+INFO  17:25:47,509 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:26:19,397 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:26:19,423 - Line 12: Using local variable name: y
+INFO  17:26:19,423 - Line 12: Access to array element detected. Array name: y
+INFO  17:26:19,423 - Line 13: Using local variable name: y
+INFO  17:26:19,423 - Line 13: Access to array element detected. Array name: y
+INFO  17:26:19,424 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:26:53,535 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:26:53,559 - Line 12: Using local variable name: x
+INFO  17:26:53,560 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:27:09,804 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:27:09,828 - Line 12: Using local variable name: x
+INFO  17:27:09,828 - Line 12: Using local variable name: x
+INFO  17:27:09,828 - Line 12: Using local variable name: x
+INFO  17:27:09,828 - Line 12: Using local variable name: x
+INFO  17:27:09,828 - Line 13: Using local variable name: x
+INFO  17:27:09,829 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:27:44,155 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:27:44,179 - Line 12: Using local variable name: y
+INFO  17:27:44,179 - Line 12: Access to array element detected. Array name: y
+INFO  17:27:44,180 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:42:38,712 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:42:38,750 - Line 12: Using local variable name: y
+INFO  17:42:38,750 - Line 12: Access to array element detected. Array name: y
+INFO  17:49:59,118 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:50:37,389 - Line 12: Using local variable name: y
+INFO  17:50:37,390 - Line 12: Access to array element detected. Array name: y
+INFO  17:51:30,284 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:59:25,228 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:59:25,252 - Line 12: Using local variable name: y
+INFO  17:59:25,253 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  17:59:38,072 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  17:59:38,097 - Line 12: Using local variable name: y
+INFO  17:59:38,097 - Line 13: Using local variable name: y
+INFO  17:59:38,097 - Line 13: Access to array element detected. Array name: y
+INFO  17:59:38,097 - Line 14: Using local variable name: y
+INFO  17:59:38,097 - Line 14: Access to array element detected. Array name: y
+INFO  17:59:38,098 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  18:01:19,712 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  18:01:19,737 - Line 12: Using local variable name: y
+INFO  18:01:19,737 - Line 13: Using local variable name: y
+INFO  18:01:19,737 - Line 13: Access to array element detected. Array name: y
+INFO  18:01:19,737 - Line 14: Using local variable name: y
+INFO  18:01:19,737 - Line 14: Access to array element detected. Array name: y
+INFO  18:01:19,737 - Line 15: Using local variable name: x
+INFO  18:01:19,737 - Line 16: Using local variable name: x
+INFO  18:01:19,738 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  19:02:24,964 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  19:02:24,983 - #2 program
+INFO  19:02:24,983 - #49 test302
+INFO  19:02:24,983 - #7 const
+INFO  19:02:24,983 - #49 int
+INFO  19:02:24,983 - #49 jedan
+INFO  19:02:24,984 - #27 =
+INFO  19:02:24,984 - #52 1
+INFO  19:02:24,984 - #38 ;
+INFO  19:02:24,984 - #44 {
+INFO  19:02:24,984 - #14 void
+INFO  19:02:24,984 - #49 main
+INFO  19:02:24,985 - #40 (
+INFO  19:02:24,985 - #41 )
+INFO  19:02:24,985 - #49 bool
+INFO  19:02:24,985 - #49 x
+INFO  19:02:24,985 - #38 ;
+INFO  19:02:24,986 - #49 int
+INFO  19:02:24,986 - #49 y
+INFO  19:02:24,986 - #42 [
+INFO  19:02:24,986 - #43 ]
+INFO  19:02:24,986 - #38 ;
+INFO  19:02:24,986 - #44 {
+INFO  19:02:24,986 - #49 x
+INFO  19:02:24,987 - #27 =
+INFO  19:02:24,987 - #50 true
+INFO  19:02:24,987 - #49 or
+ERROR 19:02:24,987 - 
+Sintaksna greska na liniji 12
+INFO  19:02:24,987 - #50 false
+INFO  19:02:24,987 - #38 ;
+INFO  19:02:24,987 - #15 return
+INFO  19:02:24,987 - #38 ;
+INFO  19:02:24,987 - #45 }
+ERROR 19:02:24,987 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
+INFO  19:02:24,988 - #45 }
+INFO  19:02:24,992 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  19:03:40,111 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  19:03:40,129 - #2 program
+INFO  19:03:40,130 - #49 test302
+INFO  19:03:40,130 - #7 const
+INFO  19:03:40,130 - #49 int
+INFO  19:03:40,130 - #49 jedan
+INFO  19:03:40,130 - #27 =
+INFO  19:03:40,130 - #52 1
+INFO  19:03:40,130 - #38 ;
+INFO  19:03:40,131 - #44 {
+INFO  19:03:40,131 - #14 void
+INFO  19:03:40,131 - #49 main
+INFO  19:03:40,131 - #40 (
+INFO  19:03:40,131 - #41 )
+INFO  19:03:40,131 - #49 bool
+INFO  19:03:40,132 - #49 x
+INFO  19:03:40,132 - #38 ;
+INFO  19:03:40,132 - #49 int
+INFO  19:03:40,132 - #49 y
+INFO  19:03:40,133 - #42 [
+INFO  19:03:40,133 - #43 ]
+INFO  19:03:40,133 - #38 ;
+INFO  19:03:40,133 - #44 {
+INFO  19:03:40,133 - #49 x
+INFO  19:03:40,133 - #27 =
+INFO  19:03:40,133 - #50 true
+INFO  19:03:40,133 - #35 ||
+ERROR 19:03:40,133 - 
+Sintaksna greska na liniji 12
+INFO  19:03:40,133 - #50 false
+INFO  19:03:40,133 - #38 ;
+INFO  19:03:40,133 - #15 return
+INFO  19:03:40,134 - #38 ;
+INFO  19:03:40,134 - #45 }
+ERROR 19:03:40,134 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
+INFO  19:03:40,134 - #45 }
+INFO  19:03:40,139 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  19:04:07,693 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  19:04:07,711 - #2 program
+INFO  19:04:07,711 - #49 test302
+INFO  19:04:07,711 - #7 const
+INFO  19:04:07,712 - #49 int
+INFO  19:04:07,712 - #49 jedan
+INFO  19:04:07,712 - #27 =
+INFO  19:04:07,712 - #52 1
+INFO  19:04:07,712 - #38 ;
+INFO  19:04:07,713 - #44 {
+INFO  19:04:07,713 - #14 void
+INFO  19:04:07,713 - #49 main
+INFO  19:04:07,713 - #40 (
+INFO  19:04:07,713 - #41 )
+INFO  19:04:07,713 - #49 bool
+INFO  19:04:07,714 - #49 x
+INFO  19:04:07,714 - #38 ;
+INFO  19:04:07,714 - #49 int
+INFO  19:04:07,714 - #49 y
+INFO  19:04:07,714 - #42 [
+INFO  19:04:07,714 - #43 ]
+INFO  19:04:07,714 - #38 ;
+INFO  19:04:07,715 - #44 {
+INFO  19:04:07,715 - #49 x
+INFO  19:04:07,715 - #27 =
+INFO  19:04:07,715 - #50 true
+INFO  19:04:07,715 - #38 ;
+INFO  19:04:07,715 - #15 return
+INFO  19:04:07,715 - #38 ;
+INFO  19:04:07,715 - #45 }
+INFO  19:04:07,715 - #45 }
+INFO  19:04:07,719 - Line 12: Using local variable name: x
+INFO  19:04:07,720 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  19:06:54,086 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  19:06:54,105 - #2 program
+INFO  19:06:54,105 - #49 test302
+INFO  19:06:54,105 - #7 const
+INFO  19:06:54,105 - #49 int
+INFO  19:06:54,105 - #49 jedan
+INFO  19:06:54,105 - #27 =
+INFO  19:06:54,105 - #52 1
+INFO  19:06:54,105 - #38 ;
+INFO  19:06:54,106 - #44 {
+INFO  19:06:54,106 - #14 void
+INFO  19:06:54,106 - #49 main
+INFO  19:06:54,106 - #40 (
+INFO  19:06:54,106 - #41 )
+INFO  19:06:54,106 - #49 bool
+INFO  19:06:54,107 - #49 x
+INFO  19:06:54,107 - #38 ;
+INFO  19:06:54,107 - #49 int
+INFO  19:06:54,107 - #49 y
+INFO  19:06:54,107 - #42 [
+INFO  19:06:54,107 - #43 ]
+INFO  19:06:54,107 - #38 ;
+INFO  19:06:54,108 - #44 {
+INFO  19:06:54,108 - #49 x
+INFO  19:06:54,108 - #27 =
+INFO  19:06:54,108 - #50 true
+INFO  19:06:54,108 - #35 ||
+ERROR 19:06:54,108 - 
+Sintaksna greska na liniji 12
+INFO  19:06:54,108 - #50 false
+INFO  19:06:54,108 - #38 ;
+INFO  19:06:54,108 - #15 return
+INFO  19:06:54,109 - #38 ;
+INFO  19:06:54,109 - #45 }
+ERROR 19:06:54,109 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
+INFO  19:06:54,109 - #45 }
+INFO  19:06:54,113 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  19:07:10,259 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  19:07:10,277 - #2 program
+INFO  19:07:10,277 - #49 test302
+INFO  19:07:10,277 - #7 const
+INFO  19:07:10,278 - #49 int
+INFO  19:07:10,278 - #49 jedan
+INFO  19:07:10,278 - #27 =
+INFO  19:07:10,278 - #52 1
+INFO  19:07:10,278 - #38 ;
+INFO  19:07:10,278 - #44 {
+INFO  19:07:10,278 - #14 void
+INFO  19:07:10,279 - #49 main
+INFO  19:07:10,279 - #40 (
+INFO  19:07:10,279 - #41 )
+INFO  19:07:10,279 - #49 bool
+INFO  19:07:10,279 - #49 x
+INFO  19:07:10,279 - #38 ;
+INFO  19:07:10,280 - #49 int
+INFO  19:07:10,280 - #49 y
+INFO  19:07:10,280 - #42 [
+INFO  19:07:10,280 - #43 ]
+INFO  19:07:10,280 - #38 ;
+INFO  19:07:10,280 - #44 {
+INFO  19:07:10,280 - #49 x
+INFO  19:07:10,280 - #27 =
+INFO  19:07:10,281 - #50 true
+INFO  19:07:10,281 - #35 ||
+ERROR 19:07:10,281 - 
+Sintaksna greska na liniji 12
+INFO  19:07:10,281 - #52 1
+INFO  19:07:10,281 - #38 ;
+INFO  19:07:10,281 - #15 return
+INFO  19:07:10,281 - #38 ;
+INFO  19:07:10,281 - #45 }
+ERROR 19:07:10,281 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
+INFO  19:07:10,282 - #45 }
+INFO  19:07:10,286 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  19:07:27,510 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  19:07:27,528 - #2 program
+INFO  19:07:27,528 - #49 test302
+INFO  19:07:27,529 - #7 const
+INFO  19:07:27,529 - #49 int
+INFO  19:07:27,529 - #49 jedan
+INFO  19:07:27,529 - #27 =
+INFO  19:07:27,529 - #52 1
+INFO  19:07:27,529 - #38 ;
+INFO  19:07:27,530 - #44 {
+INFO  19:07:27,530 - #14 void
+INFO  19:07:27,530 - #49 main
+INFO  19:07:27,530 - #40 (
+INFO  19:07:27,530 - #41 )
+INFO  19:07:27,530 - #49 bool
+INFO  19:07:27,531 - #49 x
+INFO  19:07:27,531 - #38 ;
+INFO  19:07:27,531 - #49 int
+INFO  19:07:27,531 - #49 y
+INFO  19:07:27,531 - #42 [
+INFO  19:07:27,531 - #43 ]
+INFO  19:07:27,531 - #38 ;
+INFO  19:07:27,532 - #44 {
+INFO  19:07:27,532 - #49 x
+INFO  19:07:27,532 - #27 =
+INFO  19:07:27,532 - #50 true
+INFO  19:07:27,532 - #34 &&
+ERROR 19:07:27,532 - 
+Sintaksna greska na liniji 12
+INFO  19:07:27,532 - #50 false
+INFO  19:07:27,532 - #38 ;
+INFO  19:07:27,532 - #15 return
+INFO  19:07:27,533 - #38 ;
+INFO  19:07:27,533 - #45 }
+ERROR 19:07:27,533 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
+INFO  19:07:27,533 - #45 }
+INFO  19:07:27,538 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  19:07:38,495 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  19:07:38,514 - #2 program
+INFO  19:07:38,514 - #49 test302
+INFO  19:07:38,514 - #7 const
+INFO  19:07:38,514 - #49 int
+INFO  19:07:38,514 - #49 jedan
+INFO  19:07:38,514 - #27 =
+INFO  19:07:38,515 - #52 1
+INFO  19:07:38,515 - #38 ;
+INFO  19:07:38,515 - #44 {
+INFO  19:07:38,515 - #14 void
+INFO  19:07:38,515 - #49 main
+INFO  19:07:38,515 - #40 (
+INFO  19:07:38,516 - #41 )
+INFO  19:07:38,516 - #49 bool
+INFO  19:07:38,516 - #49 x
+INFO  19:07:38,516 - #38 ;
+INFO  19:07:38,516 - #49 int
+INFO  19:07:38,517 - #49 y
+INFO  19:07:38,517 - #42 [
+INFO  19:07:38,517 - #43 ]
+INFO  19:07:38,517 - #38 ;
+INFO  19:07:38,517 - #44 {
+INFO  19:07:38,517 - #49 x
+INFO  19:07:38,517 - #27 =
+INFO  19:07:38,517 - #50 true
+INFO  19:07:38,517 - #50 false
+ERROR 19:07:38,517 - 
+Sintaksna greska na liniji 12
+INFO  19:07:38,517 - #38 ;
+INFO  19:07:38,517 - #15 return
+INFO  19:07:38,517 - #38 ;
+INFO  19:07:38,518 - #45 }
+ERROR 19:07:38,518 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
+INFO  19:07:38,518 - #45 }
+INFO  19:07:38,523 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  19:07:56,990 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  19:07:57,009 - #2 program
+INFO  19:07:57,009 - #49 test302
+INFO  19:07:57,009 - #7 const
+INFO  19:07:57,009 - #49 int
+INFO  19:07:57,009 - #49 jedan
+INFO  19:07:57,009 - #27 =
+INFO  19:07:57,009 - #52 1
+INFO  19:07:57,009 - #38 ;
+INFO  19:07:57,010 - #44 {
+INFO  19:07:57,010 - #14 void
+INFO  19:07:57,010 - #49 main
+INFO  19:07:57,010 - #40 (
+INFO  19:07:57,010 - #41 )
+INFO  19:07:57,010 - #49 bool
+INFO  19:07:57,011 - #49 x
+INFO  19:07:57,011 - #38 ;
+INFO  19:07:57,011 - #49 int
+INFO  19:07:57,011 - #49 y
+INFO  19:07:57,011 - #42 [
+INFO  19:07:57,011 - #43 ]
+INFO  19:07:57,011 - #38 ;
+INFO  19:07:57,012 - #44 {
+INFO  19:07:57,012 - #49 x
+INFO  19:07:57,012 - #27 =
+INFO  19:07:57,012 - #52 1
+INFO  19:07:57,012 - #32 <
+ERROR 19:07:57,012 - 
+Sintaksna greska na liniji 12
+INFO  19:07:57,012 - #52 2
+INFO  19:07:57,012 - #38 ;
+INFO  19:07:57,012 - #15 return
+INFO  19:07:57,012 - #38 ;
+INFO  19:07:57,012 - #45 }
+ERROR 19:07:57,012 - Izvrsen oporovak prilikom greske naredbi dodele do ; u liniji 1
+INFO  19:07:57,013 - #45 }
+INFO  19:07:57,017 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  21:05:21,873 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  21:05:21,891 - #2 program
+INFO  21:05:21,891 - #49 test302
+INFO  21:05:21,891 - #7 const
+INFO  21:05:21,891 - #49 int
+INFO  21:05:21,892 - #49 jedan
+INFO  21:05:21,892 - #27 =
+INFO  21:05:21,892 - #52 1
+INFO  21:05:21,892 - #38 ;
+INFO  21:05:21,892 - #44 {
+INFO  21:05:21,892 - #14 void
+INFO  21:05:21,892 - #49 main
+INFO  21:05:21,893 - #40 (
+INFO  21:05:21,893 - #41 )
+INFO  21:05:21,893 - #49 bool
+INFO  21:05:21,893 - #49 x
+INFO  21:05:21,893 - #38 ;
+INFO  21:05:21,894 - #49 int
+INFO  21:05:21,894 - #49 y
+INFO  21:05:21,894 - #42 [
+INFO  21:05:21,894 - #43 ]
+INFO  21:05:21,894 - #38 ;
+INFO  21:05:21,894 - #44 {
+INFO  21:05:21,894 - #49 x
+INFO  21:05:21,894 - #27 =
+INFO  21:05:21,895 - #50 true
+INFO  21:05:21,895 - #38 ;
+INFO  21:05:21,895 - #5 if
+INFO  21:05:21,895 - #40 (
+INFO  21:05:21,895 - #49 x
+INFO  21:05:21,895 - #41 )
+INFO  21:05:21,895 - #44 {
+INFO  21:05:21,895 - #12 print
+INFO  21:05:21,895 - #40 (
+INFO  21:05:21,895 - #52 2
+INFO  21:05:21,895 - #41 )
+INFO  21:05:21,895 - #38 ;
+INFO  21:05:21,896 - #45 }
+INFO  21:05:21,896 - #12 print
+INFO  21:05:21,896 - #40 (
+INFO  21:05:21,896 - #52 3
+INFO  21:05:21,896 - #41 )
+INFO  21:05:21,896 - #38 ;
+INFO  21:05:21,896 - #15 return
+INFO  21:05:21,896 - #38 ;
+INFO  21:05:21,896 - #45 }
+INFO  21:05:21,896 - #45 }
+INFO  21:05:21,900 - Line 12: Using local variable name: x
+INFO  21:05:21,900 - Line 13: Using local variable name: x
+ERROR 21:05:21,901 - 
+INFO  23:54:42,456 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  23:54:42,482 - #2 program
+INFO  23:54:42,482 - #49 test302
+INFO  23:54:42,482 - #7 const
+INFO  23:54:42,482 - #49 int
+INFO  23:54:42,482 - #49 jedan
+INFO  23:54:42,482 - #27 =
+INFO  23:54:42,482 - #52 1
+INFO  23:54:42,482 - #38 ;
+INFO  23:54:42,483 - #44 {
+INFO  23:54:42,483 - #14 void
+INFO  23:54:42,483 - #49 main
+INFO  23:54:42,483 - #40 (
+INFO  23:54:42,484 - #41 )
+INFO  23:54:42,484 - #49 bool
+INFO  23:54:42,484 - #49 x
+INFO  23:54:42,484 - #38 ;
+INFO  23:54:42,485 - #49 int
+INFO  23:54:42,485 - #49 y
+INFO  23:54:42,485 - #42 [
+INFO  23:54:42,485 - #43 ]
+INFO  23:54:42,485 - #38 ;
+INFO  23:54:42,485 - #44 {
+INFO  23:54:42,485 - #49 x
+INFO  23:54:42,486 - #27 =
+INFO  23:54:42,486 - #50 true
+INFO  23:54:42,486 - #38 ;
+INFO  23:54:42,486 - #5 if
+INFO  23:54:42,486 - #40 (
+INFO  23:54:42,486 - #49 x
+INFO  23:54:42,486 - #41 )
+INFO  23:54:42,486 - #44 {
+INFO  23:54:42,486 - #12 print
+INFO  23:54:42,486 - #40 (
+INFO  23:54:42,486 - #52 2
+INFO  23:54:42,486 - #41 )
+INFO  23:54:42,487 - #38 ;
+INFO  23:54:42,487 - #45 }
+INFO  23:54:42,487 - #12 print
+INFO  23:54:42,487 - #40 (
+INFO  23:54:42,487 - #52 3
+INFO  23:54:42,487 - #41 )
+INFO  23:54:42,487 - #38 ;
+INFO  23:54:42,487 - #15 return
+INFO  23:54:42,487 - #38 ;
+INFO  23:54:42,487 - #45 }
+INFO  23:54:42,487 - #45 }
+INFO  23:54:42,497 - Line 12: Using local variable name: x
+INFO  23:54:42,497 - Line 13: Using local variable name: x
+INFO  23:55:04,034 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  23:55:04,059 - #2 program
+INFO  23:55:04,059 - #49 test302
+INFO  23:55:04,059 - #7 const
+INFO  23:55:04,060 - #49 int
+INFO  23:55:04,060 - #49 jedan
+INFO  23:55:04,060 - #27 =
+INFO  23:55:04,060 - #52 1
+INFO  23:55:04,060 - #38 ;
+INFO  23:55:04,061 - #44 {
+INFO  23:55:04,061 - #14 void
+INFO  23:55:04,061 - #49 main
+INFO  23:55:04,061 - #40 (
+INFO  23:55:04,062 - #41 )
+INFO  23:55:04,062 - #49 bool
+INFO  23:55:04,062 - #49 x
+INFO  23:55:04,062 - #38 ;
+INFO  23:55:04,063 - #49 int
+INFO  23:55:04,063 - #49 y
+INFO  23:55:04,063 - #42 [
+INFO  23:55:04,063 - #43 ]
+INFO  23:55:04,063 - #38 ;
+INFO  23:55:04,063 - #44 {
+INFO  23:55:04,063 - #49 x
+INFO  23:55:04,063 - #27 =
+INFO  23:55:04,063 - #50 true
+INFO  23:55:04,063 - #38 ;
+INFO  23:55:04,064 - #5 if
+INFO  23:55:04,064 - #40 (
+INFO  23:55:04,064 - #49 x
+INFO  23:55:04,064 - #41 )
+INFO  23:55:04,064 - #44 {
+INFO  23:55:04,064 - #12 print
+INFO  23:55:04,064 - #40 (
+INFO  23:55:04,064 - #52 2
+INFO  23:55:04,064 - #41 )
+INFO  23:55:04,064 - #38 ;
+INFO  23:55:04,064 - #45 }
+INFO  23:55:04,065 - #12 print
+INFO  23:55:04,065 - #40 (
+INFO  23:55:04,065 - #52 3
+INFO  23:55:04,065 - #41 )
+INFO  23:55:04,065 - #38 ;
+INFO  23:55:04,065 - #15 return
+INFO  23:55:04,065 - #38 ;
+INFO  23:55:04,065 - #45 }
+INFO  23:55:04,065 - #45 }
+INFO  23:55:04,075 - Line 12: Using local variable name: x
+INFO  23:55:04,075 - Line 13: Using local variable name: x
+INFO  23:56:45,687 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  23:56:45,706 - #2 program
+INFO  23:56:45,706 - #49 test302
+INFO  23:56:45,706 - #7 const
+INFO  23:56:45,707 - #49 int
+INFO  23:56:45,707 - #49 jedan
+INFO  23:56:45,707 - #27 =
+INFO  23:56:45,707 - #52 1
+INFO  23:56:45,707 - #38 ;
+INFO  23:56:45,707 - #44 {
+INFO  23:56:45,707 - #14 void
+INFO  23:56:45,708 - #49 main
+INFO  23:56:45,708 - #40 (
+INFO  23:56:45,708 - #41 )
+INFO  23:56:45,708 - #49 bool
+INFO  23:56:45,708 - #49 x
+INFO  23:56:45,708 - #38 ;
+INFO  23:56:45,709 - #49 int
+INFO  23:56:45,709 - #49 y
+INFO  23:56:45,709 - #42 [
+INFO  23:56:45,709 - #43 ]
+INFO  23:56:45,709 - #38 ;
+INFO  23:56:45,709 - #44 {
+INFO  23:56:45,709 - #49 x
+INFO  23:56:45,710 - #27 =
+INFO  23:56:45,710 - #50 true
+INFO  23:56:45,710 - #38 ;
+INFO  23:56:45,710 - #5 if
+INFO  23:56:45,710 - #40 (
+INFO  23:56:45,710 - #49 x
+INFO  23:56:45,710 - #41 )
+INFO  23:56:45,710 - #44 {
+INFO  23:56:45,710 - #12 print
+INFO  23:56:45,710 - #40 (
+INFO  23:56:45,710 - #52 2
+INFO  23:56:45,710 - #41 )
+INFO  23:56:45,710 - #38 ;
+INFO  23:56:45,711 - #45 }
+INFO  23:56:45,711 - #12 print
+INFO  23:56:45,711 - #40 (
+INFO  23:56:45,711 - #52 3
+INFO  23:56:45,711 - #41 )
+INFO  23:56:45,711 - #38 ;
+INFO  23:56:45,711 - #15 return
+INFO  23:56:45,711 - #38 ;
+INFO  23:56:45,711 - #45 }
+INFO  23:56:45,711 - #45 }
+INFO  23:56:45,715 - Line 12: Using local variable name: x
+INFO  23:56:45,715 - Line 13: Using local variable name: x
+INFO  23:56:45,716 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  23:57:11,524 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  23:57:11,543 - #2 program
+INFO  23:57:11,543 - #49 test302
+INFO  23:57:11,543 - #7 const
+INFO  23:57:11,543 - #49 int
+INFO  23:57:11,543 - #49 jedan
+INFO  23:57:11,543 - #27 =
+INFO  23:57:11,544 - #52 1
+INFO  23:57:11,544 - #38 ;
+INFO  23:57:11,544 - #44 {
+INFO  23:57:11,544 - #14 void
+INFO  23:57:11,544 - #49 main
+INFO  23:57:11,544 - #40 (
+INFO  23:57:11,545 - #41 )
+INFO  23:57:11,545 - #49 bool
+INFO  23:57:11,545 - #49 x
+INFO  23:57:11,545 - #38 ;
+INFO  23:57:11,546 - #49 int
+INFO  23:57:11,546 - #49 y
+INFO  23:57:11,546 - #42 [
+INFO  23:57:11,546 - #43 ]
+INFO  23:57:11,546 - #38 ;
+INFO  23:57:11,546 - #44 {
+INFO  23:57:11,546 - #49 x
+INFO  23:57:11,546 - #27 =
+INFO  23:57:11,546 - #50 true
+INFO  23:57:11,546 - #38 ;
+INFO  23:57:11,546 - #5 if
+INFO  23:57:11,546 - #40 (
+INFO  23:57:11,546 - #49 x
+INFO  23:57:11,546 - #28 ==
+INFO  23:57:11,546 - #50 false
+INFO  23:57:11,546 - #41 )
+INFO  23:57:11,546 - #44 {
+INFO  23:57:11,546 - #12 print
+INFO  23:57:11,546 - #40 (
+INFO  23:57:11,546 - #52 2
+INFO  23:57:11,546 - #41 )
+INFO  23:57:11,547 - #38 ;
+INFO  23:57:11,547 - #45 }
+INFO  23:57:11,547 - #12 print
+INFO  23:57:11,547 - #40 (
+INFO  23:57:11,547 - #52 3
+INFO  23:57:11,547 - #41 )
+INFO  23:57:11,547 - #38 ;
+INFO  23:57:11,547 - #15 return
+INFO  23:57:11,547 - #38 ;
+INFO  23:57:11,547 - #45 }
+INFO  23:57:11,548 - #45 }
+INFO  23:57:11,552 - Line 12: Using local variable name: x
+INFO  23:57:11,552 - Line 13: Using local variable name: x
+INFO  23:57:11,553 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  23:57:39,916 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  23:57:39,935 - #2 program
+INFO  23:57:39,935 - #49 test302
+INFO  23:57:39,935 - #7 const
+INFO  23:57:39,936 - #49 int
+INFO  23:57:39,936 - #49 jedan
+INFO  23:57:39,936 - #27 =
+INFO  23:57:39,936 - #52 1
+INFO  23:57:39,936 - #38 ;
+INFO  23:57:39,936 - #44 {
+INFO  23:57:39,937 - #14 void
+INFO  23:57:39,937 - #49 main
+INFO  23:57:39,937 - #40 (
+INFO  23:57:39,937 - #41 )
+INFO  23:57:39,937 - #49 bool
+INFO  23:57:39,938 - #49 x
+INFO  23:57:39,938 - #38 ;
+INFO  23:57:39,938 - #49 int
+INFO  23:57:39,938 - #49 y
+INFO  23:57:39,938 - #42 [
+INFO  23:57:39,938 - #43 ]
+INFO  23:57:39,938 - #38 ;
+INFO  23:57:39,939 - #44 {
+INFO  23:57:39,939 - #49 x
+INFO  23:57:39,939 - #27 =
+INFO  23:57:39,939 - #50 true
+INFO  23:57:39,939 - #38 ;
+INFO  23:57:39,939 - #5 if
+INFO  23:57:39,939 - #40 (
+INFO  23:57:39,939 - #49 x
+INFO  23:57:39,939 - #34 &&
+INFO  23:57:39,939 - #50 false
+INFO  23:57:39,940 - #41 )
+INFO  23:57:39,940 - #44 {
+INFO  23:57:39,940 - #12 print
+INFO  23:57:39,940 - #40 (
+INFO  23:57:39,940 - #52 2
+INFO  23:57:39,940 - #41 )
+INFO  23:57:39,940 - #38 ;
+INFO  23:57:39,940 - #45 }
+INFO  23:57:39,940 - #12 print
+INFO  23:57:39,940 - #40 (
+INFO  23:57:39,940 - #52 3
+INFO  23:57:39,940 - #41 )
+INFO  23:57:39,940 - #38 ;
+INFO  23:57:39,940 - #15 return
+INFO  23:57:39,940 - #38 ;
+INFO  23:57:39,940 - #45 }
+INFO  23:57:39,941 - #45 }
+INFO  23:57:39,944 - Line 12: Using local variable name: x
+INFO  23:57:39,944 - Line 13: Using local variable name: x
+INFO  23:57:39,946 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  23:59:18,373 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  23:59:18,392 - #2 program
+INFO  23:59:18,392 - #49 test302
+INFO  23:59:18,392 - #7 const
+INFO  23:59:18,392 - #49 int
+INFO  23:59:18,392 - #49 jedan
+INFO  23:59:18,392 - #27 =
+INFO  23:59:18,393 - #52 1
+INFO  23:59:18,393 - #38 ;
+INFO  23:59:18,393 - #44 {
+INFO  23:59:18,393 - #14 void
+INFO  23:59:18,393 - #49 main
+INFO  23:59:18,393 - #40 (
+INFO  23:59:18,394 - #41 )
+INFO  23:59:18,394 - #49 bool
+INFO  23:59:18,394 - #49 x
+INFO  23:59:18,394 - #38 ;
+INFO  23:59:18,394 - #49 int
+INFO  23:59:18,394 - #49 y
+INFO  23:59:18,394 - #42 [
+INFO  23:59:18,395 - #43 ]
+INFO  23:59:18,395 - #38 ;
+INFO  23:59:18,395 - #44 {
+INFO  23:59:18,395 - #49 y
+INFO  23:59:18,395 - #27 =
+INFO  23:59:18,395 - #11 new
+INFO  23:59:18,395 - #49 int
+INFO  23:59:18,395 - #42 [
+INFO  23:59:18,395 - #52 5
+INFO  23:59:18,395 - #43 ]
+INFO  23:59:18,395 - #38 ;
+INFO  23:59:18,396 - #49 y
+INFO  23:59:18,396 - #42 [
+INFO  23:59:18,396 - #52 0
+INFO  23:59:18,396 - #43 ]
+INFO  23:59:18,396 - #27 =
+INFO  23:59:18,396 - #52 1
+INFO  23:59:18,396 - #38 ;
+INFO  23:59:18,396 - #49 y
+INFO  23:59:18,396 - #42 [
+INFO  23:59:18,396 - #52 1
+INFO  23:59:18,396 - #43 ]
+INFO  23:59:18,396 - #27 =
+INFO  23:59:18,396 - #52 2
+INFO  23:59:18,396 - #38 ;
+INFO  23:59:18,396 - #49 y
+INFO  23:59:18,396 - #42 [
+INFO  23:59:18,396 - #52 2
+INFO  23:59:18,396 - #43 ]
+INFO  23:59:18,397 - #27 =
+INFO  23:59:18,397 - #52 3
+INFO  23:59:18,397 - #38 ;
+INFO  23:59:18,397 - #49 x
+INFO  23:59:18,397 - #27 =
+INFO  23:59:18,397 - #50 true
+INFO  23:59:18,397 - #38 ;
+INFO  23:59:18,397 - #5 if
+INFO  23:59:18,397 - #40 (
+INFO  23:59:18,397 - #49 x
+INFO  23:59:18,397 - #34 &&
+INFO  23:59:18,397 - #50 false
+INFO  23:59:18,397 - #41 )
+INFO  23:59:18,397 - #44 {
+INFO  23:59:18,397 - #12 print
+INFO  23:59:18,397 - #40 (
+INFO  23:59:18,397 - #49 y
+INFO  23:59:18,397 - #42 [
+INFO  23:59:18,397 - #52 2
+INFO  23:59:18,397 - #43 ]
+INFO  23:59:18,397 - #41 )
+INFO  23:59:18,398 - #38 ;
+INFO  23:59:18,398 - #5 if
+INFO  23:59:18,398 - #40 (
+INFO  23:59:18,398 - #49 y
+INFO  23:59:18,398 - #42 [
+INFO  23:59:18,398 - #52 2
+INFO  23:59:18,398 - #43 ]
+INFO  23:59:18,398 - #30 >
+INFO  23:59:18,398 - #49 y
+INFO  23:59:18,398 - #42 [
+INFO  23:59:18,398 - #52 1
+INFO  23:59:18,398 - #43 ]
+INFO  23:59:18,398 - #41 )
+INFO  23:59:18,398 - #12 print
+INFO  23:59:18,398 - #40 (
+INFO  23:59:18,398 - #51 a
+INFO  23:59:18,399 - #41 )
+INFO  23:59:18,399 - #38 ;
+INFO  23:59:18,399 - #45 }
+INFO  23:59:18,399 - #12 print
+INFO  23:59:18,399 - #40 (
+INFO  23:59:18,399 - #52 3
+INFO  23:59:18,399 - #41 )
+INFO  23:59:18,399 - #38 ;
+INFO  23:59:18,399 - #15 return
+INFO  23:59:18,399 - #38 ;
+INFO  23:59:18,399 - #45 }
+INFO  23:59:18,399 - #45 }
+INFO  23:59:18,403 - Line 12: Using local variable name: y
+INFO  23:59:18,403 - Line 13: Using local variable name: y
+INFO  23:59:18,403 - Line 13: Access to array element detected. Array name: y
+INFO  23:59:18,403 - Line 14: Using local variable name: y
+INFO  23:59:18,403 - Line 14: Access to array element detected. Array name: y
+INFO  23:59:18,403 - Line 15: Using local variable name: y
+INFO  23:59:18,403 - Line 15: Access to array element detected. Array name: y
+INFO  23:59:18,403 - Line 16: Using local variable name: x
+INFO  23:59:18,403 - Line 17: Using local variable name: x
+INFO  23:59:18,403 - Line 18: Using local variable name: y
+INFO  23:59:18,403 - Line 18: Access to array element detected. Array name: y
+INFO  23:59:18,403 - Line 19: Using local variable name: y
+INFO  23:59:18,403 - Line 19: Access to array element detected. Array name: y
+INFO  23:59:18,403 - Line 19: Using local variable name: y
+INFO  23:59:18,403 - Line 19: Access to array element detected. Array name: y
+INFO  23:59:18,404 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  23:59:32,667 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  23:59:32,686 - #2 program
+INFO  23:59:32,686 - #49 test302
+INFO  23:59:32,686 - #7 const
+INFO  23:59:32,687 - #49 int
+INFO  23:59:32,687 - #49 jedan
+INFO  23:59:32,687 - #27 =
+INFO  23:59:32,687 - #52 1
+INFO  23:59:32,687 - #38 ;
+INFO  23:59:32,687 - #44 {
+INFO  23:59:32,688 - #14 void
+INFO  23:59:32,688 - #49 main
+INFO  23:59:32,688 - #40 (
+INFO  23:59:32,688 - #41 )
+INFO  23:59:32,688 - #49 bool
+INFO  23:59:32,689 - #49 x
+INFO  23:59:32,689 - #38 ;
+INFO  23:59:32,689 - #49 int
+INFO  23:59:32,689 - #49 y
+INFO  23:59:32,689 - #42 [
+INFO  23:59:32,689 - #43 ]
+INFO  23:59:32,689 - #38 ;
+INFO  23:59:32,690 - #44 {
+INFO  23:59:32,690 - #49 y
+INFO  23:59:32,690 - #27 =
+INFO  23:59:32,690 - #11 new
+INFO  23:59:32,690 - #49 int
+INFO  23:59:32,690 - #42 [
+INFO  23:59:32,690 - #52 5
+INFO  23:59:32,690 - #43 ]
+INFO  23:59:32,690 - #38 ;
+INFO  23:59:32,690 - #49 y
+INFO  23:59:32,690 - #42 [
+INFO  23:59:32,690 - #52 0
+INFO  23:59:32,691 - #43 ]
+INFO  23:59:32,691 - #27 =
+INFO  23:59:32,691 - #52 1
+INFO  23:59:32,691 - #38 ;
+INFO  23:59:32,691 - #49 y
+INFO  23:59:32,691 - #42 [
+INFO  23:59:32,691 - #52 1
+INFO  23:59:32,691 - #43 ]
+INFO  23:59:32,691 - #27 =
+INFO  23:59:32,691 - #52 2
+INFO  23:59:32,691 - #38 ;
+INFO  23:59:32,691 - #49 y
+INFO  23:59:32,691 - #42 [
+INFO  23:59:32,691 - #52 2
+INFO  23:59:32,691 - #43 ]
+INFO  23:59:32,691 - #27 =
+INFO  23:59:32,691 - #52 3
+INFO  23:59:32,691 - #38 ;
+INFO  23:59:32,691 - #49 x
+INFO  23:59:32,691 - #27 =
+INFO  23:59:32,691 - #50 true
+INFO  23:59:32,691 - #38 ;
+INFO  23:59:32,692 - #5 if
+INFO  23:59:32,692 - #40 (
+INFO  23:59:32,692 - #49 x
+INFO  23:59:32,692 - #34 &&
+INFO  23:59:32,692 - #50 true
+INFO  23:59:32,692 - #41 )
+INFO  23:59:32,692 - #44 {
+INFO  23:59:32,692 - #12 print
+INFO  23:59:32,692 - #40 (
+INFO  23:59:32,692 - #49 y
+INFO  23:59:32,692 - #42 [
+INFO  23:59:32,692 - #52 2
+INFO  23:59:32,692 - #43 ]
+INFO  23:59:32,692 - #41 )
+INFO  23:59:32,692 - #38 ;
+INFO  23:59:32,692 - #5 if
+INFO  23:59:32,692 - #40 (
+INFO  23:59:32,692 - #49 y
+INFO  23:59:32,693 - #42 [
+INFO  23:59:32,693 - #52 2
+INFO  23:59:32,693 - #43 ]
+INFO  23:59:32,693 - #30 >
+INFO  23:59:32,693 - #49 y
+INFO  23:59:32,693 - #42 [
+INFO  23:59:32,693 - #52 1
+INFO  23:59:32,693 - #43 ]
+INFO  23:59:32,693 - #41 )
+INFO  23:59:32,693 - #12 print
+INFO  23:59:32,693 - #40 (
+INFO  23:59:32,693 - #51 a
+INFO  23:59:32,693 - #41 )
+INFO  23:59:32,693 - #38 ;
+INFO  23:59:32,693 - #45 }
+INFO  23:59:32,693 - #12 print
+INFO  23:59:32,693 - #40 (
+INFO  23:59:32,693 - #52 3
+INFO  23:59:32,694 - #41 )
+INFO  23:59:32,694 - #38 ;
+INFO  23:59:32,694 - #15 return
+INFO  23:59:32,694 - #38 ;
+INFO  23:59:32,694 - #45 }
+INFO  23:59:32,694 - #45 }
+INFO  23:59:32,697 - Line 12: Using local variable name: y
+INFO  23:59:32,697 - Line 13: Using local variable name: y
+INFO  23:59:32,697 - Line 13: Access to array element detected. Array name: y
+INFO  23:59:32,697 - Line 14: Using local variable name: y
+INFO  23:59:32,698 - Line 14: Access to array element detected. Array name: y
+INFO  23:59:32,698 - Line 15: Using local variable name: y
+INFO  23:59:32,698 - Line 15: Access to array element detected. Array name: y
+INFO  23:59:32,698 - Line 16: Using local variable name: x
+INFO  23:59:32,698 - Line 17: Using local variable name: x
+INFO  23:59:32,698 - Line 18: Using local variable name: y
+INFO  23:59:32,698 - Line 18: Access to array element detected. Array name: y
+INFO  23:59:32,698 - Line 19: Using local variable name: y
+INFO  23:59:32,698 - Line 19: Access to array element detected. Array name: y
+INFO  23:59:32,698 - Line 19: Using local variable name: y
+INFO  23:59:32,698 - Line 19: Access to array element detected. Array name: y
+INFO  23:59:32,699 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj
+INFO  23:59:55,366 - Compiling source file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.mj
+INFO  23:59:55,384 - #2 program
+INFO  23:59:55,384 - #49 test302
+INFO  23:59:55,384 - #7 const
+INFO  23:59:55,385 - #49 int
+INFO  23:59:55,385 - #49 jedan
+INFO  23:59:55,385 - #27 =
+INFO  23:59:55,385 - #52 1
+INFO  23:59:55,385 - #38 ;
+INFO  23:59:55,385 - #44 {
+INFO  23:59:55,385 - #14 void
+INFO  23:59:55,386 - #49 main
+INFO  23:59:55,386 - #40 (
+INFO  23:59:55,386 - #41 )
+INFO  23:59:55,386 - #49 bool
+INFO  23:59:55,386 - #49 x
+INFO  23:59:55,387 - #38 ;
+INFO  23:59:55,387 - #49 int
+INFO  23:59:55,387 - #49 y
+INFO  23:59:55,387 - #42 [
+INFO  23:59:55,387 - #43 ]
+INFO  23:59:55,387 - #38 ;
+INFO  23:59:55,388 - #44 {
+INFO  23:59:55,388 - #49 y
+INFO  23:59:55,388 - #27 =
+INFO  23:59:55,388 - #11 new
+INFO  23:59:55,388 - #49 int
+INFO  23:59:55,388 - #42 [
+INFO  23:59:55,388 - #52 5
+INFO  23:59:55,388 - #43 ]
+INFO  23:59:55,388 - #38 ;
+INFO  23:59:55,388 - #49 y
+INFO  23:59:55,389 - #42 [
+INFO  23:59:55,389 - #52 0
+INFO  23:59:55,389 - #43 ]
+INFO  23:59:55,389 - #27 =
+INFO  23:59:55,389 - #52 1
+INFO  23:59:55,389 - #38 ;
+INFO  23:59:55,389 - #49 y
+INFO  23:59:55,389 - #42 [
+INFO  23:59:55,389 - #52 1
+INFO  23:59:55,389 - #43 ]
+INFO  23:59:55,389 - #27 =
+INFO  23:59:55,389 - #52 2
+INFO  23:59:55,390 - #38 ;
+INFO  23:59:55,390 - #49 y
+INFO  23:59:55,390 - #42 [
+INFO  23:59:55,390 - #52 2
+INFO  23:59:55,390 - #43 ]
+INFO  23:59:55,390 - #27 =
+INFO  23:59:55,390 - #52 3
+INFO  23:59:55,390 - #38 ;
+INFO  23:59:55,390 - #49 x
+INFO  23:59:55,390 - #27 =
+INFO  23:59:55,390 - #50 true
+INFO  23:59:55,390 - #38 ;
+INFO  23:59:55,390 - #5 if
+INFO  23:59:55,390 - #40 (
+INFO  23:59:55,390 - #49 x
+INFO  23:59:55,390 - #34 &&
+INFO  23:59:55,390 - #50 true
+INFO  23:59:55,390 - #41 )
+INFO  23:59:55,391 - #44 {
+INFO  23:59:55,391 - #12 print
+INFO  23:59:55,391 - #40 (
+INFO  23:59:55,391 - #49 y
+INFO  23:59:55,391 - #42 [
+INFO  23:59:55,391 - #52 1
+INFO  23:59:55,391 - #43 ]
+INFO  23:59:55,391 - #41 )
+INFO  23:59:55,391 - #38 ;
+INFO  23:59:55,391 - #5 if
+INFO  23:59:55,391 - #40 (
+INFO  23:59:55,391 - #49 y
+INFO  23:59:55,391 - #42 [
+INFO  23:59:55,391 - #52 2
+INFO  23:59:55,391 - #43 ]
+INFO  23:59:55,391 - #30 >
+INFO  23:59:55,391 - #49 y
+INFO  23:59:55,392 - #42 [
+INFO  23:59:55,392 - #52 1
+INFO  23:59:55,392 - #43 ]
+INFO  23:59:55,392 - #41 )
+INFO  23:59:55,392 - #12 print
+INFO  23:59:55,392 - #40 (
+INFO  23:59:55,392 - #51 a
+INFO  23:59:55,392 - #41 )
+INFO  23:59:55,392 - #38 ;
+INFO  23:59:55,392 - #45 }
+INFO  23:59:55,392 - #12 print
+INFO  23:59:55,392 - #40 (
+INFO  23:59:55,392 - #52 3
+INFO  23:59:55,392 - #41 )
+INFO  23:59:55,392 - #38 ;
+INFO  23:59:55,392 - #15 return
+INFO  23:59:55,392 - #38 ;
+INFO  23:59:55,393 - #45 }
+INFO  23:59:55,393 - #45 }
+INFO  23:59:55,397 - Line 12: Using local variable name: y
+INFO  23:59:55,397 - Line 13: Using local variable name: y
+INFO  23:59:55,397 - Line 13: Access to array element detected. Array name: y
+INFO  23:59:55,397 - Line 14: Using local variable name: y
+INFO  23:59:55,397 - Line 14: Access to array element detected. Array name: y
+INFO  23:59:55,397 - Line 15: Using local variable name: y
+INFO  23:59:55,397 - Line 15: Access to array element detected. Array name: y
+INFO  23:59:55,397 - Line 16: Using local variable name: x
+INFO  23:59:55,397 - Line 17: Using local variable name: x
+INFO  23:59:55,397 - Line 18: Using local variable name: y
+INFO  23:59:55,397 - Line 18: Access to array element detected. Array name: y
+INFO  23:59:55,397 - Line 19: Using local variable name: y
+INFO  23:59:55,397 - Line 19: Access to array element detected. Array name: y
+INFO  23:59:55,397 - Line 19: Using local variable name: y
+INFO  23:59:55,397 - Line 19: Access to array element detected. Array name: y
+INFO  23:59:55,398 - ---------------------------
+Successful compilation. Resulting file: D:\source\repos\PP_Projekat\MicroJavaCompiler\test\program.obj

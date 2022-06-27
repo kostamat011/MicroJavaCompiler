@@ -1,17 +1,27 @@
-//Test 302
+// Test301
 
-program test302
+program test301
 
-const int jedan = 1;
+	const int nula = 0;
+	const int jedan = 1;
+	const int pet = 5;
 
+	int niz[];
+	char nizch[];
+	char a;
+	
 {
-	void main()
-		int x;
-		int y[];
+	void main()	
 	{
-		y = new int[5];
-		y[0] = 1;
-		print(y[0]);
-		return;
+		
+		niz = new int[3];
+		niz[0] = 1;
+		print(niz[0]);
+	
+		nizch = new char[3]; 
+		nizch[0] = 'a';
+		print(nizch[0]);
 	}
 }
+
+

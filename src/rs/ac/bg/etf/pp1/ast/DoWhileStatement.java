@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/5/2022 17:11:54
+// 27/5/2022 2:12:12
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,15 +9,15 @@ public class DoWhileStatement extends SingleStatement {
 
     private DoEnter DoEnter;
     private StatementList StatementList;
-    private Condition Condition;
+    private WhileCondition WhileCondition;
 
-    public DoWhileStatement (DoEnter DoEnter, StatementList StatementList, Condition Condition) {
+    public DoWhileStatement (DoEnter DoEnter, StatementList StatementList, WhileCondition WhileCondition) {
         this.DoEnter=DoEnter;
         if(DoEnter!=null) DoEnter.setParent(this);
         this.StatementList=StatementList;
         if(StatementList!=null) StatementList.setParent(this);
-        this.Condition=Condition;
-        if(Condition!=null) Condition.setParent(this);
+        this.WhileCondition=WhileCondition;
+        if(WhileCondition!=null) WhileCondition.setParent(this);
     }
 
     public DoEnter getDoEnter() {
@@ -36,12 +36,12 @@ public class DoWhileStatement extends SingleStatement {
         this.StatementList=StatementList;
     }
 
-    public Condition getCondition() {
-        return Condition;
+    public WhileCondition getWhileCondition() {
+        return WhileCondition;
     }
 
-    public void setCondition(Condition Condition) {
-        this.Condition=Condition;
+    public void setWhileCondition(WhileCondition WhileCondition) {
+        this.WhileCondition=WhileCondition;
     }
 
     public void accept(Visitor visitor) {
@@ -51,20 +51,20 @@ public class DoWhileStatement extends SingleStatement {
     public void childrenAccept(Visitor visitor) {
         if(DoEnter!=null) DoEnter.accept(visitor);
         if(StatementList!=null) StatementList.accept(visitor);
-        if(Condition!=null) Condition.accept(visitor);
+        if(WhileCondition!=null) WhileCondition.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(DoEnter!=null) DoEnter.traverseTopDown(visitor);
         if(StatementList!=null) StatementList.traverseTopDown(visitor);
-        if(Condition!=null) Condition.traverseTopDown(visitor);
+        if(WhileCondition!=null) WhileCondition.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(DoEnter!=null) DoEnter.traverseBottomUp(visitor);
         if(StatementList!=null) StatementList.traverseBottomUp(visitor);
-        if(Condition!=null) Condition.traverseBottomUp(visitor);
+        if(WhileCondition!=null) WhileCondition.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -85,8 +85,8 @@ public class DoWhileStatement extends SingleStatement {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Condition!=null)
-            buffer.append(Condition.toString("  "+tab));
+        if(WhileCondition!=null)
+            buffer.append(WhileCondition.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

@@ -43,6 +43,7 @@ public class MJCompiler {
 			Symbol s = parser.parse();
 			
 			if(!parser.isSuccessful()) {
+				System.out.println("\n");
 				log.error("One or more syntax errors found! Compiling unsuccessful!");
 				return;
 			}
@@ -53,6 +54,7 @@ public class MJCompiler {
 			prog.traverseBottomUp(semanticPass);
 			
 			if(!semanticPass.isSuccessful()) {
+				System.out.println("\n");
 				log.error("One or more semantic errors found! Compiling unsuccessful!");
 				return;
 			}
@@ -65,12 +67,14 @@ public class MJCompiler {
 			Code.mainPc = codeGenerator.getMainPc();
 			
 			if(codeGenerator.isError()) {
+				System.out.println("\n");
 				log.error("One or more errors during code generation! Compiling unsuccessful!");
 				return;
 			}
 			
 			Code.write(new FileOutputStream(output));
-			log.info("---------------------------\nSuccessful compilation. Resulting file: " + output.getAbsolutePath());
+			System.out.println("\n");
+			log.info("Successful compilation. Resulting file: " + output.getAbsolutePath());
 			
 		} catch (Exception e) {
 			log.error(e.getMessage());

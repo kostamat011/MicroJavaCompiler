@@ -1,28 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/5/2022 17:11:54
+// 27/5/2022 2:12:12
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class IfStatement extends SingleStatement {
 
-    private IfCondition IfCondition;
+    private IfStart IfStart;
     private Statement Statement;
 
-    public IfStatement (IfCondition IfCondition, Statement Statement) {
-        this.IfCondition=IfCondition;
-        if(IfCondition!=null) IfCondition.setParent(this);
+    public IfStatement (IfStart IfStart, Statement Statement) {
+        this.IfStart=IfStart;
+        if(IfStart!=null) IfStart.setParent(this);
         this.Statement=Statement;
         if(Statement!=null) Statement.setParent(this);
     }
 
-    public IfCondition getIfCondition() {
-        return IfCondition;
+    public IfStart getIfStart() {
+        return IfStart;
     }
 
-    public void setIfCondition(IfCondition IfCondition) {
-        this.IfCondition=IfCondition;
+    public void setIfStart(IfStart IfStart) {
+        this.IfStart=IfStart;
     }
 
     public Statement getStatement() {
@@ -38,18 +38,18 @@ public class IfStatement extends SingleStatement {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(IfCondition!=null) IfCondition.accept(visitor);
+        if(IfStart!=null) IfStart.accept(visitor);
         if(Statement!=null) Statement.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(IfCondition!=null) IfCondition.traverseTopDown(visitor);
+        if(IfStart!=null) IfStart.traverseTopDown(visitor);
         if(Statement!=null) Statement.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(IfCondition!=null) IfCondition.traverseBottomUp(visitor);
+        if(IfStart!=null) IfStart.traverseBottomUp(visitor);
         if(Statement!=null) Statement.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -59,8 +59,8 @@ public class IfStatement extends SingleStatement {
         buffer.append(tab);
         buffer.append("IfStatement(\n");
 
-        if(IfCondition!=null)
-            buffer.append(IfCondition.toString("  "+tab));
+        if(IfStart!=null)
+            buffer.append(IfStart.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

@@ -81,7 +81,8 @@ public class SemanticPass extends VisitorAdaptor {
 	public SemanticPass() {
 		Tab.init();
 		Tab.currentScope.addToLocals(new Obj(Obj.Type, "bool", boolType));
-		Tab.insert(Obj.Var, "varArgsTemp", Tab.intType);
+		Tab.insert(Obj.Var, "varArgsTemp", Tab.intType); // global[0]
+		Tab.insert(Obj.Var, "varArgsTemp2", Tab.intType); // global[1]
 	}
 
 	// check if successful semantic pass
@@ -102,7 +103,9 @@ public class SemanticPass extends VisitorAdaptor {
 		error = true;
 		if(node != null) {
 			int line = node.getLine();
+			System.out.println("\n");
 			log.error("Line " + line + ": " + msg);
+			System.out.println("\n");
 		} else {
 			log.error(msg);
 		}
@@ -846,7 +849,7 @@ public class SemanticPass extends VisitorAdaptor {
 		if(!isInt(expr)) {
 			reportError("Expected int in array initializer",factor);
 		}
-		Struct newType = new Struct(Struct.Array, expr.getType());
+		Struct newType = new Struct(Struct.Array, factor.getType().struct);
 		factor.obj = new Obj(Obj.Var, "", newType);
 	}
 

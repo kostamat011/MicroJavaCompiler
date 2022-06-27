@@ -92,7 +92,7 @@ nonterminal MethodDecl, MethodDeclList, MethodDeclOption, MethodSignature, Metho
 nonterminal FormParsOption, FormPars, FormPar, VarArgs, FormParsEnd;
 
 /* statements */
-nonterminal StatementList, Statement, Statements, SingleStatement;
+nonterminal StatementList, Statement, Statements, SingleStatement, ElseStart, IfStart, WhileStart, WhileCondition;
 
 /* designators and designator statements */
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, ArrayDesignatorStart;
@@ -231,11 +231,19 @@ SingleStatement ::= (SingleDesignatorStatement) DesignatorStatement SEMICOLON
 				 |  (SingleContinueStatement) CONT SEMICOLON
 				 |  (SingleReturnStatement) RETURN SEMICOLON
 				 |  (SingleReturnExprStatement) RETURN Expr SEMICOLON
-				 |  (IfStatement) IF LPAREN IfCondition RPAREN Statement
-				 |  (IfElseStatement) IF LPAREN IfCondition RPAREN Statement ELSE Statement
-				 |  (DoWhileStatement) DoEnter StatementList WHILE LPAREN Condition RPAREN SEMICOLON
+				 |  (IfStatement) IfStart Statement
+				 |  (IfElseStatement) IfStart Statement ElseStart Statement
+				 |  (DoWhileStatement) DoEnter StatementList WhileCondition SEMICOLON
 				 ;
-				 
+
+WhileCondition ::= (WhileCondition) WhileStart LPAREN Condition RPAREN;
+
+WhileStart ::= (WhileStart) WHILE;
+
+IfStart ::= (IfStart) IF LPAREN IfCondition RPAREN;
+				
+ElseStart ::= (ElseStart) ELSE;
+
 DoEnter ::= (DoEnter) DO;
 				 
 NumConstOption ::= (NumConstYes) COMMA NUMBER_CONST

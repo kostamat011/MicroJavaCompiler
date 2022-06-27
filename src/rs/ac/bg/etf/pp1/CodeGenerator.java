@@ -43,11 +43,19 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	// stack of lists of actual params for method calls
 	//
+	private ArrayList<Object> currActParams = new ArrayList<Object>();
 	private Stack<ArrayList<Object>> actParamsStack = new Stack<ArrayList<Object>>();
 	
 	public CodeGenerator() {
 		generatePredefinedMethods();
 	}
+	
+	// stacks for keeping addresses for if and while jumps
+	//
+	private Stack<Integer> ifConditionsAddrStack = new Stack<Integer>();
+	private Stack<Integer> doWhileAddrStack =  new Stack<Integer>();
+	private Stack<Integer> breakAddrStack = new Stack<Integer>();
+	private Stack<Integer> contAddrStack = new Stack<Integer>();
 	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -206,6 +214,35 @@ public class CodeGenerator extends VisitorAdaptor {
 		return o.getType().getKind() == Struct.Bool;
 	}
 	
+	private int fetchRelopCode(Relop rel) {
+		if(rel instanceof RelopGT) {
+			return Code.gt;
+		}
+		
+		if(rel instanceof RelopGTE) {
+			return Code.ge;
+		}
+		
+		if(rel instanceof RelopNOTEQUAL) {
+			return Code.ne;
+		}
+		
+		if(rel instanceof RelopEQUAL) {
+			return Code.eq;
+		}
+		
+		if(rel instanceof RelopLS) {
+			return Code.lt;
+		}
+		
+		if(rel instanceof RelopLSE) {
+			return Code.le;
+		}
+		
+		reportError("Invalid rel operation.",null);
+		return 0;
+	}
+	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 	
 	/* Visit method signatures */
@@ -221,6 +258,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		
 		Obj method = signature.getMethodName().obj;
 		
+		method.setAdr(Code.pc);
 		Code.put(Code.enter);
 		Code.put(1);
 		int totalLocalsNum = countLocalVars(method, true);
@@ -238,6 +276,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		int formParsNum = countFormalPars(method);
 		int totalLocalsNum = formParsNum + countLocalVars(method, true);
 		
+		method.setAdr(Code.pc);
 		Code.put(Code.enter);
 		Code.put(formParsNum);
 		Code.put(totalLocalsNum);
@@ -259,9 +298,11 @@ public class CodeGenerator extends VisitorAdaptor {
 		int value = (currVarArgsType.equals(Tab.charType)) ? 0 : 1;
 		varArgsMethods.put(signature.getMethodName().getName(), value);
 		
+		method.setAdr(Code.pc);
 		Code.put(Code.enter);
 		Code.put(formParsNum);
 		Code.put(totalLocalsNum);
+		
 	}
 	
 	// foo()
@@ -272,13 +313,16 @@ public class CodeGenerator extends VisitorAdaptor {
 		if(name.getName().equals("main")) {
 			mainPc = Code.pc;
 		}
+		method.setAdr(Code.pc);
 		Code.put(Code.enter);
 		Code.put(0);
 		int totalLocalsNum = countLocalVars(method,false);
 		Code.put(totalLocalsNum);
+		
 	}
 	
-	// returning from void method without return statement
+	// returning from method will be always the same
+	// if there is return statement, expr will aready be on stack
 	//
 	public void visit(MethodDeclaration ret) {
 		Code.put(Code.exit);
@@ -318,20 +362,13 @@ public class CodeGenerator extends VisitorAdaptor {
 		// if method has varArgs we must pack the parameters into array
 		//
 		Obj method = call.getDesignator().obj;
-		if(varArgsMethods.containsKey(call)) {
+		if(varArgsMethods.containsKey(method.getName())) {
 			
 			// if method call had var args then number of var args
 			// was stored to obj address during semantic pass
 			//
 			Obj callObj = call.obj;
 			int num = callObj.getAdr();
-			
-			// last num actual pars should form array
-			// pop them from stack
-			//
-			for(int i=0; i<num; ++i) {
-				Code.put(Code.pop);
-			}
 
 			// array type is stored in varArgs hashmap
 			//
@@ -344,48 +381,50 @@ public class CodeGenerator extends VisitorAdaptor {
 			
 			// for int allocate num words, for char allocate num bytes
 			//
-			Code.put4((varArgType==1) ? (4*num) : num);
 			Code.put(Code.newarray);
 			Code.put(varArgType);
 			
-			// populating array with last num actual pars
+			// save created array addr in temp global var
 			//
-			Obj tmp = Tab.find("varArgsTemp");
-			if(tmp == Tab.noObj) {
-				reportError("Code generator failure", null);
-				return;
-			}
-			ArrayList<Object> pars = actParamsStack.pop();
-			pars = takeLastN(pars, num);
-			for(int i=0; i<num; ++i) {
-				// save address of array
-				//
-				Code.put(Code.putstatic);
-				Code.put2(tmp.getAdr());
+			Code.put(Code.putstatic);
+			Code.put2(1);
+			
+			for(int i=num-1; i>=0; i--) {
+				//stack: param1, param2, param3
+				Code.put(Code.getstatic);
+				Code.put2(1);
 				
-				// put index on stack
-				//
+				// stack: param1, param2, param3, array
+				Code.put(Code.dup2);
+	
+				// stack: param 1, param 2, param3, array, param3, array
+				Code.put(Code.pop);
+				
+				// stack: param1, param2, param3, array, param3
+				Code.put(Code.putstatic);
+				Code.put2(0);
+				
+				// stack: param1, param2, param3, array
 				Code.put(Code.const_);
 				Code.put4(i);
 				
-				// put param value on stack
-				//
-				Code.put(Code.const_);
-				if(varArgType == 0) {
-					Code.put4((Character)pars.get(i));
-				} else {
-					Code.put4((Integer)pars.get(i));
-				}
+				//stack: param1, param2, param3, array, index
+				Code.put(Code.getstatic);
+				Code.put2(0);
 				
-				// store param in array
-				//
+				//stack: param1, param2, param3, array, index, param3
 				Code.put(Code.astore);
 				
-				// put array address on stack
-				//
-				Code.put(Code.getstatic);
-				Code.put2(tmp.getAdr());
+				//stack: param1, param2, param3
+				Code.put(Code.pop);
+				
+				//stack: param1, param2
 			}
+
+			// put formed array on stack as param
+			//
+			Code.put(Code.getstatic);
+			Code.put2(1);
 		}
 		
 		// call address is relative to PC 
@@ -625,6 +664,224 @@ public class CodeGenerator extends VisitorAdaptor {
 		}*/
 	}
 	
+	public void visit(SingleReadStatement stmt) {
+		Obj desig = stmt.getDesignator().obj;
+		if(isInt(desig)) {
+			Code.put(Code.read);
+		} else {
+			Code.put(Code.bread);
+		}
+		Code.store(desig);
+	}
+	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	
+	/* Visiting conditions */
+	
+	public void visit(CondSingleExprFact factor) {
+		// expression will be on stack
+	}
+	
+	public void visit(CondMultiExprFact factor) {
+		// two expressions are on stack, apply relop
+		//
+		Relop relop = factor.getRelop();
+		int relopCode = fetchRelopCode(relop);
+		int jumpCode = Code.jcc + relopCode;
+		
+		Code.put(jumpCode);
+		Code.put2(11); // jump: 3(jump) + 1(const) + 4(0) + 3(jump) = 11
+		Code.put(Code.const_); // 0 - false
+		Code.put4(0);
+		Code.put(Code.jmp);
+		Code.put2(8); // jump: 3(jump) + 1(const) + 4(1) = 8
+		Code.put(Code.const_);
+		Code.put4(1);// 1 - true
+	}
+	
+	public void visit(CondSingleFactTerm term) {
+		// factor is on stack
+	}
+	
+	public void visit(CondMultiFactTerm term) {
+		// two boolean vals are on stack
+		// use multiplication for and
+		//
+		Code.put(Code.mul);
+	}
+	
+	public void visit(ConditionMultiTerm cond) {
+		// two boolean vals are on stack
+		// use addition for or
+		//
+		Code.put(Code.add);
+	}
+	
+	public void visit(ConditionSingleTerm cond) {
+		// term is on stack
+	}
+	
+	public void visit(IfConditionMultiTerm cond) {
+		// two boolean vals are on stack
+		// use addition for or
+		//
+		Code.put(Code.add);
+	}
+	
+	public void visit(IfConditionSingleTerm cond) {
+		// term is on stack
+	}
+	
+	public void visit(IfStart ifstart) {
+		ifJump();
+	}
+	
+	private void ifJump() {
+		// if value on top of stack is zero, condition is false
+		// we need to jump to: 
+		// a) else statement
+		// b) end of if statement
+		// we dont know address where to jump yet
+		// we must save PC where this address  should be stored and fill it later
+		//
+		Code.put(Code.const_n); // putting 0 (false) on top of stack
+		
+		Code.put(Code.jcc + Code.eq); // expression == 0 => condition is false
+		// here we will later put offset to jump if condition is false
+		//
+		ifConditionsAddrStack.push(Code.pc);
+		Code.put2(1); // temp value that will hold place for actual addr to be written
+		
+		// if expression !=0 => condition is true, jump wont happen, proceed to next code
+		//
+	}
+	
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	
+	/* visiting If statements */
+	
+	public void visit(IfStatement stmt) {
+		int pc = Code.pc;
+		int jmpAddr = ifConditionsAddrStack.pop();
+		int offset = pc - jmpAddr + 1;
+		
+		// replace temp 1 value at jmpAddr with actual value of jmp offset 
+		// with end of if statement
+		//
+		Code.put2(jmpAddr, offset);
+	}
+	
+	public void visit(ElseStart stmt) {
+		int jmpAddr = ifConditionsAddrStack.pop();
+		
+		// must jump over else statement if if statement completed
+		// this will happen when if condition was true
+		//
+		Code.put(Code.jcc + Code.eq); 
+		ifConditionsAddrStack.push(Code.pc);
+		Code.put2(1);
+		
+		int pc = Code.pc;
+		int offset = pc - jmpAddr + 1;
+		
+		// this is the point where we jump when if condition is false
+		//
+		Code.put2(jmpAddr, offset);
+	}
+	
+	public void visit(IfElseStatement stmt) {
+		int pc = Code.pc;
+		int jmpAddr = ifConditionsAddrStack.pop();
+		int offset = pc - jmpAddr + 1;
+		
+		// replace temp 1 value at jmpAddr with actual value of jmp offset 
+		// with ending of whole ifelse statement
+		//
+		Code.put2(jmpAddr, offset);
+	}
+	
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	
+	/* Visiting dowhile statements */
+	
+	// when entering do we must save address  where to jump if while condition will be true
+	//
+	public void visit(DoEnter doEnter) {
+		doWhileAddrStack.push(Code.pc);
+	}
+	
+	public void visit(WhileStart whileStart) {
+		// this is place where continue statements need to jump
+		// there can be more than 1 continue in a loop
+		// so must empty whole stack and fill missing jump addrs
+		//
+		while(!contAddrStack.empty()) {
+			int contAddr = contAddrStack.pop();
+			int contOffset = Code.pc - contAddr + 1;
+			Code.put2(contAddr, contOffset);
+		}
+	}
+	
+	public void visit(WhileCondition whileCondition) {
+		int doAddr = doWhileAddrStack.pop();
+		int offset = doAddr - (Code.pc + 1);
+		
+		Code.put(Code.const_n); // putting 0 (false) on top of stack
+		
+		// if top of stack is not equal to 0, means condition is true,
+		// jump back to start of do
+		//
+		Code.put(Code.jcc + Code.ne); 
+		Code.put2(offset);
+		
+		// this is place where break statements need to jump
+		// there can be more than 1 break in a loop
+		// so must empty whole stack and fill missing jump addrs
+		//
+		while(!breakAddrStack.empty()) {
+			int brkAddr = breakAddrStack.pop();
+			int brkOffset = Code.pc - brkAddr + 1;
+			Code.put2(brkAddr, brkOffset);
+		}
+	}
+	
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	
+	/* Visiting Continue and break statements */
+	
+	// Continue - jump to do while begining (before condition check)
+	//
+	public void visit(SingleContinueStatement cont) {
+		// we don't know where to jump in continue until end of loop is visited
+		// so leave temp val in jump address
+		//
+		Code.put(Code.jmp);
+		contAddrStack.push(Code.pc);
+		Code.put2(1); // temp placeholder
+	}
+	
+	// Break - jump to while end (after condition check)
+	//
+	public void visit(SingleBreakStatement brk) {
+		// we don't know where to jump in break until end of loop is visited
+		// so leave temp val in jump address
+		//
+		Code.put(Code.jmp);
+		breakAddrStack.push(Code.pc);
+		Code.put2(1); // temp placeholder
+	}
+	
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	
+	/* Visiting program */
+	
+	public void visit(Program program) {
+		if(Code.pc > 8*1024) {
+			reportError("Code size is over 8KB.", program);
+		}
+	}
+	
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	
 	
 }

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/5/2022 17:11:54
+// 27/5/2022 2:12:12
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -105,6 +105,10 @@ public interface Visitor {
     public void visit(NumConstNo NumConstNo);
     public void visit(NumConstYes NumConstYes);
     public void visit(DoEnter DoEnter);
+    public void visit(ElseStart ElseStart);
+    public void visit(IfStart IfStart);
+    public void visit(WhileStart WhileStart);
+    public void visit(WhileCondition WhileCondition);
     public void visit(DoWhileStatement DoWhileStatement);
     public void visit(IfElseStatement IfElseStatement);
     public void visit(IfStatement IfStatement);
