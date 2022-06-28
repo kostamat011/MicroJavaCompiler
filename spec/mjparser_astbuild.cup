@@ -58,7 +58,7 @@ terminal PLUS, MINUS, MUL, DIV, PCT, ASSIGN, EQUAL, NOT_EQUAL, GT, GTE, LS, LSE;
 terminal AND, OR, PLUSPLUS, MINUSMINUS, SEMICOLON, COMMA, LPAREN, RPAREN;
 terminal LBRCK, RBRCK, LBRACE, RBRACE, DBLDOT, DOT;
 
-terminal THREEDOTS;
+terminal DASH;
 terminal String IDENT;
 terminal Boolean BOOL_CONST;
 terminal Character CHAR_CONST;
@@ -299,6 +299,7 @@ Factor ::= (NumConstFactor) NUMBER_CONST:N1 {: RESULT=new NumConstFactor(N1); RE
 		| (NewTypeArrayFactor) NEW Type:T1 LBRCK Expr:E2 RBRCK {: RESULT=new NewTypeArrayFactor(T1, E2); RESULT.setLine(T1left); :}
 		| (DesignatorEmptyFactor) Designator:D1 {: RESULT=new DesignatorEmptyFactor(D1); RESULT.setLine(D1left); :}
 		| (MethodCallFactor) MethodCall:M1 {: RESULT=new MethodCallFactor(M1); RESULT.setLine(M1left); :}
+		| (MaxArrayFactor) DASH IDENT:arrayName {: RESULT=new MaxArrayFactor(arrayName); RESULT.setLine(arrayNameleft); :}
 		;
 
 Addop ::= (AddopPlus) PLUS {: RESULT=new AddopPlus(); :}

@@ -118,7 +118,82 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.exit);
 		Code.put(Code.return_);
 		
+		// modification 
+		//
+		int startAddrMod = Code.pc;
+		Code.put(Code.enter);
+		Code.put(1);
+		Code.put(4);
+		// stack: array_addr
+		
+		// local[0] will store array addr (passed as param)
+		//
+		
+		// local[1] will store array length
+		//
+		Code.put(Code.load_n + 0);
+		Code.put(Code.arraylength);
+		Code.put(Code.store_n + 1);
+		
+		// local[2] will contain max val
+		//
+		Code.put(Code.const_n + 0);
+		Code.put(Code.store_n + 2);
+		
+		// local[3] will contain counter
+		//
+		Code.put(Code.const_n + 0);
+		Code.put(Code.store_n + 3);
+		
+		// check if counter reached array len
+		//
+		Code.put(Code.load_n + 3);
+		Code.put(Code.load_n + 1);
+		
+		// if counter >= array_len jump to end
+		//
+		Code.put(Code.jcc + Code.eq);
+		Code.put2(21); // 3 + 1 + 1 + 1 + 1 + 7 + 4 + 3 = 17
+		
+		// compare current array element to max
+		//
+		Code.put(Code.load_n + 2); // stack: max
+		Code.put(Code.load_n + 0); // stack: max, addr
+		Code.put(Code.load_n + 3); // stack: max, addr, cnt
+		Code.put(Code.aload);      // stack: max, addr[cnt]
+		
+		// if max is >= current el, skip max assignment
+		//
+		Code.put(Code.jcc + Code.ge);
+		Code.put2(7); // 3 + 1 + 1 + 1 + 1 = 7
+		
+		// assign current elem to max
+		//
+		Code.put(Code.load_n + 0); // stack: addr
+		Code.put(Code.load_n + 3); // stack: addr, cnt
+		Code.put(Code.aload); 	   // stack: addr[cnt]
+		Code.put(Code.store_n + 2);
+		
+		// increment counter
+		//
+		Code.put(Code.load_n + 3);
+		Code.put(Code.const_1);
+		Code.put(Code.add);
+		Code.put(Code.store_n + 3);
+		
+		// jump back to condition check
+		//
+		Code.put(Code.jmp);
+		Code.put2(-20); // -4 -14 - 2 = -20
+		
+		// in the end after loop is finished put max on stack
+		//
+		Code.put(Code.load_n + 2);
+		Code.put(Code.exit);
+		Code.put(Code.return_);
+		
 		try {
+			Tab.find("mod").setAdr(startAddrMod);
 			Tab.find("chr").setAdr(startAddrChr);
 			Tab.find("ord").setAdr(startAddrOrd);
 			Tab.find("len").setAdr(startAddrLen);
@@ -463,6 +538,18 @@ public class CodeGenerator extends VisitorAdaptor {
 		//
 	}
 	
+	public void visit(MaxArrayFactor factor) {
+		Obj a = Tab.find(factor.getArrayName());
+		if(a == Tab.noObj) {
+			reportError("No array with name "+ factor.getArrayName(), factor);
+			return;
+		}
+		Code.load(a);
+		int callOffset = Tab.find("mod").getAdr() - Code.pc;
+		Code.put(Code.call);
+		Code.put2(callOffset);
+	}
+	
 	public void visit(DesignatorEmptyFactor factor) {
 		// all loading is handled here
 		// because factors can only appear on right side of the expression
@@ -481,6 +568,8 @@ public class CodeGenerator extends VisitorAdaptor {
 		} else if(factor.getDesignator() instanceof IdentMemberDesignator) {
 			Code.put(Code.getfield);
 			Code.put2(factor.getDesignator().obj.getAdr());
+		} else if(factor.getDesignator() instanceof IdentMemberArrayDesignator) {
+			Code.put(Code.aload);
 		}
 	}
 	
@@ -543,7 +632,11 @@ public class CodeGenerator extends VisitorAdaptor {
 	/* Visiting designators statements */
 	
 	public void visit(DesignatorStmtAssignCorrect assign) {
-		Code.store(assign.getDesignator().obj);	
+		if(assign.getDesignator() instanceof IdentMemberDesignator) {
+			Code.put(Code.putfield);
+			Code.put2(assign.getDesignator().obj.getAdr());
+		} else
+			Code.store(assign.getDesignator().obj);	
 	}
 	
 	// In array element designator a[expr]
@@ -699,16 +792,21 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.load(designator.obj);
 	}
 	
+
 	// rec.a ([4])
 	//
 	public void visit(RecordDesignatorArrayStart designator) {
-		
+		// records addr is on stack
+		// need to get arrays addr by getfield
+		//
+		Code.put(Code.getfield);
+		Code.put2(designator.obj.getAdr());
 	}
 
 	// rec.a[4]
 	//
 	public void visit(IdentMemberArrayDesignator designator) {
-
+		// nothing
 	}
 	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */	
@@ -980,6 +1078,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		if(Code.pc > 8*1024) {
 			reportError("Code size is over 8KB.", program);
 		}
+		Tab.closeScope();
 	}
 	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */

@@ -6,6 +6,7 @@ import java.util.Stack;
 
 import org.apache.log4j.Logger;
 import rs.ac.bg.etf.pp1.ast.*;
+import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.Tab;
 import rs.etf.pp1.symboltable.concepts.Obj;
 import rs.etf.pp1.symboltable.concepts.Struct;
@@ -84,6 +85,7 @@ public class SemanticPass extends VisitorAdaptor {
 	public SemanticPass() {
 		Tab.init();
 		Tab.currentScope.addToLocals(new Obj(Obj.Type, "bool", boolType));
+		Tab.currentScope.addToLocals(new Obj(Obj.Meth, "mod", Tab.intType, 0, 1));
 	}
 
 	// check if successful semantic pass
@@ -137,7 +139,11 @@ public class SemanticPass extends VisitorAdaptor {
 
 	private void insertVarToTable(String name, boolean isArray, boolean isField) {
 		if (isArray) {
-			Tab.insert(Obj.Var, name, new Struct(Struct.Array, currType));
+			if(isField) {
+				Tab.insert(Obj.Elem, name, new Struct(Struct.Array, currType));
+			} else {
+				Tab.insert(Obj.Var, name, new Struct(Struct.Array, currType));
+			}
 		} else {
 			if(isField) {
 				Tab.insert(Obj.Fld, name, currType);
@@ -329,7 +335,7 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 
 		Tab.chainLocalSymbols(prog.getProgramName().obj);
-		Tab.closeScope();
+		//Tab.closeScope();
 	}
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -779,6 +785,15 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 		expr.obj = expr.getTerm().obj;
 	}
+	
+	public void visit(MaxArrayFactor factor) {
+		Obj a = Tab.find(factor.getArrayName());
+		if(a == Tab.noObj || a.getType().getKind() != Struct.Array) {
+			reportError("No array with name "+ factor.getArrayName(), factor);
+			return;
+		}
+		factor.obj = new Obj(Obj.Var, "", Tab.intType);
+	}
 
 	// Expression which is a combination of terms with addition operations e.g 7*8 +
 	// 3*2
@@ -986,7 +1001,7 @@ public class SemanticPass extends VisitorAdaptor {
 	// rec.a ([4])
 	//
 	public void visit(RecordDesignatorArrayStart designator) {
-		/*SymbolDataStructure ownersMembers = currRecordDesignator.getType().getMembersTable();
+		SymbolDataStructure ownersMembers = currRecordDesignator.getType().getMembersTable();
 
 		Obj member = ownersMembers.searchKey(designator.getIdent());
 		if (member.equals(Tab.noObj)) {
@@ -995,19 +1010,19 @@ public class SemanticPass extends VisitorAdaptor {
 			return;
 		}
 		
-		if (member.getKind() != Obj.Var || member.getType().getKind() != Struct.Array) {
+		if (member.getType().getKind() != Struct.Array) {
 			reportError("Symbol " + designator.getIdent() + " is used like an array but is not.", designator);
 			return;
 		}
 		
-		designator.obj = member;*/
+		designator.obj = member;
 	}
 
 	// rec.a[4]
 	//
 	public void visit(IdentMemberArrayDesignator designator) {
 
-		/*Obj expr = designator.getExpr().obj;
+		Obj expr = designator.getExpr().obj;
 
 		if (expr.getType() != Tab.intType) {
 			reportError("Expression in array braces does not evaluate to integer type.", designator);
@@ -1015,9 +1030,9 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 		
 		String arrayName = designator.getRecordDesignatorArrayStart().getIdent();
-		Obj array = Tab.find(arrayName);
+		Obj array = findMember(new ArrayList(currRecordDesignator.getType().getMembers()), arrayName);
 
-		designator.obj = new Obj(Obj.Elem, "", array.getType().getElemType());*/
+		designator.obj = new Obj(Obj.Elem, "", array.getType().getElemType());
 	}
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */

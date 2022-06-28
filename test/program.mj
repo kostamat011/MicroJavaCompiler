@@ -1,0 +1,19 @@
+program prog
+
+int niz[];
+
+record A {
+	int n[];
+}
+
+A a;
+
+{
+	void main()
+	{
+		a = new A;
+		a.n = new int[5];
+		a.n[0] = 5;
+		print(a.n[0]);
+	}
+}

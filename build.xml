@@ -64,7 +64,7 @@
 	
 	<target name="disasm">
 		<java classname="rs.etf.pp1.mj.runtime.disasm">
-			<arg value="test/test301.obj"/>
+			<arg value="test/program.obj"/>
 			<classpath>
 				<pathelement location="lib/mj-runtime-1.1.jar"/>
 			</classpath>
@@ -73,7 +73,7 @@
 	
 	<target name="runObj">
 		<java classname="rs.etf.pp1.mj.runtime.Run" input="test/ulaz.txt">
-			<arg value="test/test301.obj"/>
+			<arg value="test/program.obj"/>
 			<classpath>
 				<pathelement location="lib/mj-runtime-1.1.jar"/>
 			</classpath>

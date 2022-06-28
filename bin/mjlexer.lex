@@ -86,6 +86,7 @@ import java_cup.runtime.Symbol;
 "}" 			{ return new_symbol(sym.RBRACE, yytext()); }
 ":" 			{ return new_symbol(sym.DBLDOT, yytext()); }
 "." 			{ return new_symbol(sym.DOT, yytext()); }
+"#"				{ return new_symbol(sym.DASH, yytext()); }
 
 
 "true" 			{ return new_symbol(sym.BOOL_CONST, new Boolean (yytext())); }

@@ -58,7 +58,7 @@ terminal PLUS, MINUS, MUL, DIV, PCT, ASSIGN, EQUAL, NOT_EQUAL, GT, GTE, LS, LSE;
 terminal AND, OR, PLUSPLUS, MINUSMINUS, SEMICOLON, COMMA, LPAREN, RPAREN;
 terminal LBRCK, RBRCK, LBRACE, RBRACE, DBLDOT, DOT;
 
-terminal THREEDOTS;
+terminal DASH;
 terminal String IDENT;
 terminal Boolean BOOL_CONST;
 terminal Character CHAR_CONST;
@@ -267,6 +267,7 @@ Factor ::= (NumConstFactor) NUMBER_CONST
 		| (NewTypeArrayFactor) NEW Type LBRCK Expr RBRCK
 		| (DesignatorEmptyFactor) Designator
 		| (MethodCallFactor) MethodCall
+		| (MaxArrayFactor) DASH IDENT:arrayName
 		;
 
 Addop ::= (AddopPlus) PLUS

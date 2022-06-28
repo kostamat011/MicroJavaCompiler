@@ -5,20 +5,20 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class BoolConst extends ConstVal {
+public class MaxArrayFactor extends Factor {
 
-    private Boolean boolVal;
+    private String arrayName;
 
-    public BoolConst (Boolean boolVal) {
-        this.boolVal=boolVal;
+    public MaxArrayFactor (String arrayName) {
+        this.arrayName=arrayName;
     }
 
-    public Boolean getBoolVal() {
-        return boolVal;
+    public String getArrayName() {
+        return arrayName;
     }
 
-    public void setBoolVal(Boolean boolVal) {
-        this.boolVal=boolVal;
+    public void setArrayName(String arrayName) {
+        this.arrayName=arrayName;
     }
 
     public void accept(Visitor visitor) {
@@ -39,13 +39,13 @@ public class BoolConst extends ConstVal {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("BoolConst(\n");
+        buffer.append("MaxArrayFactor(\n");
 
-        buffer.append(" "+tab+boolVal);
+        buffer.append(" "+tab+arrayName);
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [BoolConst]");
+        buffer.append(") [MaxArrayFactor]");
         return buffer.toString();
     }
 }

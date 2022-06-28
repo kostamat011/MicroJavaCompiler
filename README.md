@@ -12,7 +12,7 @@ Implement compiler is consisted of 4 parts:
 4.) Code Generator 
 
 ## How to run
-Pozicionirati se u direktorijum src u okviru korenog direktorijuma projekta.
+Position into the src dir.
 1. Generating lexer:
 
 ```cmd
