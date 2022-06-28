@@ -1,12 +1,13 @@
 # MicroJava compiler
 
 Goal of this project was implementation of compiler for MicroJava. 
+This project was for course Compiler Construction 1.
 
 ## Compiler parts
 
 Implement compiler is consisted of 4 parts: 
-1.) Lexer - generated using JFlex
-2.) Parser - generated using CUP 
+1.) Lexer - generated using JFlex. Specification .lex file is located in spec folder.
+2.) Parser - generated using CUP. Specification .cup file is located in spec folder.
 3.) Semantic checker 
 4.) Code Generator 
 
