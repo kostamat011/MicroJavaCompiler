@@ -6,9 +6,9 @@ This project was assignment for course Compiler Construction 1.
 ## Compiler parts
 
 Implement compiler is consisted of 4 parts: 
-1.) Lexer - generated using JFlex. Specification .lex file is located in spec folder.
-2.) Parser - generated using CUP. Specification .cup file is located in spec folder.
-3.) Semantic checker 
+1.) Lexer - generated using JFlex. Specification .lex file is located in spec folder.  
+2.) Parser - generated using CUP. Specification .cup file is located in spec folder.  
+3.) Semantic checker  
 4.) Code Generator 
 
 ## How to run
