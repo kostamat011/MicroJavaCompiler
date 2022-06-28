@@ -1,37 +1,39 @@
 // generated with ast extension for cup
 // version 0.8
-// 27/5/2022 6:33:21
+// 28/5/2022 2:8:1
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class IdentMemberArrayDesignator extends Designator {
 
-    private String ident;
-    private String memberArrayName;
+    private RecordDesignatorStart RecordDesignatorStart;
+    private RecordDesignatorArrayStart RecordDesignatorArrayStart;
     private Expr Expr;
 
-    public IdentMemberArrayDesignator (String ident, String memberArrayName, Expr Expr) {
-        this.ident=ident;
-        this.memberArrayName=memberArrayName;
+    public IdentMemberArrayDesignator (RecordDesignatorStart RecordDesignatorStart, RecordDesignatorArrayStart RecordDesignatorArrayStart, Expr Expr) {
+        this.RecordDesignatorStart=RecordDesignatorStart;
+        if(RecordDesignatorStart!=null) RecordDesignatorStart.setParent(this);
+        this.RecordDesignatorArrayStart=RecordDesignatorArrayStart;
+        if(RecordDesignatorArrayStart!=null) RecordDesignatorArrayStart.setParent(this);
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
     }
 
-    public String getIdent() {
-        return ident;
+    public RecordDesignatorStart getRecordDesignatorStart() {
+        return RecordDesignatorStart;
     }
 
-    public void setIdent(String ident) {
-        this.ident=ident;
+    public void setRecordDesignatorStart(RecordDesignatorStart RecordDesignatorStart) {
+        this.RecordDesignatorStart=RecordDesignatorStart;
     }
 
-    public String getMemberArrayName() {
-        return memberArrayName;
+    public RecordDesignatorArrayStart getRecordDesignatorArrayStart() {
+        return RecordDesignatorArrayStart;
     }
 
-    public void setMemberArrayName(String memberArrayName) {
-        this.memberArrayName=memberArrayName;
+    public void setRecordDesignatorArrayStart(RecordDesignatorArrayStart RecordDesignatorArrayStart) {
+        this.RecordDesignatorArrayStart=RecordDesignatorArrayStart;
     }
 
     public Expr getExpr() {
@@ -47,15 +49,21 @@ public class IdentMemberArrayDesignator extends Designator {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(RecordDesignatorStart!=null) RecordDesignatorStart.accept(visitor);
+        if(RecordDesignatorArrayStart!=null) RecordDesignatorArrayStart.accept(visitor);
         if(Expr!=null) Expr.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(RecordDesignatorStart!=null) RecordDesignatorStart.traverseTopDown(visitor);
+        if(RecordDesignatorArrayStart!=null) RecordDesignatorArrayStart.traverseTopDown(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(RecordDesignatorStart!=null) RecordDesignatorStart.traverseBottomUp(visitor);
+        if(RecordDesignatorArrayStart!=null) RecordDesignatorArrayStart.traverseBottomUp(visitor);
         if(Expr!=null) Expr.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -65,10 +73,16 @@ public class IdentMemberArrayDesignator extends Designator {
         buffer.append(tab);
         buffer.append("IdentMemberArrayDesignator(\n");
 
-        buffer.append(" "+tab+ident);
+        if(RecordDesignatorStart!=null)
+            buffer.append(RecordDesignatorStart.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
-        buffer.append(" "+tab+memberArrayName);
+        if(RecordDesignatorArrayStart!=null)
+            buffer.append(RecordDesignatorArrayStart.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(Expr!=null)

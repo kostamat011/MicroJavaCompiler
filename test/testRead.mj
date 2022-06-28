@@ -1,0 +1,53 @@
+program tr
+
+int n;
+int cnt;
+char a;
+int niz[];
+
+{
+	void readPrint(int x) char c;
+	{
+		do {
+			read(c);
+			print(c);
+			x--;
+		} while (x>0);
+		
+		print(eol);
+	}
+	
+	void main() 
+	{
+		read(n);
+		print(n);
+		print(eol);
+		cnt = 0;
+		do{
+			read(a);
+			print(a);
+			print(eol);
+			cnt++;
+		} while(cnt < n);
+		print(eol);
+		
+		niz = new int[5];
+		niz[0] = 1;
+		niz[1] = 2;
+		niz[2] = 3;
+		niz[3] = 4;
+		niz[4] = 5;
+		
+		cnt = 0;
+		do {
+			readPrint(niz[cnt]);
+			cnt++;
+		} while(cnt<5);
+		
+		print(eol);
+		print('k');
+		print('r');
+		print('a');
+		print('j');
+	}
+}

@@ -40,15 +40,18 @@ java -cp ../lib/*;. rs.ac.bg.etf.pp1.MJCompiler <mj_file> <obj_file>
 5. Disasembly MicroJava .obj fajla
 
 ```cmd
-java -cp ../lib/mj-runtime-1.1.jar rs.etf.pp1.mj.runtime.disasm <obj_file>
+java -cp ../lib/mj-runtime-1.1.jar rs.etf.pp1.mj.runtime.disasm ><output_file> <obj_file>
 ```
 
 6. Pokretanje prevedenog MicroJava fajla
 
 ```
-java -cp ../lib/mj-runtime-1.1.jar rs.etf.pp1.mj.runtime.Run [-debug] <obj_file>
+java -cp ../lib/mj-runtime-1.1.jar rs.etf.pp1.mj.runtime.Run [-debug] <<input_file> ><output_file> <obj_file>
 ```
 
 ## Opis priloženih test primera
-Uz javne testove, prilozen je i test primer pod nazivom testVarArgs.mj.  
-Ovaj primer demonstrira korišćenje nove dodate opcije za promenljiv broj parametara funkcije.  
+Priloženi su javni test primeri <strong>test301.mj</strong>, <strong>test302.mj</strong> i <strong>test 302_B.mj</strong>.
+Uz njih su priložena još tri test primera:
+1. <strong>testVarArgs.mj.</strong> Ovaj primer demonstrira korišćenje nove dodate opcije za promenljiv broj parametara funkcije.  
+2. <strong>testRead.mj.</strong> Ovaj primer demonstrira čitanje vrednosti iz fajla.  
+3. <strong>testRecord.mj.</strong> Ovaj primer demonstrira korišćenje recorda.

@@ -67,18 +67,22 @@ public class CodeGenerator extends VisitorAdaptor {
 		error = true;
 		if(node != null) {
 			int line = node.getLine();
-			log.error("Line " + line + ": " + msg);
+			System.out.println("\n");
+			System.out.println("Line " + line + " ERROR: " + msg);
+			System.out.println("\n");
 		} else {
-			log.error(msg);
+			System.out.println("\n");
+			System.out.println("ERROR: "+msg);
+			System.out.println("\n");
 		}
 	}
 
 	private void reportInfo(String msg, SyntaxNode node) {
 		if(node != null) {
 			int line = node.getLine();
-			log.info("Line " + line + ": " + msg);
+			System.out.println("Line " + line + ": " + msg);
 		} else {
-			log.info(msg);
+			System.out.println(msg);
 		}
 	}
 
@@ -254,7 +258,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		// store 0 for char var args, 1 for int
 		//
 		int value = (currVarArgsType.equals(Tab.charType)) ? 0 : 1;
-		varArgsMethods.put(signature.getMethodName().getName(), 0);
+		varArgsMethods.put(signature.getMethodName().getName(), value);
 		
 		Obj method = signature.getMethodName().obj;
 		
@@ -460,6 +464,9 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(DesignatorEmptyFactor factor) {
+		// all loading is handled here
+		// because factors can only appear on right side of the expression
+		//
 		if(factor.getDesignator() instanceof IdentDesignator) {
 			Code.load(factor.getDesignator().obj);
 		} else if(factor.getDesignator() instanceof IdentArrayDesignator) {
@@ -471,6 +478,9 @@ public class CodeGenerator extends VisitorAdaptor {
 			} else {
 				Code.put(Code.baload);
 			}
+		} else if(factor.getDesignator() instanceof IdentMemberDesignator) {
+			Code.put(Code.getfield);
+			Code.put2(factor.getDesignator().obj.getAdr());
 		}
 	}
 	
@@ -479,7 +489,12 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(NewTypeFactor factor) {
-		// empty
+		Struct type = factor.getType().struct;
+		int membersCnt = new ArrayList(type.getMembers()).size();
+		int size = membersCnt;
+		size *= 4;
+		Code.put(Code.new_);
+		Code.put2(size);
 	}
 	
 	public void visit(NewTypeArrayFactor factor) {
@@ -552,12 +567,36 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.store(d);
 		}
 		
+		// field increment
+		//
+		if(d.getKind() == Obj.Fld) {
+			
+			// stack: addr
+			//
+			Code.put(Code.dup);
+			
+			// stack: addr addr
+			//
+			Code.put(Code.getfield);
+			Code.put2(d.getAdr());
+			
+			// stack: addr val
+			//
+			Code.put(Code.const_1);
+			Code.put(Code.add);
+			
+			//stack: addr val+1
+			//
+			Code.put(Code.putfield);
+			Code.put2(d.getAdr());
+		}
+		
 		// array elem increment
 		//
 		else if(stmt.getDesignator().obj.getKind() == Obj.Elem) {
 			// stack: array, index
 			//
-			Code.put(Code.dup2);
+			Code.put(Code.dup);
 			
 			// stack: array, index, array, index
 			//
@@ -582,11 +621,35 @@ public class CodeGenerator extends VisitorAdaptor {
 		
 		// var decrement
 		//
-		if(d.getKind() == Obj.Var) {
+		if(d.getKind() == Obj.Var || d.getKind() == Obj.Fld) {
 			Code.load(d);
 			Code.put(Code.const_m1);
 			Code.put(Code.add);
 			Code.store(d);
+		}
+		
+		// field decrement
+		//
+		if(d.getKind() == Obj.Fld) {
+			
+			// stack: addr
+			//
+			Code.put(Code.dup2);
+			
+			// stack: addr addr
+			//
+			Code.put(Code.getfield);
+			Code.put2(d.getAdr());
+			
+			// stack: addr val
+			//
+			Code.put(Code.const_m1);
+			Code.put(Code.add);
+			
+			//stack: addr val-1
+			//
+			Code.put(Code.putfield);
+			Code.put2(d.getAdr());
 		}
 		
 		// array elem decrement
@@ -620,6 +683,36 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */	
 	
+	/* Visiting record designators */
+	
+	// rec.a
+	//
+	public void visit(IdentMemberDesignator designator) {
+		// do nothing, because its not same for load and store
+	}
+	
+	// rec
+	//
+	public void visit(RecordDesignatorStart designator) {
+		// here put records addr on stack
+		//
+		Code.load(designator.obj);
+	}
+	
+	// rec.a ([4])
+	//
+	public void visit(RecordDesignatorArrayStart designator) {
+		
+	}
+
+	// rec.a[4]
+	//
+	public void visit(IdentMemberArrayDesignator designator) {
+
+	}
+	
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */	
+		
 	/* Visiting print and read statements */
 	
 	public void visit(SinglePrintStatement stmt) {

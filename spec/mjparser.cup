@@ -95,7 +95,7 @@ nonterminal FormParsOption, FormPars, FormPar, VarArgs, FormParsEnd;
 nonterminal StatementList, Statement, Statements, SingleStatement, ElseStart, IfStart, WhileStart, WhileCondition;
 
 /* designators and designator statements */
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, ArrayDesignatorStart;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, ArrayDesignatorStart, RecordDesignatorStart, RecordDesignatorArrayStart;
 nonterminal DesignatorStatement, DesignatorStatementAssign, NumConstOption;
 
 /* expressions, terms, factors */
@@ -288,9 +288,13 @@ Relop ::= (RelopGT) GT
 
 Designator ::= (IdentDesignator) IDENT:ident
 			|  (IdentArrayDesignator) ArrayDesignatorStart LBRCK Expr RBRCK
-			|  (IdentMemberDesignator) IDENT:ident DOT IDENT:memberName
-			|  (IdentMemberArrayDesignator) IDENT:ident DOT IDENT:memberArrayName LBRCK Expr RBRCK
+			|  (IdentMemberDesignator) RecordDesignatorStart DOT IDENT:memberName
+			|  (IdentMemberArrayDesignator) RecordDesignatorStart DOT RecordDesignatorArrayStart LBRCK Expr RBRCK
 			;
+
+RecordDesignatorStart ::= (RecordDesignatorStart) IDENT:ident;
+
+RecordDesignatorArrayStart ::= (RecordDesignatorArrayStart) IDENT:ident;
 			
 ArrayDesignatorStart ::= (ArrayDesignatorStart) IDENT:ident;
 

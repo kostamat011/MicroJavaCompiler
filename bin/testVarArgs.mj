@@ -1,0 +1,20 @@
+program MJProgram
+{
+	int sum(int ... var) int i, s; {
+		i = len(var) - 1;
+		s = 0;
+		do{
+			s = s + var[i];
+			i--;
+		} while(i >= 0);
+		return s;
+	}
+	
+	void main() {
+		print(sum(1,2,3,4,5));
+		print(eol);
+		print(sum(1,2));
+		print(eol);
+		print(sum(10,10,10,10,10,10,10,10,10,10));
+	}
+}

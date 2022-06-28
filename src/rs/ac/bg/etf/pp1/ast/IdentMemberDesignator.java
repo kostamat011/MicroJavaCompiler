@@ -1,26 +1,27 @@
 // generated with ast extension for cup
 // version 0.8
-// 27/5/2022 6:33:21
+// 28/5/2022 2:8:1
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class IdentMemberDesignator extends Designator {
 
-    private String ident;
+    private RecordDesignatorStart RecordDesignatorStart;
     private String memberName;
 
-    public IdentMemberDesignator (String ident, String memberName) {
-        this.ident=ident;
+    public IdentMemberDesignator (RecordDesignatorStart RecordDesignatorStart, String memberName) {
+        this.RecordDesignatorStart=RecordDesignatorStart;
+        if(RecordDesignatorStart!=null) RecordDesignatorStart.setParent(this);
         this.memberName=memberName;
     }
 
-    public String getIdent() {
-        return ident;
+    public RecordDesignatorStart getRecordDesignatorStart() {
+        return RecordDesignatorStart;
     }
 
-    public void setIdent(String ident) {
-        this.ident=ident;
+    public void setRecordDesignatorStart(RecordDesignatorStart RecordDesignatorStart) {
+        this.RecordDesignatorStart=RecordDesignatorStart;
     }
 
     public String getMemberName() {
@@ -36,13 +37,16 @@ public class IdentMemberDesignator extends Designator {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(RecordDesignatorStart!=null) RecordDesignatorStart.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(RecordDesignatorStart!=null) RecordDesignatorStart.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(RecordDesignatorStart!=null) RecordDesignatorStart.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -51,7 +55,10 @@ public class IdentMemberDesignator extends Designator {
         buffer.append(tab);
         buffer.append("IdentMemberDesignator(\n");
 
-        buffer.append(" "+tab+ident);
+        if(RecordDesignatorStart!=null)
+            buffer.append(RecordDesignatorStart.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         buffer.append(" "+tab+memberName);

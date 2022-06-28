@@ -121,7 +121,7 @@ nonterminal WhileStart WhileStart;
 nonterminal WhileCondition WhileCondition;
 
 /* designators and designator statements */
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, ArrayDesignatorStart;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, ArrayDesignatorStart, RecordDesignatorStart, RecordDesignatorArrayStart;
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal DesignatorStatementAssign DesignatorStatementAssign;
 nonterminal NumConstOption NumConstOption;
@@ -320,9 +320,13 @@ Relop ::= (RelopGT) GT {: RESULT=new RelopGT(); :}
 
 Designator ::= (IdentDesignator) IDENT:ident {: RESULT=new IdentDesignator(ident); RESULT.setLine(identleft); :}
 			|  (IdentArrayDesignator) ArrayDesignatorStart:A1 LBRCK Expr:E2 RBRCK {: RESULT=new IdentArrayDesignator(A1, E2); RESULT.setLine(A1left); :}
-			|  (IdentMemberDesignator) IDENT:ident DOT IDENT:memberName {: RESULT=new IdentMemberDesignator(ident, memberName); RESULT.setLine(identleft); :}
-			|  (IdentMemberArrayDesignator) IDENT:ident DOT IDENT:memberArrayName LBRCK Expr:E1 RBRCK {: RESULT=new IdentMemberArrayDesignator(ident, memberArrayName, E1); RESULT.setLine(identleft); :}
+			|  (IdentMemberDesignator) RecordDesignatorStart:R1 DOT IDENT:memberName {: RESULT=new IdentMemberDesignator(R1, memberName); RESULT.setLine(R1left); :}
+			|  (IdentMemberArrayDesignator) RecordDesignatorStart:R1 DOT RecordDesignatorArrayStart:R2 LBRCK Expr:E3 RBRCK {: RESULT=new IdentMemberArrayDesignator(R1, R2, E3); RESULT.setLine(R1left); :}
 			;
+
+RecordDesignatorStart ::= (RecordDesignatorStart) IDENT:ident {: RESULT=new RecordDesignatorStart(ident); RESULT.setLine(identleft); :};
+
+RecordDesignatorArrayStart ::= (RecordDesignatorArrayStart) IDENT:ident {: RESULT=new RecordDesignatorArrayStart(ident); RESULT.setLine(identleft); :};
 			
 ArrayDesignatorStart ::= (ArrayDesignatorStart) IDENT:ident {: RESULT=new ArrayDesignatorStart(ident); RESULT.setLine(identleft); :};
 

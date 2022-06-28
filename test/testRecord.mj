@@ -1,0 +1,32 @@
+program testRec
+
+record A {
+	int x;
+	int y;
+	bool b;
+}
+
+record B {
+	int i;
+}
+
+{
+	void main() A a; B b; int sum; {
+		
+		a = new A;
+		b = new B;
+		
+		a.x = 5;
+		a.y = a.x * 2;
+		a.b = true;
+		
+		if(a.b) {
+			do {
+				b.i++;
+				a.x = a.x - 1;
+			} while(a.x > 0);
+		}
+		
+		print(b.i*2);
+	}
+}

@@ -68,12 +68,15 @@ public class SemanticPass extends VisitorAdaptor {
 	// hash map for keeping info about varArgs 
 	//
 	private HashMap<String, Integer> varArgsMethods = new HashMap<String, Integer>();
+	
+	//
+	//
+	private Obj currRecordDesignator = Tab.noObj;
 
 	// Symbol table extensions
 	//
 	public static final int MethodDivider = 111;
 	public static final Struct boolType = new Struct(Struct.Bool);
-	public static final Struct classType = new Struct(Struct.Class);
 	public static final Struct methodDividerType = new Struct(MethodDivider);
 
 	// init symbol table before semantic pass begins
@@ -102,19 +105,21 @@ public class SemanticPass extends VisitorAdaptor {
 		if(node != null) {
 			int line = node.getLine();
 			System.out.println("\n");
-			log.error("Line " + line + ": " + msg);
+			System.out.println("Line " + line + " ERROR: " + msg);
 			System.out.println("\n");
 		} else {
-			log.error(msg);
+			System.out.println("\n");
+			System.out.println("ERROR: "+msg);
+			System.out.println("\n");
 		}
 	}
 
 	private void reportInfo(String msg, SyntaxNode node) {
 		if(node != null) {
 			int line = node.getLine();
-			log.info("Line " + line + ": " + msg);
+			System.out.println("Line " + line + ": " + msg);
 		} else {
-			log.info(msg);
+			System.out.println(msg);
 		}
 	}
 
@@ -130,11 +135,15 @@ public class SemanticPass extends VisitorAdaptor {
 		return (Tab.currentScope.findSymbol(name) != null);
 	}
 
-	private void insertVarToTable(String name, boolean isArray) {
+	private void insertVarToTable(String name, boolean isArray, boolean isField) {
 		if (isArray) {
 			Tab.insert(Obj.Var, name, new Struct(Struct.Array, currType));
 		} else {
-			Tab.insert(Obj.Var, name, currType);
+			if(isField) {
+				Tab.insert(Obj.Fld, name, currType);
+			} else {
+				Tab.insert(Obj.Var, name, currType);
+			}
 		}
 	}
 
@@ -284,6 +293,15 @@ public class SemanticPass extends VisitorAdaptor {
 		return ret;
 	}
 	
+	private Obj findMember(ArrayList<Obj> members, String name) {
+		for(Obj o : members) {
+			if(o.getName().equals(name)) {
+				return o;
+			}
+		}
+		return Tab.noObj;
+	}
+	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 	/* Visiting program */
@@ -352,15 +370,17 @@ public class SemanticPass extends VisitorAdaptor {
 		
 		else {
 			boolean isArray = (varDecl.getArrBracketsOption() instanceof ArrayBrackets);
+			boolean isField = false;
 			if (currMethod != Tab.noObj && currRecord == Tab.noObj) {
 				localVarCount++;
 			} else if (currMethod == Tab.noObj && currRecord != Tab.noObj) {
 				fieldCount++;
+				isField = true;
 			} else {
 				reportError("Cannot declare local variable outside Method or Record", varDecl);
 				return;
 			}
-			insertVarToTable(varDecl.getVarName(), isArray);
+			insertVarToTable(varDecl.getVarName(), isArray, isField);
 		}
 	}
 
@@ -372,7 +392,7 @@ public class SemanticPass extends VisitorAdaptor {
 					globalVarDecl);
 		} else {
 			boolean isArray = (globalVarDecl.getArrBracketsOption() instanceof ArrayBrackets);
-			insertVarToTable(globalVarDecl.getVarName(), isArray);
+			insertVarToTable(globalVarDecl.getVarName(), isArray, false);
 			globalVarCount++;
 		}
 	}
@@ -403,7 +423,7 @@ public class SemanticPass extends VisitorAdaptor {
 		if (findSymbolInTable(recordName.getName())) {
 			reportError("Name " + recordName.getName() + " is already defined.", recordName);
 		} else {
-			currRecord = recordName.obj = Tab.insert(Obj.Type, recordName.getName(), classType);
+			currRecord = recordName.obj = Tab.insert(Obj.Type, recordName.getName(), new Struct(Struct.Class));
 			Tab.openScope();
 		}
 	}
@@ -411,7 +431,7 @@ public class SemanticPass extends VisitorAdaptor {
 	// Record - end of record
 	//
 	public void visit(RecordDeclarationExpr record) {
-		Tab.chainLocalSymbols(record.getRecordName().obj);
+		Tab.chainLocalSymbols(currRecord.getType());
 		Tab.closeScope();
 		currRecord = Tab.noObj;
 	}
@@ -548,7 +568,7 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 
 		boolean isArray = (param.getArrBracketsOption() instanceof ArrayBrackets);
-		insertVarToTable(param.getFormParName(), isArray);
+		insertVarToTable(param.getFormParName(), isArray, false);
 
 		currMethod.setLevel(currMethod.getLevel() + 1);
 	}
@@ -563,7 +583,7 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 		// insert var args to table as an array
 		//
-		insertVarToTable(varArgName, true);
+		insertVarToTable(varArgName, true, false);
 		
 		currMethod.setLevel(currMethod.getLevel() + 1);
 		SymbolDataStructure pars = Tab.currentScope().getLocals();
@@ -840,7 +860,7 @@ public class SemanticPass extends VisitorAdaptor {
 		if(type.getKind() != Struct.Class) {
 			reportError("Cannot use new with non-class type", factor);
 		}
-		factor.obj = new Obj(Obj.Var, "", classType);
+		//factor.obj = new Obj(Obj.Var, "", classType);
 	}
 	
 	// New type array factor e.g. new rec[5]
@@ -931,69 +951,73 @@ public class SemanticPass extends VisitorAdaptor {
 	// rec.a
 	//
 	public void visit(IdentMemberDesignator designator) {
-		if (!findSymbolInTable(designator.getIdent())) {
-			reportError("Symbol " + designator.getIdent() + " is not defined.", designator);
-			return;
-		}
+		reportInfo("Record usage detected. Name: " + currRecordDesignator.getName(), designator);
 
-		Obj owner = Tab.find(designator.getIdent());
+		ArrayList<Obj> ownersMembers = new ArrayList(currRecordDesignator.getType().getMembers());
 
-		if ((owner.getKind() != Obj.Type) || owner.getType().getKind() != Struct.Class) {
-			reportError("Symbol " + designator.getIdent() + " is used like a record but is not.", designator);
-			return;
-		}
-		
-		reportInfo("Record usage detected. Name: " + designator.getIdent(), designator);
-
-		SymbolDataStructure ownersMembers = owner.getType().getMembersTable();
-
-		Obj member = ownersMembers.searchKey(designator.getMemberName());
+		Obj member = findMember(ownersMembers, designator.getMemberName());
 		if (member.equals(Tab.noObj)) {
-			reportError("Symbol " + designator.getMemberName() + " is not defined under " + designator.getIdent(),
+			reportError("Symbol " + designator.getMemberName() + " is not defined under " + currRecordDesignator.getName(),
 					designator);
 			return;
 		}
 
 		designator.obj = member;
 	}
-
-	// rec.a[4]
+	
+	// rec
 	//
-	public void visit(IdentMemberArrayDesignator designator) {
+	public void visit(RecordDesignatorStart designator) {
 		if (!findSymbolInTable(designator.getIdent())) {
 			reportError("Symbol " + designator.getIdent() + " is not defined.", designator);
 			return;
 		}
-
+		
 		Obj owner = Tab.find(designator.getIdent());
 
-		if ((owner.getKind() != Obj.Type) || owner.getType().getKind() != Struct.Class) {
+		if ((owner.getKind() != Obj.Var) || owner.getType().getKind() != Struct.Class) {
 			reportError("Symbol " + designator.getIdent() + " is used like a record but is not.", designator);
 			return;
 		}
+		
+		designator.obj = currRecordDesignator = owner;
+	}
+	
+	// rec.a ([4])
+	//
+	public void visit(RecordDesignatorArrayStart designator) {
+		/*SymbolDataStructure ownersMembers = currRecordDesignator.getType().getMembersTable();
 
-		SymbolDataStructure ownersMembers = owner.getType().getMembersTable();
-
-		Obj member = ownersMembers.searchKey(designator.getMemberArrayName());
+		Obj member = ownersMembers.searchKey(designator.getIdent());
 		if (member.equals(Tab.noObj)) {
-			reportError("Symbol " + designator.getMemberArrayName() + " is not defined under " + designator.getIdent(),
+			reportError("Symbol " + designator.getIdent() + " is not defined under " + currRecordDesignator.getName(),
 					designator);
 			return;
 		}
-
+		
 		if (member.getKind() != Obj.Var || member.getType().getKind() != Struct.Array) {
 			reportError("Symbol " + designator.getIdent() + " is used like an array but is not.", designator);
 			return;
 		}
+		
+		designator.obj = member;*/
+	}
 
-		Obj expr = designator.getExpr().obj;
+	// rec.a[4]
+	//
+	public void visit(IdentMemberArrayDesignator designator) {
+
+		/*Obj expr = designator.getExpr().obj;
 
 		if (expr.getType() != Tab.intType) {
 			reportError("Expression in array braces does not evaluate to integer type.", designator);
 			return;
 		}
+		
+		String arrayName = designator.getRecordDesignatorArrayStart().getIdent();
+		Obj array = Tab.find(arrayName);
 
-		designator.obj = new Obj(Obj.Elem, member.getName(), member.getType().getElemType());
+		designator.obj = new Obj(Obj.Elem, "", array.getType().getElemType());*/
 	}
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */

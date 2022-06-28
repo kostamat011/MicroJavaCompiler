@@ -2,6 +2,7 @@ package rs.ac.bg.etf.pp1;
 
 import java.io.*;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 import java_cup.runtime.Symbol;
 import rs.ac.bg.etf.pp1.ast.Program;
@@ -11,15 +12,15 @@ public class MJCompiler {
 	
 	private static Logger log = Logger.getLogger(MJCompiler.class);
 	
+	
 	public static void main(String args[]) {
-		
 		if( (args.length != 2) || (args[0]==null) || !(args[0] instanceof String) 
 				|| (args[1]==null) || !(args[1] instanceof String) ) {
 			
 			System.out.print("Invalid arguments for compiler call. Expecting 2 arguments: source, output");
 			return;
 		}
-
+		
 		String sourcePath = args[0];
 		String outputPath = args[1];
 		
@@ -83,7 +84,7 @@ public class MJCompiler {
 			System.out.print("COMPILATION SUCCESSFULL\nResulting file: " + output.getAbsolutePath());
 			
 		} catch (Exception e) {
-			//log.error(e.getMessage());
+			log.error(e.getMessage());
 		} 
 		
 	}
