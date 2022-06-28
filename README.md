@@ -1,7 +1,7 @@
 # MicroJava compiler
 
-Goal of this project was implementation of compiler for MicroJava. 
-This project was for course Compiler Construction 1.
+Goal of this project was implementation of compiler for MicroJava.   
+This project was assignment for course Compiler Construction 1.
 
 ## Compiler parts
 
