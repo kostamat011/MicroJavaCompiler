@@ -15,6 +15,11 @@ import rs.etf.pp1.symboltable.structure.SymbolDataStructure;
 
 public class CodeGenerator extends VisitorAdaptor {
 
+	// constants for sizes of var args array
+	//
+	public static final int BYTE_VARARGS_TYPE = 0;
+	public static final int WORD_VARARGS_TYPE = 0;
+	
 	// address of main method
 	//
 	private int mainPc;
@@ -36,8 +41,6 @@ public class CodeGenerator extends VisitorAdaptor {
 	private Struct currVarArgsType = Tab.noType;
 	
 	// hash map for keeping info about varArgs 
-	// 0  = char type of var args
-	// 1  = int type of var args
 	//
 	private HashMap<String, Integer> varArgsMethods = new HashMap<String, Integer>();
 	
@@ -340,7 +343,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		
 		// store 0 for char var args, 1 for int
 		//
-		int value = (currVarArgsType.equals(Tab.charType)) ? 0 : 1;
+		int value = (currVarArgsType.equals(Tab.charType)) ? BYTE_VARARGS_TYPE : WORD_VARARGS_TYPE;
 		varArgsMethods.put(signature.getMethodName().getName(), value);
 		
 		Obj method = signature.getMethodName().obj;
@@ -382,7 +385,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		
 		// store 0 for char var args, 1 for int
 		//
-		int value = (currVarArgsType.equals(Tab.charType)) ? 0 : 1;
+		int value = (currVarArgsType.equals(Tab.charType)) ? BYTE_VARARGS_TYPE : WORD_VARARGS_TYPE;
 		varArgsMethods.put(signature.getMethodName().getName(), value);
 		
 		method.setAdr(Code.pc);
