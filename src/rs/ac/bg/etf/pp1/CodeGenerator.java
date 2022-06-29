@@ -48,6 +48,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public CodeGenerator() {
 		generatePredefinedMethods();
+		generateModificationMethod();
 	}
 	
 	// stacks for keeping addresses for if and while jumps
@@ -118,7 +119,17 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.exit);
 		Code.put(Code.return_);
 		
-		// modification 
+		try {
+			Tab.find("chr").setAdr(startAddrChr);
+			Tab.find("ord").setAdr(startAddrOrd);
+			Tab.find("len").setAdr(startAddrLen);
+		} catch (Exception e) {
+			reportError("Error in generating pre-defined methods code.",null);
+		}
+	}
+	
+	private void generateModificationMethod() {
+		// modification - max element of array
 		//
 		int startAddrMod = Code.pc;
 		Code.put(Code.enter);
@@ -194,11 +205,8 @@ public class CodeGenerator extends VisitorAdaptor {
 		
 		try {
 			Tab.find("mod").setAdr(startAddrMod);
-			Tab.find("chr").setAdr(startAddrChr);
-			Tab.find("ord").setAdr(startAddrOrd);
-			Tab.find("len").setAdr(startAddrLen);
 		} catch (Exception e) {
-			reportError("Error in generating pre-defined methods code.",null);
+			reportError("Error in generatin modification code.",null);
 		}
 	}
 	

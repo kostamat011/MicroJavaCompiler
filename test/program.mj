@@ -11,9 +11,9 @@ A a;
 {
 	void main()
 	{
-		a = new A;
-		a.n = new int[5];
-		a.n[0] = 5;
-		print(a.n[0]);
+		niz = new int[5];
+		niz[0] = 10;
+		niz[1] = 11;
+		print(#niz);
 	}
 }
